@@ -8,7 +8,7 @@ function cardTip(r,s){if(s==='a'&&r.shortInfo)return r.shortInfo;if(s==='t'&&yea
 function nowMoscow(){const d=new Date();return {month:Number(new Intl.DateTimeFormat('en',{month:'numeric',timeZone:'Europe/Moscow'}).format(d))-1,label:new Intl.DateTimeFormat('ru',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Moscow'}).format(d)}}
 function renderToday(){const now=nowMoscow(),q=norm($('today-search').value.trim()),origin=$('today-origin').value;
 $('today-date').textContent=now.label+' · Москва';
-let list=DB.rows.filter(r=>(!q||norm(r.name+' '+r.origin).includes(q))&&matchesOrigin(r.origin,origin)&& (todayFilter!=='fav'||favs.has(r.id)) && (todayFilter!=='good'||['p','g','a'].includes(r.months[now.month])||yearRoundGreenhouse(r))&&(todayFilter!=='off'||r.months[now.month]==='n'));
+let list=DB.rows.filter(r=>(!q||searchText(r).includes(q))&&matchesOrigin(r.origin,origin)&& (todayFilter!=='fav'||favs.has(r.id)) && (todayFilter!=='good'||['p','g','a'].includes(r.months[now.month])||yearRoundGreenhouse(r))&&(todayFilter!=='off'||r.months[now.month]==='n'));
 list.sort((a,b)=>(a.months[now.month]==='p'?-1:0)-(b.months[now.month]==='p'?-1:0)||a.name.localeCompare(b.name,'ru')||a.origin.localeCompare(b.origin,'ru'));
 $('today-count').textContent='Найдено: '+list.length;
 document.querySelectorAll('[data-today-filter]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.todayFilter===todayFilter));

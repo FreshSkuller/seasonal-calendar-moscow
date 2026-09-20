@@ -23,6 +23,12 @@ function validateData(db) {
     assert.ok(row.months.every(code => codes.has(code)), 'Неизвестный статус: '+row.id);
     assert.ok(Array.isArray(row.sources), 'Нужен список источников: '+row.id);
     for (const id of row.sources) assert.ok(db.sources[id], 'Источник не найден: '+id);
+    for (const field of ['aliases', 'qualitySources']) {
+      if (row[field] !== undefined) assert.ok(Array.isArray(row[field]) && row[field].every(x => typeof x === 'string' && x.trim()), 'Некорректное поле '+field+': '+row.id);
+    }
+    for (const id of row.qualitySources || []) assert.ok(db.sources[id], 'Источник спелости не найден: '+id);
+    for (const field of ['variety', 'selection', 'ripening']) if (row[field] !== undefined) assert.equal(typeof row[field], 'string', 'Некорректное поле '+field);
+    if (row.selection || row.ripening) assert.ok(row.qualitySources?.length, 'Советам о качестве нужен источник: '+row.id);
     if (row.months.some(code => code !== 'u')) assert.ok(row.sources.length > 0, 'Сезону нужен источник: '+row.id);
   }
 }

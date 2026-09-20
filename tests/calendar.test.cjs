@@ -40,3 +40,23 @@ test('Ошибочный месяц и ссылка на отсутствующ�
   missingSource.rows[0].sources.push('NOT_A_SOURCE');
   assert.throws(() => validateData(missingSource), /Источник не найден/);
 });
+
+test('Советы о спелости не могут ссылаться на отсутствующий источник', () => {
+  const invalid = structuredClone(db);
+  invalid.rows[0].qualitySources = ['MISSING'];
+  assert.throws(() => validateData(invalid), /Источник спелости не найден/);
+  invalid.rows[0].qualitySources = [];
+  invalid.rows[0].selection = 'Совет без основания';
+  assert.throws(() => validateData(invalid), /Советам о качестве нужен источник/);
+});
+test('Поиск находит привычное название и сорт, карточка экранирует текст', () => {
+  const code = fs.readFileSync(path.join(root, 'src/calendar.js'), 'utf8');
+  const context = vm.createContext({sourceList: () => 'sources'});
+  vm.runInContext(code.slice(code.indexOf('const esc='), code.indexOf('const REGION_COUNTRIES=')), context);
+  const pineapple = db.rows.find(r => r.name.includes('Ананас'));
+  assert.ok(context.searchText(pineapple).includes('медовый'));
+  assert.ok(context.searchText(pineapple).includes('md2'));
+  const html = context.qualityDetails({variety:'<script>',selection:'<img onerror=x>',ripening:'a&b'});
+  assert.ok(!html.includes('<script>') && !html.includes('<img'));
+  assert.ok(html.includes('&lt;img') && html.includes('a&amp;b'));
+});
