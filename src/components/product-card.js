@@ -15,9 +15,10 @@ export function productCard(product, month, statuses, isFavorite) {
   const status = product.months[month];
   return `<article class="shop-card">
     <div class="shop-card-top">${statusBadge(statuses, status)}${favoriteButton(product, isFavorite)}</div>
-    <h3><button data-product="${escape(product.id)}">${escape(product.name)}</button></h3>
+    <h3><button data-product="${escape(product.variantId || product.id)}">${escape(product.name)}</button></h3>
     <p class="shop-origin">${escape(product.origin)}</p>
+    ${product.variantCount > 1 ? `<p class="variant-caption">${escape(product.variety || product.variantName)} · вариантов: ${product.variantCount}</p>` : ''}
     <p class="shop-tip">${escape(productTip(product, status))}</p>
-    <button class="why" data-product="${escape(product.id)}">${escape(copy.common.more)}</button>
+    <button class="why" data-product="${escape(product.variantId || product.id)}">${escape(copy.common.more)}</button>
   </article>`;
 }

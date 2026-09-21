@@ -30,6 +30,7 @@ export class DetailsDialog {
     if (!product) throw new Error(`Unknown product: ${id}`);
     this.content.innerHTML = productDetails(product, month, this.database);
     this.dialog.showModal();
+    this.dialog.scrollTop = 0;
   }
 
   destroy() {

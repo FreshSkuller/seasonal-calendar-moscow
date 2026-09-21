@@ -1735,5 +1735,491 @@
     "limit": "Послеуборочная физиология; не подтверждает географический сезон.",
     "date": "1997",
     "checked": "2026-09-20"
+  },
+  "TRZSUM": {
+    "id": "TRZSUM",
+    "title": "MC Sarıkaya Gıda: собственный сезон кабачков",
+    "url": "https://mcsarikayagida.com/en/products/zucchini/",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Май–октябрь; Анталья, Мерсин, Бурса, Самсун.",
+    "limit": "Коммерческий календарь поставщика. В сочетании с зимним окном EREN подтверждает смену производственных циклов, а не единый круглогодичный пик."
+  },
+  "QCARROT": {
+    "id": "QCARROT",
+    "title": "UC Davis: морковь, качество и хранение",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/carrot",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Зрелые корнеплоды при 0 °C: 7–9 месяцев; при 3–5 °C: 3–5 месяцев.",
+    "limit": "Потенциал промышленного хранения, не гарантия партии и не домашний срок."
+  },
+  "QCABB": {
+    "id": "QCABB",
+    "title": "UC Davis: белокочанная капуста",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/cabbage",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Ранняя капуста хранится 3–6 недель, поздняя — до 6 месяцев при 0 °C.",
+    "limit": "Ранние и поздние сорта нельзя считать одинаково лёжкими."
+  },
+  "QGAR": {
+    "id": "QGAR",
+    "title": "UC Davis: чеснок",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/garlic",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Просушенный чеснок способен храниться более 9 месяцев при −1…0 °C и низкой влажности.",
+    "limit": "Это промышленный режим; дома сроки существенно короче."
+  },
+  "QONION": {
+    "id": "QONION",
+    "title": "UC Davis: сухой репчатый лук",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/onions-dry",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Зрелость, просушка, качество и сортовая зависимость хранения.",
+    "limit": "Не календарь российского урожая."
+  },
+  "QSWEET": {
+    "id": "QSWEET",
+    "title": "UC Davis: батат",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/sweet-potato",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Выдержка после сбора и хранение зрелых корней.",
+    "limit": "Не подтверждает месяцы выращивания в конкретной стране."
+  },
+  "QNAPA": {
+    "id": "QNAPA",
+    "title": "UC Davis: пекинская капуста",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/napa-cabbage",
+    "date": "2025-08",
+    "checked": "2026-09-21",
+    "scope": "Обычно 2–3 месяца холодного хранения; регулируемая атмосфера может продлить срок.",
+    "limit": "Не доказывает круглогодичный сбор или происхождение партии."
+  },
+  "QBERRY": {
+    "id": "QBERRY",
+    "title": "UC Davis: ягоды после сбора",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/bushberry",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Качество спелости ягод; ежевика и малина скоропортящиеся; клюква допускает месяцы хранения.",
+    "limit": "Календарь выращивания и российские сроки не устанавливаются."
+  },
+  "QPEAR": {
+    "id": "QPEAR",
+    "title": "UC Davis: зимние груши Anjou, Bosc, Comice",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/pear-anjou-bosc-comice",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Дозаривание; в регулируемой атмосфере Bosc/Comice до 4 месяцев, Anjou до 6.",
+    "limit": "Нельзя переносить максимальную лёжкость на все сорта."
+  },
+  "QPEACH": {
+    "id": "QPEACH",
+    "title": "UC Davis: персик и нектарин",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/peach",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Зрелость, размягчение и повреждение холодом.",
+    "limit": "Красный румянец сам по себе не показывает зрелость."
+  },
+  "QPLUM": {
+    "id": "QPLUM",
+    "title": "UC Davis: слива",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/plum",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Сортовая окраска, упругость, дозаривание и хранение.",
+    "limit": "Не источник географического календаря."
+  },
+  "QFEI": {
+    "id": "QFEI",
+    "title": "UC Davis: фейхоа",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/feijoa",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Кратковременное холодное хранение и послеуборочная зрелость.",
+    "limit": "Не основание для многомесячного свежего сезона."
+  },
+  "RUKEEP": {
+    "id": "RUKEEP",
+    "title": "Роспотребнадзор Москвы: хранение овощей",
+    "url": "https://77.rospotrebnadzor.ru/index.php/press-centr/186-press-centr/13928-kak-pravilno-khranit-ovoshchi-07-02-2025",
+    "date": "2025-02-07",
+    "checked": "2026-09-21",
+    "scope": "Картофель при подходящих условиях хранится 3–10 месяцев.",
+    "limit": "Диапазон зависит от сорта и режима; крайние месяцы не гарантированы."
+  },
+  "RUBJUL": {
+    "id": "RUBJUL",
+    "title": "Александра Арепьева: практический календарь июля",
+    "url": "https://www.botanichka.ru/article/chek-list-vazhnyh-del-sadovoda-na-iyul/",
+    "date": "2026-07-01",
+    "checked": "2026-09-21",
+    "scope": "Летние ягоды, повторные посевы зелени и корнеплодов.",
+    "limit": "Практический садоводческий ориентир; не измерение пика вкуса, не единая дата для всей России."
+  },
+  "RUBAUG": {
+    "id": "RUBAUG",
+    "title": "Александра Арепьева: практический календарь августа",
+    "url": "https://www.botanichka.ru/article/chek-list-vazhnyh-del-sadovoda-na-avgust/",
+    "date": "2026-08-01",
+    "checked": "2026-09-21",
+    "scope": "Уборка лука и чеснока, начало основного сбора картофеля.",
+    "limit": "Сроки корректируются погодой; это не наблюдение каждого хозяйства."
+  },
+  "RUBSEP": {
+    "id": "RUBSEP",
+    "title": "Александра Арепьева: практический календарь сентября",
+    "url": "https://www.botanichka.ru/article/chek-list-vazhnyh-del-sadovoda-na-sentyabr/",
+    "date": "2026-09-01",
+    "checked": "2026-09-21",
+    "scope": "Осенняя уборка корнеплодов, тыквы, капуст, хрена; повторная зелень.",
+    "limit": "Практический календарь средней полосы; южные сроки могут отличаться."
+  },
+  "RUBLACK": {
+    "id": "RUBLACK",
+    "title": "ВНИИСПК: фенология чёрной смородины",
+    "url": "https://vniispk.ru/pages/activities/science-activities/articles-2007/article-2007-17",
+    "date": "2007",
+    "checked": "2026-09-21",
+    "scope": "Орловская область: изученные формы созревают в течение июля.",
+    "limit": "Региональный научный ориентир; для юга и поздних сортов сроки шире."
+  },
+  "RURED": {
+    "id": "RURED",
+    "title": "Т. Арсеньева, ВИР: поздняя красная смородина",
+    "url": "https://sadsevzap.ru/rasteniya-dlya-sada/plodovyie-ovoshhi/yagodnyie/smorodina-krasnaya-pozdnie-sorta.html",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Поздние сорта: середина июля–начало августа.",
+    "limit": "Северо-западный ориентир; не все сорта и регионы."
+  },
+  "RUBRAMBLE": {
+    "id": "RUBRAMBLE",
+    "title": "Ботаничка: биология и выращивание ежевики",
+    "url": "https://www.botanichka.ru/article/ezhevika-rastenie-tselitel-na-dache/",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Растянутый сбор с конца июля до октября.",
+    "limit": "Поздняя граница зависит от сорта и заморозков."
+  },
+  "RUSEAB": {
+    "id": "RUSEAB",
+    "title": "Ботаничка: сорта облепихи",
+    "url": "https://www.botanichka.ru/article/sea-buckthorn-2/",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Сортовые сроки, включая созревание в начале сентября.",
+    "limit": "Практический источник; поздний сбор не равен улучшению каждого показателя вкуса."
+  },
+  "RURHUB": {
+    "id": "RURHUB",
+    "title": "Ботаничка: сбор черешков ревеня",
+    "url": "https://www.botanichka.ru/article/reven-vkusnyie-chereshki-tselebnyiy-koren/",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Начало сбора в первой половине мая, несколько приёмов уборки.",
+    "limit": "Зимняя выгонка не включена в календарь открытого грунта."
+  },
+  "RUSORREL": {
+    "id": "RUSORREL",
+    "title": "Ботаничка: выращивание и уборка щавеля",
+    "url": "https://www.botanichka.ru/article/sorrel/",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Весенний урожай и повторные срезки в течение лета; выгонка отдельно.",
+    "limit": "Срок окончания зависит от погоды и ухода."
+  },
+  "RUSUMPEAR": {
+    "id": "RUSUMPEAR",
+    "title": "ВНИИСПК: груша Виктория",
+    "url": "https://vniispk.ru/varieties/viktoriya",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Съём 20–30 августа, обычное хранение около месяца.",
+    "limit": "Только этот позднелетний сорт; другие груши могут созревать раньше."
+  },
+  "RUWINPEAR": {
+    "id": "RUWINPEAR",
+    "title": "ВНИИСПК: груша Юрьевская",
+    "url": "https://vniispk.ru/varieties/urevskaya",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "В Москве сбор конец сентября–начало октября, потребление середина октября–начало января.",
+    "limit": "Сортовой календарь; холодильное хранение обязательно для зимнего окна."
+  },
+  "RUPEACH": {
+    "id": "RUPEACH",
+    "title": "ВНИИСПК: персик Посол Мира",
+    "url": "https://vniispk.ru/varieties/posol-mira",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Северный Кавказ: третья декада июля–первая декада августа.",
+    "limit": "Только указанный сорт; не полный перечень кубанских сортов."
+  },
+  "RUCELERY": {
+    "id": "RUCELERY",
+    "title": "Supersadovnik: выращивание сельдерея",
+    "url": "https://www.supersadovnik.ru/text/vyrashchivanie-seldereya-1000651",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "Корневой сельдерей: выборочная уборка с сентября, полная — в октябре.",
+    "limit": "Практический календарь; хранение рассматривается отдельно."
+  },
+  "RUPOMSEASON": {
+    "id": "RUPOMSEASON",
+    "title": "Монография «Культура унаби в сухих субтропиках Дагестана»: раздел о гранате",
+    "url": "https://dokumen.pub/55827c7eaf9ffb492eb9891a212501cc.html",
+    "date": "без даты",
+    "checked": "2026-09-21",
+    "scope": "В обзоре субтропических плодов: большинство гранатов созревает в октябре, поздний сбор в ноябре.",
+    "limit": "Открытая копия научной монографии; общий региональный ориентир, не календарь конкретного поставщика."
+  },
+  "THAIGROW": {
+    "id": "THAIGROW",
+    "title": "Blue River: календарь собственных производителей манго",
+    "url": "https://www.blueriver.co.th/product-page/fresh-thai-mango-nam-dok-mai-mahachanok",
+    "scope": "Nam Dok Mai: декабрь–июнь, основной сбор март–май; Mahachanok: март–июль; Chok Anan: май–сентябрь.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "CNHAINAN": {
+    "id": "CNHAINAN",
+    "title": "Синьхуа: сезон манго в Санье, со слов главы города",
+    "url": "https://www.xinhuanet.com/english/2020-02/14/c_138783498.htm",
+    "scope": "Обычное поступление местного манго февраль–июнь; репортаж из сада, 14 февраля 2020.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUCHERRY": {
+    "id": "RUCHERRY",
+    "title": "ОТР: черешня, репортаж из кубанского хозяйства",
+    "url": "https://otr-online.ru/programmy/sreda-obitaniya/vybiraem-speluyu-chereshnyu-raznyh-sortov-44321.html",
+    "scope": "Южный сбор с конца мая до первой декады июля.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUMELBA": {
+    "id": "RUMELBA",
+    "title": "ВНИИСПК: яблоня Мелба",
+    "url": "https://vniispk.ru/varieties/melba",
+    "scope": "Съём во второй половине августа; холодильное хранение до ноября, иногда января.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUAPRICOT": {
+    "id": "RUAPRICOT",
+    "title": "ВНИИСПК: абрикос Краснощёкий",
+    "url": "https://vniispk.ru/varieties/krasnoschyokii",
+    "scope": "Созревание 20–23 июля; хранение 6–8 дней.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUSTANLEY": {
+    "id": "RUSTANLEY",
+    "title": "ВНИИСПК: слива Стенлей",
+    "url": "https://vniispk.ru/varieties/stenli",
+    "scope": "Поздний сорт: начало сентября.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUFALLGREENS": {
+    "id": "RUFALLGREENS",
+    "title": "Ботаничка: повторные осенние посевы",
+    "url": "https://www.botanichka.ru/article/chto-poseyat-v-nachale-oseni-chtobyi-sobrat-urozhay-do-zimyi/",
+    "scope": "Редис, шпинат и руккола при сентябрьском посеве; скороспелые формы за 20–30 дней.",
+    "limit": "Практический ориентир. Осенний сбор зависит от погоды; календарь открытого грунта не включает обогреваемую теплицу.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUSWEDE": {
+    "id": "RUSWEDE",
+    "title": "Московский союз садоводов: брюква на грядке",
+    "url": "https://mossadovod.ru/sovet/bryukva-na-gryadke",
+    "scope": "Уборка конец августа–сентябрь; сортировка перед хранением.",
+    "limit": "Срок проверен по поисковому извлечению; длительность хранения не установлена.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUOCTWORK": {
+    "id": "RUOCTWORK",
+    "title": "Ботаничка: октябрьские работы в саду и огороде",
+    "url": "https://www.botanichka.ru/article/shpargalka-na-oktyabr-vazhnye-sadovo-ogorodnye-dela/",
+    "scope": "Практика осенней уборки, в том числе хрена в октябре.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "RUFALLWORK": {
+    "id": "RUFALLWORK",
+    "title": "Ботаничка: сентябрьская уборка овощей",
+    "url": "https://www.botanichka.ru/article/chto-ne-zabyit-sdelat-v-sentyabre-sadovodu/",
+    "scope": "К концу сентября остаются сельдерей, поздняя капуста, летние посевы редьки, дайкона и зелени.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "CNGINSTORE": {
+    "id": "CNGINSTORE",
+    "title": "RJ Global Trading: производство и поставки китайского имбиря",
+    "url": "https://www.rj-globaltrading.com/Ginger",
+    "scope": "Ежегодный урожай из Аньцю/Пинду, круглогодичная поставка после хранения.",
+    "limit": "Сроки относятся к описанным сортам, региону или хозяйству; наличие в Москве и вкус каждой партии не гарантируются.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "MRARTTRIAL": {
+    "id": "MRARTTRIAL",
+    "title": "Elattir et al.: полевой опыт с артишоком в Гарб",
+    "url": "https://www.agrimaroc.net/agdumed2009/Elattir_Comparaison_cultivars_artichaut.pdf",
+    "scope": "Imperial Star и Emerald, посадка в сентябре; сбор 8 февраля–31 мая 2001; публикация AGDUMED 2009.",
+    "limit": "Исторический конкретный цикл, не полный современный экспортный календарь Марокко.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "AZPOMGUIDE": {
+    "id": "AZPOMGUIDE",
+    "title": "Союз агрономов Азербайджана: руководство по гранату",
+    "url": "https://www.hhgroup.az/uploads/texniki_destek/reqabet_qabiliyyetli_narchiliq_2022/reqabet_qabiliyyetli_narchiliq_2022.pdf",
+    "scope": "Местное и экспортное предложение граната в октябре–ноябре.",
+    "limit": "Проверено поисковое извлечение. Зимние сроки хранения из него не выводятся.",
+    "date": "без даты / дата в публикации",
+    "checked": "2026-09-21"
+  },
+  "QCORN": {
+    "id": "QCORN",
+    "title": "UC Davis: Кукуруза",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/corn-sweet",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QART": {
+    "id": "QART",
+    "title": "UC Davis: Артишоки",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/artichoke-globe",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QCEL": {
+    "id": "QCEL",
+    "title": "UC Davis: Сельдерей черешковый",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/celery",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QBROC": {
+    "id": "QBROC",
+    "title": "UC Davis: Брокколи",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/broccoli",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QCAUL": {
+    "id": "QCAUL",
+    "title": "UC Davis: Цветная капуста",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/cauliflower",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QRAD": {
+    "id": "QRAD",
+    "title": "UC Davis: Редис",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/radish",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QBEAN": {
+    "id": "QBEAN",
+    "title": "UC Davis: Фасоль стручковая",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/bean-snap",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QSQUASH": {
+    "id": "QSQUASH",
+    "title": "UC Davis: Кабачки / цуккини",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/squash-soft-rind",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QCUC": {
+    "id": "QCUC",
+    "title": "UC Davis: Огурцы",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/cucumber",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QPEPPER": {
+    "id": "QPEPPER",
+    "title": "UC Davis: Перец болгарский",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/bell-pepper",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QASPAR": {
+    "id": "QASPAR",
+    "title": "UC Davis: Спаржа",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/asparagus-green",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QHERBS": {
+    "id": "QHERBS",
+    "title": "UC Davis: Укроп / петрушка / зелень, открытый грунт",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/herbs-fresh-culinary",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QGREENONION": {
+    "id": "QGREENONION",
+    "title": "UC Davis: Лук зелёный / перо, открытый грунт",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/onions-green-bunch",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "QPUMPKIN": {
+    "id": "QPUMPKIN",
+    "title": "UC Davis: Тыква зрелая, целая",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/pumpkin-winter-squash",
+    "date": "дата в научной памятке",
+    "checked": "2026-09-21",
+    "scope": "Качество, зрелость и послеуборочное хранение.",
+    "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
   }
 }

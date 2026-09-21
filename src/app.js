@@ -1,3 +1,4 @@
+import { canonicalId, productName } from './domain/product-groups.js';
 import copy from '../content/ru.json' with { type: 'json' };
 import { getElement, escapeHtml as escape, formatMessage } from './shared/html.js';
 import { Preferences } from './services/preferences.js';
@@ -17,6 +18,10 @@ export function startApplication(database, { clock = moscowDate } = {}) {
     /* Private/file browser modes can deny storage. */
   }
   const preferences = new Preferences(storage);
+  preferences.migrateFavorites((id) => {
+    const row = database.rows.find((item) => item.id === id);
+    return row ? canonicalId(row, database.rows) : id;
+  });
   const dialog = new DetailsDialog(database);
   const dependencies = {
     database,
@@ -59,7 +64,7 @@ export function startApplication(database, { clock = moscowDate } = {}) {
     ),
   );
 
-  getElement('hero-count').textContent = database.rows.length;
+  getElement('hero-count').textContent = new Set(database.rows.map(productName)).size;
   getElement('coverage').textContent = formatMessage(copy.calendar.coverage, {
     total: database.rows.length,
     known: database.rows.filter((row) => row.months.some((status) => status !== 'u')).length,

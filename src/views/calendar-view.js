@@ -1,6 +1,7 @@
+import { groupedProducts } from '../domain/product-groups.js';
 import copy from '../../content/ru.json' with { type: 'json' };
 import { getElement, escapeHtml as escape, formatMessage } from '../shared/html.js';
-import { filterProducts, sortProducts, visibleMonths } from '../domain/products.js';
+import { sortProducts, visibleMonths } from '../domain/products.js';
 import { originOptions } from '../components/origin-options.js';
 import { calendarHeader, calendarRows } from '../components/calendar-table.js';
 
@@ -89,7 +90,7 @@ export class CalendarView {
   render() {
     this.month = Number(this.controls.month.value);
     const favorites = this.preferences.favorites;
-    const filtered = filterProducts(this.database.rows, this.filters(), favorites);
+    const filtered = groupedProducts(this.database.rows, this.filters(), favorites);
     const products = sortProducts(filtered, this.month, this.controls.sort.value);
     const months = visibleMonths(this.month, this.wholeYear);
     getElement('table-head').innerHTML = calendarHeader(this.month, months);

@@ -59,3 +59,14 @@ dialog::backdrop {
   width: 100%;
   max-width: 40px;
 }
+.variant-detail {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+.variant-caption {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 6px 0;
+}

@@ -7,7 +7,13 @@ export function normalizeSearch(value) {
 
 export function productSearchText(product) {
   return normalizeSearch(
-    [product.name, product.origin, product.variety || '', ...(product.aliases || [])].join(' '),
+    [
+      product.name,
+      product.cardName || '',
+      product.origin,
+      product.variety || '',
+      ...(product.aliases || []),
+    ].join(' '),
   );
 }
 

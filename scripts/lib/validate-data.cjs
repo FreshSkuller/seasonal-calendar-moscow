@@ -35,7 +35,7 @@ function validateData(db) {
     }
     for (const id of row.qualitySources || [])
       assert.ok(db.sources[id], 'Источник спелости не найден: ' + id);
-    for (const field of ['variety', 'selection', 'ripening'])
+    for (const field of ['cardName', 'variety', 'selection', 'ripening'])
       if (row[field] !== undefined)
         assert.equal(typeof row[field], 'string', 'Некорректное поле ' + field);
     if (row.selection || row.ripening)

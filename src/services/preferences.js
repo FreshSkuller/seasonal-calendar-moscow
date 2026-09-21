@@ -27,6 +27,11 @@ export class Preferences {
     return this.#favorites.has(id);
   }
 
+  migrateFavorites(resolveId) {
+    this.#favorites = new Set([...this.#favorites].map(resolveId));
+    this.#write(FAVORITES_KEY, [...this.#favorites]);
+  }
+
   toggleFavorite(id) {
     if (this.#favorites.has(id)) this.#favorites.delete(id);
     else this.#favorites.add(id);

@@ -1,7 +1,8 @@
+import { groupedProducts } from '../domain/product-groups.js';
 import copy from '../../content/ru.json' with { type: 'json' };
 import { TODAY_GROUPS, CARDS_PER_GROUP } from '../config/calendar.js';
 import { getElement, escapeHtml as escape, formatMessage } from '../shared/html.js';
-import { filterProducts, sortProducts } from '../domain/products.js';
+import { sortProducts } from '../domain/products.js';
 import { originOptions } from '../components/origin-options.js';
 import { productCard } from '../components/product-card.js';
 
@@ -44,7 +45,7 @@ export class TodayView {
     const query = this.search.value.trim();
     const filters = { month: now.month, query, origin: this.origin.value, mode: this.mode };
     const products = sortProducts(
-      filterProducts(this.database.rows, filters, this.preferences.favorites),
+      groupedProducts(this.database.rows, filters, this.preferences.favorites),
       now.month,
       'peak',
     );

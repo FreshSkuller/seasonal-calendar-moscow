@@ -11,7 +11,7 @@ test('Поиск, карточка со спелостью, источник и 
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await page.locator('#today-search').fill('MD2');
-  await expect(page.locator('.shop-card')).toHaveCount(3);
+  await expect(page.locator('.shop-card')).toHaveCount(1);
   await page.locator('.shop-card h3 button').first().click();
   await expect(page.locator('#detail-dialog')).toBeVisible();
   await expect(page.locator('#dialog-content')).toContainText('Дозреет ли дома');
@@ -62,7 +62,7 @@ test('Месяцы, все регионы России, сброс, тема и 
   expect(origins.length).toBeGreaterThan(0);
   expect(origins.every((origin) => origin.startsWith('Россия'))).toBe(true);
   await page.locator('#reset').click();
-  await expect(page.locator('#table-body tr')).toHaveCount(215);
+  await expect(page.locator('#table-body tr')).toHaveCount(91);
   await page.locator('#theme').click();
   await page.reload();
   await expect(page.locator('body')).toHaveClass('dark');
@@ -73,7 +73,25 @@ test('Готовый файл работает без сервера и инте
   await context.setOffline(true);
   await page.goto(pathToFileURL(path.resolve('index.html')).href);
   await page.locator('#today-search').fill('ананас');
-  await expect(page.locator('.shop-card')).toHaveCount(3);
+  await expect(page.locator('.shop-card')).toHaveCount(1);
   await page.locator('[data-today-filter="off"]').click();
   await expect(page.locator('.empty')).toBeVisible();
+});
+
+test('Один авокадо: все происхождения и годовые графики внутри карточки', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#today-search').fill('авокадо');
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await page.locator('#today-origin').selectOption('country:Перу');
+  await expect(page.locator('.shop-card .shop-origin')).toHaveText('Перу');
+  await page.locator('.shop-card .why').click();
+  await expect(page.locator('.variant-detail').first()).toContainText('Перу');
+  const variants = await page.locator('.variant-detail').count();
+  expect(variants).toBeGreaterThan(3);
+  await expect(page.locator('.year-mini')).toHaveCount(variants);
+  for (const graph of await page.locator('.year-mini').all())
+    await expect(graph.locator(':scope > div')).toHaveCount(12);
+  expect(
+    await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
 });
