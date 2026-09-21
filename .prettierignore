@@ -1,0 +1,7 @@
+node_modules/
+index.html
+package-lock.json
+docs/review-2026-09-20.json
+docs/review-2026-09-20.md
+playwright-report/
+test-results/

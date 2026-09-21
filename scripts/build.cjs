@@ -1,60 +1,74 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
 const assert = require('node:assert/strict');
-const root = path.resolve(__dirname, '..');
-const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+const esbuild = require('esbuild');
+const prettier = require('prettier');
+const { loadDatabase, readJson, root } = require('./lib/load-data.cjs');
+const { validateData } = require('./lib/validate-data.cjs');
 
-function validateData(db) {
-  const codes = new Set(['p', 'g', 'b', 'h', 't', 'n', 'u', 'a']);
-  const ids = new Set();
-  assert.ok(Array.isArray(db.rows) && db.rows.length > 0, 'Нужны строки календаря');
-  assert.deepEqual(new Set(Object.keys(db.statuses)), codes, 'Некорректный набор статусов');
-  for (const [id, source] of Object.entries(db.sources)) {
-    assert.equal(source.id, id, 'ID источника должен совпадать с ключом');
-    assert.ok(['https:', 'http:'].includes(new URL(source.url).protocol), 'Некорректная ссылка: '+id);
-    assert.ok(source.title, 'Нужно название источника: '+id);
-  }
-  for (const row of db.rows) {
-    assert.ok(row.id && !ids.has(row.id), 'Повторяющийся или пустой ID: '+row.id);
-    ids.add(row.id);
-    assert.ok(row.name && row.origin && row.category, 'Нет названия, происхождения или категории: '+row.id);
-    assert.equal(row.months.length, 12, 'Нужно 12 месяцев: '+row.id);
-    assert.ok(row.months.every(code => codes.has(code)), 'Неизвестный статус: '+row.id);
-    assert.ok(Array.isArray(row.sources), 'Нужен список источников: '+row.id);
-    for (const id of row.sources) assert.ok(db.sources[id], 'Источник не найден: '+id);
-    for (const field of ['aliases', 'qualitySources']) {
-      if (row[field] !== undefined) assert.ok(Array.isArray(row[field]) && row[field].every(x => typeof x === 'string' && x.trim()), 'Некорректное поле '+field+': '+row.id);
-    }
-    for (const id of row.qualitySources || []) assert.ok(db.sources[id], 'Источник спелости не найден: '+id);
-    for (const field of ['variety', 'selection', 'ripening']) if (row[field] !== undefined) assert.equal(typeof row[field], 'string', 'Некорректное поле '+field);
-    if (row.selection || row.ripening) assert.ok(row.qualitySources?.length, 'Советам о качестве нужен источник: '+row.id);
-    if (row.months.some(code => code !== 'u')) assert.ok(row.sources.length > 0, 'Сезону нужен источник: '+row.id);
-  }
+const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (character) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character],
+  );
+
+function renderTemplate(template, copy) {
+  const withPartials = template.replace(/@@PARTIAL:([a-z-]+)@@/g, (_, name) =>
+    read(`src/templates/partials/${name}.html`),
+  );
+  return withPartials.replace(/\{\{([\w.]+)\}\}/g, (_, key) => {
+    const value = key.split('.').reduce((parent, part) => parent?.[part], copy);
+    assert.equal(typeof value, 'string', `Нет надписи в content/ru.json: ${key}`);
+    return escapeHtml(value);
+  });
 }
 
-function build() {
-  const db = JSON.parse(read('data/calendar.json'));
-  validateData(db);
-  const calendar = read('src/calendar.js');
-  const today = read('src/today.js');
-  new vm.Script(calendar+'\n'+today, {filename:'calendar-and-today.js'});
-  for (const code of [calendar, today]) assert.ok(!/<\/script/i.test(code), 'Не вставляйте закрывающий тег script в код');
+async function build() {
+  const database = loadDatabase();
+  validateData(database);
+  const javascript = esbuild.buildSync({
+    absWorkingDir: root,
+    entryPoints: ['src/app.js'],
+    bundle: true,
+    write: false,
+    format: 'iife',
+    platform: 'browser',
+    target: ['es2020'],
+    charset: 'utf8',
+    minify: false,
+    legalComments: 'none',
+  }).outputFiles[0].text;
+  const styleFiles = readJson('src/styles/manifest.json');
+  for (const file of styleFiles) assert.match(file, /^[a-z-]+\.css$/, 'Недопустимое имя CSS');
+  const styles = styleFiles
+    .map((file) => `/* ${file} */\n${read(`src/styles/${file}`)}`)
+    .join('\n');
+  let html = renderTemplate(read('src/templates/page.html'), readJson('content/ru.json'));
   const replacements = {
-    DATABASE: JSON.stringify(db).replace(/</g, '\\u003c'),
-    STYLES: read('src/styles.css'),
-    CALENDAR_JS: calendar,
-    TODAY_JS: today
+    DATABASE: JSON.stringify(database, null, 2).replace(/</g, '\\u003c'),
+    STYLES: styles,
+    APP_JS: javascript.replace(/<\/script/gi, '<\\/script'),
   };
-  let html = read('src/template.html');
-  for (const key of Object.keys(replacements)) {
-    assert.equal(html.split('@@'+key+'@@').length, 2, 'Маркер должен встречаться один раз: '+key);
+  for (const [key, value] of Object.entries(replacements)) {
+    assert.equal(html.split(`@@${key}@@`).length, 2, `Маркер должен встречаться один раз: ${key}`);
+    html = html.replace(`@@${key}@@`, () => value);
   }
-  return html.replace(/@@(DATABASE|STYLES|CALENDAR_JS|TODAY_JS)@@/g, (_, key) => replacements[key]);
+  assert.ok(!/@@[A-Z_]+@@/.test(html), 'Необработанный маркер сборки');
+  const options = await prettier.resolveConfig(path.join(root, 'index.html'));
+  return prettier.format(html, { ...options, parser: 'html', embeddedLanguageFormatting: 'off' });
 }
 
 if (require.main === module) {
-  fs.writeFileSync(path.join(root, 'index.html'), build());
-  console.log('Готово: index.html');
+  build()
+    .then((html) => {
+      fs.writeFileSync(path.join(root, 'index.html'), html);
+      console.log('Готово: index.html');
+    })
+    .catch((error) => {
+      console.error(error);
+      process.exitCode = 1;
+    });
 }
-module.exports = {build, validateData};
+module.exports = { build, renderTemplate, validateData };

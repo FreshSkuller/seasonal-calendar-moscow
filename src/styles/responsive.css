@@ -1,0 +1,194 @@
+@media (max-width: 850px) {
+  header,
+  main,
+  footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .hero {
+    padding: 26px 0;
+  }
+  .number-note {
+    display: none;
+  }
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .topline .stamp {
+    max-width: 180px;
+    text-align: right;
+  }
+  .toolbar {
+    padding: 14px;
+  }
+  .tabs {
+    gap: 22px;
+  }
+  .table-wrap {
+    max-height: 70vh;
+  }
+  td.product {
+    min-width: 180px;
+    max-width: 210px;
+  }
+  .decision {
+    min-width: 160px;
+  }
+  .options .spacer {
+    display: none;
+  }
+  .summary-line {
+    align-items: flex-start;
+  }
+  .summary-line > span {
+    max-width: 200px;
+    text-align: right;
+  }
+  .year-mini {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.07em;
+  }
+  .stamp {
+    font-size: 11px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .filters {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .filters .search-field,
+  .filters .origin-field {
+    grid-column: 1/-1;
+  }
+  .filters .search-field {
+    grid-row: 1;
+  }
+  .legend {
+    gap: 8px;
+    font-size: 11px;
+  }
+  .legend .symbol {
+    width: 24px;
+    height: 25px;
+    font-size: 14px;
+  }
+  .tabs {
+    gap: 17px;
+  }
+  .tabs button {
+    font-size: 13px;
+  }
+  td.product {
+    min-width: 155px;
+    max-width: 180px;
+  }
+  td.product .name {
+    font-size: 13px;
+  }
+  td.origin {
+    min-width: 150px;
+  }
+  .summary-line h2 {
+    font-size: 19px;
+  }
+  .summary-line > span {
+    max-width: 150px;
+    font-size: 11px;
+  }
+  dialog {
+    padding: 18px;
+  }
+  .audit-controls {
+    display: block;
+  }
+  .scope-note {
+    font-size: 12px;
+  }
+}
+@media print {
+  .toolbar,
+  .tabs,
+  .fav,
+  .close,
+  footer,
+  .download,
+  #theme {
+    display: none;
+  }
+  .table-wrap {
+    max-height: none;
+    overflow: visible;
+  }
+  th,
+  td.product {
+    position: static;
+  }
+  .hero {
+    padding-top: 10px;
+  }
+  body {
+    background: white;
+    font-size: 10px;
+  }
+  .month {
+    min-width: 0;
+  }
+  td,
+  th {
+    padding: 5px;
+    font-size: 9px;
+  }
+  .symbol {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+  header,
+  main {
+    padding: 0;
+  }
+  .scope-note,
+  .legend {
+    font-size: 10px;
+  }
+}
+.mobile-origin {
+  display: none;
+}
+@media (max-width: 850px) {
+  td.origin,
+  td.decision,
+  th:nth-child(2),
+  th:nth-child(3) {
+    display: none;
+  }
+  td.product .row-category {
+    display: none;
+  }
+  td.product .mobile-origin {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  td.product {
+    min-width: 160px;
+    max-width: 235px;
+    width: 45%;
+  }
+  .table-wrap {
+    max-height: 70vh;
+  }
+}

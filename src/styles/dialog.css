@@ -1,0 +1,61 @@
+dialog {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 26px;
+  background: var(--card);
+  color: var(--ink);
+  width: min(810px, calc(100% - 24px));
+  max-height: 90vh;
+  box-shadow: 0 20px 100px #0003;
+}
+dialog::backdrop {
+  background: #10271e77;
+  backdrop-filter: blur(3px);
+}
+.dialog-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-between;
+}
+.dialog-head h2 {
+  font:
+    29px Georgia,
+    serif;
+  line-height: 1.2;
+  margin: 6px 0;
+}
+.dialog-head p {
+  margin: 8px 0;
+  color: var(--muted);
+}
+.close {
+  padding: 6px 12px;
+  font-size: 20px;
+}
+.detail-note {
+  background: var(--soft);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 18px 0;
+}
+.detail-note p {
+  margin: 8px 0 0;
+}
+.year-mini {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  margin: 20px 0;
+}
+.year-mini div {
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted);
+}
+.year-mini .symbol {
+  display: flex;
+  margin: 6px auto;
+  width: 100%;
+  max-width: 40px;
+}

@@ -1,0 +1,74 @@
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+  gap: 15px;
+}
+.brand {
+  font-weight: 750;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.stamp {
+  font-size: 13px;
+  color: var(--muted);
+}
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 34px 0 28px;
+}
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin: 0 0 15px;
+}
+.hero p {
+  max-width: 690px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+.number-note {
+  flex-shrink: 0;
+  border-left: 1px solid var(--line);
+  padding: 8px 0 8px 24px;
+  max-width: 220px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.number-note strong {
+  display: block;
+  font:
+    34px Georgia,
+    serif;
+  color: var(--ink);
+}
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  gap: 26px;
+  margin-bottom: 25px;
+}
+.tabs button {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 12px 0;
+  border-bottom: 3px solid transparent;
+  font-weight: 650;
+}
+.tabs button[aria-selected='true'] {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+[hidden] {
+  display: none !important;
+}

@@ -4,3 +4,6 @@ Thumbs.db
 *.log
 .env
 .env.*
+
+playwright-report/
+test-results/

@@ -1,0 +1,36 @@
+<section data-panel="today">
+  <div class="today-header">
+    <div>
+      <h2>{{page.todayTitle}}</h2>
+      <p id="today-date" class="today-date"></p>
+    </div>
+    <div class="today-meta">
+      <span class="today-count" id="today-count" aria-live="polite"></span
+      ><button id="today-reset">{{page.todayReset}}</button>
+    </div>
+  </div>
+  <div class="toolbar">
+    <div class="daily-search">
+      <label class="field"
+        >{{page.todaySearch}}<input
+          id="today-search"
+          type="search"
+          placeholder="{{page.todayPlaceholder}}" /></label
+      ><label class="field"
+        >{{page.todayOrigin}}<select id="today-origin">
+          <option value="">{{page.todayAllOrigins}}</option>
+        </select></label
+      >
+    </div>
+    <div class="today-chips" aria-label="{{page.filtersLabel}}">
+      <button data-today-filter="all" aria-pressed="true">{{page.filterAll}}</button
+      ><button data-today-filter="good" aria-pressed="false" title="{{page.goodFilterTitle}}">
+        {{page.filterGood}}</button
+      ><button data-today-filter="off" aria-pressed="false">{{page.filterOff}}</button
+      ><button data-today-filter="fav" aria-pressed="false">{{page.filterFavorites}}</button>
+    </div>
+  </div>
+  <p class="daily-note">{{page.todayNote}}</p>
+  <div id="today-groups"></div>
+  <div class="family-note">{{page.favoritesNote}}</div>
+</section>

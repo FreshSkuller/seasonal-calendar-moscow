@@ -1,0 +1,75 @@
+:root {
+  --bg: #f5f4ee;
+  --card: #fffef9;
+  --ink: #243c32;
+  --muted: #66736a;
+  --line: #dce1d6;
+  --accent: #236348;
+  --soft: #eaf0e4;
+  --shadow: 0 8px 35px #233c3210;
+  color-scheme: light;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 15px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+body.dark {
+  --bg: #17221c;
+  --card: #202e26;
+  --ink: #e2e9df;
+  --muted: #aab8ac;
+  --line: #3c4c3e;
+  --accent: #99d5ab;
+  --soft: #2a3d2c;
+  --shadow: none;
+  color-scheme: dark;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+select {
+  cursor: pointer;
+}
+button {
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px 14px;
+}
+button:hover {
+  border-color: var(--accent);
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #dc9e38;
+  outline-offset: 3px;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+header,
+main,
+footer {
+  max-width: 1420px;
+  margin: auto;
+  padding: 0 32px;
+}

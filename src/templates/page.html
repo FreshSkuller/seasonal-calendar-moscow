@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{{page.title}}</title>
+    <style>
+      @@STYLES@@;
+    </style>
+  </head>
+  <body>
+    @@PARTIAL:header@@
+    <main>
+      <nav class="tabs" aria-label="{{page.tabsLabel}}">
+        <button data-tab="today" aria-selected="true">{{page.tabToday}}</button
+        ><button data-tab="calendar" aria-selected="false">{{page.tabCalendar}}</button
+        ><button data-tab="method" aria-selected="false">{{page.tabHelp}}</button>
+      </nav>
+      @@PARTIAL:today@@@@PARTIAL:calendar@@ @@PARTIAL:method@@
+
+      <noscript>{{page.noscript}}</noscript>
+    </main>
+    <footer>{{page.footer}}</footer>
+    <dialog id="detail-dialog" aria-labelledby="dialog-title">
+      <div id="dialog-content"></div>
+    </dialog>
+    <script type="application/json" id="database">
+      @@DATABASE@@
+    </script>
+    <script>
+      @@APP_JS@@
+    </script>
+  </body>
+</html>

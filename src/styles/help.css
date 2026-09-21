@@ -1,0 +1,81 @@
+.panel {
+  max-width: 1080px;
+}
+.panel h2 {
+  font:
+    32px Georgia,
+    serif;
+  margin: 25px 0 14px;
+}
+.panel p {
+  max-width: 880px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 24px 0;
+}
+.info-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  padding: 20px;
+}
+.info-card h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.source-list {
+  list-style: none;
+  padding: 0;
+}
+.source-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.source-list p {
+  font-size: 13px;
+  margin: 5px 0;
+  color: var(--muted);
+}
+.source-list .source-id {
+  display: inline-block;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-right: 7px;
+}
+.audit details {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.audit p,
+.audit li {
+  font-size: 13px;
+}
+.audit code {
+  font-size: 12px;
+  letter-spacing: 0.07em;
+}
+.audit ul {
+  padding-left: 20px;
+}
+.audit-controls {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.audit-controls input {
+  max-width: 450px;
+}
