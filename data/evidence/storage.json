@@ -1,0 +1,2306 @@
+[
+  {
+    "id": "evidence-storage-home-cut-product-1",
+    "statement": "Практические условия хранения: Картофель; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r1", "r2"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-3",
+    "statement": "Практические условия хранения: Морковь основного урожая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r3"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-4",
+    "statement": "Практические условия хранения: Свёкла основного урожая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r4"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-5",
+    "statement": "Практические условия хранения: Капуста белокочанная; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r5", "r6"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-7",
+    "statement": "Практические условия хранения: Кольраби; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r7"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-8",
+    "statement": "Практические условия хранения: Лук репчатый; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r8"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-9",
+    "statement": "Практические условия хранения: Лук зелёный / перо, открытый грунт; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r9"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-10",
+    "statement": "Практические условия хранения: Чеснок; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r210", "r211", "r10"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-11",
+    "statement": "Практические условия хранения: Огурцы; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r183", "r184", "r11", "r80"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-12",
+    "statement": "Практические условия хранения: Томаты; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r179", "r180", "r181", "r182", "r12", "r81"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-13",
+    "statement": "Практические условия хранения: Кабачки / цуккини; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r190", "r191", "r13"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-14",
+    "statement": "Практические условия хранения: Баклажаны; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r187", "r188", "r189", "r14"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-15",
+    "statement": "Практические условия хранения: Перец болгарский; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r185", "r186", "r15"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-16",
+    "statement": "Практические условия хранения: Тыква зрелая, целая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r16"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-17",
+    "statement": "Практические условия хранения: Кукуруза; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r208", "r209", "r17"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-18",
+    "statement": "Практические условия хранения: Горошек зелёный, свежий; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r18"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-19",
+    "statement": "Практические условия хранения: Фасоль стручковая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r19"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-20",
+    "statement": "Практические условия хранения: Брокколи; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r192", "r20"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-21",
+    "statement": "Практические условия хранения: Цветная капуста; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r193", "r21"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-22",
+    "statement": "Практические условия хранения: Брюссельская капуста; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r22"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-23",
+    "statement": "Практические условия хранения: Редис; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r23", "r24"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-25",
+    "statement": "Практические условия хранения: Редька; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r25"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-26",
+    "statement": "Практические условия хранения: Репа; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r26"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-27",
+    "statement": "Практические условия хранения: Брюква; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r27"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-28",
+    "statement": "Практические условия хранения: Щавель; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r28"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-29",
+    "statement": "Практические условия хранения: Шпинат / руккола, открытый грунт; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r29"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-30",
+    "statement": "Практические условия хранения: Спаржа; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r197", "r30"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-31",
+    "statement": "Практические условия хранения: Черемша свежая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r31"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-32",
+    "statement": "Практические условия хранения: Укроп / петрушка / зелень, открытый грунт; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r32"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-33",
+    "statement": "Практические условия хранения: Сельдерей корневой; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r33"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-34",
+    "statement": "Практические условия хранения: Сельдерей черешковый; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r194", "r34"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-35",
+    "statement": "Практические условия хранения: Хрен, свежий корень; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r35"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-36",
+    "statement": "Практические условия хранения: Ревень; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r36"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-37",
+    "statement": "Практические условия хранения: Клубника; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r136", "r137", "r138", "r215", "r37", "r38", "r39"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-40",
+    "statement": "Практические условия хранения: Земляника лесная; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r40"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-41",
+    "statement": "Практические условия хранения: Жимолость; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r41"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-42",
+    "statement": "Практические условия хранения: Черешня; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r139", "r140", "r42"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-43",
+    "statement": "Практические условия хранения: Вишня; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r43"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-44",
+    "statement": "Практические условия хранения: Малина; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r44", "r45"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-46",
+    "statement": "Практические условия хранения: Чёрная смородина; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r46"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-47",
+    "statement": "Практические условия хранения: Красная смородина; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r47"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-48",
+    "statement": "Практические условия хранения: Крыжовник; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r48"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-49",
+    "statement": "Практические условия хранения: Черника лесная; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r49"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-50",
+    "statement": "Практические условия хранения: Голубика; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r141", "r142", "r143", "r50", "r51"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-52",
+    "statement": "Практические условия хранения: Ежевика; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r52"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-53",
+    "statement": "Практические условия хранения: Облепиха; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r53"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-54",
+    "statement": "Практические условия хранения: Калина; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r54"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-55",
+    "statement": "Практические условия хранения: Рябина красная; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r55"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-56",
+    "statement": "Практические условия хранения: Шиповник; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r56"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-57",
+    "statement": "Практические условия хранения: Ирга; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r57"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-58",
+    "statement": "Практические условия хранения: Черёмуха обыкновенная, свежая; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r58"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-59",
+    "statement": "Практические условия хранения: Брусника, свежий сбор; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r59"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-60",
+    "statement": "Практические условия хранения: Клюква, свежий сбор; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r60"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-61",
+    "statement": "Практические условия хранения: Абрикосы; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r144", "r145", "r146", "r61"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-62",
+    "statement": "Практические условия хранения: Персики и нектарины; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r147", "r148", "r164", "r214", "r62", "r63"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-64",
+    "statement": "Практические условия хранения: Сливы; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r149", "r150", "r151", "r64"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-65",
+    "statement": "Практические условия хранения: Алыча; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r65"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-66",
+    "statement": "Практические условия хранения: Яблоки; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r176", "r177", "r178", "r66", "r67", "r68"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-69",
+    "statement": "Практические условия хранения: Груши; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r173", "r174", "r175", "r69", "r70"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-71",
+    "statement": "Практические условия хранения: Арбуз грунтовой; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r71"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-72",
+    "statement": "Практические условия хранения: Дыня; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r72"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-73",
+    "statement": "Практические условия хранения: Виноград; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r152", "r153", "r154", "r155", "r165", "r166", "r73"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-74",
+    "statement": "Практические условия хранения: Инжир; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r161", "r169", "r74"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-75",
+    "statement": "Практические условия хранения: Айва; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r75"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-76",
+    "statement": "Практические условия хранения: Хурма; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r77", "r156", "r157", "r167", "r76"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-78",
+    "statement": "Практические условия хранения: Гранат; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r158", "r159", "r160", "r168", "r78"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-79",
+    "statement": "Практические условия хранения: Фейхоа; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r162", "r163", "r79"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-82",
+    "statement": "Практические условия хранения: Молодые салатные культуры, теплица; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r82"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-83",
+    "statement": "Практические условия хранения: Мандарины; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r83", "r84", "r85", "r86", "r87", "r88"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-89",
+    "statement": "Практические условия хранения: Апельсины; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r89", "r90", "r91", "r213"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-92",
+    "statement": "Практические условия хранения: Грейпфрут; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r92", "r93"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-94",
+    "statement": "Практические условия хранения: Лимоны; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r94", "r95"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-96",
+    "statement": "Практические условия хранения: Помело; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r96", "r97", "r98"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-99",
+    "statement": "Практические условия хранения: Лайм; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r99", "r100", "r101"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-102",
+    "statement": "Практические условия хранения: Манго; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r102", "r103", "r104", "r105", "r106", "r107", "r108", "r216", "r217"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-109",
+    "statement": "Практические условия хранения: Ананас; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r109", "r110", "r111"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-112",
+    "statement": "Практические условия хранения: Бананы; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r112", "r113"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-114",
+    "statement": "Практические условия хранения: Авокадо; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r114", "r115", "r116", "r117"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-118",
+    "statement": "Практические условия хранения: Личи; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r118", "r119", "r120", "r121"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-122",
+    "statement": "Практические условия хранения: Папайя; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r122", "r123", "r124"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-125",
+    "statement": "Практические условия хранения: Питайя (дракон-фрукт); cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r125", "r126", "r127"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-128",
+    "statement": "Практические условия хранения: Маракуйя; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r128", "r129", "r130"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-131",
+    "statement": "Практические условия хранения: Кокос; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r131", "r132", "r133"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-134",
+    "statement": "Практические условия хранения: Физалис; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r134", "r135"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-170",
+    "statement": "Практические условия хранения: Киви; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r170", "r171", "r172"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-195",
+    "statement": "Практические условия хранения: Салат айсберг / романо; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r195", "r196"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-198",
+    "statement": "Практические условия хранения: Имбирь; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r198", "r199", "r200"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-201",
+    "statement": "Практические условия хранения: Батат; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r201", "r202", "r203"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-204",
+    "statement": "Практические условия хранения: Пекинская капуста; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r204", "r205"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-206",
+    "statement": "Практические условия хранения: Артишоки; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r206", "r207"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-cut-product-212",
+    "statement": "Практические условия хранения: Лук-порей; cut / any",
+    "sourceIds": ["HOMEFDA", "HOMEDAVIS", "HOMEPNW", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r212"]
+    },
+    "supports": ["quality", "food-safety"]
+  },
+  {
+    "id": "evidence-storage-home-potato-store-product-1",
+    "statement": "Практические условия хранения: Картофель; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "HOMEPOTATO"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r1", "r2"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-store-product-3",
+    "statement": "Практические условия хранения: Морковь основного урожая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r3"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-store-product-4",
+    "statement": "Практические условия хранения: Свёкла основного урожая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r4"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-store-product-23",
+    "statement": "Практические условия хранения: Редис; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r23", "r24"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-store-product-25",
+    "statement": "Практические условия хранения: Редька; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r25"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-store-product-26",
+    "statement": "Практические условия хранения: Репа; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r26"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-cold-product-7",
+    "statement": "Практические условия хранения: Кольраби; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r7"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-roots-cold-product-27",
+    "statement": "Практические условия хранения: Брюква; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r27"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-aromatic-root-product-33",
+    "statement": "Практические условия хранения: Сельдерей корневой; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r33"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-aromatic-root-product-35",
+    "statement": "Практические условия хранения: Хрен, свежий корень; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r35"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-5",
+    "statement": "Практические условия хранения: Капуста белокочанная; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r5", "r6"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-20",
+    "statement": "Практические условия хранения: Брокколи; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r192", "r20"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-21",
+    "statement": "Практические условия хранения: Цветная капуста; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r193", "r21"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-22",
+    "statement": "Практические условия хранения: Брюссельская капуста; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r22"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-34",
+    "statement": "Практические условия хранения: Сельдерей черешковый; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r194", "r34"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-204",
+    "statement": "Практические условия хранения: Пекинская капуста; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r204", "r205"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-cold-vegetable-product-206",
+    "statement": "Практические условия хранения: Артишоки; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r206", "r207"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-9",
+    "statement": "Практические условия хранения: Лук зелёный / перо, открытый грунт; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r9"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-28",
+    "statement": "Практические условия хранения: Щавель; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r28"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-29",
+    "statement": "Практические условия хранения: Шпинат / руккола, открытый грунт; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r29"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-31",
+    "statement": "Практические условия хранения: Черемша свежая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r31"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-32",
+    "statement": "Практические условия хранения: Укроп / петрушка / зелень, открытый грунт; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r32"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-82",
+    "statement": "Практические условия хранения: Молодые салатные культуры, теплица; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r82"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-195",
+    "statement": "Практические условия хранения: Салат айсберг / романо; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r195", "r196"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-greens-store-product-212",
+    "statement": "Практические условия хранения: Лук-порей; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r212"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-dry-store-product-8",
+    "statement": "Практические условия хранения: Лук репчатый; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r8"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-dry-store-product-10",
+    "statement": "Практические условия хранения: Чеснок; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r210", "r211", "r10"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-chill-sensitive-product-11",
+    "statement": "Практические условия хранения: Огурцы; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r183", "r184", "r11", "r80"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-chill-sensitive-product-14",
+    "statement": "Практические условия хранения: Баклажаны; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r187", "r188", "r189", "r14"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-chill-sensitive-product-15",
+    "statement": "Практические условия хранения: Перец болгарский; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r185", "r186", "r15"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tender-vegetable-product-13",
+    "statement": "Практические условия хранения: Кабачки / цуккини; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r190", "r191", "r13"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tender-vegetable-product-17",
+    "statement": "Практические условия хранения: Кукуруза; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r208", "r209", "r17"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tender-vegetable-product-18",
+    "statement": "Практические условия хранения: Горошек зелёный, свежий; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r18"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tender-vegetable-product-19",
+    "statement": "Практические условия хранения: Фасоль стручковая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r19"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tender-vegetable-product-30",
+    "statement": "Практические условия хранения: Спаржа; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r197", "r30"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-pumpkin-store-product-16",
+    "statement": "Практические условия хранения: Тыква зрелая, целая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r16"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-sweet-store-product-201",
+    "statement": "Практические условия хранения: Батат; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r201", "r202", "r203"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-rhubarb-store-product-36",
+    "statement": "Практические условия хранения: Ревень; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r36"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-37",
+    "statement": "Практические условия хранения: Клубника; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r136", "r137", "r138", "r215", "r37", "r38", "r39"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-40",
+    "statement": "Практические условия хранения: Земляника лесная; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r40"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-41",
+    "statement": "Практические условия хранения: Жимолость; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r41"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-42",
+    "statement": "Практические условия хранения: Черешня; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r139", "r140", "r42"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-43",
+    "statement": "Практические условия хранения: Вишня; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r43"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-44",
+    "statement": "Практические условия хранения: Малина; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r44", "r45"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-46",
+    "statement": "Практические условия хранения: Чёрная смородина; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r46"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-47",
+    "statement": "Практические условия хранения: Красная смородина; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r47"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-48",
+    "statement": "Практические условия хранения: Крыжовник; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r48"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-49",
+    "statement": "Практические условия хранения: Черника лесная; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r49"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-50",
+    "statement": "Практические условия хранения: Голубика; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r141", "r142", "r143", "r50", "r51"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-52",
+    "statement": "Практические условия хранения: Ежевика; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r52"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-53",
+    "statement": "Практические условия хранения: Облепиха; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r53"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-54",
+    "statement": "Практические условия хранения: Калина; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r54"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-55",
+    "statement": "Практические условия хранения: Рябина красная; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r55"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-56",
+    "statement": "Практические условия хранения: Шиповник; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r56"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-57",
+    "statement": "Практические условия хранения: Ирга; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREIRGA"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r57"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-58",
+    "statement": "Практические условия хранения: Черёмуха обыкновенная, свежая; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r58"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-59",
+    "statement": "Практические условия хранения: Брусника, свежий сбор; whole / any",
+    "sourceIds": ["STORELINGON", "HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r59"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-berries-store-product-60",
+    "statement": "Практические условия хранения: Клюква, свежий сбор; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r60"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-apple-store-product-66",
+    "statement": "Практические условия хранения: Яблоки; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r176", "r177", "r178", "r66", "r67", "r68"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-melons-store-product-71",
+    "statement": "Практические условия хранения: Арбуз грунтовой; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r71"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-melons-store-product-72",
+    "statement": "Практические условия хранения: Дыня; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r72"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-delicate-fruit-product-73",
+    "statement": "Практические условия хранения: Виноград; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r152", "r153", "r154", "r155", "r165", "r166", "r73"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-delicate-fruit-product-74",
+    "statement": "Практические условия хранения: Инжир; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r161", "r169", "r74"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-quince-store-product-75",
+    "statement": "Практические условия хранения: Айва; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "HOMEQUINCE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r75"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-room-fruit-product-78",
+    "statement": "Практические условия хранения: Гранат; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r158", "r159", "r160", "r168", "r78"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-room-fruit-product-109",
+    "statement": "Практические условия хранения: Ананас; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r109", "r110", "r111"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-83",
+    "statement": "Практические условия хранения: Мандарины; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "QORANGE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r83", "r84", "r85", "r86", "r87", "r88"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-89",
+    "statement": "Практические условия хранения: Апельсины; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "QORANGE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r89", "r90", "r91", "r213"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-92",
+    "statement": "Практические условия хранения: Грейпфрут; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "QORANGE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r92", "r93"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-94",
+    "statement": "Практические условия хранения: Лимоны; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STORELEMON", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r94", "r95"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-96",
+    "statement": "Практические условия хранения: Помело; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r96", "r97", "r98"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-citrus-store-product-99",
+    "statement": "Практические условия хранения: Лайм; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STORELIME", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r99", "r100", "r101"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-lychee-store-product-118",
+    "statement": "Практические условия хранения: Личи; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "QLYCHEE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r118", "r119", "r120", "r121"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-pitaya-store-product-125",
+    "statement": "Практические условия хранения: Питайя (дракон-фрукт); whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "QPITAYA"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r125", "r126", "r127"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-passion-store-product-128",
+    "statement": "Практические условия хранения: Маракуйя; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "QPASSION", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r128", "r129", "r130"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-coconut-store-product-131",
+    "statement": "Практические условия хранения: Кокос; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r131", "r132", "r133"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-physalis-store-product-134",
+    "statement": "Практические условия хранения: Физалис; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREPHYS"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r134", "r135"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ginger-store-product-198",
+    "statement": "Практические условия хранения: Имбирь; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r198", "r199", "r200"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-61",
+    "statement": "Практические условия хранения: Абрикосы; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r144", "r145", "r146", "r61"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-61",
+    "statement": "Практические условия хранения: Абрикосы; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r144", "r145", "r146", "r61"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-62",
+    "statement": "Практические условия хранения: Персики и нектарины; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r147", "r148", "r164", "r214", "r62", "r63"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-62",
+    "statement": "Практические условия хранения: Персики и нектарины; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r147", "r148", "r164", "r214", "r62", "r63"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-64",
+    "statement": "Практические условия хранения: Сливы; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r149", "r150", "r151", "r64"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-64",
+    "statement": "Практические условия хранения: Сливы; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r149", "r150", "r151", "r64"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-65",
+    "statement": "Практические условия хранения: Алыча; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r65"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-65",
+    "statement": "Практические условия хранения: Алыча; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r65"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-69",
+    "statement": "Практические условия хранения: Груши; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r173", "r174", "r175", "r69", "r70"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-69",
+    "statement": "Практические условия хранения: Груши; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r173", "r174", "r175", "r69", "r70"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-102",
+    "statement": "Практические условия хранения: Манго; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r102", "r103", "r104", "r105", "r106", "r107", "r108", "r216", "r217"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-102",
+    "statement": "Практические условия хранения: Манго; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r102", "r103", "r104", "r105", "r106", "r107", "r108", "r216", "r217"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-112",
+    "statement": "Практические условия хранения: Бананы; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r112", "r113"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-112",
+    "statement": "Практические условия хранения: Бананы; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r112", "r113"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-114",
+    "statement": "Практические условия хранения: Авокадо; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r114", "r115", "r116", "r117"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-114",
+    "statement": "Практические условия хранения: Авокадо; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r114", "r115", "r116", "r117"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-122",
+    "statement": "Практические условия хранения: Папайя; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r122", "r123", "r124"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-122",
+    "statement": "Практические условия хранения: Папайя; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r122", "r123", "r124"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-firm-store-product-170",
+    "statement": "Практические условия хранения: Киви; whole / firm",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "STOREHERO", "QKIWI"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r170", "r171", "r172"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-ready-store-product-170",
+    "statement": "Практические условия хранения: Киви; whole / ready",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE", "HOMEPNW"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r170", "r171", "r172"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-persimmon-store-product-76",
+    "statement": "Практические условия хранения: Хурма; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "QPERS"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r77", "r156", "r157", "r167", "r76"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-feijoa-store-product-79",
+    "statement": "Практические условия хранения: Фейхоа; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "QFEI"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r162", "r163", "r79"]
+    },
+    "supports": ["quality"]
+  },
+  {
+    "id": "evidence-storage-home-tomato-store-product-12",
+    "statement": "Практические условия хранения: Томаты; whole / any",
+    "sourceIds": ["HOMEDAVIS", "STOREWISC", "STOREETHYLENE"],
+    "limits": "Бытовая памятка. supported — рекомендация для продукта/группы; general — общий приём обращения; unknown — пробел в данных. Складские сроки не являются домашней гарантией. Условия отдельных сортов могут отличаться.",
+    "reviewedAt": "2026-09-22",
+    "derivation": "editorial",
+    "scope": {
+      "variantIds": ["r179", "r180", "r181", "r182", "r12", "r81"]
+    },
+    "supports": ["quality"]
+  }
+]

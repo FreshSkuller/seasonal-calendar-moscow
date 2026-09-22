@@ -28,7 +28,7 @@ test('Состояние покупки меняет советы, сохран�
   await expect(page.locator('[data-advice-topic="ripen"]')).toHaveCount(0);
   await expect(
     page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
-  ).toContainText('не выше +4 °C');
+  ).toContainText('4 °C или ниже');
   await expect(page.locator('[data-purchase-status]')).toHaveText(
     'Советы обновлены для выбранного состояния.',
   );
@@ -106,6 +106,25 @@ test('Месяцы, все регионы России, сброс, тема и 
   await page.reload();
   await expect(page.locator('body')).toHaveClass('dark');
   expect(await page.locator('body').innerText()).not.toMatch(/undefined|\{\{page\./);
+});
+
+test('Памятка раскрывается и меняется при нарезке без переполнения', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#today-search').fill('морковь');
+  await page.locator('.shop-card .why').first().click();
+  const guide = page.locator('.storage-guide').first();
+  await expect(guide).toContainText('горечь');
+  const more = guide.locator('.storage-guide-more');
+  await expect(more).not.toHaveAttribute('open', '');
+  await more.locator(':scope > summary').click();
+  await expect(more).toHaveAttribute('open', '');
+  await expect(more).toContainText('Влага и воздух');
+  await page.locator('input[name="purchase-form"][value="cut"]').check();
+  await expect(guide).toContainText('контейнер с крышкой');
+  await expect(guide).not.toContainText('горечь');
+  expect(
+    await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
 });
 
 test('Готовый файл работает без сервера и интернета', async ({ page, context }) => {

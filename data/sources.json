@@ -2401,5 +2401,77 @@
     "checked": "2026-09-22",
     "scope": "Сырая рябина раздражает пищеварительный тракт; используется приготовленной.",
     "limit": "Краткое правило обращения; не руководство по самостоятельному определению растений."
+  },
+  "STOREWISC": {
+    "id": "STOREWISC",
+    "title": "University of Wisconsin: хранение урожая дома",
+    "url": "https://barron.extension.wisc.edu/files/2023/02/Storing-Fruits-and-Vegetables-from-the-Home-Garden.pdf",
+    "scope": "Упаковка, влажность, вентиляция и влияние соседства.",
+    "limit": "Складские сроки и режимы не перенесены на бытовой холодильник.",
+    "date": "2006",
+    "checked": "2026-09-22"
+  },
+  "STOREETHYLENE": {
+    "id": "STOREETHYLENE",
+    "title": "UC Davis: выделение этилена и чувствительность культур",
+    "url": "https://postharvest.ucdavis.edu/sites/g/files/dgvnsk12711/files/inline-files/230191.pdf",
+    "scope": "Таблица свойств культур, включая этилен.",
+    "limit": "Профессиональные условия; чувствительность не означает мгновенную порчу при соседстве.",
+    "date": "2001-11",
+    "checked": "2026-09-22"
+  },
+  "STOREHERO": {
+    "id": "STOREHERO",
+    "title": "Oregon State University, Food Hero: хранение фруктов",
+    "url": "https://foodhero.org/sites/foodhero-prod/files/health-tools/cookbook.pdf",
+    "scope": "Домашнее хранение и упаковка фруктов.",
+    "limit": "Сроки ориентировочные; качество покупки может быть хуже свежесобранного плода.",
+    "date": "2017",
+    "checked": "2026-09-22"
+  },
+  "STOREPHYS": {
+    "id": "STOREPHYS",
+    "title": "University of Minnesota: съедобный физалис",
+    "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-tomatillos-and-ground-cherries",
+    "scope": "Хранение ground cherries в сухих чашечках.",
+    "limit": "Не переносить сроки томатильо на ягодный физалис.",
+    "date": "2024",
+    "checked": "2026-09-22"
+  },
+  "STOREIRGA": {
+    "id": "STOREIRGA",
+    "title": "Veggipedia: ирга",
+    "url": "https://www.veggipedia.nl/en/fruits-and-vegetables/saskatoon-berries",
+    "scope": "Потребительские рекомендации отраслевой организации: охлаждение, неглубокая посуда и сухая поверхность.",
+    "limit": "Не устанавливает чувствительность к этилену.",
+    "date": "без даты на странице",
+    "checked": "2026-09-22"
+  },
+  "STORELINGON": {
+    "id": "STORELINGON",
+    "title": "University of Maine: брусника",
+    "url": "https://extension.umaine.edu/gardening/2011/09/01/maine-home-garden-news-13/",
+    "scope": "Охлаждение свежей брусники.",
+    "limit": "Не даёт универсального срока хранения дома.",
+    "date": "2011-09-01",
+    "checked": "2026-09-22"
+  },
+  "STORELEMON": {
+    "id": "STORELEMON",
+    "title": "UC Davis: лимон",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/lemon",
+    "date": "1999",
+    "checked": "2026-09-22",
+    "scope": "Реакция на этилен и холодовое повреждение.",
+    "limit": "Профессиональный справочник; домашний срок хранения не устанавливает."
+  },
+  "STORELIME": {
+    "id": "STORELIME",
+    "title": "UC Davis: лайм",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/lime",
+    "date": "1999",
+    "checked": "2026-09-22",
+    "scope": "Реакция на этилен и холодовое повреждение.",
+    "limit": "Профессиональный справочник; домашний срок хранения не устанавливает."
   }
 }

@@ -219,6 +219,33 @@ function validateData(db) {
       for (const id of item.evidenceIds)
         assert.ok(evidence.get(id).sourceIds.length, 'Совету нужен источник');
     }
+    if (item.storageGuide) {
+      assert.equal(item.topic, 'store', 'Памятка только для хранения');
+      assert.equal(item.appliesTo.kind, 'conditional', 'Памятке нужны условия');
+      assert.equal(item.appliesTo.environment, 'home', 'Памятка для дома');
+      const fields = ['location', 'packaging', 'moisture', 'light', 'neighbors', 'keeping'];
+      assert.deepEqual(
+        Object.keys(item.storageGuide).sort(),
+        fields.sort(),
+        'Неполная памятка хранения',
+      );
+      const supportedSources = new Set(
+        item.evidenceIds.flatMap((id) => evidence.get(id).sourceIds),
+      );
+      for (const field of Object.values(item.storageGuide)) {
+        text(field.text, 'Нет текста условия хранения');
+        assert.ok(
+          ['supported', 'general', 'unknown'].includes(field.basis),
+          'Основание условия хранения',
+        );
+        references(field.sourceIds, sources, 'Источник памятки не найден');
+        assert.ok(field.sourceIds.length, 'Условию нужен источник');
+        assert.ok(
+          field.sourceIds.every((id) => supportedSources.has(id)),
+          'Источник вне доказательства совета',
+        );
+      }
+    }
     if (item.storage) {
       assert.equal(item.appliesTo.kind, 'conditional', 'Условия хранения должны быть явными');
       knowledge(item.storage.place, 'место', (value) =>

@@ -150,6 +150,45 @@ dialog::backdrop {
 .advice-section li + li {
   margin-top: 6px;
 }
+.advice-section[data-advice-topic='store'] {
+  grid-column: 1 / -1;
+}
+.storage-guide dl {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.storage-guide dl > div {
+  min-width: 0;
+}
+.storage-guide dt {
+  font-weight: 650;
+  margin-bottom: 4px;
+}
+.storage-guide dd {
+  margin: 0;
+  line-height: 1.5;
+}
+.storage-basis {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+}
+.storage-guide-more {
+  margin-top: 14px;
+}
+.storage-guide-more > summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+@media (min-width: 601px) {
+  .storage-guide-main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .storage-guide-main > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
 @media (max-width: 600px) {
   .advice-grid {
     grid-template-columns: 1fr;
