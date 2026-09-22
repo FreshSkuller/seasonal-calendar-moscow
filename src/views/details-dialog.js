@@ -1,5 +1,5 @@
 import { getElement } from '../shared/html.js';
-import { productDetails, productVariants } from '../components/product-details.js';
+import { productDetails, homeAdvice } from '../components/product-details.js';
 import { buildProductDetails } from '../application/product-details.js';
 import copy from '../../content/ru.json' with { type: 'json' };
 
@@ -19,7 +19,7 @@ export class DetailsDialog {
         } else return;
         const scroll = this.dialog.scrollTop;
         const model = buildProductDetails(this.catalog, this.variantId, this.month, this.context);
-        this.content.querySelector('[data-variant-details]').innerHTML = productVariants(
+        this.content.querySelector('[data-home-advice]').innerHTML = homeAdvice(
           model,
           this.catalog,
         );

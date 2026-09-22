@@ -207,3 +207,64 @@ dialog::backdrop {
     font-size: 12px;
   }
 }
+.home-guide,
+.season-reference,
+.product-sources {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 16px;
+}
+.home-guide {
+  background: var(--soft);
+  border-color: var(--accent);
+}
+.home-guide > summary,
+.season-reference > summary,
+.product-sources > summary {
+  padding: 16px 0;
+  cursor: pointer;
+  font-weight: 650;
+  min-height: 44px;
+}
+.home-guide > summary span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: normal;
+}
+.purchase-season {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+[data-shop-advice] > h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+[data-shop-advice] .advice-section[data-advice-topic='ripen'] {
+  grid-column: 1 / -1;
+}
+.product-sources {
+  color: var(--muted);
+  font-size: 13px;
+}
+.shop-card-top .pill {
+  white-space: normal;
+  line-height: 1.4;
+}
+.home-guide .purchase-context {
+  padding: 0;
+}
+@media (max-width: 360px) {
+  [data-readiness] .purchase-options {
+    grid-template-columns: 1fr;
+  }
+  [data-readiness] .purchase-option {
+    flex-direction: row;
+    align-items: center;
+  }
+}

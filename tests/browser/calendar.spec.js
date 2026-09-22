@@ -12,22 +12,30 @@ test('Состояние покупки меняет советы, сохран�
   await page.goto('/');
   await page.locator('#today-search').fill('авокадо');
   await page.locator('.shop-card h3 button').first().click();
+  await expect(page.locator('[data-shop-advice]')).toBeVisible();
+  await expect(page.locator('[data-home-guide]')).not.toHaveAttribute('open', '');
+  await page.locator('[data-home-guide] > summary').click();
   await expect(page.locator('[data-needs-readiness]')).toBeVisible();
   const firm = page.getByRole('radio', { name: 'Недозрелый', exact: true });
   await firm.check();
   await expect(firm).toBeFocused();
+  expect(
+    await page
+      .locator('.purchase-option')
+      .evaluateAll((items) => items.every((el) => el.scrollWidth <= el.clientWidth)),
+  ).toBe(true);
   await expect(
-    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+    page.locator('[data-home-advice] [data-advice-topic="store"]').first(),
   ).toContainText('комнатной температуре');
   await page.getByRole('radio', { name: 'Спелый', exact: true }).check();
   await expect(
-    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+    page.locator('[data-home-advice] [data-advice-topic="store"]').first(),
   ).toContainText('холодильник');
   await page.getByRole('radio', { name: 'Разрезан / очищен', exact: true }).check();
   await expect(page.locator('[data-readiness]')).toBeHidden();
-  await expect(page.locator('[data-advice-topic="ripen"]')).toHaveCount(0);
+  await expect(page.locator('[data-home-advice] [data-advice-topic="ripen"]')).toHaveCount(0);
   await expect(
-    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+    page.locator('[data-home-advice] [data-advice-topic="store"]').first(),
   ).toContainText('4 °C или ниже');
   await expect(page.locator('[data-purchase-status]')).toHaveText(
     'Советы обновлены для выбранного состояния.',
@@ -38,10 +46,12 @@ test('Состояние покупки меняет советы, сохран�
   await page.locator('[data-close-dialog]').click();
   await page.locator('#today-search').fill('картофель');
   await page.locator('.shop-card h3 button').first().click();
+  await expect(page.locator('[data-home-guide]')).not.toHaveAttribute('open', '');
+  await page.locator('[data-home-guide] > summary').click();
   await expect(page.getByRole('radio', { name: 'Целый / не нарезан', exact: true })).toBeChecked();
   await expect(page.locator('[data-readiness]')).toHaveCount(0);
   await expect(
-    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+    page.locator('[data-home-advice] [data-advice-topic="store"]').first(),
   ).toContainText('тёмном');
 });
 
@@ -112,6 +122,7 @@ test('Памятка раскрывается и меняется при нар�
   await page.goto('/');
   await page.locator('#today-search').fill('морковь');
   await page.locator('.shop-card .why').first().click();
+  await page.locator('[data-home-guide] > summary').click();
   const guide = page.locator('.storage-guide').first();
   await expect(guide).toContainText('горечь');
   const more = guide.locator('.storage-guide-more');
@@ -175,4 +186,28 @@ test('Избранное прежней версии переносится на
   expect(await page.evaluate(() => localStorage.getItem('moscow-season-favorites-v2'))).toBe(
     '["r114","r115"]',
   );
+});
+
+test('Поиск прощает опечатки и раскладку на обоих экранах', async ({ page }) => {
+  await page.goto('/');
+  for (const query of ['авдкадо', 'fdfrflj']) {
+    await page.locator('#today-search').fill(query);
+    await expect(page.locator('.shop-card')).toHaveCount(1);
+    await expect(page.locator('.shop-card h3')).toHaveText('Авокадо');
+  }
+  await page.locator('[data-tab="calendar"]').click();
+  await page.locator('#search').fill('fdfrflj');
+  await expect(page.locator('#table-body tr')).toHaveCount(1);
+  await expect(page.locator('#table-body .name')).toHaveText('Авокадо');
+  await page.locator('#table-body .name').click();
+  await expect(page.locator('[data-shop-advice]')).toBeVisible();
+  await expect(page.locator('[data-home-guide]')).not.toHaveAttribute('open', '');
+  expect(
+    await page
+      .locator('#dialog-content')
+      .evaluate((el) => el.lastElementChild.matches('[data-product-sources]')),
+  ).toBe(true);
+  expect(
+    await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
 });

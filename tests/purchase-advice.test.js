@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import { createCatalog } from '../src/domain/catalog.js';
 import { resolveAdvice } from '../src/domain/advice.js';
 import { buildProductDetails } from '../src/application/product-details.js';
-import { productDetails } from '../src/components/product-details.js';
+import { productDetails, homeAdvice } from '../src/components/product-details.js';
 const { loadDatabase } = createRequire(import.meta.url)('../scripts/lib/load-data.cjs');
 const catalog = createCatalog(loadDatabase());
 
@@ -65,5 +65,6 @@ test('Спелость предлагается только применимы�
   const model = buildProductDetails(catalog, 'r114', 8, { form: 'cut', environment: 'home' });
   const html = productDetails(model, catalog);
   assert.equal((html.match(/data-advice="home-cut-product-114"/g) || []).length, 1);
-  assert.ok(!html.includes('data-advice-topic="ripen"'));
+  assert.ok(!homeAdvice(model, catalog).includes('data-advice-topic="ripen"'));
+  assert.ok(html.includes('data-shop-advice'));
 });

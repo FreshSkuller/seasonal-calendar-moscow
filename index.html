@@ -722,6 +722,67 @@
           font-size: 12px;
         }
       }
+      .home-guide,
+      .season-reference,
+      .product-sources {
+        margin-top: 16px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 0 16px;
+      }
+      .home-guide {
+        background: var(--soft);
+        border-color: var(--accent);
+      }
+      .home-guide > summary,
+      .season-reference > summary,
+      .product-sources > summary {
+        padding: 16px 0;
+        cursor: pointer;
+        font-weight: 650;
+        min-height: 44px;
+      }
+      .home-guide > summary span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: normal;
+      }
+      .purchase-season {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin: 12px 0 20px;
+      }
+      [data-shop-advice] > h2 {
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      [data-shop-advice] .advice-section[data-advice-topic='ripen'] {
+        grid-column: 1 / -1;
+      }
+      .product-sources {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .shop-card-top .pill {
+        white-space: normal;
+        line-height: 1.4;
+      }
+      .home-guide .purchase-context {
+        padding: 0;
+      }
+      @media (max-width: 360px) {
+        [data-readiness] .purchase-options {
+          grid-template-columns: 1fr;
+        }
+        [data-readiness] .purchase-option {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
 
       /* utilities.css */
       .fine {
@@ -45642,7 +45703,7 @@
               store: "Как хранить дома",
               prepare: "Что сделать после покупки",
               freeze: "Можно ли заморозить",
-              discard: "На что обратить внимание"
+              discard: "Когда лучше не брать"
             },
             repeatedAdvice: "Повторяющиеся советы приведены у предыдущих вариантов.",
             storage: {
@@ -45697,7 +45758,12 @@
                 general: "Общее правило хранения",
                 unknown: "Данных о специальных ограничениях недостаточно"
               }
-            }
+            },
+            shopTitle: "Выбираю в магазине",
+            homeTitle: "Памятка для дома",
+            homeHint: "Спелость, упаковка и хранение",
+            calendarTitle: "Сезонность, страны и сорта",
+            allSources: "Источники и проверка данных"
           },
           today: {
             count: "Найдено: {total}",
@@ -45811,6 +45877,13 @@
             statusLabel: "Фильтр по статусу",
             sortLabel: "Порядок строк",
             tableLabel: "Сезонность продуктов по происхождению и месяцам"
+          },
+          seasonDirections: {
+            starting: "Сезон начинается",
+            ending: "Сезон заканчивается",
+            soon: "Не сезон · скоро начало",
+            recent: "Не сезон · недавно закончился",
+            next: "Не сезон · следующий сезон: {month}"
           }
         };
 
@@ -45969,10 +46042,67 @@
           return selected.startsWith("country:") && product.origin === selected.slice(8);
         }
 
-        // src/domain/products.js
+        // src/domain/search.js
         function normalizeSearch(value) {
-          return value.toLocaleLowerCase("ru").replace(/ё/g, "е");
+          return value.toLocaleLowerCase("ru").replace(/ё/g, "е").replace(/\s+/g, " ").trim();
         }
+        var latin = "`qwertyuiop[]asdfghjkl;'zxcvbnm,.";
+        var russian = "ёйцукенгшщзхъфывапролджэячсмитьбю";
+        function correctLayout(value) {
+          return [...value].map((char) => latin.includes(char) ? russian[latin.indexOf(char)] : char).join("");
+        }
+        function editDistance(left, right) {
+          const rows = Array.from({ length: left.length + 1 }, (_, i) => [i]);
+          rows[0] = Array.from({ length: right.length + 1 }, (_, i) => i);
+          for (let i = 1; i <= left.length; i++)
+            for (let j = 1; j <= right.length; j++) {
+              rows[i][j] = Math.min(
+                rows[i - 1][j] + 1,
+                rows[i][j - 1] + 1,
+                rows[i - 1][j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1)
+              );
+              if (i > 1 && j > 1 && left[i - 1] === right[j - 2] && left[i - 2] === right[j - 1])
+                rows[i][j] = Math.min(rows[i][j], rows[i - 2][j - 2] + 1);
+            }
+          return rows[left.length][right.length];
+        }
+        var words = (value) => value.match(/[\p{L}\p{N}]+/gu) || [];
+        function score(text, query, fuzzy) {
+          if (text.includes(query)) return 0;
+          const terms = words(query), tokens = words(text);
+          if (!terms.length || terms.some((term) => term.length > 64)) return Infinity;
+          let total = 0;
+          for (const term of terms) {
+            if (tokens.some((token) => token.includes(term))) continue;
+            const limit = fuzzy && !/\d/.test(term) ? term.length >= 7 ? 2 : term.length >= 4 ? 1 : 0 : 0;
+            if (!limit) return Infinity;
+            const distance = Math.min(
+              ...tokens.filter((token) => Math.abs(token.length - term.length) <= limit && token.length <= 64).map((token) => editDistance(term, token))
+            );
+            if (distance > limit) return Infinity;
+            total += distance;
+          }
+          return total;
+        }
+        function searchProducts(products, query, textFor) {
+          const normalized = normalizeSearch(query);
+          if (!normalized) return products;
+          if (normalized.length > 160) return [];
+          const candidates = [.../* @__PURE__ */ new Set([normalized, normalizeSearch(correctLayout(normalized))])];
+          const entries = products.map((product) => ({ product, text: textFor(product) }));
+          for (const candidate of candidates) {
+            const exact = entries.filter((entry) => score(entry.text, candidate, false) === 0);
+            if (exact.length) return exact.map((entry) => entry.product);
+          }
+          const ranked = entries.map((entry) => ({
+            ...entry,
+            score: Math.min(...candidates.map((candidate) => score(entry.text, candidate, true)))
+          }));
+          const best = Math.min(...ranked.map((entry) => entry.score));
+          return Number.isFinite(best) ? ranked.filter((entry) => entry.score === best).map((entry) => entry.product) : [];
+        }
+
+        // src/domain/products.js
         function productSearchText(product) {
           return normalizeSearch(
             [
@@ -45988,10 +46118,8 @@
           return product.months.every((status) => status === "t");
         }
         function filterProducts(products, filters, favoriteIds = /* @__PURE__ */ new Set()) {
-          const query = normalizeSearch((filters.query || "").trim());
-          return products.filter((product) => {
+          return searchProducts(products, filters.query || "", productSearchText).filter((product) => {
             const status = product.months[filters.month];
-            if (query && !productSearchText(product).includes(query)) return false;
             if (!matchesOrigin(product, filters.origin || "")) return false;
             if (filters.category && product.categoryId !== filters.category && product.category !== filters.category)
               return false;
@@ -46133,9 +46261,78 @@
         }
 
         // src/components/status-badge.js
-        function statusBadge(statuses, code, compact = false) {
+        function statusBadge(statuses, code, compact = false, description) {
           const [symbol, label] = statuses[code];
-          return `<span class="${compact ? "symbol" : "pill"} status-${escapeHtml(code)}">${escapeHtml(symbol)}${compact ? "" : ` ${escapeHtml(label)}`}</span>`;
+          return `<span class="${compact ? "symbol" : "pill"} status-${escapeHtml(code)}">${escapeHtml(symbol)}${compact ? "" : ` ${escapeHtml(description || label)}`}</span>`;
+        }
+
+        // src/domain/seasons.js
+        function seasonDirection(months, month) {
+          const at = (offset) => months[(month + offset + 12) % 12];
+          const fresh = (code) => ["p", "g"].includes(code);
+          if (at(0) === "b") {
+            const edge = (step) => {
+              for (let distance = 1; distance < 12; distance++) {
+                const code = at(step * distance);
+                if (code !== "b") return code;
+              }
+              return "u";
+            };
+            const before = edge(-1), after = edge(1);
+            if (["u", "a", "t"].includes(before) || ["u", "a", "t"].includes(after)) return null;
+            if (!fresh(before) && fresh(after)) return { kind: "starting" };
+            if (fresh(before) && !fresh(after)) return { kind: "ending" };
+          }
+          if (at(0) === "n") {
+            const seek = (step) => {
+              let boundary = null;
+              for (let distance = 1; distance < 12; distance++) {
+                const code = at(step * distance);
+                if (code === "b" && !boundary)
+                  boundary = { distance, month: (month + step * distance + 12) % 12 };
+                if (fresh(code))
+                  return boundary || { distance, month: (month + step * distance + 12) % 12 };
+                if (code === "n") boundary = null;
+                if (!["n", "b"].includes(code)) break;
+              }
+              return null;
+            };
+            const next = seek(1), previous = seek(-1);
+            if (next?.distance <= 2 && (!previous || next.distance < previous.distance))
+              return { kind: "soon", month: next.month };
+            if (previous?.distance <= 2 && (!next || previous.distance < next.distance))
+              return { kind: "recent", month: previous.month };
+            if (next && (!previous || next.distance !== previous.distance))
+              return { kind: "next", month: next.month };
+          }
+          return null;
+        }
+        function resolveSeason(catalog, variantId, month) {
+          if (!Number.isInteger(month) || month < 0 || month > 11) throw new Error("Invalid month");
+          const variant = catalog.variant(variantId);
+          if (!variant) throw new Error(`Unknown variant: ${variantId}`);
+          const profile = catalog.season(variant.seasonProfileId);
+          return {
+            variantId,
+            profileId: profile.id,
+            representation: profile.representation,
+            status: profile.months[month],
+            months: profile.months,
+            note: profile.note,
+            confidence: profile.confidence,
+            supply: profile.supply,
+            basis: profile.basis,
+            reviewed: profile.reviewed,
+            evidenceIds: profile.evidenceIds,
+            sourceIds: catalog.sourceIds(profile.evidenceIds)
+          };
+        }
+
+        // src/components/season-label.js
+        function seasonLabel(months, month, statuses) {
+          const direction = seasonDirection(months, month);
+          if (!direction) return statuses[months[month]][1];
+          return ru_default.seasonDirections[direction.kind].replace("{month}", ru_default.months[direction.month]);
         }
 
         // src/components/favorite-button.js
@@ -46157,7 +46354,7 @@
         }
         function monthCell(product, index, selectedMonth, statuses) {
           const status = product.months[index];
-          const description = `${ru_default.months[index]}: ${statuses[status][1]}`;
+          const description = `${ru_default.months[index]}: ${seasonLabel(product.months, index, statuses)}`;
           return `<td class="month ${index === selectedMonth ? "selected" : ""}">
           <button class="cellbtn" data-product="${escapeHtml(product.variantId || product.id)}" data-month="${index}" title="${escapeHtml(description)}" aria-label="${escapeHtml(`${product.name}, ${description}`)}">${statusBadge(statuses, status, true)}</button>
         </td>`;
@@ -46174,7 +46371,7 @@
             <small class="mobile-origin">${escapeHtml(product.origin)}</small>
           </td>
           <td class="origin">${escapeHtml(product.origin)}</td>
-          <td class="decision"><button class="cellbtn" data-product="${escapeHtml(product.variantId || product.id)}" data-month="${month}" aria-label="${escapeHtml(`${product.name}: ${statuses[product.months[month]][1]}, ${ru_default.calendar.explanation}`)}">${statusBadge(statuses, product.months[month])}</button></td>
+          <td class="decision"><button class="cellbtn" data-product="${escapeHtml(product.variantId || product.id)}" data-month="${month}" aria-label="${escapeHtml(`${product.name}: ${seasonLabel(product.months, month, statuses)}, ${ru_default.calendar.explanation}`)}">${statusBadge(statuses, product.months[month], false, seasonLabel(product.months, month, statuses))}</button></td>
           ${months.map((index) => monthCell(product, index, month, statuses)).join("")}
           <td>${favoriteButton(product, favorites.has(product.id))}</td>
         </tr>`
@@ -46308,7 +46505,7 @@
         function productCard(product, month, statuses, isFavorite) {
           const status = product.months[month];
           return `<article class="shop-card">
-          <div class="shop-card-top">${statusBadge(statuses, status)}${favoriteButton(product, isFavorite)}</div>
+          <div class="shop-card-top">${statusBadge(statuses, status, false, seasonLabel(product.months, month, statuses))}${favoriteButton(product, isFavorite)}</div>
           <h3><button data-product="${escapeHtml(product.variantId || product.id)}">${escapeHtml(product.name)}</button></h3>
           <p class="shop-origin">${escapeHtml(product.origin)}</p>
           ${product.variantCount > 1 ? `<p class="variant-caption">${escapeHtml(product.variety || product.variantName)} · вариантов: ${product.variantCount}</p>` : ""}
@@ -46436,22 +46633,41 @@
           }
         };
 
-        // src/components/source-list.js
-        function sourceList(sources, ids) {
-          return `<ul class="source-list">${ids.map((id) => {
-            const source = sources[id];
-            const dates = formatMessage(ru_default.sources.dates, {
-              date: source.date,
-              checked: source.checked
-            });
-            return `<li>
-            <span class="source-id">${escapeHtml(id)}</span>
-            <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)}</a>
-            <p>${escapeHtml(dates)}</p>
-            <p>${escapeHtml(source.scope)}</p>
-            <p><b>${escapeHtml(ru_default.sources.limits)}</b> ${escapeHtml(source.limit)}</p>
-          </li>`;
-          }).join("")}</ul>`;
+        // src/components/season-chart.js
+        function seasonChart(months, statuses) {
+          return `<div class="year-mini">${months.map((code, index) => {
+            const label = escapeHtml(`${ru_default.months[index]}: ${seasonLabel(months, index, statuses)}`);
+            return `<div title="${label}" aria-label="${label}">${escapeHtml(ru_default.monthsShort[index])}${statusBadge(statuses, code, true)}</div>`;
+          }).join("")}</div>`;
+        }
+
+        // src/components/variant-details.js
+        function variantDetails(variant, month, { statuses, sources }) {
+          const season = variant.season;
+          return `<section class="variant-detail"><h3>${escapeHtml(variant.origin)} · ${escapeHtml(variant.name)}</h3>
+        <div class="detail-note">${statusBadge(statuses, season.status, false, seasonLabel(season.months, month, statuses))} <strong>· ${escapeHtml(ru_default.months[month])}</strong><p>${escapeHtml(statuses[season.status][2])}</p></div>
+        <p>${escapeHtml(season.note)}</p>
+        ${variant.variety ? `<p class="fine"><b>${escapeHtml(ru_default.details.variety)}</b> ${escapeHtml(variant.variety)}</p>` : ""}
+        ${seasonChart(season.months, statuses)}
+        <p><b>${escapeHtml(ru_default.details.confidence)}</b> ${escapeHtml(season.confidence)}.</p>
+        <p><b>${escapeHtml(ru_default.details.supply)}</b> ${escapeHtml(season.supply)}</p>
+        <p class="fine">${escapeHtml(season.basis)}</p>
+        ${!season.sourceIds.length ? `<p class="notice">${escapeHtml(ru_default.details.noSources)}</p>` : ""}</section>`;
+        }
+
+        // src/components/purchase-context.js
+        function purchaseContext(model) {
+          const labels = ru_default.details.purchase;
+          const options = (name, values, selected) => values.map(
+            (value) => `<label class="purchase-option"><input type="radio" name="purchase-${name}" value="${value}" ${selected === value ? "checked" : ""}><span>${escapeHtml(labels[value])}</span></label>`
+          ).join("");
+          return `<section class="purchase-context" aria-labelledby="purchase-title">
+          <h3 id="purchase-title">${escapeHtml(labels.title)}</h3>
+          <fieldset><legend>${escapeHtml(labels.form)}</legend><div class="purchase-options">${options("form", ["whole", "cut"], model.purchaseContext.form)}</div></fieldset>
+          ${model.hasReadiness ? `<fieldset data-readiness ${model.purchaseContext.form === "cut" ? "hidden" : ""}><legend>${escapeHtml(labels.readiness)}</legend><div class="purchase-options">${options("readiness", ["unknown", "firm", "ready"], model.purchaseContext.readiness || "unknown")}</div></fieldset>` : ""}
+          <p class="fine">${escapeHtml(labels.hint)}</p>
+          <p class="fine" role="status" data-purchase-status></p>
+        </section>`;
         }
 
         // src/components/storage-instructions.js
@@ -46476,7 +46692,7 @@
         }
 
         // src/components/storage-guide.js
-        function storageGuide(guide, sources) {
+        function storageGuide(guide) {
           if (!guide) return "";
           const labels = ru_default.details.storageGuide;
           const row = (key) => {
@@ -46484,8 +46700,7 @@
             const note = field.basis === "supported" ? "" : `<small class="storage-basis">${escapeHtml(labels.basis[field.basis])}</small>`;
             return `<div><dt>${escapeHtml(labels[key])}${note}</dt><dd>${escapeHtml(field.text)}</dd></div>`;
           };
-          const sourceIds = [...new Set(Object.values(guide).flatMap((field) => field.sourceIds))];
-          return `<div class="storage-guide"><dl class="storage-guide-main">${["location", "packaging", "neighbors"].map(row).join("")}</dl><details class="storage-guide-more"><summary>${escapeHtml(labels.more)}</summary><dl>${["moisture", "light", "keeping"].map(row).join("")}</dl><details><summary>${escapeHtml(labels.sources)}</summary>${sourceList(sources, sourceIds)}</details></details></div>`;
+          return `<div class="storage-guide"><dl class="storage-guide-main">${["location", "packaging", "neighbors"].map(row).join("")}</dl><details class="storage-guide-more"><summary>${escapeHtml(labels.more)}</summary><dl>${["moisture", "light", "keeping"].map(row).join("")}</dl></details></div>`;
         }
 
         // src/domain/advice.js
@@ -46524,92 +46739,73 @@
         }
 
         // src/components/advice-section.js
-        function adviceSection(items, sources) {
+        function adviceSection(items, sources, topics = ADVICE_TOPICS) {
           const fresh = items.filter((item) => !item.repeated);
-          const sourceIds = [...new Set(fresh.flatMap((item) => item.sourceIds))];
-          return `<div class="advice-grid">${ADVICE_TOPICS.map((topic) => {
+          return `<div class="advice-grid">${topics.map((topic) => {
             const group = fresh.filter((item) => item.topic === topic);
             if (!group.length) return "";
             return `<section class="advice-section" data-advice-topic="${topic}"><h3>${escapeHtml(ru_default.details.adviceTopics[topic])}</h3>${group.map((item) => `<div data-advice="${escapeHtml(item.id)}">${item.storageGuide ? storageGuide(item.storageGuide, sources) : `<p>${escapeHtml(item.summary)}</p>`}${item.steps.length ? `<ul>${item.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ul>` : ""}${storageInstructions(item.storage)}</div>`).join("")}</section>`;
-          }).join("")}</div>` + (sourceIds.length ? `<details><summary>${escapeHtml(ru_default.details.qualitySources)}</summary>${sourceList(sources, sourceIds)}</details>` : "") + (items.some((item) => item.repeated) ? `<p class="fine">${escapeHtml(ru_default.details.repeatedAdvice)}</p>` : "");
+          }).join("")}</div>` + (items.some((item) => item.repeated) ? `<p class="fine">${escapeHtml(ru_default.details.repeatedAdvice)}</p>` : "");
         }
 
-        // src/components/season-chart.js
-        function seasonChart(months, statuses) {
-          return `<div class="year-mini">${months.map((code, index) => {
-            const label = escapeHtml(`${ru_default.months[index]}: ${statuses[code][1]}`);
-            return `<div title="${label}" aria-label="${label}">${escapeHtml(ru_default.monthsShort[index])}${statusBadge(statuses, code, true)}</div>`;
-          }).join("")}</div>`;
-        }
-
-        // src/components/variant-details.js
-        function variantDetails(variant, month, { statuses, sources }) {
-          const season = variant.season;
-          return `<section class="variant-detail"><h3>${escapeHtml(variant.origin)} · ${escapeHtml(variant.name)}</h3>
-        <div class="detail-note">${statusBadge(statuses, season.status)} <strong>· ${escapeHtml(ru_default.months[month])}</strong><p>${escapeHtml(statuses[season.status][2])}</p></div>
-        <p>${escapeHtml(season.note)}</p>
-        ${variant.variety ? `<p class="fine"><b>${escapeHtml(ru_default.details.variety)}</b> ${escapeHtml(variant.variety)}</p>` : ""}
-        ${adviceSection(variant.advice, sources)}
-        ${seasonChart(season.months, statuses)}
-        <p><b>${escapeHtml(ru_default.details.confidence)}</b> ${escapeHtml(season.confidence)}.</p>
-        <p><b>${escapeHtml(ru_default.details.supply)}</b> ${escapeHtml(season.supply)}</p>
-        <p class="fine">${escapeHtml(season.basis)}</p>
-        <details><summary>${escapeHtml(ru_default.details.sources)}</summary>
-        ${season.sourceIds.length ? sourceList(sources, season.sourceIds) : `<p class="notice">${escapeHtml(ru_default.details.noSources)}</p>`}</details></section>`;
-        }
-
-        // src/components/purchase-context.js
-        function purchaseContext(model) {
-          const labels = ru_default.details.purchase;
-          const options = (name, values, selected) => values.map(
-            (value) => `<label class="purchase-option"><input type="radio" name="purchase-${name}" value="${value}" ${selected === value ? "checked" : ""}><span>${escapeHtml(labels[value])}</span></label>`
-          ).join("");
-          return `<section class="purchase-context" aria-labelledby="purchase-title">
-          <h3 id="purchase-title">${escapeHtml(labels.title)}</h3>
-          <fieldset><legend>${escapeHtml(labels.form)}</legend><div class="purchase-options">${options("form", ["whole", "cut"], model.purchaseContext.form)}</div></fieldset>
-          ${model.hasReadiness ? `<fieldset data-readiness ${model.purchaseContext.form === "cut" ? "hidden" : ""}><legend>${escapeHtml(labels.readiness)}</legend><div class="purchase-options">${options("readiness", ["unknown", "firm", "ready"], model.purchaseContext.readiness || "unknown")}</div></fieldset>` : ""}
-          <p class="fine">${escapeHtml(labels.hint)}</p>
-          <p class="fine" role="status" data-purchase-status></p>
-        </section>`;
+        // src/components/source-list.js
+        function sourceList(sources, ids) {
+          return `<ul class="source-list">${ids.map((id) => {
+            const source = sources[id];
+            const dates = formatMessage(ru_default.sources.dates, {
+              date: source.date,
+              checked: source.checked
+            });
+            return `<li>
+            <span class="source-id">${escapeHtml(id)}</span>
+            <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)}</a>
+            <p>${escapeHtml(dates)}</p>
+            <p>${escapeHtml(source.scope)}</p>
+            <p><b>${escapeHtml(ru_default.sources.limits)}</b> ${escapeHtml(source.limit)}</p>
+          </li>`;
+          }).join("")}</ul>`;
         }
 
         // src/components/product-details.js
+        var scope = (variant) => `<p class="fine">${escapeHtml(variant.origin)} · ${escapeHtml(variant.variety || variant.name)}</p>`;
+        function homeAdvice(model, presentation) {
+          return `${model.variants[0].needsContext.some((item) => item.topic === "store") ? `<p class="notice" data-needs-readiness>${escapeHtml(ru_default.details.purchase.needsReadiness)}</p>` : ""}${model.variants.map((variant, index) => {
+            const items = variant.advice.filter(
+              (item) => ["store", "prepare", "freeze"].includes(item.topic)
+            );
+            if (!items.some((item) => !item.repeated)) return "";
+            return `${index ? scope(variant) : ""}${adviceSection(
+              items.filter((item) => !item.repeated),
+              presentation.sources,
+              ["store", "prepare", "freeze"]
+            )}`;
+          }).join("")}`;
+        }
         function productDetails(model, presentation) {
+          const selected = model.variants[0];
           return `<div class="dialog-head">
-          <div><h2 id="dialog-title">${escapeHtml(model.title)}</h2><p>${escapeHtml(ru_default.details.currentVariant)}</p></div>
+          <div><h2 id="dialog-title">${escapeHtml(model.title)}</h2>${scope(selected)}</div>
           <button class="close" data-close-dialog aria-label="${escapeHtml(ru_default.details.close)}">×</button>
         </div>
-        ${purchaseContext(model)}
-        <div data-variant-details>${productVariants(model, presentation)}</div>`;
+        <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escapeHtml(ru_default.months[model.month])}</span></div>
+        <section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escapeHtml(ru_default.details.shopTitle)}</h2>
+        ${model.variants.map(
+            (variant, index) => variant.shopAdvice.some((item) => !item.repeated) ? `${index ? scope(variant) : ""}${adviceSection(
+              variant.shopAdvice.filter((item) => !item.repeated),
+              presentation.sources,
+              ["choose", "discard", "ripen"]
+            )}` : ""
+          ).join("")}
+        </section>
+        <details class="home-guide" data-home-guide><summary>${escapeHtml(ru_default.details.homeTitle)}<span>${escapeHtml(ru_default.details.homeHint)}</span></summary>
+          ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div>
+        </details>
+        <details class="season-reference"><summary>${escapeHtml(ru_default.details.calendarTitle)}</summary><div data-variant-details>${productVariants(model, presentation)}</div></details>
+        <details class="product-sources" data-product-sources><summary>${escapeHtml(ru_default.details.allSources)}</summary>${sourceList(presentation.sources, model.sourceIds)}</details>`;
         }
         function productVariants(model, presentation) {
           const [selected, ...others] = model.variants;
-          return `
-        ${selected.needsContext.some((item) => item.topic === "store") ? `<p class="notice" data-needs-readiness>${escapeHtml(ru_default.details.purchase.needsReadiness)}</p>` : ""}
-        ${variantDetails(selected, model.month, presentation)}
-        ${others.length ? `<h2>${escapeHtml(ru_default.details.otherVariants)}</h2><p class="fine">${escapeHtml(ru_default.details.variantGuide)}</p>${others.map((row) => variantDetails(row, model.month, presentation)).join("")}` : ""}`;
-        }
-
-        // src/domain/seasons.js
-        function resolveSeason(catalog, variantId, month) {
-          if (!Number.isInteger(month) || month < 0 || month > 11) throw new Error("Invalid month");
-          const variant = catalog.variant(variantId);
-          if (!variant) throw new Error(`Unknown variant: ${variantId}`);
-          const profile = catalog.season(variant.seasonProfileId);
-          return {
-            variantId,
-            profileId: profile.id,
-            representation: profile.representation,
-            status: profile.months[month],
-            months: profile.months,
-            note: profile.note,
-            confidence: profile.confidence,
-            supply: profile.supply,
-            basis: profile.basis,
-            reviewed: profile.reviewed,
-            evidenceIds: profile.evidenceIds,
-            sourceIds: catalog.sourceIds(profile.evidenceIds)
-          };
+          return `${variantDetails(selected, model.month, presentation)}${others.length ? `<h2>${escapeHtml(ru_default.details.otherVariants)}</h2><p class="fine">${escapeHtml(ru_default.details.variantGuide)}</p>${others.map((row) => variantDetails(row, model.month, presentation)).join("")}` : ""}`;
         }
 
         // src/application/product-details.js
@@ -46621,17 +46817,34 @@
             ...catalog.variantsFor(selected.productId).filter((row) => row.id !== variantId)
           ];
           const displayedAdvice = /* @__PURE__ */ new Set();
+          const displayedShopAdvice = /* @__PURE__ */ new Set();
           return {
             productId: selected.productId,
             title: catalog.product(selected.productId).name,
             month,
             purchaseContext: { ...purchaseContext2 },
+            sourceIds: [
+              ...new Set(
+                variants.flatMap((variant) => [
+                  ...resolveSeason(catalog, variant.id, month).sourceIds,
+                  ...adviceForVariant(catalog, variant.id).flatMap(
+                    (item) => catalog.sourceIds(item.evidenceIds)
+                  )
+                ])
+              )
+            ],
             hasReadiness: variants.some(
               (variant) => adviceForVariant(catalog, variant.id).some(
                 (item) => item.appliesTo.kind === "conditional" && ["firm", "ready"].includes(item.appliesTo.readiness)
               )
             ),
             variants: variants.map((variant) => {
+              const shop = resolveAdvice(catalog, variant.id, { environment: "home", form: "whole" });
+              const shopAdvice = [...shop.general, ...shop.matched].filter((item) => ["choose", "discard", "ripen"].includes(item.topic)).map((item) => {
+                const repeated = displayedShopAdvice.has(item.id);
+                displayedShopAdvice.add(item.id);
+                return { ...item, repeated, sourceIds: catalog.sourceIds(item.evidenceIds) };
+              });
               const resolution = resolveAdvice(catalog, variant.id, purchaseContext2);
               const items = [...resolution.general, ...resolution.matched].map((advice) => {
                 const repeated = displayedAdvice.has(advice.id);
@@ -46642,6 +46855,7 @@
                 ...variant,
                 season: resolveSeason(catalog, variant.id, month),
                 advice: items,
+                shopAdvice,
                 needsContext: resolution.needsContext
               };
             })
@@ -46665,7 +46879,7 @@
                 } else return;
                 const scroll = this.dialog.scrollTop;
                 const model = buildProductDetails(this.catalog, this.variantId, this.month, this.context);
-                this.content.querySelector("[data-variant-details]").innerHTML = productVariants(
+                this.content.querySelector("[data-home-advice]").innerHTML = homeAdvice(
                   model,
                   this.catalog
                 );

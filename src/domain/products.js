@@ -1,9 +1,7 @@
 import { matchesOrigin } from './geography.js';
 import { STATUS_RANK } from '../config/calendar.js';
-
-export function normalizeSearch(value) {
-  return value.toLocaleLowerCase('ru').replace(/ё/g, 'е');
-}
+import { normalizeSearch, searchProducts } from './search.js';
+export { normalizeSearch } from './search.js';
 
 export function productSearchText(product) {
   return normalizeSearch(
@@ -23,10 +21,8 @@ export function isYearRoundGreenhouse(product) {
 
 /** Both screens use the same search and geography rules. Never mutates the database. */
 export function filterProducts(products, filters, favoriteIds = new Set()) {
-  const query = normalizeSearch((filters.query || '').trim());
-  return products.filter((product) => {
+  return searchProducts(products, filters.query || '', productSearchText).filter((product) => {
     const status = product.months[filters.month];
-    if (query && !productSearchText(product).includes(query)) return false;
     if (!matchesOrigin(product, filters.origin || '')) return false;
     if (
       filters.category &&
