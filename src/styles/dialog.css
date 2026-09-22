@@ -63,6 +63,13 @@ dialog::backdrop {
   border-top: 1px solid var(--line);
   padding: 18px 0;
 }
+.storage-instructions dt {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.storage-instructions dd {
+  margin: 4px 0 0;
+}
 .variant-caption {
   display: block;
   color: var(--muted);

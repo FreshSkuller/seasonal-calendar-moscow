@@ -1,0 +1,191 @@
+[
+  {
+    "id": "r61",
+    "name": "Абрикосы (Краснодар/ЮФО)",
+    "variety": "Краснощёкий, сортовой ориентир",
+    "productId": "product-61",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r61",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r62",
+    "name": "Персики (Краснодар)",
+    "variety": "Посол Мира, сортовой ориентир",
+    "productId": "product-62",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r62",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r63",
+    "name": "Нектарины (Краснодар)",
+    "productId": "product-62",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r63",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r64",
+    "name": "Сливы",
+    "productId": "product-64",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r64",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r65",
+    "name": "Алыча",
+    "variety": "Жемчужина",
+    "productId": "product-65",
+    "originId": "id-7",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r65",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r66",
+    "name": "Яблоки летние сорта",
+    "variety": "Мелба; хранение только при охлаждении",
+    "productId": "product-66",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r66",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r67",
+    "name": "Яблоки осенние сорта",
+    "productId": "product-66",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r67",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r68",
+    "name": "Яблоки зимние сорта",
+    "variety": "Богатырь; календарь длительного холодильного хранения",
+    "productId": "product-66",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r68",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r69",
+    "name": "Груши летние",
+    "variety": "Виктория (позднелетняя); календарь именно этого сорта",
+    "productId": "product-69",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r69",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r70",
+    "name": "Груши осенние / зимние",
+    "variety": "Юрьевская; поздние груши других сортов имеют другие сроки",
+    "productId": "product-69",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r70",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r71",
+    "name": "Арбуз грунтовой",
+    "productId": "product-71",
+    "originId": "id-12",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r71",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r72",
+    "name": "Дыня",
+    "productId": "product-72",
+    "originId": "id-3",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r72",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r73",
+    "name": "Виноград",
+    "productId": "product-73",
+    "originId": "id-7",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r73",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r74",
+    "name": "Инжир",
+    "productId": "product-74",
+    "originId": "id-7",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r74",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r75",
+    "name": "Айва",
+    "variety": "Осенний сувенир; для других сортов границы могут отличаться",
+    "productId": "product-75",
+    "originId": "id-13",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r75",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r76",
+    "name": "Хурма",
+    "variety": "Ориентир по саду в Вардане",
+    "productId": "product-76",
+    "originId": "id-14",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r76",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r78",
+    "name": "Гранат",
+    "productId": "product-78",
+    "originId": "id-16",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r78",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r79",
+    "name": "Фейхоа, свежий урожай",
+    "productId": "product-79",
+    "originId": "id-14",
+    "categoryId": "id-3",
+    "seasonProfileId": "season-r79",
+    "adviceIds": [],
+    "adviceOverrides": []
+  }
+]

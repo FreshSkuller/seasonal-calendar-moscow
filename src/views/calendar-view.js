@@ -1,71 +1,87 @@
-import { groupedProducts } from '../domain/product-groups.js';
 import copy from '../../content/ru.json' with { type: 'json' };
 import { getElement, escapeHtml as escape, formatMessage } from '../shared/html.js';
-import { sortProducts, visibleMonths } from '../domain/products.js';
+import { visibleMonths } from '../domain/products.js';
+import { buildProductList } from '../application/product-list.js';
+import { FilterState } from '../state/filters.js';
 import { originOptions } from '../components/origin-options.js';
 import { calendarHeader, calendarRows } from '../components/calendar-table.js';
 
-/** Owns only the monthly screen's controls and state. */
+const CONTROL_FIELDS = {
+  month: 'month',
+  search: 'query',
+  origin: 'origin',
+  category: 'category',
+  status: 'status',
+  favorites: 'favoritesOnly',
+  'known-only': 'knownOnly',
+  sort: 'order',
+};
+
 export class CalendarView {
-  constructor({ database, preferences, clock, openProduct }) {
-    this.database = database;
-    this.preferences = preferences;
-    this.openProduct = openProduct;
-    this.month = clock().month;
-    this.wholeYear = false;
+  constructor({ catalog, preferences, clock, openProduct }) {
+    Object.assign(this, { catalog, preferences, openProduct });
+    this.state = new FilterState(clock().month);
     this.events = new AbortController();
     this.controls = Object.fromEntries(
-      ['month', 'search', 'origin', 'category', 'status', 'favorites', 'known-only', 'sort'].map(
-        (id) => [id, getElement(id)],
-      ),
+      Object.keys(CONTROL_FIELDS).map((id) => [id, getElement(id)]),
     );
     this.initializeControls();
+    this.syncControls();
     this.bindEvents();
     this.render();
   }
-
   initializeControls() {
-    this.controls.origin.innerHTML = originOptions(this.database.rows);
+    this.controls.origin.innerHTML = originOptions(this.catalog.origins);
     this.controls.month.innerHTML = copy.months
       .map((name, index) => `<option value="${index}">${escape(name)}</option>`)
       .join('');
-    this.controls.month.value = this.month;
-    const categories = [...new Set(this.database.rows.map((product) => product.category))].sort(
-      (a, b) => a.localeCompare(b, 'ru'),
+    const categories = [...this.catalog.categories].sort((a, b) =>
+      a.label.localeCompare(b.label, 'ru'),
     );
     this.controls.category.innerHTML =
       `<option value="">${escape(copy.common.allProducts)}</option>` +
-      categories.map((name) => `<option>${escape(name)}</option>`).join('');
+      categories
+        .map((item) => `<option value="${escape(item.id)}">${escape(item.label)}</option>`)
+        .join('');
     this.controls.status.innerHTML =
       `<option value="">${escape(copy.common.allStatuses)}</option>` +
-      Object.entries(this.database.statuses)
+      Object.entries(this.catalog.statuses)
         .map(
           ([code, [symbol, name]]) =>
             `<option value="${code}">${escape(symbol)} ${escape(name)}</option>`,
         )
         .join('');
   }
-
   bindEvents() {
     const options = { signal: this.events.signal };
-    for (const [id, control] of Object.entries(this.controls))
-      control.addEventListener(id === 'search' ? 'input' : 'change', () => this.render(), options);
-    getElement('focus-view').addEventListener(
-      'click',
-      () => {
-        this.wholeYear = false;
-        this.render();
-      },
-      options,
-    );
-    getElement('year-view').addEventListener(
-      'click',
-      () => {
-        this.wholeYear = true;
-        this.render();
-      },
-      options,
-    );
+    for (const [id, control] of Object.entries(this.controls)) {
+      control.addEventListener(
+        id === 'search' ? 'input' : 'change',
+        () => {
+          const value =
+            control.type === 'checkbox'
+              ? control.checked
+              : id === 'month'
+                ? Number(control.value)
+                : control.value;
+          this.state.update({ [CONTROL_FIELDS[id]]: value });
+          this.render();
+        },
+        options,
+      );
+    }
+    for (const [id, wholeYear] of [
+      ['focus-view', false],
+      ['year-view', true],
+    ])
+      getElement(id).addEventListener(
+        'click',
+        () => {
+          this.state.update({ wholeYear });
+          this.render();
+        },
+        options,
+      );
     getElement('reset').addEventListener('click', () => this.reset(), options);
     getElement('table-body').addEventListener(
       'click',
@@ -73,54 +89,43 @@ export class CalendarView {
       options,
     );
   }
-
-  filters() {
-    const controls = this.controls;
-    return {
-      month: this.month,
-      query: controls.search.value,
-      origin: controls.origin.value,
-      category: controls.category.value,
-      status: controls.status.value,
-      favoritesOnly: controls.favorites.checked,
-      knownOnly: controls['known-only'].checked,
-    };
+  syncControls() {
+    const state = this.state.value;
+    for (const [id, control] of Object.entries(this.controls)) {
+      if (control.type === 'checkbox') control.checked = state[CONTROL_FIELDS[id]];
+      else control.value = state[CONTROL_FIELDS[id]];
+    }
   }
-
   render() {
-    this.month = Number(this.controls.month.value);
+    const filters = this.state.value;
+    const { month, wholeYear, order } = filters;
     const favorites = this.preferences.favorites;
-    const filtered = groupedProducts(this.database.rows, this.filters(), favorites);
-    const products = sortProducts(filtered, this.month, this.controls.sort.value);
-    const months = visibleMonths(this.month, this.wholeYear);
-    getElement('table-head').innerHTML = calendarHeader(this.month, months);
+    const model = buildProductList(this.catalog, filters, favorites, order);
+    const months = visibleMonths(month, wholeYear);
+    getElement('table-head').innerHTML = calendarHeader(month, months);
     getElement('table-body').innerHTML = calendarRows(
-      products,
-      this.month,
+      model.products,
+      month,
       months,
-      this.database.statuses,
+      this.catalog.statuses,
       favorites,
     );
     getElement('month-title').textContent = formatMessage(copy.common.monthLocation, {
-      month: copy.months[this.month],
+      month: copy.months[month],
     });
-    getElement('result-count').textContent = formatMessage(copy.calendar.count, {
-      total: products.length,
-      good: products.filter((product) => ['p', 'g', 'a'].includes(product.months[this.month]))
-        .length,
-      unknown: products.filter((product) => product.months[this.month] === 'u').length,
-    });
-    getElement('focus-view').setAttribute('aria-pressed', !this.wholeYear);
-    getElement('year-view').setAttribute('aria-pressed', this.wholeYear);
+    getElement('result-count').textContent = formatMessage(copy.calendar.count, model);
+    getElement('focus-view').setAttribute('aria-pressed', !wholeYear);
+    getElement('year-view').setAttribute('aria-pressed', wholeYear);
   }
-
   handleTableClick(event) {
     const product = event.target.closest('[data-product]');
     const favorite = event.target.closest('[data-favorite]');
     if (product)
       this.openProduct(
         product.dataset.product,
-        product.dataset.month === undefined ? this.month : Number(product.dataset.month),
+        product.dataset.month === undefined
+          ? this.state.value.month
+          : Number(product.dataset.month),
       );
     if (favorite) {
       this.preferences.toggleFavorite(favorite.dataset.favorite);
@@ -129,15 +134,11 @@ export class CalendarView {
         ?.focus();
     }
   }
-
   reset() {
-    for (const id of ['search', 'origin', 'category', 'status']) this.controls[id].value = '';
-    this.controls.favorites.checked = false;
-    this.controls['known-only'].checked = false;
-    this.controls.sort.value = 'season';
+    this.state.reset();
+    this.syncControls();
     this.render();
   }
-
   destroy() {
     this.events.abort();
   }

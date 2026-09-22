@@ -1,22 +1,28 @@
-const FAVORITES_KEY = 'moscow-season-favorites-v2';
+const PREFERENCES_KEY = 'moscow-season-preferences-v3';
+const LEGACY_FAVORITES_KEY = 'moscow-season-favorites-v2';
 const THEME_KEY = 'moscow-season-dark';
+const validIds = (value) =>
+  Array.isArray(value) && value.every((id) => typeof id === 'string' && id.trim());
 
-/** Owns preferences and notifications; existing browser storage keys remain compatible. */
+/** Versioned persistence; old values remain available for rollback and recovery. */
 export class Preferences {
   #storage;
   #listeners = new Set();
   #favorites;
   #dark;
-
-  constructor(storage) {
+  #canWrite;
+  constructor(storage, { resolveFavoriteId = (id) => id } = {}) {
     this.#storage = storage;
-    const saved = this.#read(FAVORITES_KEY, []);
-    this.#favorites = new Set(
-      Array.isArray(saved) ? saved.filter((id) => typeof id === 'string') : [],
-    );
+    const saved = this.#read(PREFERENCES_KEY, null, Symbol('unreadable'));
+    const valid = saved?.version === 3 && validIds(saved.favorites);
+    const legacy = this.#read(LEGACY_FAVORITES_KEY, []);
+    const ids = valid ? saved.favorites : validIds(legacy) ? legacy : [];
+    this.#favorites = new Set(ids.map(resolveFavoriteId));
     this.#dark = this.#read(THEME_KEY, false) === true;
+    // A newer or malformed record is not silently overwritten during fallback.
+    this.#canWrite = saved === null || valid;
+    if (this.#canWrite && ids.length) this.#saveFavorites();
   }
-
   get favorites() {
     return new Set(this.#favorites);
   }
@@ -26,45 +32,42 @@ export class Preferences {
   hasFavorite(id) {
     return this.#favorites.has(id);
   }
-
-  migrateFavorites(resolveId) {
-    this.#favorites = new Set([...this.#favorites].map(resolveId));
-    this.#write(FAVORITES_KEY, [...this.#favorites]);
-  }
-
   toggleFavorite(id) {
     if (this.#favorites.has(id)) this.#favorites.delete(id);
     else this.#favorites.add(id);
-    this.#write(FAVORITES_KEY, [...this.#favorites]);
+    this.#saveFavorites();
     this.#notify('favorites');
   }
-
   toggleTheme() {
     this.#dark = !this.#dark;
     this.#write(THEME_KEY, this.#dark);
     this.#notify('theme');
   }
-
   subscribe(listener) {
     this.#listeners.add(listener);
     return () => this.#listeners.delete(listener);
   }
-
   #notify(kind) {
     for (const listener of this.#listeners) listener(kind);
   }
-  #read(key, fallback) {
+  #saveFavorites() {
+    if (this.#canWrite)
+      this.#write(PREFERENCES_KEY, { version: 3, favorites: [...this.#favorites] });
+  }
+  #read(key, fallback, unreadable = fallback) {
     try {
-      return JSON.parse(this.#storage?.getItem(key)) ?? fallback;
+      const raw = this.#storage?.getItem(key);
+      if (raw === null || raw === undefined) return fallback;
+      return JSON.parse(raw) ?? fallback;
     } catch {
-      return fallback;
+      return unreadable;
     }
   }
   #write(key, value) {
     try {
       this.#storage?.setItem(key, JSON.stringify(value));
     } catch {
-      /* Storage may be unavailable. Preferences still work for this visit. */
+      /* In-memory preferences still work. */
     }
   }
 }

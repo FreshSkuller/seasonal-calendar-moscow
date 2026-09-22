@@ -82,7 +82,7 @@ test('Один авокадо: все происхождения и годовы
   await page.goto('/');
   await page.locator('#today-search').fill('авокадо');
   await expect(page.locator('.shop-card')).toHaveCount(1);
-  await page.locator('#today-origin').selectOption('country:Перу');
+  await page.locator('#today-origin').selectOption({ label: 'Перу' });
   await expect(page.locator('.shop-card .shop-origin')).toHaveText('Перу');
   await page.locator('.shop-card .why').click();
   await expect(page.locator('.variant-detail').first()).toContainText('Перу');
@@ -94,4 +94,27 @@ test('Один авокадо: все происхождения и годовы
   expect(
     await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
   ).toBe(true);
+});
+
+test('Избранное прежней версии переносится на постоянный продукт без потери старой записи', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    if (!localStorage.getItem('seeded')) {
+      localStorage.setItem('moscow-season-favorites-v2', '["r114","r115"]');
+      localStorage.setItem('seeded', 'true');
+    }
+  });
+  await page.goto('/');
+  await page.locator('[data-today-filter="fav"]').click();
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await expect(page.locator('.shop-card h3')).toHaveText('Авокадо');
+  const id = await page.locator('.shop-card [data-favorite]').getAttribute('data-favorite');
+  expect(id).toMatch(/^product-/);
+  await page.reload();
+  await page.locator('[data-today-filter="fav"]').click();
+  await expect(page.locator('.shop-card [data-favorite]')).toHaveAttribute('data-favorite', id);
+  expect(await page.evaluate(() => localStorage.getItem('moscow-season-favorites-v2'))).toBe(
+    '["r114","r115"]',
+  );
 });

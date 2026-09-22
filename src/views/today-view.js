@@ -1,32 +1,46 @@
-import { groupedProducts } from '../domain/product-groups.js';
+import { buildProductList } from '../application/product-list.js';
+import { FilterState } from '../state/filters.js';
 import copy from '../../content/ru.json' with { type: 'json' };
 import { TODAY_GROUPS, CARDS_PER_GROUP } from '../config/calendar.js';
 import { getElement, escapeHtml as escape, formatMessage } from '../shared/html.js';
-import { sortProducts } from '../domain/products.js';
 import { originOptions } from '../components/origin-options.js';
 import { productCard } from '../components/product-card.js';
 
 /** Owns daily filters and expanded groups; uses the shared database and preferences. */
 export class TodayView {
-  constructor({ database, preferences, clock, openProduct }) {
-    Object.assign(this, { database, preferences, clock, openProduct });
-    this.mode = 'all';
+  constructor({ catalog, preferences, clock, openProduct }) {
+    Object.assign(this, { catalog, preferences, clock, openProduct });
+    this.state = new FilterState(clock().month);
     this.expandedGroups = new Set();
     this.events = new AbortController();
     this.search = getElement('today-search');
     this.origin = getElement('today-origin');
     this.groups = getElement('today-groups');
-    this.origin.innerHTML = originOptions(database.rows);
+    this.origin.innerHTML = originOptions(catalog.origins);
     const options = { signal: this.events.signal };
-    this.search.addEventListener('input', () => this.render(), options);
-    this.origin.addEventListener('change', () => this.render(), options);
+    this.search.addEventListener(
+      'input',
+      () => {
+        this.state.update({ query: this.search.value.trim() });
+        this.render();
+      },
+      options,
+    );
+    this.origin.addEventListener(
+      'change',
+      () => {
+        this.state.update({ origin: this.origin.value });
+        this.render();
+      },
+      options,
+    );
     getElement('today-reset').addEventListener('click', () => this.reset(), options);
     this.groups.addEventListener('click', (event) => this.handleClick(event), options);
     document.querySelectorAll('[data-today-filter]').forEach((button) =>
       button.addEventListener(
         'click',
         () => {
-          this.mode = button.dataset.todayFilter;
+          this.state.update({ mode: button.dataset.todayFilter });
           this.render();
         },
         options,
@@ -42,11 +56,11 @@ export class TodayView {
         )
       : [];
     const now = this.clock();
-    const query = this.search.value.trim();
-    const filters = { month: now.month, query, origin: this.origin.value, mode: this.mode };
-    const products = sortProducts(
-      groupedProducts(this.database.rows, filters, this.preferences.favorites),
-      now.month,
+    const filters = this.state.update({ month: now.month });
+    const { products } = buildProductList(
+      this.catalog,
+      filters,
+      this.preferences.favorites,
       'peak',
     );
     getElement('today-date').textContent = formatMessage(copy.common.monthLocation, {
@@ -58,11 +72,11 @@ export class TodayView {
     document
       .querySelectorAll('[data-today-filter]')
       .forEach((button) =>
-        button.setAttribute('aria-pressed', button.dataset.todayFilter === this.mode),
+        button.setAttribute('aria-pressed', button.dataset.todayFilter === filters.mode),
       );
     this.groups.innerHTML =
       TODAY_GROUPS.map((group) => this.renderGroup(group, products, filters)).join('') ||
-      `<div class="empty">${escape(this.mode === 'fav' ? copy.today.emptyFavorites : copy.today.empty)}</div>`;
+      `<div class="empty">${escape(filters.mode === 'fav' ? copy.today.emptyFavorites : copy.today.empty)}</div>`;
     for (const id of opened) {
       const group = this.groups.querySelector(`[data-group="${id}"]`);
       if (group) group.open = true;
@@ -76,14 +90,15 @@ export class TodayView {
     if (!matches.length) return '';
     const expanded = this.expandedGroups.has(group.id) || Boolean(filters.query);
     const visible = expanded ? matches : matches.slice(0, CARDS_PER_GROUP);
-    const open = group.open || filters.query || filters.origin || this.mode !== 'all' || expanded;
+    const open =
+      group.open || filters.query || filters.origin || filters.mode !== 'all' || expanded;
     const text = copy.today.groups[group.id];
     const cards = visible
       .map((product) =>
         productCard(
           product,
           filters.month,
-          this.database.statuses,
+          this.catalog.statuses,
           this.preferences.hasFavorite(product.id),
         ),
       )
@@ -117,7 +132,7 @@ export class TodayView {
   reset() {
     this.search.value = '';
     this.origin.value = '';
-    this.mode = 'all';
+    this.state.reset();
     this.expandedGroups.clear();
     this.render();
   }

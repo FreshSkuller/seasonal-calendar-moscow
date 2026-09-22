@@ -1,4 +1,4 @@
-import { canonicalId, productName } from './domain/product-groups.js';
+import { createCatalog } from './domain/catalog.js';
 import copy from '../content/ru.json' with { type: 'json' };
 import { getElement, escapeHtml as escape, formatMessage } from './shared/html.js';
 import { Preferences } from './services/preferences.js';
@@ -11,20 +11,17 @@ import { statusBadge } from './components/status-badge.js';
 
 /** Composition root: creates dependencies and coordinates independent screens. */
 export function startApplication(database, { clock = moscowDate } = {}) {
+  const catalog = createCatalog(database);
   let storage;
   try {
     storage = window.localStorage;
   } catch {
     /* Private/file browser modes can deny storage. */
   }
-  const preferences = new Preferences(storage);
-  preferences.migrateFavorites((id) => {
-    const row = database.rows.find((item) => item.id === id);
-    return row ? canonicalId(row, database.rows) : id;
-  });
-  const dialog = new DetailsDialog(database);
+  const preferences = new Preferences(storage, { resolveFavoriteId: catalog.favoriteProductId });
+  const dialog = new DetailsDialog(catalog);
   const dependencies = {
-    database,
+    catalog,
     preferences,
     clock,
     openProduct: (id, month) => dialog.open(id, month),
@@ -64,10 +61,10 @@ export function startApplication(database, { clock = moscowDate } = {}) {
     ),
   );
 
-  getElement('hero-count').textContent = new Set(database.rows.map(productName)).size;
+  getElement('hero-count').textContent = catalog.products.length;
   getElement('coverage').textContent = formatMessage(copy.calendar.coverage, {
-    total: database.rows.length,
-    known: database.rows.filter((row) => row.months.some((status) => status !== 'u')).length,
+    total: catalog.variants.length,
+    known: catalog.variants.filter((row) => row.months.some((status) => status !== 'u')).length,
   });
   getElement('legend-items').innerHTML = Object.entries(database.statuses)
     .map(

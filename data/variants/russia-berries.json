@@ -1,0 +1,277 @@
+[
+  {
+    "id": "r37",
+    "name": "Клубника, обычные сорта",
+    "continuation": {
+      "source": "STRAW",
+      "months": [5, 8, 9],
+      "reason": "Для обычных сортов окно заканчивается в середине июля: август–май — вне основного сезона свежего местного сбора. Ремонтантные сорта показаны отдельно."
+    },
+    "productId": "product-37",
+    "originId": "id-2",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r37",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r38",
+    "name": "Клубника ранняя, под укрытием",
+    "variety": "Флер, Клери, Джоли; ориентир по Белореченску",
+    "aliases": ["Клубника, обычные сорта"],
+    "productId": "product-37",
+    "originId": "id-7",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r38",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r39",
+    "name": "Клубника с продлённым сезоном",
+    "aliases": ["Клубника ремонтантная / под укрытием"],
+    "productId": "product-37",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r39",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r40",
+    "name": "Земляника лесная",
+    "continuation": {
+      "source": "MO",
+      "months": [8],
+      "reason": "Окно местного свежего сбора — конец июня–июль; после июля это уже не обычный сезон лесной земляники."
+    },
+    "productId": "product-40",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r40",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r41",
+    "name": "Жимолость",
+    "productId": "product-41",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r41",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r42",
+    "name": "Черешня",
+    "productId": "product-42",
+    "originId": "id-7",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r42",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r43",
+    "name": "Вишня",
+    "productId": "product-43",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r43",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r44",
+    "name": "Малина лесная / обычное летнее плодоношение",
+    "continuation": {
+      "source": "MO",
+      "months": [9],
+      "reason": "Указанный местный сезон летней малины заканчивается в августе; сентябрь относится к несезону этой строки, а не ремонтантной малины."
+    },
+    "productId": "product-44",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r44",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r45",
+    "name": "Малина ремонтантная",
+    "productId": "product-44",
+    "originId": "id-2",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r45",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r46",
+    "name": "Чёрная смородина",
+    "productId": "product-46",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r46",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r47",
+    "name": "Красная смородина",
+    "productId": "product-47",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r47",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r48",
+    "name": "Крыжовник",
+    "productId": "product-48",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r48",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r49",
+    "name": "Черника лесная",
+    "continuation": {
+      "source": "MO",
+      "months": [6, 10],
+      "reason": "Окно дикорастущей ягоды в Московской области заканчивается в сентябре; октябрь–июнь — вне обычного сезона свежего сбора."
+    },
+    "productId": "product-49",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r49",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r50",
+    "name": "Голубика дикорастущая",
+    "continuation": {
+      "source": "MO",
+      "months": [6, 10],
+      "reason": "Окно дикорастущей ягоды в Московской области заканчивается в сентябре; октябрь–июнь — вне обычного сезона свежего сбора."
+    },
+    "productId": "product-50",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r50",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r51",
+    "name": "Голубика садовая",
+    "productId": "product-50",
+    "originId": "id-9",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r51",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r52",
+    "name": "Ежевика",
+    "productId": "product-52",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r52",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r53",
+    "name": "Облепиха",
+    "productId": "product-53",
+    "originId": "id-3",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r53",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r54",
+    "name": "Калина",
+    "productId": "product-54",
+    "originId": "id-10",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r54",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r55",
+    "name": "Рябина красная",
+    "aliases": ["Рябина"],
+    "productId": "product-55",
+    "originId": "id-2",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r55",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r56",
+    "name": "Шиповник",
+    "productId": "product-56",
+    "originId": "id-2",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r56",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r57",
+    "name": "Ирга",
+    "productId": "product-57",
+    "originId": "id-2",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r57",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r58",
+    "name": "Черёмуха обыкновенная, свежая",
+    "aliases": ["Черёмуха"],
+    "productId": "product-58",
+    "originId": "id-5",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r58",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r59",
+    "name": "Брусника, свежий сбор",
+    "continuation": {
+      "source": "MO",
+      "months": [12],
+      "reason": "По местному календарю сбор заканчивается примерно в середине ноября. Декабрь — вне обычного сезона нового сбора; хранившаяся ягода требует отдельной оценки."
+    },
+    "productId": "product-59",
+    "originId": "id-8",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r59",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r60",
+    "name": "Клюква, свежий сбор",
+    "productId": "product-60",
+    "originId": "id-11",
+    "categoryId": "id-2",
+    "seasonProfileId": "season-r60",
+    "adviceIds": [],
+    "adviceOverrides": []
+  }
+]

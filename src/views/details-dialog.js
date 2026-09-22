@@ -1,9 +1,10 @@
 import { getElement } from '../shared/html.js';
 import { productDetails } from '../components/product-details.js';
+import { buildProductDetails } from '../application/product-details.js';
 
 export class DetailsDialog {
-  constructor(database) {
-    this.database = database;
+  constructor(catalog) {
+    this.catalog = catalog;
     this.dialog = getElement('detail-dialog');
     this.content = getElement('dialog-content');
     this.events = new AbortController();
@@ -26,9 +27,8 @@ export class DetailsDialog {
   }
 
   open(id, month) {
-    const product = this.database.rows.find((row) => row.id === id);
-    if (!product) throw new Error(`Unknown product: ${id}`);
-    this.content.innerHTML = productDetails(product, month, this.database);
+    const model = buildProductDetails(this.catalog, id, month);
+    this.content.innerHTML = productDetails(model, this.catalog);
     this.dialog.showModal();
     this.dialog.scrollTop = 0;
   }

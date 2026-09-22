@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "advice-1",
+    "productId": "product-3",
+    "topic": "choose",
+    "summary": "Корнеплод плотный и хрустящий, без загнивания и сильного увядания. Большая ботва не доказывает свежесть самого корня.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-1"]
+  },
+  {
+    "id": "advice-2",
+    "productId": "product-3",
+    "topic": "ripen",
+    "summary": "Сладость и аромат сформированы при выращивании. Хранение должно сохранять влагу; размягчение означает потерю качества.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-2"]
+  },
+  {
+    "id": "advice-3",
+    "productId": "product-5",
+    "topic": "choose",
+    "summary": "Учитывайте тип: ранняя капуста менее плотная и лёжкая, поздняя подходит для зимнего хранения. Избегайте гнили и выраженного увядания.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-3"]
+  },
+  {
+    "id": "advice-4",
+    "productId": "product-5",
+    "topic": "ripen",
+    "summary": "Срезанный кочан не дозревает как фрукт. Сроки хранения ранних и поздних сортов существенно различаются.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-4"]
+  },
+  {
+    "id": "advice-5",
+    "productId": "product-8",
+    "topic": "choose",
+    "summary": "Для хранения выбирайте сухие плотные луковицы с подсохшей шейкой. Мокрые мягкие участки и плесень нежелательны; сочный сладкий лук обычно менее лёжкий.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-5"]
+  },
+  {
+    "id": "advice-6",
+    "productId": "product-8",
+    "topic": "ripen",
+    "summary": "Просушка после уборки — подготовка к хранению, а не фруктовое дозревание. Максимальные складские сроки зависят от сорта.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-6"]
+  },
+  {
+    "id": "advice-7",
+    "productId": "product-9",
+    "topic": "choose",
+    "summary": "Упругое зелёное перо и чистое основание без слизи и гнили. Сильно подсохшие кончики и полегшие листья означают потерю качества.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-7"]
+  },
+  {
+    "id": "advice-8",
+    "productId": "product-9",
+    "topic": "ripen",
+    "summary": "Это свежая зелень, её не оставляют дозревать. Для сохранения сочности важны охлаждение и защита от пересыхания.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-8"]
+  },
+  {
+    "id": "advice-9",
+    "productId": "product-10",
+    "topic": "choose",
+    "summary": "Головки плотные, зубчики наполненные, покровы просушенные. Мягкость, плесень и пустые зубчики — дефекты, а не признак зрелости.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-9"]
+  },
+  {
+    "id": "advice-10",
+    "productId": "product-10",
+    "topic": "ripen",
+    "summary": "После сбора чеснок просушивают. Дома не ждут сладкого дозревания; для сухих головок важнее сухость и вентиляция.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-10"]
+  },
+  {
+    "id": "advice-11",
+    "productId": "product-11",
+    "topic": "choose",
+    "summary": "Упругие плоды без пожелтения, увядания и водянистых повреждений. Размер и выраженность семян оценивайте с учётом сорта.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-11"]
+  },
+  {
+    "id": "advice-12",
+    "productId": "product-11",
+    "topic": "ripen",
+    "summary": "Огурец едят физиологически незрелым: пожелтение при дальнейшем созревании не улучшает его салатное качество.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-12"]
+  },
+  {
+    "id": "advice-13",
+    "productId": "product-12",
+    "topic": "choose",
+    "summary": "Для еды сейчас важны сортовая окраска, отсутствие ушибов, трещин и гнили. Мягкий провал — повреждение, а не желательная спелость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-13"]
+  },
+  {
+    "id": "advice-14",
+    "productId": "product-12",
+    "topic": "ripen",
+    "summary": "Зрелые, но ещё не полностью окрашенные томаты могут дозревать. Слишком ранний сбор и сильное охлаждение ухудшают результат.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-14"]
+  },
+  {
+    "id": "advice-15",
+    "productId": "product-13",
+    "topic": "choose",
+    "summary": "Для нежной мякоти выбирайте молодые упругие плоды с тонкой неповреждённой кожицей. Крупный размер сам по себе не означает лучшее качество.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-15"]
+  },
+  {
+    "id": "advice-16",
+    "productId": "product-13",
+    "topic": "ripen",
+    "summary": "Молодому кабачку не требуется дозаривание. С возрастом грубеют кожица и семена; не путайте его с лёжкой зрелой тыквой.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-16"]
+  },
+  {
+    "id": "advice-17",
+    "productId": "product-14",
+    "topic": "choose",
+    "summary": "Выбирайте упругий плод с блестящей кожицей, без сморщивания и мягких пятен. Переросшая грубая мякоть и твёрдые семена нежелательны.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-17"]
+  },
+  {
+    "id": "advice-18",
+    "productId": "product-14",
+    "topic": "ripen",
+    "summary": "Баклажаны едят в технической зрелости. Дозаривать их ради сладости не нужно: хранение ведёт к старению и потере качества.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-18"]
+  },
+  {
+    "id": "advice-19",
+    "productId": "product-15",
+    "topic": "choose",
+    "summary": "Плотные сочные стенки, гладкая кожица, отсутствие мягких вдавленных пятен. Зелёный перец может быть нормальной стадией сбора, а цветной — другим сортом.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-19"]
+  },
+  {
+    "id": "advice-20",
+    "productId": "product-15",
+    "topic": "ripen",
+    "summary": "Цвет и зрелость связаны с сортом и стадией уборки. На гарантированное превращение любого зелёного плода в сладкий красный дома рассчитывать нельзя.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-20"]
+  },
+  {
+    "id": "advice-21",
+    "productId": "product-16",
+    "topic": "choose",
+    "summary": "Зрелая неповреждённая кожура и целая плодоножка; мягкие участки и гниль — повод отказаться. Размер не определяет сладость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-21"]
+  },
+  {
+    "id": "advice-22",
+    "productId": "product-16",
+    "topic": "ripen",
+    "summary": "Послеуборочные изменения зависят от вида и сорта. Нельзя обещать, что любая недозрелая тыква станет сладкой при хранении.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-22"]
+  },
+  {
+    "id": "advice-23",
+    "productId": "product-17",
+    "topic": "choose",
+    "summary": "Ищите упругие початки с зелёными обёртками и наполненными сочными зёрнами. Сморщенные зёрна и подсохший початок указывают на потерю качества.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-23"]
+  },
+  {
+    "id": "advice-24",
+    "productId": "product-17",
+    "topic": "ripen",
+    "summary": "Не оставляйте дозревать в тепле: после сбора качество быстро падает. Важны охлаждение и недавняя дата уборки; даже хороший сезон не исправляет долгую тёплую перевозку.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-24"]
+  },
+  {
+    "id": "advice-25",
+    "productId": "product-19",
+    "topic": "choose",
+    "summary": "Молодые упругие стручки, легко ломающиеся, с небольшими семенами. Сильно выступающие крупные семена часто означают более грубые створки.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-25"]
+  },
+  {
+    "id": "advice-26",
+    "productId": "product-19",
+    "topic": "ripen",
+    "summary": "Стручки едят молодыми. Дальнейшее созревание семян не улучшает нежность стручка.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-26"]
+  },
+  {
+    "id": "advice-27",
+    "productId": "product-20",
+    "topic": "choose",
+    "summary": "Плотная головка с закрытыми бутонами. Раскрытые жёлтые цветки и вялые стебли означают потерю свежести.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-27"]
+  },
+  {
+    "id": "advice-28",
+    "productId": "product-20",
+    "topic": "ripen",
+    "summary": "Дозаривание не нужно: раскрытие цветков ухудшает качество. Охлаждение замедляет пожелтение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-28"]
+  },
+  {
+    "id": "advice-29",
+    "productId": "product-21",
+    "topic": "choose",
+    "summary": "Компактное соцветие без распада, мокрых пятен и гнили. Цвет сверяйте с сортом: существуют белые, зелёные и фиолетовые формы.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-29"]
+  },
+  {
+    "id": "advice-30",
+    "productId": "product-21",
+    "topic": "ripen",
+    "summary": "Не становится лучше от ожидания. Разрыхление головки и потемнение — не полезное дозревание.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-30"]
+  },
+  {
+    "id": "advice-31",
+    "productId": "product-23",
+    "topic": "choose",
+    "summary": "Корнеплод плотный, без губчатости, сильного сморщивания и мокрых повреждений. Переросшие экземпляры могут быть волокнистыми.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-31"]
+  },
+  {
+    "id": "advice-32",
+    "productId": "product-23",
+    "topic": "ripen",
+    "summary": "Дозаривать не нужно. Удаление ботвы уменьшает потерю влаги корнеплодом; охлаждение помогает сохранить хрусткость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-32"]
+  },
+  {
+    "id": "advice-33",
+    "productId": "product-25",
+    "topic": "choose",
+    "summary": "Корнеплод плотный, без губчатости, сильного сморщивания и мокрых повреждений. Переросшие экземпляры могут быть волокнистыми.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-33"]
+  },
+  {
+    "id": "advice-34",
+    "productId": "product-25",
+    "topic": "ripen",
+    "summary": "Дозаривать не нужно. Удаление ботвы уменьшает потерю влаги корнеплодом; охлаждение помогает сохранить хрусткость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-34"]
+  },
+  {
+    "id": "advice-35",
+    "productId": "product-30",
+    "topic": "choose",
+    "summary": "Плотно закрытые верхушки, сочные стебли без сильного увядания и сухих волокнистых оснований.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-35"]
+  },
+  {
+    "id": "advice-36",
+    "productId": "product-30",
+    "topic": "ripen",
+    "summary": "Не дозревает; после сбора может грубеть. Быстрая доставка и охлаждение важнее долгого ожидания.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-36"]
+  },
+  {
+    "id": "advice-37",
+    "productId": "product-32",
+    "topic": "choose",
+    "summary": "Свежий характерный аромат, упругие листья, без слизистых и почерневших участков.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-37"]
+  },
+  {
+    "id": "advice-38",
+    "productId": "product-32",
+    "topic": "ripen",
+    "summary": "Дозаривания нет. Берегите от увядания; хранение не восстанавливает утраченный аромат.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-38"]
+  },
+  {
+    "id": "advice-39",
+    "productId": "product-34",
+    "topic": "choose",
+    "summary": "Черешки упругие и хрустящие, без губчатой сердцевины и загнивания; листья без выраженного пожелтения.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-39"]
+  },
+  {
+    "id": "advice-40",
+    "productId": "product-34",
+    "topic": "ripen",
+    "summary": "Сладким фруктом не дозревает: задача хранения — сохранить сочность, а не дождаться размягчения.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-40"]
+  },
+  {
+    "id": "advice-41",
+    "productId": "product-37",
+    "topic": "choose",
+    "summary": "Смотрите на сортовую окраску, аромат и отсутствие течи, плесени и размятых ягод. Размер сам по себе не определяет сладость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-41"]
+  },
+  {
+    "id": "advice-42",
+    "productId": "product-37",
+    "topic": "ripen",
+    "summary": "Клубнику собирают близко к спелости: ожидание дома не заменяет созревания на кусте. Лучше быстро съесть и держать в холоде.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-42"]
+  },
+  {
+    "id": "advice-43",
+    "productId": "product-44",
+    "topic": "choose",
+    "summary": "Выбирайте ягоды сортовой окраски без плесени, подтёков и раздавленного нижнего слоя. Для малины и ежевики особенно важна целостность упаковки и охлаждение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-43"]
+  },
+  {
+    "id": "advice-44",
+    "productId": "product-44",
+    "topic": "ripen",
+    "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-44"]
+  },
+  {
+    "id": "advice-45",
+    "productId": "product-50",
+    "topic": "choose",
+    "summary": "Выбирайте ягоды сортовой окраски без плесени, подтёков и раздавленного нижнего слоя. Для малины и ежевики особенно важна целостность упаковки и охлаждение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-45"]
+  },
+  {
+    "id": "advice-46",
+    "productId": "product-50",
+    "topic": "ripen",
+    "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-46"]
+  },
+  {
+    "id": "advice-47",
+    "productId": "product-52",
+    "topic": "choose",
+    "summary": "Выбирайте ягоды сортовой окраски без плесени, подтёков и раздавленного нижнего слоя. Для малины и ежевики особенно важна целостность упаковки и охлаждение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-47"]
+  },
+  {
+    "id": "advice-48",
+    "productId": "product-52",
+    "topic": "ripen",
+    "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-48"]
+  },
+  {
+    "id": "advice-49",
+    "productId": "product-60",
+    "topic": "choose",
+    "summary": "Выбирайте ягоды сортовой окраски без плесени, подтёков и раздавленного нижнего слоя. Для малины и ежевики особенно важна целостность упаковки и охлаждение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-49"]
+  },
+  {
+    "id": "advice-50",
+    "productId": "product-60",
+    "topic": "ripen",
+    "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-50"]
+  },
+  {
+    "id": "advice-51",
+    "productId": "product-61",
+    "topic": "choose",
+    "summary": "Для еды сейчас выбирайте плод с характерной для сорта окраской и слегка податливой мякотью, без ушибов и гнили.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-51"]
+  },
+  {
+    "id": "advice-52",
+    "productId": "product-61",
+    "topic": "ripen",
+    "summary": "Абрикосы размягчаются после сбора. Очень рано снятый плод может остаться слабым по вкусу, даже став мягким.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-52"]
+  },
+  {
+    "id": "advice-53",
+    "productId": "product-62",
+    "topic": "choose",
+    "summary": "Смотрите на основной фон кожицы, аромат и упругость, а не только на красный румянец. Мучнистость и потемнение внутри могут возникнуть из-за неправильного хранения.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-53"]
+  },
+  {
+    "id": "advice-54",
+    "productId": "product-62",
+    "topic": "ripen",
+    "summary": "Зрелый при сборе плод может размягчиться после покупки. Совсем незрелый не гарантирует хорошего вкуса даже после размягчения.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-54"]
+  },
+  {
+    "id": "advice-55",
+    "productId": "product-64",
+    "topic": "choose",
+    "summary": "Цвет должен соответствовать сорту; оценивайте упругость, отсутствие трещин и гнили. Тёмная кожица сама по себе не доказывает сладость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-55"]
+  },
+  {
+    "id": "advice-56",
+    "productId": "product-64",
+    "topic": "ripen",
+    "summary": "Зрелые при сборе сливы могут размягчаться. Эффект зависит от сорта; хранение не исправляет все последствия слишком раннего сбора.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-56"]
+  },
+  {
+    "id": "advice-57",
+    "productId": "product-65",
+    "topic": "choose",
+    "summary": "Цвет должен соответствовать сорту; оценивайте упругость, отсутствие трещин и гнили. Тёмная кожица сама по себе не доказывает сладость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-57"]
+  },
+  {
+    "id": "advice-58",
+    "productId": "product-65",
+    "topic": "ripen",
+    "summary": "Зрелые при сборе сливы могут размягчаться. Эффект зависит от сорта; хранение не исправляет все последствия слишком раннего сбора.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-58"]
+  },
+  {
+    "id": "advice-59",
+    "productId": "product-73",
+    "topic": "choose",
+    "summary": "Ягоды должны быть упругими, без плесени, трещин и сморщивания. Сильно подсохшие гребни и осыпание — повод внимательнее проверить свежесть.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-59"]
+  },
+  {
+    "id": "advice-60",
+    "productId": "product-73",
+    "topic": "ripen",
+    "summary": "Сладость оценивайте при покупке: хранение прежде всего сохраняет качество, а не заменяет созревание на лозе.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-60"]
+  },
+  {
+    "id": "advice-61",
+    "productId": "product-74",
+    "topic": "choose",
+    "summary": "Выбирайте зрелый плод с характерной для сорта окраской, без течи, плесени и кислого или спиртового запаха. Он очень чувствителен к повреждениям.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-61"]
+  },
+  {
+    "id": "advice-62",
+    "productId": "product-74",
+    "topic": "ripen",
+    "summary": "Хороший свежий инжир собирают почти спелым. Дома он размягчается и быстро портится; не рассчитывайте исправить ранний сбор длительной выдержкой.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-62"]
+  },
+  {
+    "id": "advice-63",
+    "productId": "product-76",
+    "topic": "choose",
+    "summary": "Выбирайте без плесени, трещин и мокрых повреждений. Фуйю и другие невяжущие сорта можно есть плотными; вяжущие сорта требуют размягчения.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-63"]
+  },
+  {
+    "id": "advice-64",
+    "productId": "product-76",
+    "topic": "ripen",
+    "summary": "Хурма способна размягчаться после сбора. Терпкость зависит от сорта и обработки, поэтому одна только мягкость или надпись «королёк» не определяет качество.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-64"]
+  },
+  {
+    "id": "advice-65",
+    "productId": "product-78",
+    "topic": "choose",
+    "summary": "Кожура без гнили и глубоких повреждений. Цвет зависит от сорта и не гарантирует сладость; кисло-сладкий вкус определяется соотношением сахаров и кислот.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-65"]
+  },
+  {
+    "id": "advice-66",
+    "productId": "product-78",
+    "topic": "ripen",
+    "summary": "После сбора гранат не дозревает. Выдержка дома не исправит слишком раннюю уборку.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-66"]
+  },
+  {
+    "id": "advice-67",
+    "productId": "product-79",
+    "topic": "choose",
+    "summary": "Внешняя зелёная окраска мало помогает. На разрезе съедобная зрелость связана с желеобразной полупрозрачной серединой; потемнение мякоти — дефект.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-67"]
+  },
+  {
+    "id": "advice-68",
+    "productId": "product-79",
+    "topic": "ripen",
+    "summary": "Плод может размягчиться, но это не гарантирует улучшения вкуса слишком рано снятого фейхоа. Спелые плоды не рассчитаны на долгое домашнее хранение.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-68"]
+  },
+  {
+    "id": "advice-69",
+    "productId": "product-102",
+    "topic": "choose",
+    "summary": "Спелый плод слегка поддаётся мягкому нажатию и имеет характерный аромат. Красный румянец сам по себе не доказывает спелость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-69"]
+  },
+  {
+    "id": "advice-70",
+    "productId": "product-102",
+    "topic": "ripen",
+    "summary": "Манго может дозревать после сбора. Слишком рано снятый плод может размягчиться, но остаться невкусным.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-70"]
+  },
+  {
+    "id": "advice-71",
+    "productId": "product-109",
+    "topic": "choose",
+    "summary": "Плод без мокрых мягких участков, плесени и запаха брожения. Название «медовый» не гарантирует сладость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-71"]
+  },
+  {
+    "id": "advice-72",
+    "productId": "product-109",
+    "topic": "ripen",
+    "summary": "После сбора ананас заметно слаще не становится. Пожелтение дома — не доказательство улучшения вкуса.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-72"]
+  },
+  {
+    "id": "advice-73",
+    "productId": "product-114",
+    "topic": "choose",
+    "summary": "Для еды сейчас выбирайте слегка податливый плод без провалов и гнили. Окраска зависит от сорта: зелёная кожица не всегда означает незрелость.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-73"]
+  },
+  {
+    "id": "advice-74",
+    "productId": "product-114",
+    "topic": "ripen",
+    "summary": "Авокадо дозревает после сбора. Твёрдый зрелый плод можно оставить дозреть при комнатной температуре; готовый — убрать в холодильник.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-74"]
+  },
+  {
+    "id": "advice-75",
+    "productId": "product-122",
+    "topic": "choose",
+    "summary": "Для десерта выбирайте плод с желтеющей кожицей и слегка податливой мякотью, без мокрых провалов. Зелёная салатная папайя — другой продукт.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-75"]
+  },
+  {
+    "id": "advice-76",
+    "productId": "product-122",
+    "topic": "ripen",
+    "summary": "После сбора папайя желтеет и размягчается, но существенно слаще не становится. Ранний сбор ограничивает вкус.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-76"]
+  },
+  {
+    "id": "advice-77",
+    "productId": "product-170",
+    "topic": "choose",
+    "summary": "Для еды сейчас подходит слегка податливый плод без мокрых пятен и повреждений. Каменно-твёрдый обычно требует дозаривания.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-77"]
+  },
+  {
+    "id": "advice-78",
+    "productId": "product-170",
+    "topic": "ripen",
+    "summary": "Киви может дозревать после уборки. Холодное хранение задерживает размягчение; при комнатной температуре оно ускоряется.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-78"]
+  },
+  {
+    "id": "advice-79",
+    "productId": "product-201",
+    "topic": "choose",
+    "summary": "Целые плотные корни без глубоких порезов и мягкой гнили. Спросите, прошёл ли свежий урожай послеуборочную выдержку.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-79"]
+  },
+  {
+    "id": "advice-80",
+    "productId": "product-201",
+    "topic": "ripen",
+    "summary": "Послеуборочная выдержка залечивает кожицу и влияет на качество. Батат чувствителен к слишком низкой температуре: режим обычных зимних корнеплодов ему не подходит.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-80"]
+  },
+  {
+    "id": "advice-81",
+    "productId": "product-204",
+    "topic": "choose",
+    "summary": "Кочан без слизистых участков, повреждённых внутренних листьев и подмораживания. Наружные листья могут быть удалены при подготовке: смотрите и на срез.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-81"]
+  },
+  {
+    "id": "advice-82",
+    "productId": "product-204",
+    "topic": "ripen",
+    "summary": "Не дозревает как фрукт. Послеуборочное хранение сохраняет уже сформированное качество, но не превращает старый кочан в свежий урожай.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-82"]
+  },
+  {
+    "id": "advice-83",
+    "productId": "product-206",
+    "topic": "choose",
+    "summary": "Плотный закрытый бутон, тяжёлый для своего размера. Раскрытые, жёсткие, буреющие прицветники — признак перерастания.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-83"]
+  },
+  {
+    "id": "advice-84",
+    "productId": "product-206",
+    "topic": "ripen",
+    "summary": "Едят нераскрывшийся бутон. Ожидание цветения ухудшает кулинарное качество; после покупки держите охлаждённым.",
+    "steps": [],
+    "appliesTo": {
+      "kind": "general"
+    },
+    "editorialStatus": "published",
+    "reviewedAt": null,
+    "evidenceIds": ["evidence-advice-84"]
+  }
+]

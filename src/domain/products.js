@@ -9,7 +9,7 @@ export function productSearchText(product) {
   return normalizeSearch(
     [
       product.name,
-      product.cardName || '',
+      product.productName || '',
       product.origin,
       product.variety || '',
       ...(product.aliases || []),
@@ -27,8 +27,13 @@ export function filterProducts(products, filters, favoriteIds = new Set()) {
   return products.filter((product) => {
     const status = product.months[filters.month];
     if (query && !productSearchText(product).includes(query)) return false;
-    if (!matchesOrigin(product.origin, filters.origin || '')) return false;
-    if (filters.category && product.category !== filters.category) return false;
+    if (!matchesOrigin(product, filters.origin || '')) return false;
+    if (
+      filters.category &&
+      product.categoryId !== filters.category &&
+      product.category !== filters.category
+    )
+      return false;
     if (filters.status && status !== filters.status) return false;
     if (filters.favoritesOnly && !favoriteIds.has(product.id)) return false;
     if (filters.knownOnly && status === 'u') return false;
@@ -55,7 +60,8 @@ export function sortProducts(products, month, order = 'name') {
     (left, right) =>
       rank(left) - rank(right) ||
       left.name.localeCompare(right.name, 'ru') ||
-      left.origin.localeCompare(right.origin, 'ru'),
+      left.origin.localeCompare(right.origin, 'ru') ||
+      left.id.localeCompare(right.id, 'en', { numeric: true }),
   );
 }
 

@@ -1,15 +1,7 @@
-import { REGION_COUNTRIES } from '../config/geography.js';
-
-export function regionOf(origin) {
-  if (origin === 'Россия' || origin.startsWith('Россия ·')) return 'Россия';
-  for (const [region, countries] of Object.entries(REGION_COUNTRIES)) {
-    if (countries.includes(origin)) return region;
-  }
-  throw new Error(`Unknown origin: ${origin}`);
-}
-
-export function matchesOrigin(origin, selected) {
+/** Match stable origin IDs; country: labels remain accepted for old integrations. */
+export function matchesOrigin(product, selected) {
   if (!selected) return true;
-  if (selected.startsWith('region:')) return regionOf(origin) === selected.slice(7);
-  return selected.startsWith('country:') && origin === selected.slice(8);
+  if (selected.startsWith('region:')) return product.navigationGroup === selected.slice(7);
+  if (selected.startsWith('origin:')) return product.originId === selected.slice(7);
+  return selected.startsWith('country:') && product.origin === selected.slice(8);
 }

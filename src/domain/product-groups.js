@@ -1,39 +1,39 @@
 import { filterProducts, sortProducts } from './products.js';
 
-export function productName(product) {
-  return product.cardName || product.name;
+export function selectRepresentative(variants, month, preferredVariantId) {
+  const preferred = variants.find((variant) => variant.id === preferredVariantId);
+  if (preferred) return { variant: preferred, reason: 'preferred' };
+  const variant = sortProducts(variants, month, 'season')[0];
+  return {
+    variant,
+    reason: variant ? (preferredVariantId ? 'preferred-filtered-out' : 'season') : 'no-match',
+  };
 }
 
-export function productVariants(product, products) {
-  return products.filter((row) => productName(row) === productName(product));
-}
-
-export function canonicalId(product, products) {
-  return productVariants(product, products)
-    .map((row) => row.id)
-    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))[0];
-}
-
-/** Filter variants first: a country or variety search must keep its own calendar. */
-export function groupedProducts(products, filters, favorites = new Set()) {
-  const favoriteNames = new Set(products.filter((row) => favorites.has(row.id)).map(productName));
+/** One actual variant per permanent product ID, never a synthetic monthly calendar. */
+export function groupedProducts(catalog, filters, favorites = new Set(), preferredVariants = {}) {
   const expandedFavorites = new Set(
-    products.filter((row) => favoriteNames.has(productName(row))).map((row) => row.id),
+    catalog.variants.filter((row) => favorites.has(row.productId)).map((row) => row.id),
   );
-  const matches = filterProducts(products, filters, expandedFavorites);
   const groups = new Map();
-  for (const row of sortProducts(matches, filters.month, 'season')) {
-    const name = productName(row);
-    if (!groups.has(name)) {
-      groups.set(name, {
-        ...row,
-        id: canonicalId(row, products),
-        variantId: row.id,
-        name,
-        variantName: row.name,
-        variantCount: productVariants(row, products).length,
-      });
-    }
+  for (const row of filterProducts(catalog.variants, filters, expandedFavorites)) {
+    if (!groups.has(row.productId)) groups.set(row.productId, []);
+    groups.get(row.productId).push(row);
   }
-  return [...groups.values()];
+  return [...groups].map(([productId, variants]) => {
+    const { variant, reason } = selectRepresentative(
+      variants,
+      filters.month,
+      preferredVariants[productId],
+    );
+    return {
+      ...variant,
+      id: productId,
+      variantId: variant.id,
+      name: catalog.product(productId).name,
+      variantName: variant.name,
+      variantCount: catalog.variantsFor(productId).length,
+      selectionReason: reason,
+    };
+  });
 }

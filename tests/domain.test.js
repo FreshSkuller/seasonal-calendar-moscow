@@ -7,25 +7,23 @@ import {
   visibleMonths,
   productSearchText,
 } from '../src/domain/products.js';
-import { regionOf, matchesOrigin } from '../src/domain/geography.js';
+import { matchesOrigin } from '../src/domain/geography.js';
 import { Preferences } from '../src/services/preferences.js';
 import { moscowDate } from '../src/services/clock.js';
-import { qualityDetails } from '../src/components/product-details.js';
+import { adviceSection } from '../src/components/advice-section.js';
+import { createCatalog } from '../src/domain/catalog.js';
 import { productCard } from '../src/components/product-card.js';
 const require = createRequire(import.meta.url);
 const { loadDatabase } = require('../scripts/lib/load-data.cjs');
-const database = loadDatabase();
+const database = createCatalog(loadDatabase());
 
 test('Каждое происхождение относится к группе, Россия — общий фильтр', () => {
-  for (const product of database.rows) {
-    assert.ok(regionOf(product.origin));
-    assert.ok(matchesOrigin(product.origin, `country:${product.origin}`));
-    assert.equal(
-      matchesOrigin(product.origin, 'region:Россия'),
-      product.origin.startsWith('Россия'),
-    );
+  for (const product of database.variants) {
+    assert.ok(product.navigationGroup);
+    assert.ok(matchesOrigin(product, `country:${product.origin}`));
+    assert.equal(matchesOrigin(product, 'region:Россия'), product.origin.startsWith('Россия'));
   }
-  assert.throws(() => regionOf('Unknown country'), /Unknown origin/);
+  assert.equal(matchesOrigin({ origin: 'Unknown' }, 'region:Россия'), false);
 });
 
 test('Поиск учитывает регистр, ё, привычные названия и сортовые обозначения', () => {
@@ -43,13 +41,13 @@ test('Поиск учитывает регистр, ё, привычные на�
     assert.equal(filterProducts(products, { month: 0, query }).length, 1);
   assert.equal(filterProducts(products, { month: 0, query: 'яблоко' }).length, 0);
   assert.ok(
-    productSearchText(database.rows.find((row) => row.name.includes('Ананас'))).includes('md2'),
+    productSearchText(database.variants.find((row) => row.name.includes('Ананас'))).includes('md2'),
   );
 });
 
 test('Сезонные фильтры не превращают неизвестные месяцы и хранение в сезон', () => {
   for (let month = 0; month < 12; month++) {
-    const good = filterProducts(database.rows, { month, mode: 'good' });
+    const good = filterProducts(database.variants, { month, mode: 'good' });
     assert.ok(
       good.every(
         (product) =>
@@ -57,13 +55,13 @@ test('Сезонные фильтры не превращают неизвест
           product.months.every((status) => status === 't'),
       ),
     );
-    const off = filterProducts(database.rows, { month, mode: 'off' });
+    const off = filterProducts(database.variants, { month, mode: 'off' });
     assert.deepEqual(
       off.map((row) => row.id),
-      database.rows.filter((row) => row.months[month] === 'n').map((row) => row.id),
+      database.variants.filter((row) => row.months[month] === 'n').map((row) => row.id),
     );
     assert.ok(
-      filterProducts(database.rows, { month, knownOnly: true }).every(
+      filterProducts(database.variants, { month, knownOnly: true }).every(
         (row) => row.months[month] !== 'u',
       ),
     );
@@ -71,11 +69,11 @@ test('Сезонные фильтры не превращают неизвест
 });
 
 test('Избранное, категория, страна и статус работают вместе; сортировка не меняет базу', () => {
-  const product = database.rows[0];
+  const product = database.variants[0];
   const favorites = new Set([product.id]);
   assert.deepEqual(
     filterProducts(
-      database.rows,
+      database.variants,
       {
         month: 0,
         favoritesOnly: true,
@@ -87,10 +85,10 @@ test('Избранное, категория, страна и статус ра�
     ).map((row) => row.id),
     [product.id],
   );
-  const ids = database.rows.map((row) => row.id);
-  sortProducts(database.rows, 0, 'season');
+  const ids = database.variants.map((row) => row.id);
+  sortProducts(database.variants, 0, 'season');
   assert.deepEqual(
-    database.rows.map((row) => row.id),
+    database.variants.map((row) => row.id),
     ids,
   );
   assert.deepEqual(visibleMonths(0, false), [11, 0, 1]);
@@ -125,6 +123,7 @@ test('Старые ключи избранного и темы сохраняю�
   assert.ok(new Preferences(storage).hasFavorite('r2'));
   preferences.favorites.clear();
   assert.ok(preferences.hasFavorite('r2'));
+  data.delete('moscow-season-preferences-v3');
   data.set('moscow-season-favorites-v2', '{}');
   assert.equal(new Preferences(storage).favorites.size, 0);
   const denied = new Preferences({
@@ -141,13 +140,16 @@ test('Старые ключи избранного и темы сохраняю�
 
 test('Карточки и советы экранируют данные, не исполняя HTML из названий', () => {
   const product = {
-    ...database.rows[0],
+    ...database.variants[0],
     name: '<img src=x onerror=alert(1)>',
     variety: '<script>',
     selection: '<img>',
     ripening: 'a&b',
   };
-  const quality = qualityDetails(product, database.sources);
+  const quality = adviceSection(
+    [{ id: 'test', topic: 'choose', summary: '<img> a&b', steps: ['<script>'], sourceIds: [] }],
+    database.sources,
+  );
   const card = productCard(product, 0, database.statuses, false);
   assert.ok(!quality.includes('<script>') && !quality.includes('<img>'));
   assert.ok(quality.includes('a&amp;b'));

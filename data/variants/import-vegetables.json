@@ -1,0 +1,348 @@
+[
+  {
+    "id": "r179",
+    "name": "Томаты тепличные",
+    "aliases": ["Томаты"],
+    "productId": "product-12",
+    "originId": "id-41",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r179",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r180",
+    "name": "Томаты",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-12",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r180",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r181",
+    "name": "Томаты тепличные",
+    "aliases": ["Томаты"],
+    "productId": "product-12",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r181",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r182",
+    "name": "Томаты",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-12",
+    "originId": "id-23",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r182",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r183",
+    "name": "Огурцы тепличные",
+    "productId": "product-11",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r183",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r184",
+    "name": "Огурцы тепличные",
+    "productId": "product-11",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r184",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r185",
+    "name": "Перец болгарский тепличный",
+    "aliases": ["Перец болгарский"],
+    "productId": "product-15",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r185",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r186",
+    "name": "Перец болгарский",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-15",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r186",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r187",
+    "name": "Баклажаны",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-14",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r187",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r188",
+    "name": "Баклажаны",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-14",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r188",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r189",
+    "name": "Баклажаны тепличные",
+    "variety": "Подтверждённый пример — Моюй, Синьцзян",
+    "aliases": ["Баклажаны"],
+    "productId": "product-14",
+    "originId": "id-20",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r189",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r190",
+    "name": "Кабачки / цуккини",
+    "productId": "product-13",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r190",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r191",
+    "name": "Кабачки / цуккини",
+    "productId": "product-13",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r191",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r192",
+    "name": "Брокколи",
+    "productId": "product-20",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r192",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r193",
+    "name": "Цветная капуста",
+    "productId": "product-21",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r193",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r194",
+    "name": "Сельдерей черешковый",
+    "productId": "product-34",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r194",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r195",
+    "name": "Салат айсберг / романо",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-195",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r195",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r196",
+    "name": "Салат айсберг / романо",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-195",
+    "originId": "id-23",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r196",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r197",
+    "name": "Спаржа",
+    "shortInfo": "Свежий урожай доступен круглый год. Выбирайте по спелости и состоянию.",
+    "productId": "product-30",
+    "originId": "id-29",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r197",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r198",
+    "name": "Имбирь",
+    "productId": "product-198",
+    "originId": "id-20",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r198",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r199",
+    "name": "Имбирь",
+    "productId": "product-198",
+    "originId": "id-30",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r199",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r200",
+    "name": "Имбирь",
+    "productId": "product-198",
+    "originId": "id-26",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r200",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r201",
+    "name": "Батат",
+    "variety": "Ориентир для батата из Ляонина; для южного происхождения сроки уточняются",
+    "productId": "product-201",
+    "originId": "id-20",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r201",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r202",
+    "name": "Батат",
+    "productId": "product-201",
+    "originId": "id-39",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r202",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r203",
+    "name": "Батат",
+    "productId": "product-201",
+    "originId": "id-23",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r203",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r204",
+    "name": "Пекинская капуста",
+    "variety": "Северный Китай, осенний урожай и зимний склад",
+    "productId": "product-204",
+    "originId": "id-20",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r204",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r205",
+    "name": "Пекинская капуста",
+    "productId": "product-204",
+    "originId": "id-42",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r205",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r206",
+    "name": "Артишоки",
+    "variety": "Imperial Star / Emerald, осенняя посадка в Гарб",
+    "productId": "product-206",
+    "originId": "id-22",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r206",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r207",
+    "name": "Артишоки",
+    "productId": "product-206",
+    "originId": "id-21",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r207",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r208",
+    "name": "Кукуруза",
+    "productId": "product-17",
+    "originId": "id-23",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r208",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r209",
+    "name": "Кукуруза",
+    "productId": "product-17",
+    "originId": "id-18",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r209",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r210",
+    "name": "Чеснок",
+    "productId": "product-10",
+    "originId": "id-20",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r210",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r211",
+    "name": "Чеснок",
+    "productId": "product-10",
+    "originId": "id-39",
+    "categoryId": "id-5",
+    "seasonProfileId": "season-r211",
+    "adviceIds": [],
+    "adviceOverrides": []
+  }
+]

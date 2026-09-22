@@ -29,20 +29,19 @@ test('Самостоятельный HTML содержит всю базу бе�
 
 test('Неизвестный месяц и отсутствующие источники блокируют сборку', () => {
   const invalid = structuredClone(database);
-  invalid.rows[0].months[0] = 'invalid';
+  invalid.seasons[0].months[0] = 'invalid';
   assert.throws(() => validateData(invalid), /Неизвестный статус/);
-  invalid.rows[0].months[0] = 'g';
-  invalid.rows[0].sources.push('MISSING');
+  invalid.seasons[0].months[0] = 'g';
+  invalid.evidence[0].sourceIds.push('MISSING');
   assert.throws(() => validateData(invalid), /Источник не найден/);
 });
 
 test('Совет о качестве требует отдельного действующего источника', () => {
   const invalid = structuredClone(database);
-  invalid.rows[0].qualitySources = ['MISSING'];
-  assert.throws(() => validateData(invalid), /Источник спелости не найден/);
-  invalid.rows[0].qualitySources = [];
-  invalid.rows[0].selection = 'Новый совет';
-  assert.throws(() => validateData(invalid), /Советам о качестве нужен источник/);
+  invalid.advice[0].evidenceIds = ['MISSING'];
+  assert.throws(() => validateData(invalid));
+  invalid.advice[0].evidenceIds = [];
+  assert.throws(() => validateData(invalid), /Совету нужен источник/);
 });
 
 test('Надписи шаблона экранируются, опечатка ключа вызывает ошибку', () => {

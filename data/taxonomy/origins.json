@@ -1,0 +1,217 @@
+[
+  {
+    "id": "id-1",
+    "label": "Россия · Астраханская область",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-2",
+    "label": "Россия · Подмосковье / средняя полоса",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-3",
+    "label": "Россия · европейская часть (включая юг)",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-4",
+    "label": "Россия · Татарстан",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-5",
+    "label": "Россия · Подмосковье",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-6",
+    "label": "Россия · Чечня",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-7",
+    "label": "Россия · Краснодарский край",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-8",
+    "label": "Россия · Московская область",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-9",
+    "label": "Россия · Тульская область / Подмосковье",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-10",
+    "label": "Россия · Ростовская область / юг",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-11",
+    "label": "Россия · Карелия",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-12",
+    "label": "Россия · Астраханская / Ростовская области",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-13",
+    "label": "Россия · южные регионы",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-14",
+    "label": "Россия · Сочи",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-15",
+    "label": "Абхазия",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-16",
+    "label": "Россия · Дагестан",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-17",
+    "label": "Россия",
+    "navigationGroup": "Россия"
+  },
+  {
+    "id": "id-18",
+    "label": "Турция",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-19",
+    "label": "ЮАР",
+    "navigationGroup": "Африка"
+  },
+  {
+    "id": "id-20",
+    "label": "Китай",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-21",
+    "label": "Египет",
+    "navigationGroup": "Африка"
+  },
+  {
+    "id": "id-22",
+    "label": "Марокко",
+    "navigationGroup": "Африка"
+  },
+  {
+    "id": "id-23",
+    "label": "Израиль",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-24",
+    "label": "Аргентина",
+    "navigationGroup": "Южная Америка"
+  },
+  {
+    "id": "id-25",
+    "label": "Таиланд",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-26",
+    "label": "Вьетнам",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-27",
+    "label": "Мексика",
+    "navigationGroup": "Северная Америка"
+  },
+  {
+    "id": "id-28",
+    "label": "Бразилия",
+    "navigationGroup": "Южная Америка"
+  },
+  {
+    "id": "id-29",
+    "label": "Перу",
+    "navigationGroup": "Южная Америка"
+  },
+  {
+    "id": "id-30",
+    "label": "Индия",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-31",
+    "label": "Коста-Рика",
+    "navigationGroup": "Северная Америка"
+  },
+  {
+    "id": "id-32",
+    "label": "Эквадор",
+    "navigationGroup": "Южная Америка"
+  },
+  {
+    "id": "id-33",
+    "label": "Гана",
+    "navigationGroup": "Африка"
+  },
+  {
+    "id": "id-34",
+    "label": "Мадагаскар",
+    "navigationGroup": "Африка"
+  },
+  {
+    "id": "id-35",
+    "label": "Колумбия",
+    "navigationGroup": "Южная Америка"
+  },
+  {
+    "id": "id-36",
+    "label": "Индонезия",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-37",
+    "label": "Шри-Ланка",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-38",
+    "label": "Сербия",
+    "navigationGroup": "Европа"
+  },
+  {
+    "id": "id-39",
+    "label": "Узбекистан",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-40",
+    "label": "Армения",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-41",
+    "label": "Азербайджан",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-42",
+    "label": "Иран",
+    "navigationGroup": "Азия"
+  },
+  {
+    "id": "id-43",
+    "label": "Чили",
+    "navigationGroup": "Южная Америка"
+  }
+]

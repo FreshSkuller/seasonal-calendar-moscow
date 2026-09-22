@@ -1,0 +1,457 @@
+[
+  {
+    "id": "product-1",
+    "name": "Картофель",
+    "adviceIds": []
+  },
+  {
+    "id": "product-3",
+    "name": "Морковь основного урожая",
+    "adviceIds": ["advice-1", "advice-2"]
+  },
+  {
+    "id": "product-4",
+    "name": "Свёкла основного урожая",
+    "adviceIds": []
+  },
+  {
+    "id": "product-5",
+    "name": "Капуста белокочанная",
+    "adviceIds": ["advice-3", "advice-4"]
+  },
+  {
+    "id": "product-7",
+    "name": "Кольраби",
+    "adviceIds": []
+  },
+  {
+    "id": "product-8",
+    "name": "Лук репчатый",
+    "adviceIds": ["advice-5", "advice-6"]
+  },
+  {
+    "id": "product-9",
+    "name": "Лук зелёный / перо, открытый грунт",
+    "adviceIds": ["advice-7", "advice-8"]
+  },
+  {
+    "id": "product-10",
+    "name": "Чеснок",
+    "adviceIds": ["advice-9", "advice-10"]
+  },
+  {
+    "id": "product-11",
+    "name": "Огурцы",
+    "adviceIds": ["advice-11", "advice-12"]
+  },
+  {
+    "id": "product-12",
+    "name": "Томаты",
+    "adviceIds": ["advice-13", "advice-14"]
+  },
+  {
+    "id": "product-13",
+    "name": "Кабачки / цуккини",
+    "adviceIds": ["advice-15", "advice-16"]
+  },
+  {
+    "id": "product-14",
+    "name": "Баклажаны",
+    "adviceIds": ["advice-17", "advice-18"]
+  },
+  {
+    "id": "product-15",
+    "name": "Перец болгарский",
+    "adviceIds": ["advice-19", "advice-20"]
+  },
+  {
+    "id": "product-16",
+    "name": "Тыква зрелая, целая",
+    "adviceIds": ["advice-21", "advice-22"]
+  },
+  {
+    "id": "product-17",
+    "name": "Кукуруза",
+    "adviceIds": ["advice-23", "advice-24"]
+  },
+  {
+    "id": "product-18",
+    "name": "Горошек зелёный, свежий",
+    "adviceIds": []
+  },
+  {
+    "id": "product-19",
+    "name": "Фасоль стручковая",
+    "adviceIds": ["advice-25", "advice-26"]
+  },
+  {
+    "id": "product-20",
+    "name": "Брокколи",
+    "adviceIds": ["advice-27", "advice-28"]
+  },
+  {
+    "id": "product-21",
+    "name": "Цветная капуста",
+    "adviceIds": ["advice-29", "advice-30"]
+  },
+  {
+    "id": "product-22",
+    "name": "Брюссельская капуста",
+    "adviceIds": []
+  },
+  {
+    "id": "product-23",
+    "name": "Редис",
+    "adviceIds": ["advice-31", "advice-32"]
+  },
+  {
+    "id": "product-25",
+    "name": "Редька",
+    "adviceIds": ["advice-33", "advice-34"]
+  },
+  {
+    "id": "product-26",
+    "name": "Репа",
+    "adviceIds": []
+  },
+  {
+    "id": "product-27",
+    "name": "Брюква",
+    "adviceIds": []
+  },
+  {
+    "id": "product-28",
+    "name": "Щавель",
+    "adviceIds": []
+  },
+  {
+    "id": "product-29",
+    "name": "Шпинат / руккола, открытый грунт",
+    "adviceIds": []
+  },
+  {
+    "id": "product-30",
+    "name": "Спаржа",
+    "adviceIds": ["advice-35", "advice-36"]
+  },
+  {
+    "id": "product-31",
+    "name": "Черемша свежая",
+    "adviceIds": []
+  },
+  {
+    "id": "product-32",
+    "name": "Укроп / петрушка / зелень, открытый грунт",
+    "adviceIds": ["advice-37", "advice-38"]
+  },
+  {
+    "id": "product-33",
+    "name": "Сельдерей корневой",
+    "adviceIds": []
+  },
+  {
+    "id": "product-34",
+    "name": "Сельдерей черешковый",
+    "adviceIds": ["advice-39", "advice-40"]
+  },
+  {
+    "id": "product-35",
+    "name": "Хрен, свежий корень",
+    "adviceIds": []
+  },
+  {
+    "id": "product-36",
+    "name": "Ревень",
+    "adviceIds": []
+  },
+  {
+    "id": "product-37",
+    "name": "Клубника",
+    "adviceIds": ["advice-41", "advice-42"]
+  },
+  {
+    "id": "product-40",
+    "name": "Земляника лесная",
+    "adviceIds": []
+  },
+  {
+    "id": "product-41",
+    "name": "Жимолость",
+    "adviceIds": []
+  },
+  {
+    "id": "product-42",
+    "name": "Черешня",
+    "adviceIds": []
+  },
+  {
+    "id": "product-43",
+    "name": "Вишня",
+    "adviceIds": []
+  },
+  {
+    "id": "product-44",
+    "name": "Малина",
+    "adviceIds": ["advice-43", "advice-44"]
+  },
+  {
+    "id": "product-46",
+    "name": "Чёрная смородина",
+    "adviceIds": []
+  },
+  {
+    "id": "product-47",
+    "name": "Красная смородина",
+    "adviceIds": []
+  },
+  {
+    "id": "product-48",
+    "name": "Крыжовник",
+    "adviceIds": []
+  },
+  {
+    "id": "product-49",
+    "name": "Черника лесная",
+    "adviceIds": []
+  },
+  {
+    "id": "product-50",
+    "name": "Голубика",
+    "adviceIds": ["advice-45", "advice-46"]
+  },
+  {
+    "id": "product-52",
+    "name": "Ежевика",
+    "adviceIds": ["advice-47", "advice-48"]
+  },
+  {
+    "id": "product-53",
+    "name": "Облепиха",
+    "adviceIds": []
+  },
+  {
+    "id": "product-54",
+    "name": "Калина",
+    "adviceIds": []
+  },
+  {
+    "id": "product-55",
+    "name": "Рябина красная",
+    "adviceIds": []
+  },
+  {
+    "id": "product-56",
+    "name": "Шиповник",
+    "adviceIds": []
+  },
+  {
+    "id": "product-57",
+    "name": "Ирга",
+    "adviceIds": []
+  },
+  {
+    "id": "product-58",
+    "name": "Черёмуха обыкновенная, свежая",
+    "adviceIds": []
+  },
+  {
+    "id": "product-59",
+    "name": "Брусника, свежий сбор",
+    "adviceIds": []
+  },
+  {
+    "id": "product-60",
+    "name": "Клюква, свежий сбор",
+    "adviceIds": ["advice-49", "advice-50"]
+  },
+  {
+    "id": "product-61",
+    "name": "Абрикосы",
+    "adviceIds": ["advice-51", "advice-52"]
+  },
+  {
+    "id": "product-62",
+    "name": "Персики и нектарины",
+    "adviceIds": ["advice-53", "advice-54"]
+  },
+  {
+    "id": "product-64",
+    "name": "Сливы",
+    "adviceIds": ["advice-55", "advice-56"]
+  },
+  {
+    "id": "product-65",
+    "name": "Алыча",
+    "adviceIds": ["advice-57", "advice-58"]
+  },
+  {
+    "id": "product-66",
+    "name": "Яблоки",
+    "adviceIds": []
+  },
+  {
+    "id": "product-69",
+    "name": "Груши",
+    "adviceIds": []
+  },
+  {
+    "id": "product-71",
+    "name": "Арбуз грунтовой",
+    "adviceIds": []
+  },
+  {
+    "id": "product-72",
+    "name": "Дыня",
+    "adviceIds": []
+  },
+  {
+    "id": "product-73",
+    "name": "Виноград",
+    "adviceIds": ["advice-59", "advice-60"]
+  },
+  {
+    "id": "product-74",
+    "name": "Инжир",
+    "adviceIds": ["advice-61", "advice-62"]
+  },
+  {
+    "id": "product-75",
+    "name": "Айва",
+    "adviceIds": []
+  },
+  {
+    "id": "product-76",
+    "name": "Хурма",
+    "adviceIds": ["advice-63", "advice-64"]
+  },
+  {
+    "id": "product-78",
+    "name": "Гранат",
+    "adviceIds": ["advice-65", "advice-66"]
+  },
+  {
+    "id": "product-79",
+    "name": "Фейхоа",
+    "adviceIds": ["advice-67", "advice-68"]
+  },
+  {
+    "id": "product-82",
+    "name": "Молодые салатные культуры, теплица",
+    "adviceIds": []
+  },
+  {
+    "id": "product-83",
+    "name": "Мандарины",
+    "adviceIds": []
+  },
+  {
+    "id": "product-89",
+    "name": "Апельсины",
+    "adviceIds": []
+  },
+  {
+    "id": "product-92",
+    "name": "Грейпфрут",
+    "adviceIds": []
+  },
+  {
+    "id": "product-94",
+    "name": "Лимоны",
+    "adviceIds": []
+  },
+  {
+    "id": "product-96",
+    "name": "Помело",
+    "adviceIds": []
+  },
+  {
+    "id": "product-99",
+    "name": "Лайм",
+    "adviceIds": []
+  },
+  {
+    "id": "product-102",
+    "name": "Манго",
+    "adviceIds": ["advice-69", "advice-70"]
+  },
+  {
+    "id": "product-109",
+    "name": "Ананас",
+    "adviceIds": ["advice-71", "advice-72"]
+  },
+  {
+    "id": "product-112",
+    "name": "Бананы",
+    "adviceIds": []
+  },
+  {
+    "id": "product-114",
+    "name": "Авокадо",
+    "adviceIds": ["advice-73", "advice-74"]
+  },
+  {
+    "id": "product-118",
+    "name": "Личи",
+    "adviceIds": []
+  },
+  {
+    "id": "product-122",
+    "name": "Папайя",
+    "adviceIds": ["advice-75", "advice-76"]
+  },
+  {
+    "id": "product-125",
+    "name": "Питайя (дракон-фрукт)",
+    "adviceIds": []
+  },
+  {
+    "id": "product-128",
+    "name": "Маракуйя",
+    "adviceIds": []
+  },
+  {
+    "id": "product-131",
+    "name": "Кокос",
+    "adviceIds": []
+  },
+  {
+    "id": "product-134",
+    "name": "Физалис",
+    "adviceIds": []
+  },
+  {
+    "id": "product-170",
+    "name": "Киви",
+    "adviceIds": ["advice-77", "advice-78"]
+  },
+  {
+    "id": "product-195",
+    "name": "Салат айсберг / романо",
+    "adviceIds": []
+  },
+  {
+    "id": "product-198",
+    "name": "Имбирь",
+    "adviceIds": []
+  },
+  {
+    "id": "product-201",
+    "name": "Батат",
+    "adviceIds": ["advice-79", "advice-80"]
+  },
+  {
+    "id": "product-204",
+    "name": "Пекинская капуста",
+    "adviceIds": ["advice-81", "advice-82"]
+  },
+  {
+    "id": "product-206",
+    "name": "Артишоки",
+    "adviceIds": ["advice-83", "advice-84"]
+  },
+  {
+    "id": "product-212",
+    "name": "Лук-порей",
+    "adviceIds": []
+  }
+]

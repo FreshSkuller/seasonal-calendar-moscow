@@ -1,0 +1,404 @@
+[
+  {
+    "id": "r1",
+    "name": "Картофель молодой",
+    "productId": "product-1",
+    "originId": "id-1",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r1",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r2",
+    "name": "Картофель основного урожая",
+    "productId": "product-1",
+    "originId": "id-2",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r2",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r3",
+    "name": "Морковь основного урожая",
+    "productId": "product-3",
+    "originId": "id-2",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r3",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r4",
+    "name": "Свёкла основного урожая",
+    "productId": "product-4",
+    "originId": "id-2",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r4",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r5",
+    "name": "Капуста белокочанная поздняя",
+    "productId": "product-5",
+    "originId": "id-2",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r5",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r6",
+    "name": "Капуста ранняя",
+    "productId": "product-5",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r6",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r7",
+    "name": "Кольраби",
+    "productId": "product-7",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r7",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r8",
+    "name": "Лук репчатый",
+    "productId": "product-8",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r8",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r9",
+    "name": "Лук зелёный / перо, открытый грунт",
+    "productId": "product-9",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r9",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r10",
+    "name": "Чеснок",
+    "productId": "product-10",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r10",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r11",
+    "name": "Огурцы грунтовые",
+    "productId": "product-11",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r11",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r12",
+    "name": "Томаты грунтовые",
+    "productId": "product-12",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r12",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r13",
+    "name": "Кабачки / цуккини, открытый грунт",
+    "productId": "product-13",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r13",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r14",
+    "name": "Баклажаны, открытый грунт",
+    "productId": "product-14",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r14",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r15",
+    "name": "Перец болгарский, открытый грунт",
+    "productId": "product-15",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r15",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r16",
+    "name": "Тыква зрелая, целая",
+    "productId": "product-16",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r16",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r17",
+    "name": "Кукуруза сахарная, свежие початки",
+    "productId": "product-17",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r17",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r18",
+    "name": "Горошек зелёный, свежий",
+    "productId": "product-18",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r18",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r19",
+    "name": "Фасоль стручковая",
+    "productId": "product-19",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r19",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r20",
+    "name": "Брокколи",
+    "productId": "product-20",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r20",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r21",
+    "name": "Цветная капуста",
+    "productId": "product-21",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r21",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r22",
+    "name": "Брюссельская капуста",
+    "productId": "product-22",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r22",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r23",
+    "name": "Редис (весенний)",
+    "productId": "product-23",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r23",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r24",
+    "name": "Редис (осенний)",
+    "productId": "product-23",
+    "originId": "id-4",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r24",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r25",
+    "name": "Редька",
+    "productId": "product-25",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r25",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r26",
+    "name": "Репа",
+    "productId": "product-26",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r26",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r27",
+    "name": "Брюква",
+    "productId": "product-27",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r27",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r28",
+    "name": "Щавель",
+    "productId": "product-28",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r28",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r29",
+    "name": "Шпинат / руккола, открытый грунт",
+    "productId": "product-29",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r29",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r30",
+    "name": "Спаржа свежая, грунтовая",
+    "aliases": ["Спаржа, свежая"],
+    "productId": "product-30",
+    "originId": "id-5",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r30",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r31",
+    "name": "Черемша свежая",
+    "aliases": ["Черемша / дикоросы"],
+    "productId": "product-31",
+    "originId": "id-6",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r31",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r32",
+    "name": "Укроп / петрушка / зелень, открытый грунт",
+    "productId": "product-32",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r32",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r33",
+    "name": "Сельдерей корневой",
+    "productId": "product-33",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r33",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r34",
+    "name": "Сельдерей черешковый",
+    "productId": "product-34",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r34",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r35",
+    "name": "Хрен, свежий корень",
+    "productId": "product-35",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r35",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r36",
+    "name": "Ревень",
+    "productId": "product-36",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r36",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r80",
+    "name": "Огурцы тепличные",
+    "productId": "product-11",
+    "originId": "id-17",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r80",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r81",
+    "name": "Томаты тепличные",
+    "productId": "product-12",
+    "originId": "id-17",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r81",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r82",
+    "name": "Молодые салатные культуры, теплица",
+    "productId": "product-82",
+    "originId": "id-17",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r82",
+    "adviceIds": [],
+    "adviceOverrides": []
+  },
+  {
+    "id": "r212",
+    "name": "Лук-порей",
+    "productId": "product-212",
+    "originId": "id-3",
+    "categoryId": "id-1",
+    "seasonProfileId": "season-r212",
+    "adviceIds": [],
+    "adviceOverrides": []
+  }
+]
