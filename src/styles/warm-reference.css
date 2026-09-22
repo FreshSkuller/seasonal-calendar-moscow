@@ -1,0 +1,338 @@
+/* Product-scoped visual trial. Content and advice behaviour stay shared. */
+dialog[data-detail-design='warm-reference'] {
+  --card: #faf7ef;
+  --ink: #34372b;
+  --muted: #696657;
+  --line: #ded8c8;
+  --accent: #52613e;
+  --soft: #eeeee0;
+  width: min(760px, calc(100% - 24px));
+  padding: 30px;
+  border-color: var(--line);
+  border-radius: 22px;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 24px 90px #302b2338;
+}
+body.dark dialog[data-detail-design='warm-reference'] {
+  --card: #292c24;
+  --ink: #f0ede3;
+  --muted: #c1bcad;
+  --line: #535648;
+  --accent: #b6c89b;
+  --soft: #343b2c;
+}
+[data-detail-design='warm-reference']::backdrop {
+  background: #2e30245e;
+}
+[data-detail-design='warm-reference'] .dialog-head h2 {
+  font:
+    400 42px/1.15 Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+[data-detail-design='warm-reference'] .dialog-head p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--muted);
+}
+[data-detail-design='warm-reference'] .close {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+}
+[data-detail-design='warm-reference'] .purchase-season {
+  margin: 16px 0 24px;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+[data-detail-design='warm-reference'] .purchase-season .pill {
+  white-space: normal;
+  font-size: 12px;
+}
+[data-detail-design='warm-reference'] [data-shop-advice] > h2 {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+[data-detail-design='warm-reference'] .advice-grid {
+  gap: 24px;
+  margin: 0 0 24px;
+}
+[data-detail-design='warm-reference'] .advice-section {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+[data-detail-design='warm-reference'] .advice-section h3 {
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+[data-detail-design='warm-reference'] .advice-section p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+[data-detail-design='warm-reference'] .advice-section p:last-child {
+  margin-bottom: 0;
+}
+[data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='choose'] {
+  grid-column: 1 / -1;
+  padding: 20px 22px;
+  background: var(--soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+}
+[data-detail-design='warm-reference']
+  [data-advice-topic='choose']
+  > [data-advice]:first-of-type
+  p:first-child {
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+[data-detail-design='warm-reference'] [data-advice-topic='choose'] > [data-advice] + [data-advice] {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 14px;
+}
+[data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='ripen'],
+[data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='discard'] {
+  grid-column: auto;
+}
+[data-detail-design='warm-reference'] .home-guide {
+  padding: 0 20px;
+  background: var(--soft);
+  border-color: var(--line);
+  border-radius: 14px;
+  margin-top: 26px;
+}
+[data-detail-design='warm-reference'] .home-guide > summary {
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 18px 0;
+}
+[data-detail-design='warm-reference'] .home-guide > summary span {
+  font-size: 14px;
+  line-height: 1.5;
+}
+[data-detail-design='warm-reference'] .purchase-context {
+  margin: 4px 0 24px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+[data-detail-design='warm-reference'] .purchase-context h3 {
+  font-size: 17px;
+  margin: 0 0 16px;
+}
+[data-detail-design='warm-reference'] .purchase-context legend {
+  font-size: 15px;
+  font-weight: 600;
+}
+[data-detail-design='warm-reference'] .purchase-option {
+  font-size: 14px;
+  min-height: 48px;
+  padding: 10px;
+  border-color: var(--muted);
+  gap: 8px;
+}
+[data-detail-design='warm-reference'] .purchase-option:has(:checked) {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+[data-detail-design='warm-reference'] input[type='radio'] {
+  accent-color: var(--accent);
+}
+[data-detail-design='warm-reference'] .fine,
+[data-detail-design='warm-reference'] .storage-basis {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+[data-detail-design='warm-reference'] .storage-guide dt {
+  font-size: 15px;
+  line-height: 1.4;
+}
+[data-detail-design='warm-reference'] .storage-guide dd {
+  font-size: 16px;
+  line-height: 1.6;
+}
+[data-detail-design='warm-reference'] .storage-guide dl {
+  gap: 20px;
+}
+[data-detail-design='warm-reference'] [data-home-advice] .advice-section + .advice-section {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+[data-detail-design='warm-reference'] .season-reference,
+[data-detail-design='warm-reference'] .product-sources {
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0;
+  margin-top: 18px;
+}
+[data-detail-design='warm-reference'] .season-reference > summary {
+  font-size: 15px;
+}
+[data-detail-design='warm-reference'] .product-sources > summary {
+  font-size: 13px;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  dialog[data-detail-design='warm-reference'] {
+    padding: 22px 20px;
+    max-height: 94dvh;
+  }
+  [data-detail-design='warm-reference'] .dialog-head h2 {
+    font-size: 36px;
+  }
+  [data-detail-design='warm-reference'] .advice-grid {
+    gap: 20px;
+  }
+  [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='choose'] {
+    padding: 16px;
+  }
+  [data-detail-design='warm-reference']
+    [data-advice-topic='choose']
+    > [data-advice]:first-of-type
+    p:first-child {
+    font-size: 18px;
+  }
+  [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='ripen'] {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  [data-detail-design='warm-reference'] .home-guide {
+    padding: 0 14px;
+  }
+  [data-detail-design='warm-reference'] .purchase-option {
+    font-size: 13px;
+    padding: 8px;
+  }
+  [data-detail-design='warm-reference'] [data-readiness] .purchase-options {
+    grid-template-columns: 1fr;
+  }
+  [data-detail-design='warm-reference'] [data-readiness] .purchase-option {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* Short, scannable advice and compact native controls for the avocado trial. */
+[data-detail-design='warm-reference']
+  [data-advice-topic='choose']
+  > [data-advice]:first-of-type
+  p:first-child {
+  font-size: 18px;
+  line-height: 1.45;
+}
+[data-detail-design='warm-reference'] .advice-section ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+[data-detail-design='warm-reference'] .advice-section li {
+  padding-left: 2px;
+  line-height: 1.5;
+}
+[data-detail-design='warm-reference'] .advice-section li::marker {
+  color: var(--accent);
+}
+[data-detail-design='warm-reference'] .purchase-context-compact h3,
+[data-detail-design='warm-reference'] .purchase-context-compact [data-purchase-status] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact > p:empty {
+  display: none;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact {
+  margin: 0 0 20px;
+  padding: 4px 0 0;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact fieldset {
+  margin: 12px 0;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact legend {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact .purchase-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 340px;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact [data-readiness] .purchase-options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+[data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px;
+  gap: 5px;
+  font-size: 13px;
+  border-color: var(--line);
+}
+[data-detail-design='warm-reference'] .purchase-context-compact input {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+[data-detail-design='warm-reference'] .purchase-context-compact .purchase-option:has(:checked) {
+  border-color: var(--accent);
+}
+[data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+[data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main > div {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+[data-detail-design='warm-reference'] .storage-guide-compact dt {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+[data-detail-design='warm-reference'] .storage-guide-compact dd {
+  font-size: 15px;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  [data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+    font-size: 12px;
+  }
+}
+@media (max-width: 360px) {
+  [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+    flex-direction: column;
+    gap: 3px;
+  }
+}

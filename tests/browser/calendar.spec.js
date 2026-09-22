@@ -211,3 +211,45 @@ test('Поиск прощает опечатки и раскладку на об
     await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
   ).toBe(true);
 });
+
+test('Открытая карточка удерживает фон и возвращает прокрутку после закрытия', async ({ page }) => {
+  await page.goto('/');
+  const trigger = page.locator('.shop-card .why').first();
+  await trigger.scrollIntoViewIfNeeded();
+  const before = await page.evaluate(() => window.scrollY);
+  await trigger.click();
+  const dialog = page.locator('#detail-dialog');
+  await expect(dialog).toBeVisible();
+  const locked = await page.evaluate(() => window.scrollY);
+  await page.mouse.move(2, 2);
+  await page.mouse.wheel(0, 700);
+  await page.waitForTimeout(150);
+  expect(await page.evaluate(() => window.scrollY)).toBe(locked);
+  await page.locator('.season-reference > summary').click();
+  const box = await dialog.boundingBox();
+  const innerBefore = await dialog.evaluate((el) => el.scrollTop);
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.mouse.wheel(0, 500);
+  await expect.poll(() => dialog.evaluate((el) => el.scrollTop)).toBeGreaterThan(innerBefore);
+  await dialog.evaluate((el) => (el.scrollTop = el.scrollHeight));
+  await page.mouse.wheel(0, 1000);
+  await page.waitForTimeout(150);
+  expect(await page.evaluate(() => window.scrollY)).toBe(locked);
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  expect(await page.evaluate(() => window.scrollY)).toBe(before);
+  await page.mouse.move(2, 2);
+  await page.mouse.wheel(0, 500);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(before);
+  await trigger.click();
+  await page.locator('[data-close-dialog]').click();
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).overflowY)).not.toBe(
+    'hidden',
+  );
+  await trigger.click();
+  await page.mouse.click(2, 2);
+  await expect(dialog).not.toBeVisible();
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).overflowY)).not.toBe(
+    'hidden',
+  );
+});

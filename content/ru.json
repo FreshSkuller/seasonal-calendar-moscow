@@ -132,7 +132,24 @@
     "homeTitle": "Памятка для дома",
     "homeHint": "Спелость, упаковка и хранение",
     "calendarTitle": "Сезонность, страны и сорта",
-    "allSources": "Источники и проверка данных"
+    "allSources": "Источники и проверка данных",
+    "compactPurchase": {
+      "title": "Ваш авокадо",
+      "form": "Вид",
+      "whole": "Целый",
+      "cut": "Нарезан",
+      "readiness": "Спелость",
+      "firm": "Твёрдый",
+      "hint": ""
+    },
+    "compactStorage": {
+      "location": "Где",
+      "packaging": "Упаковка",
+      "neighbors": "Соседство",
+      "keeping": "Срок",
+      "more": "Влага, свет и пояснения",
+      "general": "Общие правила хранения:"
+    }
   },
   "today": {
     "count": "Найдено: {total}",

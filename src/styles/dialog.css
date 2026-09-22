@@ -1,4 +1,16 @@
+/* Native dialog makes the background inert, but does not lock document scrolling. */
+html:has(#detail-dialog[open]),
+body:has(#detail-dialog[open]) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+html {
+  scrollbar-gutter: stable;
+}
+
 dialog {
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 26px;

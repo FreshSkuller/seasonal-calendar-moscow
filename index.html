@@ -513,7 +513,19 @@
       }
 
       /* dialog.css */
+      /* Native dialog makes the background inert, but does not lock document scrolling. */
+      html:has(#detail-dialog[open]),
+      body:has(#detail-dialog[open]) {
+        overflow: hidden;
+        overscroll-behavior: none;
+      }
+      html {
+        scrollbar-gutter: stable;
+      }
+
       dialog {
+        overflow-y: auto;
+        overscroll-behavior: contain;
         border: 1px solid var(--line);
         border-radius: 18px;
         padding: 26px;
@@ -1346,6 +1358,346 @@
         }
         .shop-tip {
           margin-bottom: 10px;
+        }
+      }
+
+      /* warm-reference.css */
+      /* Product-scoped visual trial. Content and advice behaviour stay shared. */
+      dialog[data-detail-design='warm-reference'] {
+        --card: #faf7ef;
+        --ink: #34372b;
+        --muted: #696657;
+        --line: #ded8c8;
+        --accent: #52613e;
+        --soft: #eeeee0;
+        width: min(760px, calc(100% - 24px));
+        padding: 30px;
+        border-color: var(--line);
+        border-radius: 22px;
+        font-size: 16px;
+        line-height: 1.6;
+        box-shadow: 0 24px 90px #302b2338;
+      }
+      body.dark dialog[data-detail-design='warm-reference'] {
+        --card: #292c24;
+        --ink: #f0ede3;
+        --muted: #c1bcad;
+        --line: #535648;
+        --accent: #b6c89b;
+        --soft: #343b2c;
+      }
+      [data-detail-design='warm-reference']::backdrop {
+        background: #2e30245e;
+      }
+      [data-detail-design='warm-reference'] .dialog-head h2 {
+        font:
+          400 42px/1.15 Georgia,
+          serif;
+        letter-spacing: -0.025em;
+        margin: 0 0 10px;
+      }
+      [data-detail-design='warm-reference'] .dialog-head p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+        color: var(--muted);
+      }
+      [data-detail-design='warm-reference'] .close {
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: 50%;
+        background: transparent;
+        flex-shrink: 0;
+      }
+      [data-detail-design='warm-reference'] .purchase-season {
+        margin: 16px 0 24px;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      [data-detail-design='warm-reference'] .purchase-season .pill {
+        white-space: normal;
+        font-size: 12px;
+      }
+      [data-detail-design='warm-reference'] [data-shop-advice] > h2 {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      [data-detail-design='warm-reference'] .advice-grid {
+        gap: 24px;
+        margin: 0 0 24px;
+      }
+      [data-detail-design='warm-reference'] .advice-section {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+      }
+      [data-detail-design='warm-reference'] .advice-section h3 {
+        font-size: 17px;
+        line-height: 1.35;
+        font-weight: 650;
+        margin: 0 0 10px;
+      }
+      [data-detail-design='warm-reference'] .advice-section p {
+        margin: 0 0 12px;
+        line-height: 1.6;
+      }
+      [data-detail-design='warm-reference'] .advice-section p:last-child {
+        margin-bottom: 0;
+      }
+      [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='choose'] {
+        grid-column: 1 / -1;
+        padding: 20px 22px;
+        background: var(--soft);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 12px 12px 0;
+      }
+      [data-detail-design='warm-reference']
+        [data-advice-topic='choose']
+        > [data-advice]:first-of-type
+        p:first-child {
+        font-size: 20px;
+        line-height: 1.55;
+        font-weight: 500;
+      }
+      [data-detail-design='warm-reference'] [data-advice-topic='choose'] > [data-advice] + [data-advice] {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 14px;
+      }
+      [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='ripen'],
+      [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='discard'] {
+        grid-column: auto;
+      }
+      [data-detail-design='warm-reference'] .home-guide {
+        padding: 0 20px;
+        background: var(--soft);
+        border-color: var(--line);
+        border-radius: 14px;
+        margin-top: 26px;
+      }
+      [data-detail-design='warm-reference'] .home-guide > summary {
+        font-size: 18px;
+        line-height: 1.4;
+        padding: 18px 0;
+      }
+      [data-detail-design='warm-reference'] .home-guide > summary span {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      [data-detail-design='warm-reference'] .purchase-context {
+        margin: 4px 0 24px;
+        padding: 18px 0 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0;
+        background: transparent;
+      }
+      [data-detail-design='warm-reference'] .purchase-context h3 {
+        font-size: 17px;
+        margin: 0 0 16px;
+      }
+      [data-detail-design='warm-reference'] .purchase-context legend {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      [data-detail-design='warm-reference'] .purchase-option {
+        font-size: 14px;
+        min-height: 48px;
+        padding: 10px;
+        border-color: var(--muted);
+        gap: 8px;
+      }
+      [data-detail-design='warm-reference'] .purchase-option:has(:checked) {
+        border-color: var(--accent);
+        box-shadow: inset 0 0 0 1px var(--accent);
+      }
+      [data-detail-design='warm-reference'] input[type='radio'] {
+        accent-color: var(--accent);
+      }
+      [data-detail-design='warm-reference'] .fine,
+      [data-detail-design='warm-reference'] .storage-basis {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      [data-detail-design='warm-reference'] .storage-guide dt {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+      [data-detail-design='warm-reference'] .storage-guide dd {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      [data-detail-design='warm-reference'] .storage-guide dl {
+        gap: 20px;
+      }
+      [data-detail-design='warm-reference'] [data-home-advice] .advice-section + .advice-section {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      [data-detail-design='warm-reference'] .season-reference,
+      [data-detail-design='warm-reference'] .product-sources {
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0;
+        padding: 0;
+        margin-top: 18px;
+      }
+      [data-detail-design='warm-reference'] .season-reference > summary {
+        font-size: 15px;
+      }
+      [data-detail-design='warm-reference'] .product-sources > summary {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      @media (max-width: 600px) {
+        dialog[data-detail-design='warm-reference'] {
+          padding: 22px 20px;
+          max-height: 94dvh;
+        }
+        [data-detail-design='warm-reference'] .dialog-head h2 {
+          font-size: 36px;
+        }
+        [data-detail-design='warm-reference'] .advice-grid {
+          gap: 20px;
+        }
+        [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='choose'] {
+          padding: 16px;
+        }
+        [data-detail-design='warm-reference']
+          [data-advice-topic='choose']
+          > [data-advice]:first-of-type
+          p:first-child {
+          font-size: 18px;
+        }
+        [data-detail-design='warm-reference'] [data-shop-advice] [data-advice-topic='ripen'] {
+          border-top: 1px solid var(--line);
+          padding-top: 18px;
+        }
+        [data-detail-design='warm-reference'] .home-guide {
+          padding: 0 14px;
+        }
+        [data-detail-design='warm-reference'] .purchase-option {
+          font-size: 13px;
+          padding: 8px;
+        }
+        [data-detail-design='warm-reference'] [data-readiness] .purchase-options {
+          grid-template-columns: 1fr;
+        }
+        [data-detail-design='warm-reference'] [data-readiness] .purchase-option {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+      /* Short, scannable advice and compact native controls for the avocado trial. */
+      [data-detail-design='warm-reference']
+        [data-advice-topic='choose']
+        > [data-advice]:first-of-type
+        p:first-child {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+      [data-detail-design='warm-reference'] .advice-section ul {
+        margin: 10px 0 0;
+        padding-left: 20px;
+      }
+      [data-detail-design='warm-reference'] .advice-section li {
+        padding-left: 2px;
+        line-height: 1.5;
+      }
+      [data-detail-design='warm-reference'] .advice-section li::marker {
+        color: var(--accent);
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact h3,
+      [data-detail-design='warm-reference'] .purchase-context-compact [data-purchase-status] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact > p:empty {
+        display: none;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact {
+        margin: 0 0 20px;
+        padding: 4px 0 0;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact fieldset {
+        margin: 12px 0;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact legend {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact .purchase-options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        max-width: 340px;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact [data-readiness] .purchase-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 6px;
+        gap: 5px;
+        font-size: 13px;
+        border-color: var(--line);
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact input {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+      }
+      [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option:has(:checked) {
+        border-color: var(--accent);
+      }
+      [data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      [data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main > div {
+        display: grid;
+        grid-template-columns: 90px minmax(0, 1fr);
+        gap: 14px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      [data-detail-design='warm-reference'] .storage-guide-compact dt {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+      }
+      [data-detail-design='warm-reference'] .storage-guide-compact dd {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      @media (max-width: 600px) {
+        [data-detail-design='warm-reference'] .storage-guide-compact .storage-guide-main > div {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+          font-size: 12px;
+        }
+      }
+      @media (max-width: 360px) {
+        [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
+          flex-direction: column;
+          gap: 3px;
         }
       }
       ;
@@ -14725,8 +15077,11 @@
             "id": "advice-73",
             "productId": "product-114",
             "topic": "choose",
-            "summary": "Для еды сейчас выбирайте слегка податливый плод без провалов и гнили. Окраска зависит от сорта: зелёная кожица не всегда означает незрелость.",
-            "steps": [],
+            "summary": "Для еды сегодня — слегка податливый плод.",
+            "steps": [
+              "Без глубоких вмятин и гнили.",
+              "Не судите только по цвету: зелёная кожица бывает и у спелого авокадо."
+            ],
             "appliesTo": {
               "kind": "general"
             },
@@ -14740,7 +15095,7 @@
             "id": "advice-74",
             "productId": "product-114",
             "topic": "ripen",
-            "summary": "Авокадо дозревает после сбора. Твёрдый зрелый плод можно оставить дозреть при комнатной температуре; готовый — убрать в холодильник.",
+            "summary": "Да. Твёрдый плод дозревает при комнатной температуре. Спелый — в холодильник.",
             "steps": [],
             "appliesTo": {
               "kind": "conditional",
@@ -16078,7 +16433,7 @@
             "id": "home-buy-product-114",
             "productId": "product-114",
             "topic": "choose",
-            "summary": "Осмотрите покупку со всех сторон: избегайте повреждений и следов гнили. Готовую нарезку берите только из охлаждаемой витрины.",
+            "summary": "Готовую нарезку берите только из холодильной витрины.",
             "steps": [],
             "appliesTo": {
               "kind": "general"
@@ -17828,9 +18183,9 @@
             "id": "home-wash-product-114",
             "productId": "product-114",
             "topic": "prepare",
-            "summary": "Перед приготовлением промойте продукт проточной водой, без мыла. Мойте и несъедобную кожуру перед разрезанием.",
+            "summary": "Перед разрезанием вымойте кожуру водой, без мыла.",
             "steps": [
-              "Держите отдельно от сырого мяса и используйте чистый нож и доску."
+              "Чистые нож и доска; отдельно от сырого мяса."
             ],
             "appliesTo": {
               "kind": "conditional",
@@ -23344,7 +23699,7 @@
             "id": "home-cut-product-114",
             "productId": "product-114",
             "topic": "store",
-            "summary": "В холодильнике при 4 °C или ниже, сразу после нарезки. При комнатной температуре не дозревать.",
+            "summary": "В холодильнике при 4 °C или ниже. Не оставляйте дозревать.",
             "steps": [],
             "appliesTo": {
               "kind": "conditional",
@@ -23360,14 +23715,14 @@
             ],
             "storageGuide": {
               "location": {
-                "text": "В холодильнике при 4 °C или ниже, сразу после нарезки. При комнатной температуре не дозревать.",
+                "text": "В холодильнике при 4 °C или ниже. Не оставляйте дозревать.",
                 "sourceIds": [
                   "HOMEFDA"
                 ],
                 "basis": "supported"
               },
               "packaging": {
-                "text": "Чистый пищевой контейнер с крышкой или закрытый пищевой пакет. Для нарезки нужна закрытая упаковка, а не перфорированный пакет для целых плодов.",
+                "text": "Чистый пищевой контейнер с крышкой или закрытый пакет.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "HOMEPNW"
@@ -23375,7 +23730,7 @@
                 "basis": "supported"
               },
               "moisture": {
-                "text": "Обсушите после мытья. Не заливайте водой как универсальным способом хранения; держите срез защищённым от высыхания.",
+                "text": "Обсушите. Не храните в воде; прикройте срез от высыхания.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -23383,7 +23738,7 @@
                 "basis": "general"
               },
               "light": {
-                "text": "Только холод: тень, подоконник или прохладный угол комнаты холодильник не заменяют.",
+                "text": "Только холодильник — тень на столе его не заменяет.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -23391,7 +23746,7 @@
                 "basis": "general"
               },
               "neighbors": {
-                "text": "Отдельно от сырого мяса, рыбы и их соков. Закрытая ёмкость также защищает от посторонних запахов; правила соседства целых плодов не заменяют гигиену нарезки.",
+                "text": "Отдельно от сырого мяса, рыбы и их соков.",
                 "sourceIds": [
                   "HOMEFDA",
                   "HOMEPNW"
@@ -23399,7 +23754,7 @@
                 "basis": "supported"
               },
               "keeping": {
-                "text": "Уберите в холодильник не позднее двух часов после нарезки и используйте как можно скорее. У покупной нарезки соблюдайте срок и условия на этикетке. Единого безопасного срока для всех нарезанных продуктов нет.",
+                "text": "Охладите не позднее 2 часов после нарезки. Съешьте скорее; у покупной нарезки соблюдайте срок на этикетке.",
                 "sourceIds": [
                   "HOMEFDA",
                   "HOMEPNW"
@@ -25451,7 +25806,7 @@
             "id": "home-spoilage-product-114",
             "productId": "product-114",
             "topic": "discard",
-            "summary": "При плесени, гнили, слизи или постороннем неприятном запахе не используйте продукт. Нормальный вид сам по себе не подтверждает безопасность.",
+            "summary": "Не берите при плесени, гнили, слизи или неприятном запахе.",
             "steps": [],
             "appliesTo": {
               "kind": "general"
@@ -32634,7 +32989,7 @@
             "id": "home-firm-store-product-114",
             "productId": "product-114",
             "topic": "store",
-            "summary": "При комнатной температуре для дозревания; проверяйте ежедневно. После созревания выберите «Спелый».",
+            "summary": "При комнатной температуре, до созревания.",
             "steps": [],
             "appliesTo": {
               "kind": "conditional",
@@ -32650,21 +33005,21 @@
             ],
             "storageGuide": {
               "location": {
-                "text": "При комнатной температуре для дозревания; проверяйте ежедневно. После созревания выберите «Спелый».",
+                "text": "При комнатной температуре, до созревания.",
                 "sourceIds": [
                   "HOMEDAVIS"
                 ],
                 "basis": "supported"
               },
               "packaging": {
-                "text": "В открытой ёмкости или неплотно закрытом бумажном пакете. Не запечатывайте в пластик.",
+                "text": "Открытая ёмкость или неплотно закрытый бумажный пакет. Не герметичный пластик.",
                 "sourceIds": [
                   "HOMEDAVIS"
                 ],
                 "basis": "supported"
               },
               "moisture": {
-                "text": "Нужен влажный воздух, но не мокрая поверхность. Не мойте заранее; если помыли — обсушите. При каплях в пакете увеличьте вентиляцию.",
+                "text": "Не мойте заранее. Если появились капли в пакете — обсушите плод и приоткройте пакет.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32672,7 +33027,7 @@
                 "basis": "general"
               },
               "light": {
-                "text": "Без прямого солнца и вдали от батареи или плиты. Свет и тепло не помогают сохранять свежесть.",
+                "text": "Без прямого солнца, вдали от плиты и батареи.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32680,7 +33035,7 @@
                 "basis": "general"
               },
               "neighbors": {
-                "text": "Выделяет этилен: не кладите в общий пакет или ящик с салатом, брокколи, морковью и огурцами — они быстрее теряют качество.",
+                "text": "Отдельно от салата, брокколи, моркови и огурцов: этилен авокадо ускоряет их старение.",
                 "sourceIds": [
                   "STOREETHYLENE",
                   "STOREWISC"
@@ -32688,7 +33043,7 @@
                 "basis": "supported"
               },
               "keeping": {
-                "text": "Точного срока дозревания нет: проверяйте аромат и характерную для этого продукта мягкость каждый день. Тепло от батареи и солнце не нужны.",
+                "text": "Проверяйте мягкость ежедневно. Созрел — уберите в холодильник. Точный срок дозревания неизвестен.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32701,7 +33056,7 @@
             "id": "home-ready-store-product-114",
             "productId": "product-114",
             "topic": "store",
-            "summary": "В холодильнике, в ящике для овощей; не прижимайте к задней стенке, где продукт может подмёрзнуть.",
+            "summary": "В холодильнике, в овощном ящике. Не у холодной задней стенки.",
             "steps": [],
             "appliesTo": {
               "kind": "conditional",
@@ -32717,7 +33072,7 @@
             ],
             "storageGuide": {
               "location": {
-                "text": "В холодильнике, в ящике для овощей; не прижимайте к задней стенке, где продукт может подмёрзнуть.",
+                "text": "В холодильнике, в овощном ящике. Не у холодной задней стенки.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32725,7 +33080,7 @@
                 "basis": "general"
               },
               "packaging": {
-                "text": "В пакете с отверстиями или неплотно закрытом пакете: он уменьшает высыхание, но выпускает лишнюю влагу.",
+                "text": "Пакет с отверстиями или неплотно закрытый пакет.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32733,7 +33088,7 @@
                 "basis": "general"
               },
               "moisture": {
-                "text": "Нужен влажный воздух, но не мокрая поверхность. Не мойте заранее; если помыли — обсушите. При каплях в пакете увеличьте вентиляцию.",
+                "text": "Не мойте заранее. Если появились капли в пакете — обсушите плод и приоткройте пакет.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32741,7 +33096,7 @@
                 "basis": "general"
               },
               "light": {
-                "text": "Без прямого солнца и вдали от батареи или плиты. Свет и тепло не помогают сохранять свежесть.",
+                "text": "Без прямого солнца, вдали от плиты и батареи.",
                 "sourceIds": [
                   "HOMEDAVIS",
                   "STOREWISC"
@@ -32749,7 +33104,7 @@
                 "basis": "general"
               },
               "neighbors": {
-                "text": "Выделяет этилен: не кладите в общий пакет или ящик с салатом, брокколи, морковью и огурцами — они быстрее теряют качество.",
+                "text": "Отдельно от салата, брокколи, моркови и огурцов: этилен авокадо ускоряет их старение.",
                 "sourceIds": [
                   "STOREETHYLENE",
                   "STOREWISC"
@@ -32757,7 +33112,7 @@
                 "basis": "supported"
               },
               "keeping": {
-                "text": "Ориентир сохранения качества в холодильнике — 3–5 дней для свежего неповреждённого продукта. Для дозревающих плодов отсчёт после достижения спелости, для остальных — после покупки. Проверяйте состояние раньше: это не гарантия безопасности.",
+                "text": "Ориентир — 3–5 дней после созревания для свежего целого плода. Это срок качества, не гарантия безопасности.",
                 "sourceIds": [
                   "HOMEPNW"
                 ],
@@ -45763,7 +46118,24 @@
             homeTitle: "Памятка для дома",
             homeHint: "Спелость, упаковка и хранение",
             calendarTitle: "Сезонность, страны и сорта",
-            allSources: "Источники и проверка данных"
+            allSources: "Источники и проверка данных",
+            compactPurchase: {
+              title: "Ваш авокадо",
+              form: "Вид",
+              whole: "Целый",
+              cut: "Нарезан",
+              readiness: "Спелость",
+              firm: "Твёрдый",
+              hint: ""
+            },
+            compactStorage: {
+              location: "Где",
+              packaging: "Упаковка",
+              neighbors: "Соседство",
+              keeping: "Срок",
+              more: "Влага, свет и пояснения",
+              general: "Общие правила хранения:"
+            }
           },
           today: {
             count: "Найдено: {total}",
@@ -46655,13 +47027,20 @@
         ${!season.sourceIds.length ? `<p class="notice">${escapeHtml(ru_default.details.noSources)}</p>` : ""}</section>`;
         }
 
+        // src/config/detail-design.js
+        var warmReferenceProducts = /* @__PURE__ */ new Set(["product-114"]);
+        function detailDesign(productId) {
+          return warmReferenceProducts.has(productId) ? "warm-reference" : "default";
+        }
+
         // src/components/purchase-context.js
         function purchaseContext(model) {
-          const labels = ru_default.details.purchase;
+          const compact = detailDesign(model.productId) === "warm-reference";
+          const labels = compact ? { ...ru_default.details.purchase, ...ru_default.details.compactPurchase } : ru_default.details.purchase;
           const options = (name, values, selected) => values.map(
-            (value) => `<label class="purchase-option"><input type="radio" name="purchase-${name}" value="${value}" ${selected === value ? "checked" : ""}><span>${escapeHtml(labels[value])}</span></label>`
+            (value) => `<label class="purchase-option"><input type="radio" aria-label="${escapeHtml(ru_default.details.purchase[value])}" name="purchase-${name}" value="${value}" ${selected === value ? "checked" : ""}><span>${escapeHtml(labels[value])}</span></label>`
           ).join("");
-          return `<section class="purchase-context" aria-labelledby="purchase-title">
+          return `<section class="purchase-context${compact ? " purchase-context-compact" : ""}" aria-labelledby="purchase-title">
           <h3 id="purchase-title">${escapeHtml(labels.title)}</h3>
           <fieldset><legend>${escapeHtml(labels.form)}</legend><div class="purchase-options">${options("form", ["whole", "cut"], model.purchaseContext.form)}</div></fieldset>
           ${model.hasReadiness ? `<fieldset data-readiness ${model.purchaseContext.form === "cut" ? "hidden" : ""}><legend>${escapeHtml(labels.readiness)}</legend><div class="purchase-options">${options("readiness", ["unknown", "firm", "ready"], model.purchaseContext.readiness || "unknown")}</div></fieldset>` : ""}
@@ -46692,15 +47071,16 @@
         }
 
         // src/components/storage-guide.js
-        function storageGuide(guide) {
+        function storageGuide(guide, { compact = false } = {}) {
           if (!guide) return "";
-          const labels = ru_default.details.storageGuide;
+          const labels = { ...ru_default.details.storageGuide, ...compact ? ru_default.details.compactStorage : {} };
           const row = (key) => {
             const field = guide[key];
-            const note = field.basis === "supported" ? "" : `<small class="storage-basis">${escapeHtml(labels.basis[field.basis])}</small>`;
+            const note = field.basis === "supported" || compact && field.basis === "general" ? "" : `<small class="storage-basis">${escapeHtml(labels.basis[field.basis])}</small>`;
             return `<div><dt>${escapeHtml(labels[key])}${note}</dt><dd>${escapeHtml(field.text)}</dd></div>`;
           };
-          return `<div class="storage-guide"><dl class="storage-guide-main">${["location", "packaging", "neighbors"].map(row).join("")}</dl><details class="storage-guide-more"><summary>${escapeHtml(labels.more)}</summary><dl>${["moisture", "light", "keeping"].map(row).join("")}</dl></details></div>`;
+          const general = compact ? Object.keys(guide).filter((key) => guide[key].basis === "general").map((key) => labels[key]) : [];
+          return `<div class="storage-guide${compact ? " storage-guide-compact" : ""}"><dl class="storage-guide-main">${(compact ? ["location", "packaging", "keeping", "neighbors"] : ["location", "packaging", "neighbors"]).map(row).join("")}</dl><details class="storage-guide-more"><summary>${escapeHtml(labels.more)}</summary><dl>${(compact ? ["moisture", "light"] : ["moisture", "light", "keeping"]).map(row).join("")}</dl>${general.length ? `<p class="fine">${escapeHtml(labels.general)} ${escapeHtml(general.join(", ").toLocaleLowerCase("ru"))}.</p>` : ""}</details></div>`;
         }
 
         // src/domain/advice.js
@@ -46744,7 +47124,7 @@
           return `<div class="advice-grid">${topics.map((topic) => {
             const group = fresh.filter((item) => item.topic === topic);
             if (!group.length) return "";
-            return `<section class="advice-section" data-advice-topic="${topic}"><h3>${escapeHtml(ru_default.details.adviceTopics[topic])}</h3>${group.map((item) => `<div data-advice="${escapeHtml(item.id)}">${item.storageGuide ? storageGuide(item.storageGuide, sources) : `<p>${escapeHtml(item.summary)}</p>`}${item.steps.length ? `<ul>${item.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ul>` : ""}${storageInstructions(item.storage)}</div>`).join("")}</section>`;
+            return `<section class="advice-section" data-advice-topic="${topic}"><h3>${escapeHtml(ru_default.details.adviceTopics[topic])}</h3>${group.map((item) => `<div data-advice="${escapeHtml(item.id)}">${item.storageGuide ? storageGuide(item.storageGuide, { compact: detailDesign(item.productId) === "warm-reference" }) : `<p>${escapeHtml(item.summary)}</p>`}${item.steps.length ? `<ul>${item.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ul>` : ""}${storageInstructions(item.storage)}</div>`).join("")}</section>`;
           }).join("")}</div>` + (items.some((item) => item.repeated) ? `<p class="fine">${escapeHtml(ru_default.details.repeatedAdvice)}</p>` : "");
         }
 
@@ -46907,6 +47287,7 @@
             this.month = month;
             this.context = { environment: "home", form: "whole" };
             const model = buildProductDetails(this.catalog, id, month, this.context);
+            this.dialog.dataset.detailDesign = detailDesign(model.productId);
             this.content.innerHTML = productDetails(model, this.catalog);
             this.dialog.showModal();
             this.dialog.scrollTop = 0;

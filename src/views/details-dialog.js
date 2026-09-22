@@ -2,6 +2,7 @@ import { getElement } from '../shared/html.js';
 import { productDetails, homeAdvice } from '../components/product-details.js';
 import { buildProductDetails } from '../application/product-details.js';
 import copy from '../../content/ru.json' with { type: 'json' };
+import { detailDesign } from '../config/detail-design.js';
 
 export class DetailsDialog {
   constructor(catalog) {
@@ -54,6 +55,7 @@ export class DetailsDialog {
     this.month = month;
     this.context = { environment: 'home', form: 'whole' };
     const model = buildProductDetails(this.catalog, id, month, this.context);
+    this.dialog.dataset.detailDesign = detailDesign(model.productId);
     this.content.innerHTML = productDetails(model, this.catalog);
     this.dialog.showModal();
     this.dialog.scrollTop = 0;
