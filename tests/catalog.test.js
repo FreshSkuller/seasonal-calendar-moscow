@@ -99,7 +99,7 @@ test('Промышленный совет и черновик не подмен�
       form: 'cut',
       readiness: 'ready',
       environment: 'home',
-    }).matched.length,
+    }).matched.some((item) => item.id === advice.id),
   );
   advice.editorialStatus = 'draft';
   const result = adviceForVariant(createCatalog(db), variant.id);

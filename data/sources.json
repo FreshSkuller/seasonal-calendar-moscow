@@ -2221,5 +2221,185 @@
     "checked": "2026-09-21",
     "scope": "Качество, зрелость и послеуборочное хранение.",
     "limit": "Не календарь страны. Промышленные сроки хранения не равны срокам в домашнем холодильнике."
+  },
+  "HOMEFDA": {
+    "id": "HOMEFDA",
+    "title": "FDA: выбор, мытьё и хранение свежих продуктов",
+    "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Повреждения при покупке, охлаждение нарезки, гигиена и мытьё.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEDAVIS": {
+    "id": "HOMEDAVIS",
+    "title": "UC Davis: домашнее хранение для сохранения вкуса",
+    "url": "https://postharvest.ucdavis.edu/sites/g/files/dgvnsk12711/files/inline-files/230110.pdf",
+    "date": "2012",
+    "checked": "2026-09-22",
+    "scope": "Место хранения целых продуктов, дозревание и отдельные правила для нарезки.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEPNW": {
+    "id": "HOMEPNW",
+    "title": "Университеты Айдахо, Орегона и Вашингтона: хранение дома",
+    "url": "https://extension.oregonstate.edu/sites/extd8/files/2023-08/pnw612.pdf",
+    "date": "дата редакции не указана в извлечении",
+    "checked": "2026-09-22",
+    "scope": "PNW 612, таблица 3: домашнее хранение; качество и безопасность различаются.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEUMD": {
+    "id": "HOMEUMD",
+    "title": "Университет Мэриленда: хранение плодов и овощей дома",
+    "url": "https://extension.umd.edu/resource/storing-garden-fruits-and-vegetables",
+    "date": "2023-02-20",
+    "checked": "2026-09-22",
+    "scope": "Хранение ягод, корнеплодов, зелени, тыквы и нарезанных продуктов.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEIOWA": {
+    "id": "HOMEIOWA",
+    "title": "Университет Айовы: хранение корнеплодов",
+    "url": "https://yardandgarden.extension.iastate.edu/how-to/storing-winter-storage-vegetables",
+    "date": "2025-01",
+    "checked": "2026-09-22",
+    "scope": "Корневой сельдерей, хрен, корнеплоды; холод и защита от потери влаги.",
+    "limit": "Сроки погребного хранения не перенесены в домашние советы."
+  },
+  "HOMEAPPLE": {
+    "id": "HOMEAPPLE",
+    "title": "Purdue Extension FoodLink: яблоки",
+    "url": "https://extension.purdue.edu/foodlink/food.php?food=apple",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Выбор, подготовка и домашнее хранение: яблоки.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEPEAR": {
+    "id": "HOMEPEAR",
+    "title": "Purdue Extension FoodLink: груши",
+    "url": "https://extension.purdue.edu/foodlink/food.php?food=pear",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Выбор, подготовка и домашнее хранение: груши.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEPOTATO": {
+    "id": "HOMEPOTATO",
+    "title": "Purdue Extension FoodLink: картофель",
+    "url": "https://extension.purdue.edu/foodlink/food.php?food=potato",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Выбор, подготовка и домашнее хранение: картофель.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEMELON": {
+    "id": "HOMEMELON",
+    "title": "Purdue Extension FoodLink: арбуз",
+    "url": "https://extension.purdue.edu/foodlink/food.php?food=watermelon",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Выбор, подготовка и домашнее хранение: арбуз.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMERHUBARB": {
+    "id": "HOMERHUBARB",
+    "title": "Purdue Extension FoodLink: ревень",
+    "url": "https://extension.purdue.edu/foodlink/food.php?food=rhubarb",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Выбор, подготовка и домашнее хранение: ревень.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "QLYCHEE": {
+    "id": "QLYCHEE",
+    "title": "UC Davis: качество и хранение — личи",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/lychee",
+    "date": "1998-05",
+    "checked": "2026-09-22",
+    "scope": "Спелость, внешние дефекты и чувствительность к хранению: личи.",
+    "limit": "Профессиональный справочник: складские сроки не являются домашними."
+  },
+  "QPITAYA": {
+    "id": "QPITAYA",
+    "title": "UC Davis: качество и хранение — питайя",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/dragon-fruit",
+    "date": "2011-07",
+    "checked": "2026-09-22",
+    "scope": "Спелость, внешние дефекты и чувствительность к хранению: питайя.",
+    "limit": "Профессиональный справочник: складские сроки не являются домашними."
+  },
+  "QPASSION": {
+    "id": "QPASSION",
+    "title": "UC Davis: качество и хранение — маракуйя",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/passion-fruit",
+    "date": "1999-02",
+    "checked": "2026-09-22",
+    "scope": "Спелость, внешние дефекты и чувствительность к хранению: маракуйя.",
+    "limit": "Профессиональный справочник: складские сроки не являются домашними."
+  },
+  "QORANGE": {
+    "id": "QORANGE",
+    "title": "UC Davis: качество и хранение — апельсины",
+    "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/orange",
+    "date": "1999-05",
+    "checked": "2026-09-22",
+    "scope": "Спелость, внешние дефекты и чувствительность к хранению: апельсины.",
+    "limit": "Профессиональный справочник: складские сроки не являются домашними."
+  },
+  "HOMEQUINCE": {
+    "id": "HOMEQUINCE",
+    "title": "RHS: выбор и хранение айвы",
+    "url": "https://www.rhs.org.uk/fruit/quince/grow-your-own",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Целые неповреждённые плоды, прохладное тёмное место.",
+    "limit": "Домашние рекомендации; срок конкретной покупки зависит от её состояния и предшествующего хранения."
+  },
+  "HOMEWILD": {
+    "id": "HOMEWILD",
+    "title": "RHS: употребление дикорастущих плодов",
+    "url": "https://www.rhs.org.uk/fruit/hedgerow",
+    "date": "без даты на странице",
+    "checked": "2026-09-22",
+    "scope": "Определение вида, кулинарная обработка калины, удаление волосков шиповника.",
+    "limit": "Не руководство по определению растений по фотографии; не все дикорастущие плоды едят сырыми."
+  },
+  "HOMEPHYS": {
+    "id": "HOMEPHYS",
+    "title": "Wandin Yallock Farms: физалис",
+    "url": "https://wandinyallockfarms.squarespace.com/cape-gooseberries",
+    "date": "без даты в доступном извлечении",
+    "checked": "2026-09-22",
+    "scope": "Хранение съедобного физалиса в оболочке до использования.",
+    "limit": "Практика производителя; доступен поисковый фрагмент, численные сроки не подтверждены."
+  },
+  "HOMEGARLICSAFE": {
+    "id": "HOMEGARLICSAFE",
+    "title": "BfR: черемша и опасность подмены",
+    "url": "https://www.bfr.bund.de/en/press-release/wild-garlic-confusion-often-leads-to-poisoning/",
+    "date": "без даты в доступном извлечении",
+    "checked": "2026-09-22",
+    "scope": "Риск путаницы черемши с ядовитыми растениями.",
+    "limit": "Краткое правило обращения; не руководство по самостоятельному определению растений."
+  },
+  "HOMEGOLDEN": {
+    "id": "HOMEGOLDEN",
+    "title": "UC Marin Master Gardeners: съедобный физалис",
+    "url": "https://ucanr.edu/site/uc-marin-master-gardeners/document/groundcherry",
+    "date": "без даты в доступном извлечении",
+    "checked": "2026-09-22",
+    "scope": "Physalis peruviana: в пищу подходят зрелые плоды, не листья и незрелые ягоды.",
+    "limit": "Краткое правило обращения; не руководство по самостоятельному определению растений."
+  },
+  "HOMEROWAN": {
+    "id": "HOMEROWAN",
+    "title": "Scottish Forestry: лесные пищевые растения",
+    "url": "https://www.forestry.gov.scot/sites/default/files/pub-documents/pdf_Forests_for_people_woodlands_for_all_08_07_2025_v1.pdf",
+    "date": "без даты в доступном извлечении",
+    "checked": "2026-09-22",
+    "scope": "Сырая рябина раздражает пищеварительный тракт; используется приготовленной.",
+    "limit": "Краткое правило обращения; не руководство по самостоятельному определению растений."
   }
 }

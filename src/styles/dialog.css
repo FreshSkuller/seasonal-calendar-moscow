@@ -77,3 +77,94 @@ dialog::backdrop {
   line-height: 1.5;
   margin: 6px 0;
 }
+.purchase-context {
+  background: var(--soft);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 18px 0;
+}
+.purchase-context h3 {
+  margin-top: 0;
+}
+.purchase-context fieldset {
+  border: 0;
+  padding: 0;
+  margin: 14px 0;
+  min-width: 0;
+}
+.purchase-context legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.purchase-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.purchase-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--card);
+}
+.purchase-option:has(:checked) {
+  border-color: var(--ink);
+  font-weight: 600;
+}
+.purchase-option:focus-within {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.purchase-option input {
+  margin: 0;
+  width: auto;
+}
+[data-purchase-status]:empty {
+  display: none;
+}
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.advice-section {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.advice-section h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.advice-section p {
+  margin: 8px 0;
+}
+.advice-section ul {
+  padding-left: 20px;
+}
+.advice-section li + li {
+  margin-top: 6px;
+}
+@media (max-width: 600px) {
+  .advice-grid {
+    grid-template-columns: 1fr;
+  }
+  .purchase-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  [data-readiness] .purchase-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .purchase-option {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    font-size: 12px;
+  }
+}

@@ -19,7 +19,10 @@
     "summary": "Сладость и аромат сформированы при выращивании. Хранение должно сохранять влагу; размягчение означает потерю качества.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -45,7 +48,10 @@
     "summary": "Срезанный кочан не дозревает как фрукт. Сроки хранения ранних и поздних сортов существенно различаются.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -71,7 +77,10 @@
     "summary": "Просушка после уборки — подготовка к хранению, а не фруктовое дозревание. Максимальные складские сроки зависят от сорта.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -97,7 +106,10 @@
     "summary": "Это свежая зелень, её не оставляют дозревать. Для сохранения сочности важны охлаждение и защита от пересыхания.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -123,7 +135,10 @@
     "summary": "После сбора чеснок просушивают. Дома не ждут сладкого дозревания; для сухих головок важнее сухость и вентиляция.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -149,7 +164,10 @@
     "summary": "Огурец едят физиологически незрелым: пожелтение при дальнейшем созревании не улучшает его салатное качество.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -175,7 +193,10 @@
     "summary": "Зрелые, но ещё не полностью окрашенные томаты могут дозревать. Слишком ранний сбор и сильное охлаждение ухудшают результат.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -201,7 +222,10 @@
     "summary": "Молодому кабачку не требуется дозаривание. С возрастом грубеют кожица и семена; не путайте его с лёжкой зрелой тыквой.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -227,7 +251,10 @@
     "summary": "Баклажаны едят в технической зрелости. Дозаривать их ради сладости не нужно: хранение ведёт к старению и потере качества.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -253,7 +280,10 @@
     "summary": "Цвет и зрелость связаны с сортом и стадией уборки. На гарантированное превращение любого зелёного плода в сладкий красный дома рассчитывать нельзя.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -279,7 +309,10 @@
     "summary": "Послеуборочные изменения зависят от вида и сорта. Нельзя обещать, что любая недозрелая тыква станет сладкой при хранении.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -305,7 +338,10 @@
     "summary": "Не оставляйте дозревать в тепле: после сбора качество быстро падает. Важны охлаждение и недавняя дата уборки; даже хороший сезон не исправляет долгую тёплую перевозку.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -331,7 +367,10 @@
     "summary": "Стручки едят молодыми. Дальнейшее созревание семян не улучшает нежность стручка.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -357,7 +396,10 @@
     "summary": "Дозаривание не нужно: раскрытие цветков ухудшает качество. Охлаждение замедляет пожелтение.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -383,7 +425,10 @@
     "summary": "Не становится лучше от ожидания. Разрыхление головки и потемнение — не полезное дозревание.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -409,7 +454,10 @@
     "summary": "Дозаривать не нужно. Удаление ботвы уменьшает потерю влаги корнеплодом; охлаждение помогает сохранить хрусткость.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -435,7 +483,10 @@
     "summary": "Дозаривать не нужно. Удаление ботвы уменьшает потерю влаги корнеплодом; охлаждение помогает сохранить хрусткость.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -461,7 +512,10 @@
     "summary": "Не дозревает; после сбора может грубеть. Быстрая доставка и охлаждение важнее долгого ожидания.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -487,7 +541,10 @@
     "summary": "Дозаривания нет. Берегите от увядания; хранение не восстанавливает утраченный аромат.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -513,7 +570,10 @@
     "summary": "Сладким фруктом не дозревает: задача хранения — сохранить сочность, а не дождаться размягчения.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -539,7 +599,10 @@
     "summary": "Клубнику собирают близко к спелости: ожидание дома не заменяет созревания на кусте. Лучше быстро съесть и держать в холоде.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -565,7 +628,10 @@
     "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -591,7 +657,10 @@
     "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -617,7 +686,10 @@
     "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -643,7 +715,10 @@
     "summary": "Слишком рано собранные ягоды не приобретают полноценный вкус после покупки. Размягчение само по себе не означает улучшения спелости.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -669,7 +744,10 @@
     "summary": "Абрикосы размягчаются после сбора. Очень рано снятый плод может остаться слабым по вкусу, даже став мягким.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -695,7 +773,10 @@
     "summary": "Зрелый при сборе плод может размягчиться после покупки. Совсем незрелый не гарантирует хорошего вкуса даже после размягчения.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -721,7 +802,10 @@
     "summary": "Зрелые при сборе сливы могут размягчаться. Эффект зависит от сорта; хранение не исправляет все последствия слишком раннего сбора.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -747,7 +831,10 @@
     "summary": "Зрелые при сборе сливы могут размягчаться. Эффект зависит от сорта; хранение не исправляет все последствия слишком раннего сбора.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -773,7 +860,10 @@
     "summary": "Сладость оценивайте при покупке: хранение прежде всего сохраняет качество, а не заменяет созревание на лозе.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -799,7 +889,10 @@
     "summary": "Хороший свежий инжир собирают почти спелым. Дома он размягчается и быстро портится; не рассчитывайте исправить ранний сбор длительной выдержкой.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -825,7 +918,10 @@
     "summary": "Хурма способна размягчаться после сбора. Терпкость зависит от сорта и обработки, поэтому одна только мягкость или надпись «королёк» не определяет качество.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -851,7 +947,10 @@
     "summary": "После сбора гранат не дозревает. Выдержка дома не исправит слишком раннюю уборку.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -877,7 +976,10 @@
     "summary": "Плод может размягчиться, но это не гарантирует улучшения вкуса слишком рано снятого фейхоа. Спелые плоды не рассчитаны на долгое домашнее хранение.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -903,7 +1005,10 @@
     "summary": "Манго может дозревать после сбора. Слишком рано снятый плод может размягчиться, но остаться невкусным.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -929,7 +1034,10 @@
     "summary": "После сбора ананас заметно слаще не становится. Пожелтение дома — не доказательство улучшения вкуса.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -955,7 +1063,10 @@
     "summary": "Авокадо дозревает после сбора. Твёрдый зрелый плод можно оставить дозреть при комнатной температуре; готовый — убрать в холодильник.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -981,7 +1092,10 @@
     "summary": "После сбора папайя желтеет и размягчается, но существенно слаще не становится. Ранний сбор ограничивает вкус.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -1007,7 +1121,10 @@
     "summary": "Киви может дозревать после уборки. Холодное хранение задерживает размягчение; при комнатной температуре оно ускоряется.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -1033,7 +1150,10 @@
     "summary": "Послеуборочная выдержка залечивает кожицу и влияет на качество. Батат чувствителен к слишком низкой температуре: режим обычных зимних корнеплодов ему не подходит.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -1059,7 +1179,10 @@
     "summary": "Не дозревает как фрукт. Послеуборочное хранение сохраняет уже сформированное качество, но не превращает старый кочан в свежий урожай.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,
@@ -1085,7 +1208,10 @@
     "summary": "Едят нераскрывшийся бутон. Ожидание цветения ухудшает кулинарное качество; после покупки держите охлаждённым.",
     "steps": [],
     "appliesTo": {
-      "kind": "general"
+      "kind": "conditional",
+      "form": "whole",
+      "readiness": "any",
+      "environment": "home"
     },
     "editorialStatus": "published",
     "reviewedAt": null,

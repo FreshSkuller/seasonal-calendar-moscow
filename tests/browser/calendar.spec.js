@@ -6,6 +6,45 @@ test.beforeEach(async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-09-20T09:00:00Z'));
 });
 
+test('Состояние покупки меняет советы, сохраняет фокус и сбрасывается для другой карточки', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('#today-search').fill('авокадо');
+  await page.locator('.shop-card h3 button').first().click();
+  await expect(page.locator('[data-needs-readiness]')).toBeVisible();
+  const firm = page.getByRole('radio', { name: 'Недозрелый', exact: true });
+  await firm.check();
+  await expect(firm).toBeFocused();
+  await expect(
+    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+  ).toContainText('комнатной температуре');
+  await page.getByRole('radio', { name: 'Спелый', exact: true }).check();
+  await expect(
+    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+  ).toContainText('холодильник');
+  await page.getByRole('radio', { name: 'Разрезан / очищен', exact: true }).check();
+  await expect(page.locator('[data-readiness]')).toBeHidden();
+  await expect(page.locator('[data-advice-topic="ripen"]')).toHaveCount(0);
+  await expect(
+    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+  ).toContainText('не выше +4 °C');
+  await expect(page.locator('[data-purchase-status]')).toHaveText(
+    'Советы обновлены для выбранного состояния.',
+  );
+  expect(
+    await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
+  await page.locator('[data-close-dialog]').click();
+  await page.locator('#today-search').fill('картофель');
+  await page.locator('.shop-card h3 button').first().click();
+  await expect(page.getByRole('radio', { name: 'Целый / не нарезан', exact: true })).toBeChecked();
+  await expect(page.locator('[data-readiness]')).toHaveCount(0);
+  await expect(
+    page.locator('.variant-detail').first().locator('[data-advice-topic="store"]'),
+  ).toContainText('тёмном');
+});
+
 test('Поиск, карточка со спелостью, источник и мобильная ширина', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));

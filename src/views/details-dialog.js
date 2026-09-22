@@ -1,6 +1,7 @@
 import { getElement } from '../shared/html.js';
-import { productDetails } from '../components/product-details.js';
+import { productDetails, productVariants } from '../components/product-details.js';
 import { buildProductDetails } from '../application/product-details.js';
+import copy from '../../content/ru.json' with { type: 'json' };
 
 export class DetailsDialog {
   constructor(catalog) {
@@ -8,6 +9,28 @@ export class DetailsDialog {
     this.dialog = getElement('detail-dialog');
     this.content = getElement('dialog-content');
     this.events = new AbortController();
+    this.content.addEventListener(
+      'change',
+      (event) => {
+        const { name, value } = event.target;
+        if (name === 'purchase-form' && ['whole', 'cut'].includes(value)) this.context.form = value;
+        else if (name === 'purchase-readiness' && ['unknown', 'firm', 'ready'].includes(value)) {
+          this.context.readiness = value === 'unknown' ? undefined : value;
+        } else return;
+        const scroll = this.dialog.scrollTop;
+        const model = buildProductDetails(this.catalog, this.variantId, this.month, this.context);
+        this.content.querySelector('[data-variant-details]').innerHTML = productVariants(
+          model,
+          this.catalog,
+        );
+        const readiness = this.content.querySelector('[data-readiness]');
+        if (readiness) readiness.hidden = this.context.form === 'cut';
+        this.content.querySelector('[data-purchase-status]').textContent =
+          copy.details.purchase.updated;
+        this.dialog.scrollTop = scroll;
+      },
+      { signal: this.events.signal },
+    );
     this.dialog.addEventListener(
       'click',
       (event) => {
@@ -27,7 +50,10 @@ export class DetailsDialog {
   }
 
   open(id, month) {
-    const model = buildProductDetails(this.catalog, id, month);
+    this.variantId = id;
+    this.month = month;
+    this.context = { environment: 'home', form: 'whole' };
+    const model = buildProductDetails(this.catalog, id, month, this.context);
     this.content.innerHTML = productDetails(model, this.catalog);
     this.dialog.showModal();
     this.dialog.scrollTop = 0;

@@ -2,456 +2,1150 @@
   {
     "id": "product-1",
     "name": "Картофель",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-1",
+      "home-wash-product-1",
+      "home-cut-product-1",
+      "home-spoilage-product-1",
+      "home-potato-select-product-1",
+      "home-potato-store-product-1"
+    ]
   },
   {
     "id": "product-3",
     "name": "Морковь основного урожая",
-    "adviceIds": ["advice-1", "advice-2"]
+    "adviceIds": [
+      "advice-1",
+      "advice-2",
+      "home-buy-product-3",
+      "home-wash-product-3",
+      "home-cut-product-3",
+      "home-spoilage-product-3",
+      "home-roots-store-product-3"
+    ]
   },
   {
     "id": "product-4",
     "name": "Свёкла основного урожая",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-4",
+      "home-wash-product-4",
+      "home-cut-product-4",
+      "home-spoilage-product-4",
+      "home-root-select-product-4",
+      "home-roots-store-product-4"
+    ]
   },
   {
     "id": "product-5",
     "name": "Капуста белокочанная",
-    "adviceIds": ["advice-3", "advice-4"]
+    "adviceIds": [
+      "advice-3",
+      "advice-4",
+      "home-buy-product-5",
+      "home-wash-product-5",
+      "home-cut-product-5",
+      "home-spoilage-product-5",
+      "home-cold-vegetable-product-5"
+    ]
   },
   {
     "id": "product-7",
     "name": "Кольраби",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-7",
+      "home-wash-product-7",
+      "home-cut-product-7",
+      "home-spoilage-product-7",
+      "home-root-select-product-7",
+      "home-roots-cold-product-7"
+    ]
   },
   {
     "id": "product-8",
     "name": "Лук репчатый",
-    "adviceIds": ["advice-5", "advice-6"]
+    "adviceIds": [
+      "advice-5",
+      "advice-6",
+      "home-buy-product-8",
+      "home-wash-product-8",
+      "home-cut-product-8",
+      "home-spoilage-product-8",
+      "home-dry-store-product-8"
+    ]
   },
   {
     "id": "product-9",
     "name": "Лук зелёный / перо, открытый грунт",
-    "adviceIds": ["advice-7", "advice-8"]
+    "adviceIds": [
+      "advice-7",
+      "advice-8",
+      "home-buy-product-9",
+      "home-wash-product-9",
+      "home-cut-product-9",
+      "home-spoilage-product-9",
+      "home-greens-store-product-9"
+    ]
   },
   {
     "id": "product-10",
     "name": "Чеснок",
-    "adviceIds": ["advice-9", "advice-10"]
+    "adviceIds": [
+      "advice-9",
+      "advice-10",
+      "home-buy-product-10",
+      "home-wash-product-10",
+      "home-cut-product-10",
+      "home-spoilage-product-10",
+      "home-dry-store-product-10"
+    ]
   },
   {
     "id": "product-11",
     "name": "Огурцы",
-    "adviceIds": ["advice-11", "advice-12"]
+    "adviceIds": [
+      "advice-11",
+      "advice-12",
+      "home-buy-product-11",
+      "home-wash-product-11",
+      "home-cut-product-11",
+      "home-spoilage-product-11",
+      "home-chill-sensitive-product-11"
+    ]
   },
   {
     "id": "product-12",
     "name": "Томаты",
-    "adviceIds": ["advice-13", "advice-14"]
+    "adviceIds": [
+      "advice-13",
+      "advice-14",
+      "home-buy-product-12",
+      "home-wash-product-12",
+      "home-cut-product-12",
+      "home-spoilage-product-12",
+      "home-tomato-store-product-12"
+    ]
   },
   {
     "id": "product-13",
     "name": "Кабачки / цуккини",
-    "adviceIds": ["advice-15", "advice-16"]
+    "adviceIds": [
+      "advice-15",
+      "advice-16",
+      "home-buy-product-13",
+      "home-wash-product-13",
+      "home-cut-product-13",
+      "home-spoilage-product-13",
+      "home-tender-vegetable-product-13"
+    ]
   },
   {
     "id": "product-14",
     "name": "Баклажаны",
-    "adviceIds": ["advice-17", "advice-18"]
+    "adviceIds": [
+      "advice-17",
+      "advice-18",
+      "home-buy-product-14",
+      "home-wash-product-14",
+      "home-cut-product-14",
+      "home-spoilage-product-14",
+      "home-chill-sensitive-product-14"
+    ]
   },
   {
     "id": "product-15",
     "name": "Перец болгарский",
-    "adviceIds": ["advice-19", "advice-20"]
+    "adviceIds": [
+      "advice-19",
+      "advice-20",
+      "home-buy-product-15",
+      "home-wash-product-15",
+      "home-cut-product-15",
+      "home-spoilage-product-15",
+      "home-chill-sensitive-product-15"
+    ]
   },
   {
     "id": "product-16",
     "name": "Тыква зрелая, целая",
-    "adviceIds": ["advice-21", "advice-22"]
+    "adviceIds": [
+      "advice-21",
+      "advice-22",
+      "home-buy-product-16",
+      "home-wash-product-16",
+      "home-cut-product-16",
+      "home-spoilage-product-16",
+      "home-pumpkin-store-product-16"
+    ]
   },
   {
     "id": "product-17",
     "name": "Кукуруза",
-    "adviceIds": ["advice-23", "advice-24"]
+    "adviceIds": [
+      "advice-23",
+      "advice-24",
+      "home-buy-product-17",
+      "home-wash-product-17",
+      "home-cut-product-17",
+      "home-spoilage-product-17",
+      "home-tender-vegetable-product-17"
+    ]
   },
   {
     "id": "product-18",
     "name": "Горошек зелёный, свежий",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-18",
+      "home-wash-product-18",
+      "home-cut-product-18",
+      "home-spoilage-product-18",
+      "home-pea-select-product-18",
+      "home-tender-vegetable-product-18"
+    ]
   },
   {
     "id": "product-19",
     "name": "Фасоль стручковая",
-    "adviceIds": ["advice-25", "advice-26"]
+    "adviceIds": [
+      "advice-25",
+      "advice-26",
+      "home-buy-product-19",
+      "home-wash-product-19",
+      "home-cut-product-19",
+      "home-spoilage-product-19",
+      "home-tender-vegetable-product-19"
+    ]
   },
   {
     "id": "product-20",
     "name": "Брокколи",
-    "adviceIds": ["advice-27", "advice-28"]
+    "adviceIds": [
+      "advice-27",
+      "advice-28",
+      "home-buy-product-20",
+      "home-wash-product-20",
+      "home-cut-product-20",
+      "home-spoilage-product-20",
+      "home-cold-vegetable-product-20"
+    ]
   },
   {
     "id": "product-21",
     "name": "Цветная капуста",
-    "adviceIds": ["advice-29", "advice-30"]
+    "adviceIds": [
+      "advice-29",
+      "advice-30",
+      "home-buy-product-21",
+      "home-wash-product-21",
+      "home-cut-product-21",
+      "home-spoilage-product-21",
+      "home-cold-vegetable-product-21"
+    ]
   },
   {
     "id": "product-22",
     "name": "Брюссельская капуста",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-22",
+      "home-wash-product-22",
+      "home-cut-product-22",
+      "home-spoilage-product-22",
+      "home-sprout-select-product-22",
+      "home-cold-vegetable-product-22"
+    ]
   },
   {
     "id": "product-23",
     "name": "Редис",
-    "adviceIds": ["advice-31", "advice-32"]
+    "adviceIds": [
+      "advice-31",
+      "advice-32",
+      "home-buy-product-23",
+      "home-wash-product-23",
+      "home-cut-product-23",
+      "home-spoilage-product-23",
+      "home-roots-store-product-23"
+    ]
   },
   {
     "id": "product-25",
     "name": "Редька",
-    "adviceIds": ["advice-33", "advice-34"]
+    "adviceIds": [
+      "advice-33",
+      "advice-34",
+      "home-buy-product-25",
+      "home-wash-product-25",
+      "home-cut-product-25",
+      "home-spoilage-product-25",
+      "home-roots-store-product-25"
+    ]
   },
   {
     "id": "product-26",
     "name": "Репа",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-26",
+      "home-wash-product-26",
+      "home-cut-product-26",
+      "home-spoilage-product-26",
+      "home-root-select-product-26",
+      "home-roots-store-product-26"
+    ]
   },
   {
     "id": "product-27",
     "name": "Брюква",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-27",
+      "home-wash-product-27",
+      "home-cut-product-27",
+      "home-spoilage-product-27",
+      "home-root-select-product-27",
+      "home-roots-cold-product-27"
+    ]
   },
   {
     "id": "product-28",
     "name": "Щавель",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-28",
+      "home-wash-product-28",
+      "home-cut-product-28",
+      "home-spoilage-product-28",
+      "home-leaf-select-product-28",
+      "home-greens-store-product-28"
+    ]
   },
   {
     "id": "product-29",
     "name": "Шпинат / руккола, открытый грунт",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-29",
+      "home-wash-product-29",
+      "home-cut-product-29",
+      "home-spoilage-product-29",
+      "home-leaf-select-product-29",
+      "home-greens-store-product-29"
+    ]
   },
   {
     "id": "product-30",
     "name": "Спаржа",
-    "adviceIds": ["advice-35", "advice-36"]
+    "adviceIds": [
+      "advice-35",
+      "advice-36",
+      "home-buy-product-30",
+      "home-wash-product-30",
+      "home-cut-product-30",
+      "home-spoilage-product-30",
+      "home-tender-vegetable-product-30"
+    ]
   },
   {
     "id": "product-31",
     "name": "Черемша свежая",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-31",
+      "home-wash-product-31",
+      "home-cut-product-31",
+      "home-spoilage-product-31",
+      "home-leaf-select-product-31",
+      "home-greens-store-product-31",
+      "home-wild-garlic-product-31"
+    ]
   },
   {
     "id": "product-32",
     "name": "Укроп / петрушка / зелень, открытый грунт",
-    "adviceIds": ["advice-37", "advice-38"]
+    "adviceIds": [
+      "advice-37",
+      "advice-38",
+      "home-buy-product-32",
+      "home-wash-product-32",
+      "home-cut-product-32",
+      "home-spoilage-product-32",
+      "home-greens-store-product-32"
+    ]
   },
   {
     "id": "product-33",
     "name": "Сельдерей корневой",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-33",
+      "home-wash-product-33",
+      "home-cut-product-33",
+      "home-spoilage-product-33",
+      "home-root-select-product-33",
+      "home-aromatic-root-product-33"
+    ]
   },
   {
     "id": "product-34",
     "name": "Сельдерей черешковый",
-    "adviceIds": ["advice-39", "advice-40"]
+    "adviceIds": [
+      "advice-39",
+      "advice-40",
+      "home-buy-product-34",
+      "home-wash-product-34",
+      "home-cut-product-34",
+      "home-spoilage-product-34",
+      "home-cold-vegetable-product-34"
+    ]
   },
   {
     "id": "product-35",
     "name": "Хрен, свежий корень",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-35",
+      "home-wash-product-35",
+      "home-cut-product-35",
+      "home-spoilage-product-35",
+      "home-root-select-product-35",
+      "home-aromatic-root-product-35"
+    ]
   },
   {
     "id": "product-36",
     "name": "Ревень",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-36",
+      "home-wash-product-36",
+      "home-cut-product-36",
+      "home-spoilage-product-36",
+      "home-rhubarb-select-product-36",
+      "home-rhubarb-store-product-36"
+    ]
   },
   {
     "id": "product-37",
     "name": "Клубника",
-    "adviceIds": ["advice-41", "advice-42"]
+    "adviceIds": [
+      "advice-41",
+      "advice-42",
+      "home-buy-product-37",
+      "home-wash-product-37",
+      "home-cut-product-37",
+      "home-spoilage-product-37",
+      "home-berries-store-product-37"
+    ]
   },
   {
     "id": "product-40",
     "name": "Земляника лесная",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-40",
+      "home-wash-product-40",
+      "home-cut-product-40",
+      "home-spoilage-product-40",
+      "home-berry-select-product-40",
+      "home-berries-store-product-40"
+    ]
   },
   {
     "id": "product-41",
     "name": "Жимолость",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-41",
+      "home-wash-product-41",
+      "home-cut-product-41",
+      "home-spoilage-product-41",
+      "home-berry-select-product-41",
+      "home-berries-store-product-41"
+    ]
   },
   {
     "id": "product-42",
     "name": "Черешня",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-42",
+      "home-wash-product-42",
+      "home-cut-product-42",
+      "home-spoilage-product-42",
+      "home-berry-select-product-42",
+      "home-berries-store-product-42"
+    ]
   },
   {
     "id": "product-43",
     "name": "Вишня",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-43",
+      "home-wash-product-43",
+      "home-cut-product-43",
+      "home-spoilage-product-43",
+      "home-berry-select-product-43",
+      "home-berries-store-product-43"
+    ]
   },
   {
     "id": "product-44",
     "name": "Малина",
-    "adviceIds": ["advice-43", "advice-44"]
+    "adviceIds": [
+      "advice-43",
+      "advice-44",
+      "home-buy-product-44",
+      "home-wash-product-44",
+      "home-cut-product-44",
+      "home-spoilage-product-44",
+      "home-berries-store-product-44"
+    ]
   },
   {
     "id": "product-46",
     "name": "Чёрная смородина",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-46",
+      "home-wash-product-46",
+      "home-cut-product-46",
+      "home-spoilage-product-46",
+      "home-berry-select-product-46",
+      "home-berries-store-product-46"
+    ]
   },
   {
     "id": "product-47",
     "name": "Красная смородина",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-47",
+      "home-wash-product-47",
+      "home-cut-product-47",
+      "home-spoilage-product-47",
+      "home-berry-select-product-47",
+      "home-berries-store-product-47"
+    ]
   },
   {
     "id": "product-48",
     "name": "Крыжовник",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-48",
+      "home-wash-product-48",
+      "home-cut-product-48",
+      "home-spoilage-product-48",
+      "home-berry-select-product-48",
+      "home-berries-store-product-48"
+    ]
   },
   {
     "id": "product-49",
     "name": "Черника лесная",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-49",
+      "home-wash-product-49",
+      "home-cut-product-49",
+      "home-spoilage-product-49",
+      "home-berry-select-product-49",
+      "home-berries-store-product-49"
+    ]
   },
   {
     "id": "product-50",
     "name": "Голубика",
-    "adviceIds": ["advice-45", "advice-46"]
+    "adviceIds": [
+      "advice-45",
+      "advice-46",
+      "home-buy-product-50",
+      "home-wash-product-50",
+      "home-cut-product-50",
+      "home-spoilage-product-50",
+      "home-berries-store-product-50"
+    ]
   },
   {
     "id": "product-52",
     "name": "Ежевика",
-    "adviceIds": ["advice-47", "advice-48"]
+    "adviceIds": [
+      "advice-47",
+      "advice-48",
+      "home-buy-product-52",
+      "home-wash-product-52",
+      "home-cut-product-52",
+      "home-spoilage-product-52",
+      "home-berries-store-product-52"
+    ]
   },
   {
     "id": "product-53",
     "name": "Облепиха",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-53",
+      "home-wash-product-53",
+      "home-cut-product-53",
+      "home-spoilage-product-53",
+      "home-berry-select-product-53",
+      "home-berries-store-product-53"
+    ]
   },
   {
     "id": "product-54",
     "name": "Калина",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-54",
+      "home-wash-product-54",
+      "home-cut-product-54",
+      "home-spoilage-product-54",
+      "home-berry-select-product-54",
+      "home-berries-store-product-54",
+      "home-guelder-prepare-product-54"
+    ]
   },
   {
     "id": "product-55",
     "name": "Рябина красная",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-55",
+      "home-wash-product-55",
+      "home-cut-product-55",
+      "home-spoilage-product-55",
+      "home-berry-select-product-55",
+      "home-berries-store-product-55",
+      "home-rowan-prepare-product-55"
+    ]
   },
   {
     "id": "product-56",
     "name": "Шиповник",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-56",
+      "home-wash-product-56",
+      "home-cut-product-56",
+      "home-spoilage-product-56",
+      "home-berry-select-product-56",
+      "home-berries-store-product-56",
+      "home-rosehip-prepare-product-56"
+    ]
   },
   {
     "id": "product-57",
     "name": "Ирга",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-57",
+      "home-wash-product-57",
+      "home-cut-product-57",
+      "home-spoilage-product-57",
+      "home-berry-select-product-57",
+      "home-berries-store-product-57"
+    ]
   },
   {
     "id": "product-58",
     "name": "Черёмуха обыкновенная, свежая",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-58",
+      "home-wash-product-58",
+      "home-cut-product-58",
+      "home-spoilage-product-58",
+      "home-berry-select-product-58",
+      "home-berries-store-product-58"
+    ]
   },
   {
     "id": "product-59",
     "name": "Брусника, свежий сбор",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-59",
+      "home-wash-product-59",
+      "home-cut-product-59",
+      "home-spoilage-product-59",
+      "home-berry-select-product-59",
+      "home-berries-store-product-59"
+    ]
   },
   {
     "id": "product-60",
     "name": "Клюква, свежий сбор",
-    "adviceIds": ["advice-49", "advice-50"]
+    "adviceIds": [
+      "advice-49",
+      "advice-50",
+      "home-buy-product-60",
+      "home-wash-product-60",
+      "home-cut-product-60",
+      "home-spoilage-product-60",
+      "home-berries-store-product-60"
+    ]
   },
   {
     "id": "product-61",
     "name": "Абрикосы",
-    "adviceIds": ["advice-51", "advice-52"]
+    "adviceIds": [
+      "advice-51",
+      "advice-52",
+      "home-buy-product-61",
+      "home-wash-product-61",
+      "home-cut-product-61",
+      "home-spoilage-product-61",
+      "home-firm-store-product-61",
+      "home-ready-store-product-61"
+    ]
   },
   {
     "id": "product-62",
     "name": "Персики и нектарины",
-    "adviceIds": ["advice-53", "advice-54"]
+    "adviceIds": [
+      "advice-53",
+      "advice-54",
+      "home-buy-product-62",
+      "home-wash-product-62",
+      "home-cut-product-62",
+      "home-spoilage-product-62",
+      "home-firm-store-product-62",
+      "home-ready-store-product-62"
+    ]
   },
   {
     "id": "product-64",
     "name": "Сливы",
-    "adviceIds": ["advice-55", "advice-56"]
+    "adviceIds": [
+      "advice-55",
+      "advice-56",
+      "home-buy-product-64",
+      "home-wash-product-64",
+      "home-cut-product-64",
+      "home-spoilage-product-64",
+      "home-firm-store-product-64",
+      "home-ready-store-product-64"
+    ]
   },
   {
     "id": "product-65",
     "name": "Алыча",
-    "adviceIds": ["advice-57", "advice-58"]
+    "adviceIds": [
+      "advice-57",
+      "advice-58",
+      "home-buy-product-65",
+      "home-wash-product-65",
+      "home-cut-product-65",
+      "home-spoilage-product-65",
+      "home-firm-store-product-65",
+      "home-ready-store-product-65"
+    ]
   },
   {
     "id": "product-66",
     "name": "Яблоки",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-66",
+      "home-wash-product-66",
+      "home-cut-product-66",
+      "home-spoilage-product-66",
+      "home-apple-select-product-66",
+      "home-apple-store-product-66"
+    ]
   },
   {
     "id": "product-69",
     "name": "Груши",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-69",
+      "home-wash-product-69",
+      "home-cut-product-69",
+      "home-spoilage-product-69",
+      "home-pear-select-product-69",
+      "home-firm-store-product-69",
+      "home-ready-store-product-69"
+    ]
   },
   {
     "id": "product-71",
     "name": "Арбуз грунтовой",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-71",
+      "home-wash-product-71",
+      "home-cut-product-71",
+      "home-spoilage-product-71",
+      "home-melon-select-product-71",
+      "home-melons-store-product-71"
+    ]
   },
   {
     "id": "product-72",
     "name": "Дыня",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-72",
+      "home-wash-product-72",
+      "home-cut-product-72",
+      "home-spoilage-product-72",
+      "home-muskmelon-select-product-72",
+      "home-melons-store-product-72"
+    ]
   },
   {
     "id": "product-73",
     "name": "Виноград",
-    "adviceIds": ["advice-59", "advice-60"]
+    "adviceIds": [
+      "advice-59",
+      "advice-60",
+      "home-buy-product-73",
+      "home-wash-product-73",
+      "home-cut-product-73",
+      "home-spoilage-product-73",
+      "home-delicate-fruit-product-73"
+    ]
   },
   {
     "id": "product-74",
     "name": "Инжир",
-    "adviceIds": ["advice-61", "advice-62"]
+    "adviceIds": [
+      "advice-61",
+      "advice-62",
+      "home-buy-product-74",
+      "home-wash-product-74",
+      "home-cut-product-74",
+      "home-spoilage-product-74",
+      "home-delicate-fruit-product-74"
+    ]
   },
   {
     "id": "product-75",
     "name": "Айва",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-75",
+      "home-wash-product-75",
+      "home-cut-product-75",
+      "home-spoilage-product-75",
+      "home-quince-select-product-75",
+      "home-quince-store-product-75"
+    ]
   },
   {
     "id": "product-76",
     "name": "Хурма",
-    "adviceIds": ["advice-63", "advice-64"]
+    "adviceIds": [
+      "advice-63",
+      "advice-64",
+      "home-buy-product-76",
+      "home-wash-product-76",
+      "home-cut-product-76",
+      "home-spoilage-product-76",
+      "home-persimmon-store-product-76"
+    ]
   },
   {
     "id": "product-78",
     "name": "Гранат",
-    "adviceIds": ["advice-65", "advice-66"]
+    "adviceIds": [
+      "advice-65",
+      "advice-66",
+      "home-buy-product-78",
+      "home-wash-product-78",
+      "home-cut-product-78",
+      "home-spoilage-product-78",
+      "home-room-fruit-product-78"
+    ]
   },
   {
     "id": "product-79",
     "name": "Фейхоа",
-    "adviceIds": ["advice-67", "advice-68"]
+    "adviceIds": [
+      "advice-67",
+      "advice-68",
+      "home-buy-product-79",
+      "home-wash-product-79",
+      "home-cut-product-79",
+      "home-spoilage-product-79",
+      "home-feijoa-store-product-79"
+    ]
   },
   {
     "id": "product-82",
     "name": "Молодые салатные культуры, теплица",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-82",
+      "home-wash-product-82",
+      "home-cut-product-82",
+      "home-spoilage-product-82",
+      "home-leaf-select-product-82",
+      "home-greens-store-product-82"
+    ]
   },
   {
     "id": "product-83",
     "name": "Мандарины",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-83",
+      "home-wash-product-83",
+      "home-cut-product-83",
+      "home-spoilage-product-83",
+      "home-citrus-select-product-83",
+      "home-citrus-store-product-83"
+    ]
   },
   {
     "id": "product-89",
     "name": "Апельсины",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-89",
+      "home-wash-product-89",
+      "home-cut-product-89",
+      "home-spoilage-product-89",
+      "home-citrus-select-product-89",
+      "home-citrus-store-product-89"
+    ]
   },
   {
     "id": "product-92",
     "name": "Грейпфрут",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-92",
+      "home-wash-product-92",
+      "home-cut-product-92",
+      "home-spoilage-product-92",
+      "home-citrus-select-product-92",
+      "home-citrus-store-product-92"
+    ]
   },
   {
     "id": "product-94",
     "name": "Лимоны",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-94",
+      "home-wash-product-94",
+      "home-cut-product-94",
+      "home-spoilage-product-94",
+      "home-citrus-select-product-94",
+      "home-citrus-store-product-94"
+    ]
   },
   {
     "id": "product-96",
     "name": "Помело",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-96",
+      "home-wash-product-96",
+      "home-cut-product-96",
+      "home-spoilage-product-96",
+      "home-citrus-select-product-96",
+      "home-citrus-store-product-96"
+    ]
   },
   {
     "id": "product-99",
     "name": "Лайм",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-99",
+      "home-wash-product-99",
+      "home-cut-product-99",
+      "home-spoilage-product-99",
+      "home-citrus-select-product-99",
+      "home-citrus-store-product-99"
+    ]
   },
   {
     "id": "product-102",
     "name": "Манго",
-    "adviceIds": ["advice-69", "advice-70"]
+    "adviceIds": [
+      "advice-69",
+      "advice-70",
+      "home-buy-product-102",
+      "home-wash-product-102",
+      "home-cut-product-102",
+      "home-spoilage-product-102",
+      "home-firm-store-product-102",
+      "home-ready-store-product-102"
+    ]
   },
   {
     "id": "product-109",
     "name": "Ананас",
-    "adviceIds": ["advice-71", "advice-72"]
+    "adviceIds": [
+      "advice-71",
+      "advice-72",
+      "home-buy-product-109",
+      "home-wash-product-109",
+      "home-cut-product-109",
+      "home-spoilage-product-109",
+      "home-room-fruit-product-109"
+    ]
   },
   {
     "id": "product-112",
     "name": "Бананы",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-112",
+      "home-wash-product-112",
+      "home-cut-product-112",
+      "home-spoilage-product-112",
+      "home-banana-select-product-112",
+      "home-firm-store-product-112",
+      "home-ready-store-product-112"
+    ]
   },
   {
     "id": "product-114",
     "name": "Авокадо",
-    "adviceIds": ["advice-73", "advice-74"]
+    "adviceIds": [
+      "advice-73",
+      "advice-74",
+      "home-buy-product-114",
+      "home-wash-product-114",
+      "home-cut-product-114",
+      "home-spoilage-product-114",
+      "home-firm-store-product-114",
+      "home-ready-store-product-114"
+    ]
   },
   {
     "id": "product-118",
     "name": "Личи",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-118",
+      "home-wash-product-118",
+      "home-cut-product-118",
+      "home-spoilage-product-118",
+      "home-lychee-select-product-118",
+      "home-lychee-store-product-118"
+    ]
   },
   {
     "id": "product-122",
     "name": "Папайя",
-    "adviceIds": ["advice-75", "advice-76"]
+    "adviceIds": [
+      "advice-75",
+      "advice-76",
+      "home-buy-product-122",
+      "home-wash-product-122",
+      "home-cut-product-122",
+      "home-spoilage-product-122",
+      "home-firm-store-product-122",
+      "home-ready-store-product-122"
+    ]
   },
   {
     "id": "product-125",
     "name": "Питайя (дракон-фрукт)",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-125",
+      "home-wash-product-125",
+      "home-cut-product-125",
+      "home-spoilage-product-125",
+      "home-pitaya-select-product-125",
+      "home-pitaya-store-product-125"
+    ]
   },
   {
     "id": "product-128",
     "name": "Маракуйя",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-128",
+      "home-wash-product-128",
+      "home-cut-product-128",
+      "home-spoilage-product-128",
+      "home-passion-select-product-128",
+      "home-passion-store-product-128"
+    ]
   },
   {
     "id": "product-131",
     "name": "Кокос",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-131",
+      "home-wash-product-131",
+      "home-cut-product-131",
+      "home-spoilage-product-131",
+      "home-coconut-select-product-131",
+      "home-coconut-store-product-131"
+    ]
   },
   {
     "id": "product-134",
     "name": "Физалис",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-134",
+      "home-wash-product-134",
+      "home-cut-product-134",
+      "home-spoilage-product-134",
+      "home-physalis-select-product-134",
+      "home-physalis-store-product-134",
+      "home-physalis-prepare-product-134"
+    ]
   },
   {
     "id": "product-170",
     "name": "Киви",
-    "adviceIds": ["advice-77", "advice-78"]
+    "adviceIds": [
+      "advice-77",
+      "advice-78",
+      "home-buy-product-170",
+      "home-wash-product-170",
+      "home-cut-product-170",
+      "home-spoilage-product-170",
+      "home-firm-store-product-170",
+      "home-ready-store-product-170"
+    ]
   },
   {
     "id": "product-195",
     "name": "Салат айсберг / романо",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-195",
+      "home-wash-product-195",
+      "home-cut-product-195",
+      "home-spoilage-product-195",
+      "home-leaf-select-product-195",
+      "home-greens-store-product-195"
+    ]
   },
   {
     "id": "product-198",
     "name": "Имбирь",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-198",
+      "home-wash-product-198",
+      "home-cut-product-198",
+      "home-spoilage-product-198",
+      "home-ginger-select-product-198",
+      "home-ginger-store-product-198"
+    ]
   },
   {
     "id": "product-201",
     "name": "Батат",
-    "adviceIds": ["advice-79", "advice-80"]
+    "adviceIds": [
+      "advice-79",
+      "advice-80",
+      "home-buy-product-201",
+      "home-wash-product-201",
+      "home-cut-product-201",
+      "home-spoilage-product-201",
+      "home-sweet-store-product-201"
+    ]
   },
   {
     "id": "product-204",
     "name": "Пекинская капуста",
-    "adviceIds": ["advice-81", "advice-82"]
+    "adviceIds": [
+      "advice-81",
+      "advice-82",
+      "home-buy-product-204",
+      "home-wash-product-204",
+      "home-cut-product-204",
+      "home-spoilage-product-204",
+      "home-cold-vegetable-product-204"
+    ]
   },
   {
     "id": "product-206",
     "name": "Артишоки",
-    "adviceIds": ["advice-83", "advice-84"]
+    "adviceIds": [
+      "advice-83",
+      "advice-84",
+      "home-buy-product-206",
+      "home-wash-product-206",
+      "home-cut-product-206",
+      "home-spoilage-product-206",
+      "home-cold-vegetable-product-206"
+    ]
   },
   {
     "id": "product-212",
     "name": "Лук-порей",
-    "adviceIds": []
+    "adviceIds": [
+      "home-buy-product-212",
+      "home-wash-product-212",
+      "home-cut-product-212",
+      "home-spoilage-product-212",
+      "home-leaf-select-product-212",
+      "home-greens-store-product-212"
+    ]
   }
 ]
