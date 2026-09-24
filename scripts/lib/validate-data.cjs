@@ -182,6 +182,8 @@ function validateData(db) {
     assert.ok(products.has(item.productId), 'Продукт совета не найден');
     assert.ok(TOPICS.has(item.topic), 'Раздел совета неизвестен');
     text(item.summary, 'Нет текста совета');
+    if (item.emphasis !== undefined)
+      assert.ok(['primary', 'secondary'].includes(item.emphasis), 'Неизвестный акцент совета');
     assert.ok(
       Array.isArray(item.steps) && item.steps.every((s) => typeof s === 'string' && s.trim()),
       'Некорректные шаги',

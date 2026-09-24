@@ -10,7 +10,9 @@ export function adviceSection(items, sources, topics = ADVICE_TOPICS) {
   return (
     `<div class="advice-grid">${topics
       .map((topic) => {
-        const group = fresh.filter((item) => item.topic === topic);
+        const group = fresh
+          .filter((item) => item.topic === topic)
+          .sort((a, b) => Number(a.emphasis === 'secondary') - Number(b.emphasis === 'secondary'));
         if (!group.length) return '';
         return `<section class="advice-section" data-advice-topic="${topic}"><h3>${escape(copy.details.adviceTopics[topic])}</h3>${group.map((item) => `<div data-advice="${escape(item.id)}">${item.storageGuide ? storageGuide(item.storageGuide, { compact: detailDesign(item.productId) === 'warm-reference' }) : `<p>${escape(item.summary)}</p>`}${item.steps.length ? `<ul>${item.steps.map((step) => `<li>${escape(step)}</li>`).join('')}</ul>` : ''}${storageInstructions(item.storage)}</div>`).join('')}</section>`;
       })

@@ -1,4 +1,4 @@
-/* Product-scoped visual trial. Content and advice behaviour stay shared. */
+/* Shared reference-card presentation. Advice behaviour is independent of styling. */
 dialog[data-detail-design='warm-reference'] {
   --card: #faf7ef;
   --ink: #34372b;
@@ -229,7 +229,7 @@ body.dark dialog[data-detail-design='warm-reference'] {
     align-items: center;
   }
 }
-/* Short, scannable advice and compact native controls for the avocado trial. */
+/* Short, scannable advice and compact native controls. */
 [data-detail-design='warm-reference']
   [data-advice-topic='choose']
   > [data-advice]:first-of-type
@@ -334,5 +334,19 @@ body.dark dialog[data-detail-design='warm-reference'] {
   [data-detail-design='warm-reference'] .purchase-context-compact .purchase-option {
     flex-direction: column;
     gap: 3px;
+  }
+}
+
+[data-detail-design='warm-reference'] .dialog-head > div {
+  min-width: 0;
+}
+[data-detail-design='warm-reference'] .dialog-head h2 {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+@media (max-width: 600px) {
+  [data-detail-design='warm-reference'] .dialog-head h2[data-long-title] {
+    font-size: clamp(24px, 7.2vw, 34px);
+    line-height: 1.2;
   }
 }

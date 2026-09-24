@@ -52,7 +52,7 @@ test('Состояние покупки меняет советы, сохран�
   await expect(page.locator('[data-readiness]')).toHaveCount(0);
   await expect(
     page.locator('[data-home-advice] [data-advice-topic="store"]').first(),
-  ).toContainText('тёмном');
+  ).toContainText('тёмный шкаф');
 });
 
 test('Поиск, карточка со спелостью, источник и мобильная ширина', async ({ page }) => {
