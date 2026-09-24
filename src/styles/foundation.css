@@ -1,12 +1,26 @@
 :root {
-  --bg: #f5f4ee;
-  --card: #fffef9;
-  --ink: #243c32;
-  --muted: #66736a;
-  --line: #dce1d6;
-  --accent: #236348;
-  --soft: #eaf0e4;
-  --shadow: 0 8px 35px #233c3210;
+  --bg: #f6f2e9;
+  --card: #fffdf7;
+  --ink: #30382d;
+  --muted: #656b5c;
+  --line: #ded8ca;
+  --accent: #435d39;
+  --soft: #ecefe3;
+  --hero-wash: #efe6d4;
+  --hero-glow: #f3e5cd;
+  --group-wash: #edf4e9;
+  --group-wash-annual: #f1efe3;
+  --group-wash-choose: #eaf2f4;
+  --group-wash-careful: #fbf0dd;
+  --group-wash-off: #f8eae6;
+  --group-wash-unknown: #f0f0eb;
+  --group-accent-good: #426643;
+  --group-accent-annual: #6e653a;
+  --group-accent-choose: #416a76;
+  --group-accent-careful: #88602c;
+  --group-accent-off: #95574e;
+  --group-accent-unknown: #666c62;
+  --shadow: 0 10px 34px #4d483119;
   color-scheme: light;
   font-family:
     system-ui,
@@ -25,14 +39,28 @@ body {
   line-height: 1.5;
 }
 body.dark {
-  --bg: #17221c;
-  --card: #202e26;
-  --ink: #e2e9df;
-  --muted: #aab8ac;
-  --line: #3c4c3e;
-  --accent: #99d5ab;
-  --soft: #2a3d2c;
-  --shadow: none;
+  --bg: #1d241e;
+  --card: #273128;
+  --ink: #f0eee2;
+  --muted: #bec5b5;
+  --line: #4c594b;
+  --accent: #bed2a4;
+  --soft: #333f32;
+  --hero-wash: #364236;
+  --hero-glow: #46513a;
+  --group-wash: #2b392b;
+  --group-wash-annual: #38372a;
+  --group-wash-choose: #283940;
+  --group-wash-careful: #40362a;
+  --group-wash-off: #3f302e;
+  --group-wash-unknown: #323630;
+  --group-accent-good: #b7d5a8;
+  --group-accent-annual: #ddcb97;
+  --group-accent-choose: #a9cbd5;
+  --group-accent-careful: #e9c490;
+  --group-accent-off: #e5afa3;
+  --group-accent-unknown: #c1c8ba;
+  --shadow: 0 10px 34px #10181054;
   color-scheme: dark;
 }
 button,
@@ -48,18 +76,21 @@ button {
   color: inherit;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: 11px;
   padding: 9px 14px;
 }
-button:hover {
+button:hover,
+select:hover,
+input[type='search']:hover {
   border-color: var(--accent);
 }
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
-summary:focus-visible {
-  outline: 3px solid #dc9e38;
+summary:focus-visible,
+.legend:focus-visible {
+  outline: 3px solid #bf8b42;
   outline-offset: 3px;
 }
 a {

@@ -1,11 +1,5 @@
 /* Shared reference-card presentation. Advice behaviour is independent of styling. */
 dialog[data-detail-design='warm-reference'] {
-  --card: #faf7ef;
-  --ink: #34372b;
-  --muted: #696657;
-  --line: #ded8c8;
-  --accent: #52613e;
-  --soft: #eeeee0;
   width: min(760px, calc(100% - 24px));
   padding: 30px;
   border-color: var(--line);
@@ -13,14 +7,6 @@ dialog[data-detail-design='warm-reference'] {
   font-size: 16px;
   line-height: 1.6;
   box-shadow: 0 24px 90px #302b2338;
-}
-body.dark dialog[data-detail-design='warm-reference'] {
-  --card: #292c24;
-  --ink: #f0ede3;
-  --muted: #c1bcad;
-  --line: #535648;
-  --accent: #b6c89b;
-  --soft: #343b2c;
 }
 [data-detail-design='warm-reference']::backdrop {
   background: #2e30245e;

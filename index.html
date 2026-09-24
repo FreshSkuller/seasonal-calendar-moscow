@@ -8,14 +8,28 @@
     <style>
             /* foundation.css */
       :root {
-        --bg: #f5f4ee;
-        --card: #fffef9;
-        --ink: #243c32;
-        --muted: #66736a;
-        --line: #dce1d6;
-        --accent: #236348;
-        --soft: #eaf0e4;
-        --shadow: 0 8px 35px #233c3210;
+        --bg: #f6f2e9;
+        --card: #fffdf7;
+        --ink: #30382d;
+        --muted: #656b5c;
+        --line: #ded8ca;
+        --accent: #435d39;
+        --soft: #ecefe3;
+        --hero-wash: #efe6d4;
+        --hero-glow: #f3e5cd;
+        --group-wash: #edf4e9;
+        --group-wash-annual: #f1efe3;
+        --group-wash-choose: #eaf2f4;
+        --group-wash-careful: #fbf0dd;
+        --group-wash-off: #f8eae6;
+        --group-wash-unknown: #f0f0eb;
+        --group-accent-good: #426643;
+        --group-accent-annual: #6e653a;
+        --group-accent-choose: #416a76;
+        --group-accent-careful: #88602c;
+        --group-accent-off: #95574e;
+        --group-accent-unknown: #666c62;
+        --shadow: 0 10px 34px #4d483119;
         color-scheme: light;
         font-family:
           system-ui,
@@ -34,14 +48,28 @@
         line-height: 1.5;
       }
       body.dark {
-        --bg: #17221c;
-        --card: #202e26;
-        --ink: #e2e9df;
-        --muted: #aab8ac;
-        --line: #3c4c3e;
-        --accent: #99d5ab;
-        --soft: #2a3d2c;
-        --shadow: none;
+        --bg: #1d241e;
+        --card: #273128;
+        --ink: #f0eee2;
+        --muted: #bec5b5;
+        --line: #4c594b;
+        --accent: #bed2a4;
+        --soft: #333f32;
+        --hero-wash: #364236;
+        --hero-glow: #46513a;
+        --group-wash: #2b392b;
+        --group-wash-annual: #38372a;
+        --group-wash-choose: #283940;
+        --group-wash-careful: #40362a;
+        --group-wash-off: #3f302e;
+        --group-wash-unknown: #323630;
+        --group-accent-good: #b7d5a8;
+        --group-accent-annual: #ddcb97;
+        --group-accent-choose: #a9cbd5;
+        --group-accent-careful: #e9c490;
+        --group-accent-off: #e5afa3;
+        --group-accent-unknown: #c1c8ba;
+        --shadow: 0 10px 34px #10181054;
         color-scheme: dark;
       }
       button,
@@ -57,18 +85,21 @@
         color: inherit;
         background: var(--card);
         border: 1px solid var(--line);
-        border-radius: 9px;
+        border-radius: 11px;
         padding: 9px 14px;
       }
-      button:hover {
+      button:hover,
+      select:hover,
+      input[type='search']:hover {
         border-color: var(--accent);
       }
       button:focus-visible,
       a:focus-visible,
       input:focus-visible,
       select:focus-visible,
-      summary:focus-visible {
-        outline: 3px solid #dc9e38;
+      summary:focus-visible,
+      .legend:focus-visible {
+        outline: 3px solid #bf8b42;
         outline-offset: 3px;
       }
       a {
@@ -122,21 +153,6 @@
         color: var(--muted);
         font-size: 17px;
       }
-      .number-note {
-        flex-shrink: 0;
-        border-left: 1px solid var(--line);
-        padding: 8px 0 8px 24px;
-        max-width: 220px;
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .number-note strong {
-        display: block;
-        font:
-          34px Georgia,
-          serif;
-        color: var(--ink);
-      }
       .tabs {
         display: flex;
         border-bottom: 1px solid var(--line);
@@ -167,11 +183,6 @@
         padding: 20px;
         box-shadow: var(--shadow);
       }
-      .filters {
-        display: grid;
-        grid-template-columns: 150px minmax(190px, 1.7fr) minmax(190px, 1.5fr) minmax(160px, 1fr);
-        gap: 14px;
-      }
       label.field {
         display: flex;
         flex-direction: column;
@@ -192,33 +203,6 @@
       }
       input::placeholder {
         color: var(--muted);
-      }
-      .options {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 17px;
-      }
-      .options label {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 13px;
-      }
-      .options input {
-        accent-color: var(--accent);
-        width: 17px;
-        height: 17px;
-      }
-      .options select {
-        width: auto;
-        min-height: 36px;
-        padding: 5px 8px;
-        font-size: 13px;
-      }
-      .options .spacer {
-        flex: 1;
       }
       .segmented {
         display: flex;
@@ -316,7 +300,7 @@
         font-size: 13px;
         color: var(--muted);
       }
-      .summary-line h2 {
+      .summary-line h1 {
         font-size: 22px;
         color: var(--ink);
         margin: 0;
@@ -433,6 +417,7 @@
       .panel {
         max-width: 1080px;
       }
+      .panel h1,
       .panel h2 {
         font:
           32px Georgia,
@@ -566,6 +551,13 @@
         backdrop-filter: blur(14px) saturate(1.25);
         -webkit-backdrop-filter: blur(14px) saturate(1.25);
         pointer-events: auto;
+      }
+      #dialog-title:focus {
+        outline: none;
+      }
+      #detail-dialog .close:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
       .dialog-head {
         padding-right: 64px;
@@ -875,12 +867,6 @@
         .hero {
           padding: 26px 0;
         }
-        .number-note {
-          display: none;
-        }
-        .filters {
-          grid-template-columns: 1fr 1fr;
-        }
         .info-grid {
           grid-template-columns: 1fr;
         }
@@ -903,9 +889,6 @@
         }
         .decision {
           min-width: 160px;
-        }
-        .options .spacer {
-          display: none;
         }
         .summary-line {
           align-items: flex-start;
@@ -932,17 +915,6 @@
         .hero p {
           font-size: 15px;
         }
-        .filters {
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
-        }
-        .filters .search-field,
-        .filters .origin-field {
-          grid-column: 1/-1;
-        }
-        .filters .search-field {
-          grid-row: 1;
-        }
         .legend {
           gap: 8px;
           font-size: 11px;
@@ -968,7 +940,7 @@
         td.origin {
           min-width: 150px;
         }
-        .summary-line h2 {
+        .summary-line h1 {
           font-size: 19px;
         }
         .summary-line > span {
@@ -1389,12 +1361,6 @@
       /* warm-reference.css */
       /* Shared reference-card presentation. Advice behaviour is independent of styling. */
       dialog[data-detail-design='warm-reference'] {
-        --card: #faf7ef;
-        --ink: #34372b;
-        --muted: #696657;
-        --line: #ded8c8;
-        --accent: #52613e;
-        --soft: #eeeee0;
         width: min(760px, calc(100% - 24px));
         padding: 30px;
         border-color: var(--line);
@@ -1402,14 +1368,6 @@
         font-size: 16px;
         line-height: 1.6;
         box-shadow: 0 24px 90px #302b2338;
-      }
-      body.dark dialog[data-detail-design='warm-reference'] {
-        --card: #292c24;
-        --ink: #f0ede3;
-        --muted: #c1bcad;
-        --line: #535648;
-        --accent: #b6c89b;
-        --soft: #343b2c;
       }
       [data-detail-design='warm-reference']::backdrop {
         background: #2e30245e;
@@ -1738,6 +1696,483 @@
           line-height: 1.2;
         }
       }
+
+      /* experience.css */
+      /* The same reading rhythm connects the daily list, calendar and reference card. */
+      .hero {
+        align-items: center;
+        min-height: 228px;
+        margin: 20px 0 22px;
+        padding: 26px 36px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background:
+          radial-gradient(circle at 73% 8%, var(--hero-glow) 0, transparent 34%),
+          linear-gradient(115deg, var(--card), var(--hero-wash));
+        overflow: hidden;
+      }
+
+      body[data-active-panel='calendar'] .hero,
+      body[data-active-panel='method'] .hero {
+        display: none;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        max-width: 600px;
+        margin-bottom: 14px;
+      }
+
+      .hero p {
+        max-width: 560px;
+      }
+
+      .hero-side {
+        position: relative;
+        flex: 0 0 280px;
+        min-height: 172px;
+      }
+
+      .hero-art {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: auto;
+      }
+
+      .shop-group {
+        --group-accent: var(--group-accent-good);
+        border: 1px solid color-mix(in srgb, var(--group-accent) 23%, var(--line));
+        border-left: 3px solid color-mix(in srgb, var(--group-accent) 70%, var(--line));
+        border-radius: 20px;
+        padding: 20px;
+        margin: 0 0 18px;
+        background: var(--group-wash);
+      }
+
+      .shop-group[data-group='annual'] {
+        --group-accent: var(--group-accent-annual);
+        background: var(--group-wash-annual);
+      }
+
+      .shop-group[data-group='choose'] {
+        --group-accent: var(--group-accent-choose);
+        background: var(--group-wash-choose);
+      }
+
+      .shop-group[data-group='careful'] {
+        --group-accent: var(--group-accent-careful);
+        background: var(--group-wash-careful);
+      }
+
+      .shop-group[data-group='off'] {
+        --group-accent: var(--group-accent-off);
+        background: var(--group-wash-off);
+      }
+
+      .shop-group[data-group='unknown'] {
+        --group-accent: var(--group-accent-unknown);
+        background: var(--group-wash-unknown);
+      }
+
+      .shop-group > summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+      }
+
+      .shop-group > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .shop-group > summary::before {
+        content: '›';
+        display: inline-grid;
+        place-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: color-mix(in srgb, var(--group-accent) 12%, var(--card));
+        color: var(--group-accent);
+        font:
+          25px/1 Georgia,
+          serif;
+        transform: rotate(0);
+      }
+
+      .shop-group[open] > summary::before {
+        transform: rotate(90deg);
+      }
+
+      .group-count {
+        margin-left: auto;
+        color: var(--group-accent);
+        background: color-mix(in srgb, var(--group-accent) 10%, var(--card));
+        font-weight: 700;
+      }
+
+      .family-note {
+        background: var(--card);
+        border: 1px solid var(--line);
+      }
+
+      .shop-card {
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .shop-card .why {
+        font-weight: 650;
+      }
+
+      .shop-card .why:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .today-chips button,
+      .segmented button {
+        font-weight: 600;
+      }
+
+      .today-chips button[aria-pressed='true'],
+      .segmented button[aria-pressed='true'] {
+        box-shadow: inset 0 1px #ffffff30;
+      }
+
+      .table-wrap tbody tr:hover td {
+        background: var(--group-wash);
+      }
+
+      .table-wrap tbody tr:hover td.month.selected {
+        background: var(--soft);
+      }
+
+      input[type='search'],
+      select {
+        border-radius: 10px;
+      }
+
+      @media (hover: hover) {
+        .shop-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 28px #302b231b;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .shop-card {
+          transition: none;
+        }
+      }
+
+      .calendar-primary {
+        display: grid;
+        grid-template-columns: minmax(280px, 1fr) minmax(150px, 190px) auto;
+        align-items: end;
+        gap: 14px;
+      }
+
+      .calendar-primary .segmented {
+        min-height: 44px;
+      }
+
+      .calendar-primary .segmented button {
+        min-height: 44px;
+        white-space: nowrap;
+      }
+
+      .calendar-more {
+        margin-top: 15px;
+        border-top: 1px solid var(--line);
+      }
+
+      .calendar-more > summary {
+        display: none;
+      }
+
+      .calendar-secondary {
+        display: grid;
+        grid-template-columns:
+          minmax(180px, 1.5fr) minmax(150px, 1fr) minmax(155px, 1fr) minmax(155px, 1fr)
+          auto;
+        align-items: end;
+        gap: 12px;
+        padding-top: 15px;
+      }
+
+      .calendar-secondary .check-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        font-size: 13px;
+        cursor: pointer;
+        grid-column: span 2;
+      }
+
+      .calendar-secondary .check-option input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        accent-color: var(--accent);
+      }
+
+      .calendar-secondary #reset {
+        min-height: 44px;
+        grid-column: 5;
+        grid-row: 2;
+      }
+
+      .summary-line {
+        margin-top: 20px;
+      }
+
+      .legend {
+        margin: 10px 0 14px;
+      }
+
+      .scope-note {
+        margin-top: 14px;
+      }
+
+      .cellbtn {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .table-wrap td:last-child .fav {
+        width: 44px;
+        height: 44px;
+      }
+
+      .shop-card {
+        box-shadow: 0 6px 20px #302b2309;
+      }
+
+      .shop-card h3 button,
+      td.product .name {
+        min-height: 34px;
+      }
+
+      .shop-card h3 button:hover,
+      td.product .name:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 850px) {
+        .hero {
+          padding: 22px 26px;
+          min-height: 0;
+        }
+
+        .hero-side {
+          flex-basis: 230px;
+        }
+
+        .hero-art {
+          width: 210px;
+        }
+
+        .calendar-primary {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          gap: 10px;
+        }
+
+        .calendar-primary .search-field {
+          grid-column: 1 / -1;
+        }
+
+        .calendar-primary .segmented {
+          align-self: end;
+        }
+
+        .calendar-more {
+          margin-top: 12px;
+        }
+
+        .calendar-more > summary {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          width: fit-content;
+          min-height: 44px;
+          color: var(--accent);
+          font-size: 14px;
+        }
+
+        .calendar-more > summary::marker {
+          color: var(--accent);
+        }
+
+        #calendar-filter-count {
+          display: inline-grid;
+          place-items: center;
+          min-width: 22px;
+          min-height: 22px;
+          padding: 1px 5px;
+          border-radius: 100px;
+          color: var(--card);
+          background: var(--accent);
+          font-size: 12px;
+        }
+
+        #calendar-filter-count[hidden] {
+          display: none;
+        }
+
+        .calendar-secondary {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+          padding: 5px 0 3px;
+        }
+
+        .calendar-secondary .origin-field {
+          grid-column: 1 / -1;
+        }
+
+        .calendar-secondary .check-option,
+        .calendar-secondary #reset {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .summary-line {
+          margin: 14px 0 6px;
+        }
+
+        .legend {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          white-space: nowrap;
+          padding: 4px 0 8px;
+          margin: 0 0 8px;
+          scrollbar-width: thin;
+        }
+
+        .legend > span {
+          flex: none;
+        }
+
+        .table-wrap {
+          max-height: 72vh;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .hero {
+          margin: 12px 0 8px;
+          padding: 17px 18px;
+          border-radius: 17px;
+          background: linear-gradient(115deg, var(--card), var(--hero-wash));
+        }
+
+        .hero-side {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 29px;
+          margin-bottom: 7px;
+        }
+
+        .shop-group {
+          padding: 13px;
+          margin: 0 0 12px;
+          border-radius: 16px;
+        }
+
+        .calendar-primary {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+
+        .calendar-primary .segmented button {
+          padding: 6px 9px;
+          font-size: 12px;
+        }
+
+        .calendar-secondary .check-option {
+          font-size: 12px;
+        }
+
+        .calendar-secondary #reset {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+
+        .today-header h2 {
+          display: block;
+          font-size: 21px;
+        }
+
+        .today-header {
+          align-items: end;
+        }
+
+        .today-header .today-date {
+          margin: 2px 0 0;
+        }
+
+        .today-meta .today-count {
+          display: inline;
+        }
+
+        .today-meta {
+          flex-direction: column;
+          align-items: end;
+          gap: 0;
+        }
+
+        .today-meta button {
+          min-height: 32px;
+          padding: 3px 8px;
+        }
+
+        .hero p {
+          display: block;
+          font-size: 13px;
+          line-height: 1.4;
+        }
+
+        .daily-note {
+          margin-bottom: 10px;
+        }
+
+        .shop-group > summary {
+          font-size: 19px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .calendar-secondary {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .calendar-secondary .origin-field,
+        .calendar-secondary #reset {
+          grid-column: auto;
+        }
+
+        .summary-line {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 3px;
+        }
+
+        .summary-line > span {
+          max-width: none;
+          text-align: left;
+        }
+      }
       ;
     </style>
   </head>
@@ -1751,15 +2186,77 @@
         </div>
       </div>
       <div class="hero">
-        <div>
+        <div class="hero-copy">
           <h1>Что сейчас в сезоне</h1>
           <p>
             Найдите продукт и укажите происхождение с ценника.<br />Узнайте его сезон на сегодня.
           </p>
         </div>
-        <div class="number-note">
-          <strong id="hero-count"></strong>карточка продуктов<br />со странами, сортами и
-          источниками
+        <div class="hero-side">
+          <svg
+            class="hero-art"
+            viewBox="0 0 250 165"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="149" cy="79" r="76" fill="#E9D8B9" />
+            <path
+              d="M47 129c23 18 58 27 101 27 36 0 65-8 83-23"
+              stroke="#9D795A"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M62 122c19 16 51 24 88 24 32 0 58-7 75-20"
+              stroke="#9D795A"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M83 71c-20-14-43-5-42 21 0 22 19 46 39 48 8 1 14-3 19-3s11 4 19 2c19-4 36-29 35-51-1-25-25-32-43-17-7 5-19 5-27 0Z"
+              fill="#C8775D"
+              stroke="#8F5846"
+              stroke-width="2"
+            />
+            <path
+              d="M99 72c-2-15 3-26 16-32"
+              stroke="#5E6744"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              d="M103 58c-11-15-27-17-38-10 7 15 20 20 38 10Z"
+              fill="#7E8B61"
+              stroke="#5E6744"
+              stroke-width="2"
+            />
+            <path
+              d="M171 62c-5 22-20 26-25 49-5 25 13 38 34 38s41-14 35-39c-5-21-22-30-28-48-3-8-13-8-16 0Z"
+              fill="#D8AA61"
+              stroke="#9D795A"
+              stroke-width="2"
+            />
+            <path
+              d="M178 62c-1-13 2-21 10-28"
+              stroke="#5E6744"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              d="M184 48c4-15 17-21 30-18-3 15-13 23-30 18Z"
+              fill="#7E8B61"
+              stroke="#5E6744"
+              stroke-width="2"
+            />
+            <path
+              d="M71 109c-12-7-17-17-17-29M91 121c-12-5-18-15-20-28"
+              stroke="#E8AD93"
+              stroke-width="2"
+              stroke-linecap="round"
+              opacity=".8"
+            />
+          </svg>
         </div>
       </div>
     </header>
@@ -1818,57 +2315,67 @@
         </div>
       </section>
       <section data-panel="calendar" hidden>
-        <div class="toolbar">
-          <div class="filters">
-            <label class="field">Месяц<select id="month"></select></label
-            ><label class="field search-field"
+        <div class="toolbar calendar-toolbar">
+          <div class="calendar-primary">
+            <label class="field search-field"
               >Продукт или страна<input
                 type="search"
                 id="search"
                 placeholder="Например, манго или Египет" /></label
-            ><label class="field origin-field"
-              >Страна / регион<select id="origin">
-                <option value="">Все происхождения</option>
-              </select></label
-            ><label class="field"
-              >Категория<select id="category">
-                <option value="">Все продукты</option>
-              </select></label
-            >
-          </div>
-          <div class="options">
-            <label><input type="checkbox" id="favorites" /> Только избранное</label
-            ><label><input type="checkbox" id="known-only" /> С данными на месяц</label
-            ><select id="status" aria-label="Фильтр по статусу">
-              <option value="">Все статусы</option></select
-            ><select id="sort" aria-label="Порядок строк">
-              <option value="season">Сезонные сначала</option>
-              <option value="name">По алфавиту</option>
-            </select>
-            <div class="spacer"></div>
-            <div class="segmented">
+            ><label class="field">Месяц<select id="month"></select></label>
+            <div class="segmented" role="group" aria-label="Период календаря">
               <button id="focus-view" aria-pressed="true">3 месяца</button
               ><button id="year-view" aria-pressed="false">Весь год</button>
             </div>
-            <button id="reset">Сбросить</button>
           </div>
+          <details class="calendar-more" id="calendar-more" open>
+            <summary>Остальные фильтры <span id="calendar-filter-count" hidden></span></summary>
+            <div class="calendar-secondary">
+              <label class="field origin-field"
+                >Страна / регион<select id="origin">
+                  <option value="">Все происхождения</option>
+                </select></label
+              ><label class="field"
+                >Категория<select id="category">
+                  <option value="">Все продукты</option>
+                </select></label
+              >
+              <label class="field"
+                >Фильтр по статусу<select id="status">
+                  <option value="">Все статусы</option>
+                </select></label
+              >
+              <label class="field"
+                >Порядок строк<select id="sort">
+                  <option value="season">Сезонные сначала</option>
+                  <option value="name">По алфавиту</option>
+                </select></label
+              >
+              <label class="check-option"
+                ><input type="checkbox" id="favorites" /> Только избранное</label
+              ><label class="check-option"
+                ><input type="checkbox" id="known-only" /> С данными на месяц</label
+              >
+              <button id="reset">Сбросить</button>
+            </div>
+          </details>
         </div>
-        <div class="legend" id="legend-items"></div>
-        <p class="scope-note">
-          ★ и ● — сезонный ориентир, а не гарантия вкуса. Хранение и теплица могут давать хороший
-          продукт. <b>? означает, что данных недостаточно; это не «не покупать».</b> Нажмите
-          название или статус, чтобы увидеть объяснение и источники.
-        </p>
         <div class="summary-line">
-          <h2 id="month-title"></h2>
+          <h1 id="month-title"></h1>
           <span id="result-count" aria-live="polite"></span>
         </div>
+        <div class="legend" id="legend-items" tabindex="0"></div>
         <div class="table-wrap">
           <table aria-label="Сезонность продуктов по происхождению и месяцам">
             <thead id="table-head"></thead>
             <tbody id="table-body"></tbody>
           </table>
         </div>
+        <p class="scope-note">
+          ★ и ● — сезонный ориентир, а не гарантия вкуса. Хранение и теплица могут давать хороший
+          продукт. <b>? означает, что данных недостаточно; это не «не покупать».</b> Нажмите
+          название или статус, чтобы увидеть объяснение и источники.
+        </p>
         <p class="coverage" id="coverage"></p>
         <p class="fine">
           Календарь типичного сезона, обновлён 21.09.2026. Дата проверки каждого источника указана
@@ -1877,7 +2384,7 @@
         </p>
       </section>
       <section class="panel" data-panel="method" hidden>
-        <h2>Сезон помогает выбрать. Этикетка уточняет.</h2>
+        <h1>Сезон помогает выбрать. Этикетка уточняет.</h1>
         <p>
           Сначала сопоставьте продукт, страну и сорт. Если на ценнике только «Россия», региональная
           строка может не подойти. У клубники важны обычный или ремонтантный сорт и укрытие; у
@@ -46476,8 +46983,6 @@
             heroTitle: "Что сейчас в сезоне",
             heroIntro: "Найдите продукт и укажите происхождение с ценника.",
             heroAction: "Узнайте его сезон на сегодня.",
-            countDescription: "карточка продуктов",
-            countSources: "со странами, сортами и источниками",
             tabToday: "Сегодня",
             tabCalendar: "По месяцам",
             tabHelp: "Справка",
@@ -46505,6 +47010,8 @@
             sortName: "По алфавиту",
             threeMonths: "3 месяца",
             wholeYear: "Весь год",
+            calendarViewLabel: "Период календаря",
+            moreFilters: "Остальные фильтры",
             calendarReset: "Сбросить",
             legendIntro: "★ и ● — сезонный ориентир, а не гарантия вкуса. Хранение и теплица могут давать хороший продукт. ",
             legendUnknown: "? означает, что данных недостаточно; это не «не покупать».",
@@ -47057,6 +47564,9 @@
             this.controls = Object.fromEntries(
               Object.keys(CONTROL_FIELDS).map((id) => [id, getElement(id)])
             );
+            this.moreFilters = getElement("calendar-more");
+            this.wideLayout = window.matchMedia("(min-width: 851px)");
+            this.moreFilters.open = this.wideLayout.matches;
             this.initializeControls();
             this.syncControls();
             this.bindEvents();
@@ -47075,6 +47585,13 @@
           }
           bindEvents() {
             const options = { signal: this.events.signal };
+            this.wideLayout.addEventListener(
+              "change",
+              (event) => {
+                this.moreFilters.open = event.matches;
+              },
+              options
+            );
             for (const [id, control] of Object.entries(this.controls)) {
               control.addEventListener(
                 id === "search" ? "input" : "change",
@@ -47130,6 +47647,17 @@
               month: ru_default.months[month]
             });
             getElement("result-count").textContent = formatMessage(ru_default.calendar.count, model);
+            const activeCount = [
+              filters.origin,
+              filters.category,
+              filters.status,
+              filters.favoritesOnly,
+              filters.knownOnly,
+              filters.order !== "season"
+            ].filter(Boolean).length;
+            const count = getElement("calendar-filter-count");
+            count.textContent = activeCount;
+            count.hidden = activeCount === 0;
             getElement("focus-view").setAttribute("aria-pressed", !wholeYear);
             getElement("year-view").setAttribute("aria-pressed", wholeYear);
           }
@@ -47451,7 +47979,7 @@
         function productDetails(model, presentation) {
           const selected = model.variants[0];
           return `<div class="dialog-head">
-          <div><h2 id="dialog-title"${model.title.length > 18 ? " data-long-title" : ""}>${escapeHtml(model.title)}</h2>${scope(selected)}</div>
+          <div><h2 id="dialog-title" tabindex="-1"${model.title.length > 18 ? " data-long-title" : ""}>${escapeHtml(model.title)}</h2>${scope(selected)}</div>
         </div>
         <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escapeHtml(ru_default.months[model.month])}</span></div>
         <section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escapeHtml(ru_default.details.shopTitle)}</h2>
@@ -47576,6 +48104,7 @@
             this.dialog.dataset.detailDesign = detailDesign(model.productId);
             this.content.innerHTML = productDetails(model, this.catalog);
             this.dialog.showModal();
+            this.content.querySelector("#dialog-title").focus({ preventScroll: true });
             this.dialog.scrollTop = 0;
           }
           destroy() {
@@ -47617,10 +48146,12 @@
           });
           applyTheme();
           getElement("theme").addEventListener("click", () => preferences.toggleTheme(), options);
+          document.body.dataset.activePanel = "today";
           document.querySelectorAll("[data-tab]").forEach(
             (button) => button.addEventListener(
               "click",
               () => {
+                document.body.dataset.activePanel = button.dataset.tab;
                 document.querySelectorAll("[data-tab]").forEach((tab) => tab.setAttribute("aria-selected", tab === button));
                 document.querySelectorAll("[data-panel]").forEach((panel) => {
                   panel.hidden = panel.dataset.panel !== button.dataset.tab;
@@ -47630,7 +48161,6 @@
               options
             )
           );
-          getElement("hero-count").textContent = catalog.products.length;
           getElement("coverage").textContent = formatMessage(ru_default.calendar.coverage, {
             total: catalog.variants.length,
             known: catalog.variants.filter((row) => row.months.some((status) => status !== "u")).length

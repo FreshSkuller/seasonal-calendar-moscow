@@ -8,12 +8,6 @@
   .hero {
     padding: 26px 0;
   }
-  .number-note {
-    display: none;
-  }
-  .filters {
-    grid-template-columns: 1fr 1fr;
-  }
   .info-grid {
     grid-template-columns: 1fr;
   }
@@ -36,9 +30,6 @@
   }
   .decision {
     min-width: 160px;
-  }
-  .options .spacer {
-    display: none;
   }
   .summary-line {
     align-items: flex-start;
@@ -65,17 +56,6 @@
   .hero p {
     font-size: 15px;
   }
-  .filters {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .filters .search-field,
-  .filters .origin-field {
-    grid-column: 1/-1;
-  }
-  .filters .search-field {
-    grid-row: 1;
-  }
   .legend {
     gap: 8px;
     font-size: 11px;
@@ -101,7 +81,7 @@
   td.origin {
     min-width: 150px;
   }
-  .summary-line h2 {
+  .summary-line h1 {
     font-size: 19px;
   }
   .summary-line > span {

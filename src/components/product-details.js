@@ -30,7 +30,7 @@ export function homeAdvice(model, presentation) {
 export function productDetails(model, presentation) {
   const selected = model.variants[0];
   return `<div class="dialog-head">
-    <div><h2 id="dialog-title"${model.title.length > 18 ? ' data-long-title' : ''}>${escape(model.title)}</h2>${scope(selected)}</div>
+    <div><h2 id="dialog-title" tabindex="-1"${model.title.length > 18 ? ' data-long-title' : ''}>${escape(model.title)}</h2>${scope(selected)}</div>
   </div>
   <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escape(copy.months[model.month])}</span></div>
   <section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escape(copy.details.shopTitle)}</h2>

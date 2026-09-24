@@ -45,10 +45,12 @@ export function startApplication(database, { clock = moscowDate } = {}) {
   applyTheme();
   getElement('theme').addEventListener('click', () => preferences.toggleTheme(), options);
 
+  document.body.dataset.activePanel = 'today';
   document.querySelectorAll('[data-tab]').forEach((button) =>
     button.addEventListener(
       'click',
       () => {
+        document.body.dataset.activePanel = button.dataset.tab;
         document
           .querySelectorAll('[data-tab]')
           .forEach((tab) => tab.setAttribute('aria-selected', tab === button));
@@ -61,7 +63,6 @@ export function startApplication(database, { clock = moscowDate } = {}) {
     ),
   );
 
-  getElement('hero-count').textContent = catalog.products.length;
   getElement('coverage').textContent = formatMessage(copy.calendar.coverage, {
     total: catalog.variants.length,
     known: catalog.variants.filter((row) => row.months.some((status) => status !== 'u')).length,

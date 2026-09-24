@@ -1,0 +1,475 @@
+/* The same reading rhythm connects the daily list, calendar and reference card. */
+.hero {
+  align-items: center;
+  min-height: 228px;
+  margin: 20px 0 22px;
+  padding: 26px 36px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 73% 8%, var(--hero-glow) 0, transparent 34%),
+    linear-gradient(115deg, var(--card), var(--hero-wash));
+  overflow: hidden;
+}
+
+body[data-active-panel='calendar'] .hero,
+body[data-active-panel='method'] .hero {
+  display: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  max-width: 600px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  max-width: 560px;
+}
+
+.hero-side {
+  position: relative;
+  flex: 0 0 280px;
+  min-height: 172px;
+}
+
+.hero-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: auto;
+}
+
+.shop-group {
+  --group-accent: var(--group-accent-good);
+  border: 1px solid color-mix(in srgb, var(--group-accent) 23%, var(--line));
+  border-left: 3px solid color-mix(in srgb, var(--group-accent) 70%, var(--line));
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0 0 18px;
+  background: var(--group-wash);
+}
+
+.shop-group[data-group='annual'] {
+  --group-accent: var(--group-accent-annual);
+  background: var(--group-wash-annual);
+}
+
+.shop-group[data-group='choose'] {
+  --group-accent: var(--group-accent-choose);
+  background: var(--group-wash-choose);
+}
+
+.shop-group[data-group='careful'] {
+  --group-accent: var(--group-accent-careful);
+  background: var(--group-wash-careful);
+}
+
+.shop-group[data-group='off'] {
+  --group-accent: var(--group-accent-off);
+  background: var(--group-wash-off);
+}
+
+.shop-group[data-group='unknown'] {
+  --group-accent: var(--group-accent-unknown);
+  background: var(--group-wash-unknown);
+}
+
+.shop-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.shop-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.shop-group > summary::before {
+  content: '›';
+  display: inline-grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--group-accent) 12%, var(--card));
+  color: var(--group-accent);
+  font:
+    25px/1 Georgia,
+    serif;
+  transform: rotate(0);
+}
+
+.shop-group[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.group-count {
+  margin-left: auto;
+  color: var(--group-accent);
+  background: color-mix(in srgb, var(--group-accent) 10%, var(--card));
+  font-weight: 700;
+}
+
+.family-note {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.shop-card {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.shop-card .why {
+  font-weight: 650;
+}
+
+.shop-card .why:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.today-chips button,
+.segmented button {
+  font-weight: 600;
+}
+
+.today-chips button[aria-pressed='true'],
+.segmented button[aria-pressed='true'] {
+  box-shadow: inset 0 1px #ffffff30;
+}
+
+.table-wrap tbody tr:hover td {
+  background: var(--group-wash);
+}
+
+.table-wrap tbody tr:hover td.month.selected {
+  background: var(--soft);
+}
+
+input[type='search'],
+select {
+  border-radius: 10px;
+}
+
+@media (hover: hover) {
+  .shop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px #302b231b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-card {
+    transition: none;
+  }
+}
+
+.calendar-primary {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(150px, 190px) auto;
+  align-items: end;
+  gap: 14px;
+}
+
+.calendar-primary .segmented {
+  min-height: 44px;
+}
+
+.calendar-primary .segmented button {
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.calendar-more {
+  margin-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.calendar-more > summary {
+  display: none;
+}
+
+.calendar-secondary {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 1.5fr) minmax(150px, 1fr) minmax(155px, 1fr) minmax(155px, 1fr)
+    auto;
+  align-items: end;
+  gap: 12px;
+  padding-top: 15px;
+}
+
+.calendar-secondary .check-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 13px;
+  cursor: pointer;
+  grid-column: span 2;
+}
+
+.calendar-secondary .check-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.calendar-secondary #reset {
+  min-height: 44px;
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.summary-line {
+  margin-top: 20px;
+}
+
+.legend {
+  margin: 10px 0 14px;
+}
+
+.scope-note {
+  margin-top: 14px;
+}
+
+.cellbtn {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-grid;
+  place-items: center;
+}
+
+.table-wrap td:last-child .fav {
+  width: 44px;
+  height: 44px;
+}
+
+.shop-card {
+  box-shadow: 0 6px 20px #302b2309;
+}
+
+.shop-card h3 button,
+td.product .name {
+  min-height: 34px;
+}
+
+.shop-card h3 button:hover,
+td.product .name:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 850px) {
+  .hero {
+    padding: 22px 26px;
+    min-height: 0;
+  }
+
+  .hero-side {
+    flex-basis: 230px;
+  }
+
+  .hero-art {
+    width: 210px;
+  }
+
+  .calendar-primary {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .calendar-primary .search-field {
+    grid-column: 1 / -1;
+  }
+
+  .calendar-primary .segmented {
+    align-self: end;
+  }
+
+  .calendar-more {
+    margin-top: 12px;
+  }
+
+  .calendar-more > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    min-height: 44px;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .calendar-more > summary::marker {
+    color: var(--accent);
+  }
+
+  #calendar-filter-count {
+    display: inline-grid;
+    place-items: center;
+    min-width: 22px;
+    min-height: 22px;
+    padding: 1px 5px;
+    border-radius: 100px;
+    color: var(--card);
+    background: var(--accent);
+    font-size: 12px;
+  }
+
+  #calendar-filter-count[hidden] {
+    display: none;
+  }
+
+  .calendar-secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 5px 0 3px;
+  }
+
+  .calendar-secondary .origin-field {
+    grid-column: 1 / -1;
+  }
+
+  .calendar-secondary .check-option,
+  .calendar-secondary #reset {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .summary-line {
+    margin: 14px 0 6px;
+  }
+
+  .legend {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 4px 0 8px;
+    margin: 0 0 8px;
+    scrollbar-width: thin;
+  }
+
+  .legend > span {
+    flex: none;
+  }
+
+  .table-wrap {
+    max-height: 72vh;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    margin: 12px 0 8px;
+    padding: 17px 18px;
+    border-radius: 17px;
+    background: linear-gradient(115deg, var(--card), var(--hero-wash));
+  }
+
+  .hero-side {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+    margin-bottom: 7px;
+  }
+
+  .shop-group {
+    padding: 13px;
+    margin: 0 0 12px;
+    border-radius: 16px;
+  }
+
+  .calendar-primary {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .calendar-primary .segmented button {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .calendar-secondary .check-option {
+    font-size: 12px;
+  }
+
+  .calendar-secondary #reset {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .today-header h2 {
+    display: block;
+    font-size: 21px;
+  }
+
+  .today-header {
+    align-items: end;
+  }
+
+  .today-header .today-date {
+    margin: 2px 0 0;
+  }
+
+  .today-meta .today-count {
+    display: inline;
+  }
+
+  .today-meta {
+    flex-direction: column;
+    align-items: end;
+    gap: 0;
+  }
+
+  .today-meta button {
+    min-height: 32px;
+    padding: 3px 8px;
+  }
+
+  .hero p {
+    display: block;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .daily-note {
+    margin-bottom: 10px;
+  }
+
+  .shop-group > summary {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 360px) {
+  .calendar-secondary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .calendar-secondary .origin-field,
+  .calendar-secondary #reset {
+    grid-column: auto;
+  }
+
+  .summary-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .summary-line > span {
+    max-width: none;
+    text-align: left;
+  }
+}

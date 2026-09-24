@@ -6,6 +6,12 @@ test.beforeEach(async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-09-20T09:00:00Z'));
 });
 
+async function revealCalendarFilters(page) {
+  if (!(await page.locator('#calendar-more').evaluate((element) => element.open))) {
+    await page.locator('#calendar-more > summary').click();
+  }
+}
+
 test('Состояние покупки меняет советы, сохраняет фокус и сбрасывается для другой карточки', async ({
   page,
 }) => {
@@ -80,6 +86,7 @@ test('Избранное синхронно между экранами и со�
   const id = await favorite.getAttribute('data-favorite');
   await favorite.click();
   await page.locator('[data-tab="calendar"]').click();
+  await revealCalendarFilters(page);
   await page.locator('#favorites').check();
   await expect(page.locator('#table-body tr')).toHaveCount(1);
   await expect(page.locator(`#table-body [data-favorite="${id}"]`)).toHaveAttribute(
@@ -106,6 +113,7 @@ test('Месяцы, все регионы России, сброс, тема и 
   await expect(page.locator('#table-head th.month')).toHaveCount(12);
   await page.locator('#focus-view').click();
   await expect(page.locator('#table-head th.month')).toHaveText(['Дек', 'Янв', 'Фев']);
+  await revealCalendarFilters(page);
   await page.locator('#origin').selectOption('region:Россия');
   const origins = await page.locator('#table-body td.origin').allTextContents();
   expect(origins.length).toBeGreaterThan(0);
@@ -116,6 +124,118 @@ test('Месяцы, все регионы России, сброс, тема и 
   await page.reload();
   await expect(page.locator('body')).toHaveClass('dark');
   expect(await page.locator('body').innerText()).not.toMatch(/undefined|\{\{page\./);
+});
+
+test('Календарь показывает результаты над сгибом экрана и сохраняет доступ к фильтрам', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('[data-tab="calendar"]').click();
+  await expect(page.locator('.hero')).toBeHidden();
+  const phone = page.viewportSize().width <= 850;
+  await expect(page.locator('#calendar-more')).toHaveJSProperty('open', !phone);
+  if (phone) {
+    const top = await page
+      .locator('.table-wrap')
+      .evaluate((element) => element.getBoundingClientRect().top);
+    expect(top).toBeLessThan(page.viewportSize().height);
+  }
+  await revealCalendarFilters(page);
+  await page.locator('#origin').selectOption('region:Россия');
+  await expect(page.locator('#calendar-filter-count')).toHaveText('1');
+  const cell = await page.locator('.month .cellbtn').first().boundingBox();
+  expect(cell.width).toBeGreaterThanOrEqual(44);
+  expect(cell.height).toBeGreaterThanOrEqual(44);
+  await page.locator('#reset').click();
+  await expect(page.locator('#calendar-filter-count')).toBeHidden();
+  if (phone) {
+    await page.setViewportSize({ width: 320, height: 700 });
+    const sort = await page.locator('#sort').boundingBox();
+    expect(sort.width).toBeGreaterThan(200);
+    const title = await page.locator('#month-title').boundingBox();
+    const result = await page.locator('#result-count').boundingBox();
+    expect(result.y).toBeGreaterThanOrEqual(title.y + title.height);
+    await page.setViewportSize({ width: 1024, height: 700 });
+    await expect(page.locator('#calendar-more')).toHaveJSProperty('open', true);
+    await page.setViewportSize({ width: 390, height: 700 });
+    await expect(page.locator('#calendar-more')).toHaveJSProperty('open', false);
+  }
+});
+
+test('Сезонные группы и карточка открываются без лишней рамки', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.number-note')).toHaveCount(0);
+  if (page.viewportSize().width > 540) await expect(page.locator('.hero-art')).toBeVisible();
+  for (const id of ['choose', 'careful', 'off']) {
+    const group = page.locator(`.shop-group[data-group="${id}"]`);
+    await expect(group).toBeVisible();
+    const style = await group.evaluate((element) => {
+      const computed = getComputedStyle(element);
+      return { background: computed.backgroundColor, radius: computed.borderRadius };
+    });
+    expect(style.background).not.toBe('rgba(0, 0, 0, 0)');
+    expect(style.radius).not.toBe('0px');
+    await group.locator(':scope > summary').click();
+    await expect(group.locator('.shop-card').first()).toBeVisible();
+  }
+  await page.locator('.shop-card .why').first().click();
+  await expect(page.locator('#dialog-title')).toBeFocused();
+  const close = page.locator('[data-close-dialog]');
+  await expect(close).not.toBeFocused();
+  expect(await close.evaluate((element) => getComputedStyle(element).outlineStyle)).toBe('none');
+  await page.locator('[data-home-guide] > summary').click();
+  expect(await close.evaluate((element) => getComputedStyle(element).outlineStyle)).toBe('none');
+  await close.click();
+  await expect(page.locator('#detail-dialog')).not.toBeVisible();
+});
+
+test('Пять сезонных состояний различимы и счётчики читаются в обеих темах', async ({ page }) => {
+  await page.goto('/');
+  const ids = ['good', 'annual', 'choose', 'careful', 'off'];
+  for (const theme of ['light', 'dark']) {
+    if (theme === 'dark') await page.locator('#theme').click();
+    const colors = await page.locator('.shop-group').evaluateAll((groups) => {
+      const channel = (value) => {
+        const normalized = value / 255;
+        return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+      };
+      const luminance = (value) => {
+        const scale = value.startsWith('color(srgb ') ? 255 : 1;
+        const rgb = value
+          .match(/[\d.]+/g)
+          .slice(0, 3)
+          .map((number) => Number(number) * scale);
+        return rgb.reduce(
+          (sum, component, index) => sum + channel(component) * [0.2126, 0.7152, 0.0722][index],
+          0,
+        );
+      };
+      return groups.map((group) => {
+        const count = group.querySelector('.group-count');
+        const foreground = luminance(getComputedStyle(count).color);
+        const background = luminance(getComputedStyle(count).backgroundColor);
+        return {
+          id: group.dataset.group,
+          wash: getComputedStyle(group).backgroundColor,
+          accent: getComputedStyle(count).color,
+          contrast:
+            (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05),
+        };
+      });
+    });
+    const visible = colors.filter(({ id }) => ids.includes(id));
+    expect(visible.map(({ id }) => id)).toEqual(ids);
+    expect(new Set(visible.map(({ wash }) => wash)).size).toBe(ids.length);
+    expect(new Set(visible.map(({ accent }) => accent)).size).toBe(ids.length);
+    expect(visible.every(({ contrast }) => contrast >= 4.5)).toBe(true);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  if (page.viewportSize().width <= 540) {
+    await page.setViewportSize({ width: 320, height: 700 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+  }
 });
 
 test('Памятка раскрывается и меняется при нарезке без переполнения', async ({ page }) => {

@@ -1,51 +1,61 @@
 <section data-panel="calendar" hidden>
-  <div class="toolbar">
-    <div class="filters">
-      <label class="field">{{page.monthLabel}}<select id="month"></select></label
-      ><label class="field search-field"
+  <div class="toolbar calendar-toolbar">
+    <div class="calendar-primary">
+      <label class="field search-field"
         >{{page.searchLabel}}<input
           type="search"
           id="search"
           placeholder="{{page.calendarPlaceholder}}" /></label
-      ><label class="field origin-field"
-        >{{page.originLabel}}<select id="origin">
-          <option value="">{{page.allOrigins}}</option>
-        </select></label
-      ><label class="field"
-        >{{page.categoryLabel}}<select id="category">
-          <option value="">{{page.allProducts}}</option>
-        </select></label
-      >
-    </div>
-    <div class="options">
-      <label><input type="checkbox" id="favorites" />{{page.onlyFavorites}}</label
-      ><label><input type="checkbox" id="known-only" />{{page.knownOnly}}</label
-      ><select id="status" aria-label="{{page.statusLabel}}">
-        <option value="">{{page.allStatuses}}</option></select
-      ><select id="sort" aria-label="{{page.sortLabel}}">
-        <option value="season">{{page.sortSeason}}</option>
-        <option value="name">{{page.sortName}}</option>
-      </select>
-      <div class="spacer"></div>
-      <div class="segmented">
+      ><label class="field">{{page.monthLabel}}<select id="month"></select></label>
+      <div class="segmented" role="group" aria-label="{{page.calendarViewLabel}}">
         <button id="focus-view" aria-pressed="true">{{page.threeMonths}}</button
         ><button id="year-view" aria-pressed="false">{{page.wholeYear}}</button>
       </div>
-      <button id="reset">{{page.calendarReset}}</button>
     </div>
+    <details class="calendar-more" id="calendar-more" open>
+      <summary>{{page.moreFilters}} <span id="calendar-filter-count" hidden></span></summary>
+      <div class="calendar-secondary">
+        <label class="field origin-field"
+          >{{page.originLabel}}<select id="origin">
+            <option value="">{{page.allOrigins}}</option>
+          </select></label
+        ><label class="field"
+          >{{page.categoryLabel}}<select id="category">
+            <option value="">{{page.allProducts}}</option>
+          </select></label
+        >
+        <label class="field"
+          >{{page.statusLabel}}<select id="status">
+            <option value="">{{page.allStatuses}}</option>
+          </select></label
+        >
+        <label class="field"
+          >{{page.sortLabel}}<select id="sort">
+            <option value="season">{{page.sortSeason}}</option>
+            <option value="name">{{page.sortName}}</option>
+          </select></label
+        >
+        <label class="check-option"
+          ><input type="checkbox" id="favorites" />{{page.onlyFavorites}}</label
+        ><label class="check-option"
+          ><input type="checkbox" id="known-only" />{{page.knownOnly}}</label
+        >
+        <button id="reset">{{page.calendarReset}}</button>
+      </div>
+    </details>
   </div>
-  <div class="legend" id="legend-items"></div>
-  <p class="scope-note">{{page.legendIntro}}<b>{{page.legendUnknown}}</b>{{page.legendAction}}</p>
   <div class="summary-line">
-    <h2 id="month-title"></h2>
+    <h1 id="month-title"></h1>
     <span id="result-count" aria-live="polite"></span>
   </div>
+  <div class="legend" id="legend-items" tabindex="0"></div>
   <div class="table-wrap">
     <table aria-label="{{page.tableLabel}}">
       <thead id="table-head"></thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
+  <p class="scope-note">{{page.legendIntro}}<b>{{page.legendUnknown}}</b>{{page.legendAction}}</p>
   <p class="coverage" id="coverage"></p>
   <p class="fine">{{page.dateScope}}</p>
 </section>

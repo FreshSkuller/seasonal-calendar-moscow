@@ -1,6 +1,7 @@
 .panel {
   max-width: 1080px;
 }
+.panel h1,
 .panel h2 {
   font:
     32px Georgia,

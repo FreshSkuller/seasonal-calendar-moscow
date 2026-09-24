@@ -25,6 +25,9 @@ export class CalendarView {
     this.controls = Object.fromEntries(
       Object.keys(CONTROL_FIELDS).map((id) => [id, getElement(id)]),
     );
+    this.moreFilters = getElement('calendar-more');
+    this.wideLayout = window.matchMedia('(min-width: 851px)');
+    this.moreFilters.open = this.wideLayout.matches;
     this.initializeControls();
     this.syncControls();
     this.bindEvents();
@@ -54,6 +57,13 @@ export class CalendarView {
   }
   bindEvents() {
     const options = { signal: this.events.signal };
+    this.wideLayout.addEventListener(
+      'change',
+      (event) => {
+        this.moreFilters.open = event.matches;
+      },
+      options,
+    );
     for (const [id, control] of Object.entries(this.controls)) {
       control.addEventListener(
         id === 'search' ? 'input' : 'change',
@@ -114,6 +124,17 @@ export class CalendarView {
       month: copy.months[month],
     });
     getElement('result-count').textContent = formatMessage(copy.calendar.count, model);
+    const activeCount = [
+      filters.origin,
+      filters.category,
+      filters.status,
+      filters.favoritesOnly,
+      filters.knownOnly,
+      filters.order !== 'season',
+    ].filter(Boolean).length;
+    const count = getElement('calendar-filter-count');
+    count.textContent = activeCount;
+    count.hidden = activeCount === 0;
     getElement('focus-view').setAttribute('aria-pressed', !wholeYear);
     getElement('year-view').setAttribute('aria-pressed', wholeYear);
   }

@@ -36,21 +36,6 @@
   color: var(--muted);
   font-size: 17px;
 }
-.number-note {
-  flex-shrink: 0;
-  border-left: 1px solid var(--line);
-  padding: 8px 0 8px 24px;
-  max-width: 220px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.number-note strong {
-  display: block;
-  font:
-    34px Georgia,
-    serif;
-  color: var(--ink);
-}
 .tabs {
   display: flex;
   border-bottom: 1px solid var(--line);

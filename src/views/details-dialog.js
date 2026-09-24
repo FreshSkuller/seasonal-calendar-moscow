@@ -58,6 +58,7 @@ export class DetailsDialog {
     this.dialog.dataset.detailDesign = detailDesign(model.productId);
     this.content.innerHTML = productDetails(model, this.catalog);
     this.dialog.showModal();
+    this.content.querySelector('#dialog-title').focus({ preventScroll: true });
     this.dialog.scrollTop = 0;
   }
 
