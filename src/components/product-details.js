@@ -6,6 +6,7 @@ import { adviceSection } from './advice-section.js';
 import { sourceList } from './source-list.js';
 import { statusBadge } from './status-badge.js';
 import { seasonLabel } from './season-label.js';
+import { seasonSourceNotes } from './season-source-notes.js';
 
 const scope = (variant) =>
   `<p class="fine">${escape(variant.origin)} · ${escape(variant.variety || variant.name)}</p>`;
@@ -46,11 +47,11 @@ export function productDetails(model, presentation) {
     )
     .join('')}
   </section>
-  <details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}<span>${escape(copy.details.homeHint)}</span></summary>
+  <details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}</summary>
     ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div>
   </details>
   <details class="season-reference"><summary>${escape(copy.details.calendarTitle)}</summary><div data-variant-details>${productVariants(model, presentation)}</div></details>
-  <details class="product-sources" data-product-sources><summary>${escape(copy.details.allSources)}</summary>${sourceList(presentation.sources, model.sourceIds)}</details>`;
+  <details class="product-sources" data-product-sources><summary>${escape(copy.details.allSources)}</summary>${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</details>`;
 }
 
 export function productVariants(model, presentation) {

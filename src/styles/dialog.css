@@ -213,17 +213,8 @@ dialog::backdrop {
   margin: 0;
   line-height: 1.5;
 }
-.storage-basis {
-  display: block;
-  font-weight: normal;
-  font-size: 12px;
-}
 .storage-guide-more {
   margin-top: 14px;
-}
-.storage-guide-more > summary {
-  cursor: pointer;
-  padding: 8px 0;
 }
 @media (min-width: 601px) {
   .storage-guide-main {

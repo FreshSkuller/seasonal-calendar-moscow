@@ -159,6 +159,12 @@ test('Невалидные связи, конфликт замен и небез
       },
     },
   };
+  // Explicit quality-only evidence: published catalogue advice may also cite food safety.
+  const qualityEvidence = structuredClone(db.evidence.find((e) => e.id === advice.evidenceIds[0]));
+  qualityEvidence.id = 'test-quality-only';
+  qualityEvidence.supports = ['quality'];
+  db.evidence.push(qualityEvidence);
+  advice.evidenceIds = [qualityEvidence.id];
   assert.throws(() => validateData(db), /безопасности/);
   advice.storage.duration.value.meaning = 'quality-estimate';
   validateData(db);

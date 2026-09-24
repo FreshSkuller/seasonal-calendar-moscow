@@ -64,7 +64,7 @@ test('Причины соседства различаются, редким я�
   assert.match(guide(1).neighbors.text, /запах/);
   assert.match(guide(125).neighbors.text, /не дозревает/);
   assert.equal(guide(54).neighbors.basis, 'unknown');
-  assert.match(guide(54).keeping.text, /не установлено/);
+  assert.match(guide(54).keeping.text, /не подтверждён/);
   assert.match(guide(134).keeping.text, /томатильо/);
   assert.match(guide(170).keeping.text, /отложить дозревание/);
 });
@@ -79,6 +79,28 @@ test('Памятка экранирует текст и показывает г�
   const html = storageGuide(guide, db.sources);
   assert.ok(!html.includes('<img'));
   assert.match(html, /&lt;img/);
-  assert.match(html, /Данных о специальных ограничениях недостаточно/);
+  assert.match(html, /специальные ограничения по соседству не подтверждены/);
+  assert.ok(!html.includes('storage-basis'));
   assert.match(html, /storage-guide-more/);
+});
+
+test('Подготовка дикорастущих плодов сохраняется при переключении на нарезку', () => {
+  const precautions = new Map([
+    [36, /[Лл]истья.*выбросьте|[Уу]далите листья/],
+    [54, /термически обработайте/],
+    [55, /термически обработайте/],
+    [56, /волоск/],
+    [58, /[Кк]осточки не/],
+  ]);
+  for (const [id, precaution] of precautions) {
+    const variant = catalog.variantsFor(`product-${id}`)[0];
+    for (const form of ['whole', 'cut']) {
+      const result = resolveAdvice(catalog, variant.id, { form, environment: 'home' });
+      const rendered = [...result.general, ...result.matched]
+        .filter((a) => a.storageGuide)
+        .map((a) => storageGuide(a.storageGuide))
+        .join('');
+      assert.match(rendered, precaution, `${variant.id}: ${form}`);
+    }
+  }
 });

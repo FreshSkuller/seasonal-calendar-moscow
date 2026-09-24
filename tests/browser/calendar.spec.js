@@ -69,8 +69,9 @@ test('Поиск, карточка со спелостью, источник и 
   await expect(page.locator('.shop-card')).toHaveCount(1);
   await page.locator('.shop-card h3 button').first().click();
   await expect(page.locator('#detail-dialog')).toBeVisible();
-  await expect(page.locator('#dialog-content')).toContainText('Дозреет ли дома');
-  await expect(page.locator('#dialog-content')).toContainText('слаще не становится');
+  await expect(page.locator('[data-shop-advice]')).toContainText('Как выбрать и купить');
+  await expect(page.locator('[data-shop-advice]')).toContainText('слаще не становится');
+  await expect(page.locator('[data-advice-topic="ripen"]')).toHaveCount(0);
   await expect(page.locator('#dialog-content a').first()).toHaveAttribute('href', /^https:/);
   await page.locator('[data-close-dialog]').click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
@@ -326,7 +327,7 @@ test('Пять сезонных состояний различимы и счё�
   }
 });
 
-test('Памятка раскрывается и меняется при нарезке без переполнения', async ({ page }) => {
+test('Условия хранения и влажности видны вместе и меняются при нарезке', async ({ page }) => {
   await page.goto('/');
   await page.locator('#today-search').fill('морковь');
   await page.locator('.shop-card .why').first().click();
@@ -334,9 +335,8 @@ test('Памятка раскрывается и меняется при нар�
   const guide = page.locator('.storage-guide').first();
   await expect(guide).toContainText('горечь');
   const more = guide.locator('.storage-guide-more');
-  await expect(more).not.toHaveAttribute('open', '');
-  await more.locator(':scope > summary').click();
-  await expect(more).toHaveAttribute('open', '');
+  await expect(more).toBeVisible();
+  await expect(more.locator('summary')).toHaveCount(0);
   await expect(more).toContainText('Влага и воздух');
   await page.locator('input[name="purchase-form"][value="cut"]').check();
   await expect(guide).toContainText('контейнер с крышкой');

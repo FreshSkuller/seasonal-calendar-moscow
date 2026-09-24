@@ -14,11 +14,13 @@ test('У каждого варианта есть выбор, домашнее �
       for (const readiness of [undefined, 'firm', 'ready']) {
         const result = resolveAdvice(catalog, variant.id, { form, readiness, environment: 'home' });
         const visible = [...result.general, ...result.matched];
-        for (const topic of ['choose', 'discard'])
+        for (const topic of ['choose'])
           assert.ok(
             visible.some((a) => a.topic === topic),
             `${variant.id}: ${topic}`,
           );
+        assert.equal(visible.filter((a) => a.topic === 'choose').length, 1);
+        assert.ok(!visible.some((a) => ['discard', 'prepare', 'ripen'].includes(a.topic)));
         assert.ok(
           [...visible, ...result.needsContext].some((a) => a.topic === 'store'),
           `${variant.id}: store`,
@@ -67,4 +69,14 @@ test('Спелость предлагается только применимы�
   assert.equal((html.match(/data-advice="home-cut-product-114"/g) || []).length, 1);
   assert.ok(!homeAdvice(model, catalog).includes('data-advice-topic="ripen"'));
   assert.ok(html.includes('data-shop-advice'));
+});
+
+test('Оговорки сезона находятся один раз в источниках, а не в каждом происхождении', () => {
+  const model = buildProductDetails(catalog, 'r114', 8);
+  const html = productDetails(model, catalog);
+  const [content, sources] = html.split('data-product-sources');
+  assert.ok(!content.includes('Надёжность:'));
+  assert.ok(!content.includes('Поставки:'));
+  assert.ok(!content.includes('Календарный ориентир сезонности'));
+  assert.equal((sources.match(/Календарь показывает типичный сезон/g) || []).length, 1);
 });
