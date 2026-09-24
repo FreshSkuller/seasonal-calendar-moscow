@@ -31,13 +31,20 @@
     "allOrigins": "Все происхождения",
     "allProducts": "Все продукты",
     "allStatuses": "Все статусы",
+    "emptyQuery": "По запросу «{query}» ничего не найдено.",
+    "emptyTypeQuery": "В разделе «{type}» нет результатов по запросу «{query}».",
     "unspecifiedRussia": "Россия — регион не уточнён",
     "allRegion": "{region} — все",
     "addFavorite": "В избранное: {product}",
     "removeFavorite": "Убрать из избранного: {product}",
     "favorites": "Избранное",
     "more": "Подробнее →",
-    "monthLocation": "{month} · Москва"
+    "monthLocation": "{month} · Москва",
+    "otherOrigins": {
+      "one": "ещё {count} происхождение",
+      "few": "ещё {count} происхождения",
+      "many": "ещё {count} происхождений"
+    }
   },
   "calendar": {
     "product": "Продукт",
@@ -190,6 +197,10 @@
         "description": "Сведений недостаточно для уверенного статуса."
       }
     },
+    "additionalTypes": {
+      "title": "Также в разделе «{type}»",
+      "description": "Здесь этот раздел дополнительный. Статус сезона указан на каждой карточке."
+    },
     "showMore": "Показать остальные: {count}",
     "emptyFavorites": "В избранном пока ничего нет по этому запросу. Добавляйте продукты сердечком.",
     "empty": "Ничего не найдено. Попробуйте другое название или сбросьте фильтры."
@@ -210,17 +221,24 @@
     "todaySearch": "Найти продукт",
     "todayOrigin": "Страна / регион",
     "todayAllOrigins": "Все страны и регионы",
-    "filterAll": "Все продукты",
+    "productTypeLabel": "Что смотрите?",
+    "productTypes": {
+      "all": "Все",
+      "vegetable": "Овощи",
+      "fruit": "Фрукты",
+      "berry": "Ягоды"
+    },
+    "filterAnySeason": "Любой сезон",
     "filterGood": "В сезоне",
     "filterOff": "Не сезон",
-    "filterFavorites": "♥ Моё избранное",
+    "clearSearch": "Очистить поиск",
+    "seasonFilterLabel": "Сезон",
     "todayNote": "Происхождение — с ценника. Статус — по текущему месяцу. Календарь показывает сезонность, а вкус зависит и от спелости.",
     "favoritesNote": "Сердечко сохраняет продукт целиком, со всеми странами и сортами. Избранное хранится только в этом браузере. Хранение и теплица не означают плохой вкус; «нет данных» не означает «не покупать».",
     "monthLabel": "Месяц",
-    "searchLabel": "Продукт или страна",
+    "searchLabel": "Найти продукт",
     "originLabel": "Страна / регион",
     "allOrigins": "Все происхождения",
-    "categoryLabel": "Категория",
     "allProducts": "Все продукты",
     "onlyFavorites": " Только избранное",
     "knownOnly": " С данными на месяц",
@@ -228,7 +246,9 @@
     "sortSeason": "Сезонные сначала",
     "sortName": "По алфавиту",
     "threeMonths": "3 месяца",
+    "threeMonthsShort": "3 мес.",
     "wholeYear": "Весь год",
+    "wholeYearShort": "Год",
     "calendarViewLabel": "Период календаря",
     "moreFilters": "Остальные фильтры",
     "calendarReset": "Сбросить",
@@ -256,10 +276,10 @@
     "footer": "Москва · версия от 21.09.2026 · избранное хранится только в этом браузере.",
     "themeLabel": "Тёмная тема",
     "tabsLabel": "Разделы",
-    "todayPlaceholder": "Что перед вами на прилавке?",
+    "todayPlaceholder": "Например, морковь",
     "filtersLabel": "Что показать",
     "goodFilterTitle": "Пик, сезон и круглогодичный урожай",
-    "calendarPlaceholder": "Например, манго или Египет",
+    "calendarPlaceholder": "Например, манго",
     "statusLabel": "Фильтр по статусу",
     "sortLabel": "Порядок строк",
     "tableLabel": "Сезонность продуктов по происхождению и месяцам"

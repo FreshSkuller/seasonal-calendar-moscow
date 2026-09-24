@@ -20,14 +20,20 @@ export function startApplication(database, { clock = moscowDate } = {}) {
   }
   const preferences = new Preferences(storage, { resolveFavoriteId: catalog.favoriteProductId });
   const dialog = new DetailsDialog(catalog);
+  let calendar;
+  let today;
   const dependencies = {
     catalog,
     preferences,
     clock,
     openProduct: (id, month) => dialog.open(id, month),
+    onSharedFiltersChange: (source, patch) => {
+      for (const view of [calendar, today])
+        if (view && view !== source) view.applySharedFilters(patch);
+    },
   };
-  const calendar = new CalendarView(dependencies);
-  const today = new TodayView(dependencies);
+  calendar = new CalendarView(dependencies);
+  today = new TodayView(dependencies);
   const events = new AbortController();
   const options = { signal: events.signal };
 

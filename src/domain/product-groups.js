@@ -33,6 +33,8 @@ export function groupedProducts(catalog, filters, favorites = new Set(), preferr
       name: catalog.product(productId).name,
       variantName: variant.name,
       variantCount: catalog.variantsFor(productId).length,
+      otherOriginCount:
+        new Set(catalog.variantsFor(productId).map((item) => item.originId)).size - 1,
       selectionReason: reason,
     };
   });

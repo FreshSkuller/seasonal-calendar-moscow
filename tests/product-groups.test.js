@@ -51,7 +51,7 @@ test('Старое избранное любого происхождения п
     { resolveFavoriteId: db.favoriteProductId },
   );
   assert.equal(prefs.favorites.size, 1);
-  const found = groupedProducts(db, { month: 0, mode: 'fav' }, prefs.favorites);
+  const found = groupedProducts(db, { month: 0, favoritesOnly: true }, prefs.favorites);
   assert.equal(found.length, 1);
   assert.equal(found[0].name, 'Авокадо');
 });

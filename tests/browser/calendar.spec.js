@@ -79,6 +79,91 @@ test('Поиск, карточка со спелостью, источник и 
   expect(errors).toEqual([]);
 });
 
+test('Отдел, поиск и происхождение сохраняются при переходе к годовому календарю', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const today = page.locator('[data-panel="today"]');
+  const calendar = page.locator('[data-panel="calendar"]');
+  await today.locator('[data-product-type="vegetable"]').click();
+  await expect(page.locator('#today-count')).toHaveText('Найдено: 41');
+  await page.locator('#today-search').fill('морковь');
+  await today.locator('[data-product-type="fruit"]').click();
+  await expect(page.locator('#today-groups .empty')).toContainText('Фрукты');
+  await expect(page.locator('#today-groups .empty')).toContainText('морковь');
+  await page.locator('#today-groups [data-clear-query]').click();
+  await expect(page.locator('#today-count')).toHaveText('Найдено: 30');
+  await today.locator('[data-product-type="berry"]').click();
+  await expect(page.locator('#today-count')).toHaveText('Найдено: 37');
+  await page.locator('#today-search').fill('клубника');
+  await page.locator('#today-origin').selectOption('region:Россия');
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await page.locator('[data-tab="calendar"]').click();
+  await expect(calendar.locator('[data-product-type="berry"]')).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+  await expect(page.locator('#search')).toHaveValue('клубника');
+  await expect(page.locator('#origin')).toHaveValue('region:Россия');
+  await expect(page.locator('#table-body tr')).toHaveCount(1);
+  await page.locator('#year-view').click();
+  await expect(page.locator('#table-head th.month')).toHaveCount(12);
+  await page.locator('[data-tab="today"]').click();
+  await expect(page.locator('#today-search')).toHaveValue('клубника');
+  await expect(page.locator('#today-origin')).toHaveValue('region:Россия');
+});
+
+test('Томаты находятся как овощи и ягоды на обоих экранах', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#today-search').fill('томаты');
+  await page.locator('[data-panel="today"] [data-product-type="berry"]').click();
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await expect(page.locator('.shop-card .shop-types')).toHaveText('Овощи · Ягоды');
+  await page.locator('[data-tab="calendar"]').click();
+  await expect(page.locator('#table-body tr')).toHaveCount(1);
+  await expect(page.locator('#table-body .row-category')).toHaveText('Овощи · Ягоды');
+  await page.locator('[data-panel="calendar"] [data-product-type="fruit"]').click();
+  await expect(page.locator('#table-body .filter-empty')).toBeVisible();
+});
+
+test('Основные ягоды идут перед дополнительными на главной и в календаре', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('[data-panel="today"] [data-product-type="berry"]').click();
+  const groups = page.locator('#today-groups .shop-group');
+  await expect(groups.last()).toHaveAttribute('data-group', 'additional');
+  await expect(groups.last().locator('.group-count')).toHaveText('17');
+  await expect(page.locator('.shop-card .shop-types')).toHaveCount(
+    await page.locator('.shop-card').count(),
+  );
+  await page.locator('[data-more="additional"]').click();
+  await expect(groups.last()).toContainText('Томаты');
+  await page.locator('[data-tab="calendar"]').click();
+  const types = await page.locator('#table-body .row-category').allTextContents();
+  const firstAdditional = types.findIndex((type) => !type.startsWith('Ягоды'));
+  expect(firstAdditional).toBeGreaterThan(0);
+  expect(types.slice(0, firstAdditional).every((type) => type.startsWith('Ягоды'))).toBe(true);
+  expect(types.slice(firstAdditional).every((type) => !type.startsWith('Ягоды'))).toBe(true);
+});
+
+test('Избранное сочетается с отделом и сезонным фильтром', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('[data-panel="today"] [data-product-type="fruit"]').click();
+  const card = page.locator('.shop-group[data-group="good"] .shop-card').first();
+  await expect(card).toBeVisible();
+  const favoriteId = await card.locator('[data-favorite]').getAttribute('data-favorite');
+  await card.locator('[data-favorite]').click();
+  await page.locator('[data-today-filter="good"]').click();
+  await page.locator('#today-favorites').check();
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await expect(page.locator('.shop-card [data-favorite]')).toHaveAttribute(
+    'data-favorite',
+    favoriteId,
+  );
+  await page.locator('[data-tab="calendar"]').click();
+  await expect(page.locator('#favorites')).toBeChecked();
+  await expect(page.locator('#table-body tr')).toHaveCount(1);
+});
+
 test('Избранное синхронно между экранами и сохраняется после перезагрузки', async ({ page }) => {
   await page.goto('/');
   await page.locator('#today-search').fill('MD2');
@@ -94,6 +179,7 @@ test('Избранное синхронно между экранами и со�
     'true',
   );
   await page.locator(`#table-body [data-favorite="${id}"]`).click();
+  await page.locator('#favorites').uncheck();
   await page.locator('[data-tab="today"]').click();
   await expect(page.locator(`#today-groups [data-favorite="${id}"]`)).toHaveAttribute(
     'aria-pressed',
@@ -101,7 +187,7 @@ test('Избранное синхронно между экранами и со�
   );
   await page.locator(`#today-groups [data-favorite="${id}"]`).click();
   await page.reload();
-  await page.locator('[data-today-filter="fav"]').click();
+  await page.locator('#today-favorites').check();
   await expect(page.locator('.shop-card')).toHaveCount(1);
 });
 
@@ -142,6 +228,8 @@ test('Календарь показывает результаты над сги
   }
   await revealCalendarFilters(page);
   await page.locator('#origin').selectOption('region:Россия');
+  await expect(page.locator('#calendar-filter-count')).toBeHidden();
+  await page.locator('#known-only').check();
   await expect(page.locator('#calendar-filter-count')).toHaveText('1');
   const cell = await page.locator('.month .cellbtn').first().boundingBox();
   expect(cell.width).toBeGreaterThanOrEqual(44);
@@ -272,7 +360,7 @@ test('Один авокадо: все происхождения и годовы
   await page.locator('#today-search').fill('авокадо');
   await expect(page.locator('.shop-card')).toHaveCount(1);
   await page.locator('#today-origin').selectOption({ label: 'Перу' });
-  await expect(page.locator('.shop-card .shop-origin')).toHaveText('Перу');
+  await expect(page.locator('.shop-card .shop-origin')).toHaveText('Перу · ещё 3 происхождения');
   await page.locator('.shop-card .why').click();
   await expect(page.locator('.variant-detail').first()).toContainText('Перу');
   const variants = await page.locator('.variant-detail').count();
@@ -295,13 +383,13 @@ test('Избранное прежней версии переносится на
     }
   });
   await page.goto('/');
-  await page.locator('[data-today-filter="fav"]').click();
+  await page.locator('#today-favorites').check();
   await expect(page.locator('.shop-card')).toHaveCount(1);
   await expect(page.locator('.shop-card h3')).toHaveText('Авокадо');
   const id = await page.locator('.shop-card [data-favorite]').getAttribute('data-favorite');
   expect(id).toMatch(/^product-/);
   await page.reload();
-  await page.locator('[data-today-filter="fav"]').click();
+  await page.locator('#today-favorites').check();
   await expect(page.locator('.shop-card [data-favorite]')).toHaveAttribute('data-favorite', id);
   expect(await page.evaluate(() => localStorage.getItem('moscow-season-favorites-v2'))).toBe(
     '["r114","r115"]',

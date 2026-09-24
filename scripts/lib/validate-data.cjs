@@ -91,6 +91,14 @@ function validateData(db) {
   };
   for (const product of products.values()) {
     text(product.name, 'Название продукта');
+    assert.ok(
+      Array.isArray(product.productTypes) &&
+        product.productTypes.length > 0 &&
+        product.productTypes.length <= 3 &&
+        product.productTypes.every((type) => ['vegetable', 'fruit', 'berry'].includes(type)) &&
+        new Set(product.productTypes).size === product.productTypes.length,
+      'Некорректные отделы продукта: ' + product.id,
+    );
     linkedAdvice(product.adviceIds, product.id);
     assert.ok(
       [...variants.values()].some((v) => v.productId === product.id),

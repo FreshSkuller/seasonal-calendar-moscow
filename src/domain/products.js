@@ -24,16 +24,10 @@ export function filterProducts(products, filters, favoriteIds = new Set()) {
   return searchProducts(products, filters.query || '', productSearchText).filter((product) => {
     const status = product.months[filters.month];
     if (!matchesOrigin(product, filters.origin || '')) return false;
-    if (
-      filters.category &&
-      product.categoryId !== filters.category &&
-      product.category !== filters.category
-    )
-      return false;
+    if (filters.productType && !product.productTypes.includes(filters.productType)) return false;
     if (filters.status && status !== filters.status) return false;
     if (filters.favoritesOnly && !favoriteIds.has(product.id)) return false;
     if (filters.knownOnly && status === 'u') return false;
-    if (filters.mode === 'fav' && !favoriteIds.has(product.id)) return false;
     if (filters.mode === 'off' && status !== 'n') return false;
     if (
       filters.mode === 'good' &&
@@ -45,7 +39,8 @@ export function filterProducts(products, filters, favoriteIds = new Set()) {
   });
 }
 
-export function sortProducts(products, month, order = 'name') {
+export function sortProducts(products, month, order = 'name', selectedType = '') {
+  const typeRank = (product) => (selectedType && product.productTypes[0] !== selectedType ? 1 : 0);
   const rank = (product) =>
     order === 'season'
       ? STATUS_RANK[product.months[month]]
@@ -54,6 +49,7 @@ export function sortProducts(products, month, order = 'name') {
         : 0;
   return [...products].sort(
     (left, right) =>
+      typeRank(left) - typeRank(right) ||
       rank(left) - rank(right) ||
       left.name.localeCompare(right.name, 'ru') ||
       left.origin.localeCompare(right.origin, 'ru') ||

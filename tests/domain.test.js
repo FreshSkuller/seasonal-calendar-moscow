@@ -12,7 +12,10 @@ import { Preferences } from '../src/services/preferences.js';
 import { moscowDate } from '../src/services/clock.js';
 import { adviceSection } from '../src/components/advice-section.js';
 import { createCatalog } from '../src/domain/catalog.js';
+import { groupedProducts } from '../src/domain/product-groups.js';
 import { productCard } from '../src/components/product-card.js';
+import { originSummary } from '../src/components/origin-summary.js';
+import { buildProductList } from '../src/application/product-list.js';
 const require = createRequire(import.meta.url);
 const { loadDatabase } = require('../scripts/lib/load-data.cjs');
 const database = createCatalog(loadDatabase());
@@ -68,7 +71,7 @@ test('Сезонные фильтры не превращают неизвест
   }
 });
 
-test('Избранное, категория, страна и статус работают вместе; сортировка не меняет базу', () => {
+test('Избранное, отдел, страна и статус работают вместе; сортировка не меняет базу', () => {
   const product = database.variants[0];
   const favorites = new Set([product.id]);
   assert.deepEqual(
@@ -77,7 +80,7 @@ test('Избранное, категория, страна и статус ра�
       {
         month: 0,
         favoritesOnly: true,
-        category: product.category,
+        productType: product.productTypes[0],
         origin: `country:${product.origin}`,
         status: product.months[0],
       },
@@ -94,6 +97,84 @@ test('Избранное, категория, страна и статус ра�
   assert.deepEqual(visibleMonths(0, false), [11, 0, 1]);
   assert.deepEqual(visibleMonths(11, false), [10, 11, 0]);
   assert.equal(visibleMonths(11, true).length, 12);
+});
+
+test('Все типы продукта сохраняются при любом происхождении и работают в фильтре', () => {
+  const groups = new Set(['vegetable', 'fruit', 'berry']);
+  assert.equal(database.products.length, 91);
+  for (const product of database.products) {
+    assert.ok(
+      product.productTypes.every((type) => groups.has(type)),
+      product.name,
+    );
+    assert.ok(
+      database
+        .variantsFor(product.id)
+        .every((variant) => variant.productTypes === product.productTypes),
+      product.name,
+    );
+  }
+  for (const [name, expected] of [
+    ['Клубника', ['berry']],
+    ['Голубика', ['berry']],
+    ['Авокадо', ['vegetable', 'berry']],
+    ['Томаты', ['vegetable', 'berry']],
+    ['Черешня', ['berry']],
+    ['Вишня', ['berry']],
+  ]) {
+    const product = database.products.find((item) => item.name === name);
+    assert.ok(product);
+    assert.deepEqual(product.productTypes, expected);
+    for (const type of expected)
+      assert.deepEqual(
+        groupedProducts(database, { month: 8, productType: type, query: name }).map(
+          (item) => item.id,
+        ),
+        [product.id],
+      );
+  }
+  assert.equal(
+    groupedProducts(database, { month: 8, productType: 'fruit', query: 'томаты' }).length,
+    0,
+  );
+  for (const [type, count] of [
+    ['vegetable', 41],
+    ['fruit', 30],
+    ['berry', 37],
+  ])
+    assert.equal(groupedProducts(database, { month: 8, productType: type }).length, count);
+  for (const name of ['Авокадо', 'Вишня', 'Черешня'])
+    assert.equal(
+      groupedProducts(database, { month: 8, productType: 'fruit', query: name }).length,
+      0,
+    );
+});
+
+test('Основной тип идёт раньше дополнительного при любой сортировке', () => {
+  for (const type of ['vegetable', 'fruit', 'berry']) {
+    for (const order of ['name', 'season']) {
+      const products = buildProductList(
+        database,
+        { month: 8, productType: type },
+        new Set(),
+        order,
+      ).products;
+      const firstAdditional = products.findIndex((product) => product.productTypes[0] !== type);
+      if (firstAdditional < 0) continue;
+      assert.ok(
+        products.slice(0, firstAdditional).every((product) => product.productTypes[0] === type),
+      );
+      assert.ok(
+        products.slice(firstAdditional).every((product) => product.productTypes[0] !== type),
+      );
+    }
+  }
+  assert.equal(
+    originSummary(
+      groupedProducts(database, { month: 8, query: 'авокадо', origin: 'country:Перу' })[0],
+    ),
+    'Перу · ещё 3 происхождения',
+  );
 });
 
 test('Московская дата корректна при смене месяца и года в UTC', () => {

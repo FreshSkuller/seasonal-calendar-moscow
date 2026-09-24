@@ -156,7 +156,7 @@
     display: none;
   }
   td.product .row-category {
-    display: none;
+    display: block;
   }
   td.product .mobile-origin {
     display: block;

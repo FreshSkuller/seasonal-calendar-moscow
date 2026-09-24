@@ -12,6 +12,7 @@ export function buildProductList(
     groupedProducts(catalog, filters, favorites, preferredVariants),
     filters.month,
     order,
+    filters.productType,
   );
   return {
     products,

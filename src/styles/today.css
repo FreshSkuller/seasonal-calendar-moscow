@@ -16,6 +16,9 @@
   font-size: 14px;
   margin: 6px 0;
 }
+[data-panel='today'] > .toolbar {
+  margin-bottom: 20px;
+}
 .daily-search {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -105,10 +108,15 @@
   background: none;
 }
 .shop-origin {
-  font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   margin: 0 0 12px;
   color: var(--muted);
+}
+.shop-types {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
 }
 .shop-tip {
   font-size: 14px;

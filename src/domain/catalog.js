@@ -16,6 +16,7 @@ export function createCatalog(database) {
     .map((variant) => ({
       ...variant,
       productName: products.get(variant.productId).name,
+      productTypes: products.get(variant.productId).productTypes,
       origin: origins.get(variant.originId).label,
       navigationGroup: origins.get(variant.originId).navigationGroup,
       category: categories.get(variant.categoryId).label,

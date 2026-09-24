@@ -2,6 +2,7 @@
   {
     "id": "product-1",
     "name": "Картофель",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-1",
       "home-wash-product-1",
@@ -14,6 +15,7 @@
   {
     "id": "product-3",
     "name": "Морковь основного урожая",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-1",
       "advice-2",
@@ -27,6 +29,7 @@
   {
     "id": "product-4",
     "name": "Свёкла основного урожая",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-4",
       "home-wash-product-4",
@@ -39,6 +42,7 @@
   {
     "id": "product-5",
     "name": "Капуста белокочанная",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-3",
       "advice-4",
@@ -52,6 +56,7 @@
   {
     "id": "product-7",
     "name": "Кольраби",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-7",
       "home-wash-product-7",
@@ -64,6 +69,7 @@
   {
     "id": "product-8",
     "name": "Лук репчатый",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-5",
       "advice-6",
@@ -77,6 +83,7 @@
   {
     "id": "product-9",
     "name": "Лук зелёный / перо, открытый грунт",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-7",
       "advice-8",
@@ -90,6 +97,7 @@
   {
     "id": "product-10",
     "name": "Чеснок",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-9",
       "advice-10",
@@ -103,6 +111,7 @@
   {
     "id": "product-11",
     "name": "Огурцы",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-11",
       "advice-12",
@@ -116,6 +125,7 @@
   {
     "id": "product-12",
     "name": "Томаты",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-13",
       "advice-14",
@@ -129,6 +139,7 @@
   {
     "id": "product-13",
     "name": "Кабачки / цуккини",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-15",
       "advice-16",
@@ -142,6 +153,7 @@
   {
     "id": "product-14",
     "name": "Баклажаны",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-17",
       "advice-18",
@@ -155,6 +167,7 @@
   {
     "id": "product-15",
     "name": "Перец болгарский",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-19",
       "advice-20",
@@ -168,6 +181,7 @@
   {
     "id": "product-16",
     "name": "Тыква зрелая, целая",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-21",
       "advice-22",
@@ -181,6 +195,7 @@
   {
     "id": "product-17",
     "name": "Кукуруза",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-23",
       "advice-24",
@@ -194,6 +209,7 @@
   {
     "id": "product-18",
     "name": "Горошек зелёный, свежий",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-18",
       "home-wash-product-18",
@@ -206,6 +222,7 @@
   {
     "id": "product-19",
     "name": "Фасоль стручковая",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-25",
       "advice-26",
@@ -219,6 +236,7 @@
   {
     "id": "product-20",
     "name": "Брокколи",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-27",
       "advice-28",
@@ -232,6 +250,7 @@
   {
     "id": "product-21",
     "name": "Цветная капуста",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-29",
       "advice-30",
@@ -245,6 +264,7 @@
   {
     "id": "product-22",
     "name": "Брюссельская капуста",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-22",
       "home-wash-product-22",
@@ -257,6 +277,7 @@
   {
     "id": "product-23",
     "name": "Редис",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-31",
       "advice-32",
@@ -270,6 +291,7 @@
   {
     "id": "product-25",
     "name": "Редька",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-33",
       "advice-34",
@@ -283,6 +305,7 @@
   {
     "id": "product-26",
     "name": "Репа",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-26",
       "home-wash-product-26",
@@ -295,6 +318,7 @@
   {
     "id": "product-27",
     "name": "Брюква",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-27",
       "home-wash-product-27",
@@ -307,6 +331,7 @@
   {
     "id": "product-28",
     "name": "Щавель",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-28",
       "home-wash-product-28",
@@ -319,6 +344,7 @@
   {
     "id": "product-29",
     "name": "Шпинат / руккола, открытый грунт",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-29",
       "home-wash-product-29",
@@ -331,6 +357,7 @@
   {
     "id": "product-30",
     "name": "Спаржа",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-35",
       "advice-36",
@@ -344,6 +371,7 @@
   {
     "id": "product-31",
     "name": "Черемша свежая",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-31",
       "home-wash-product-31",
@@ -357,6 +385,7 @@
   {
     "id": "product-32",
     "name": "Укроп / петрушка / зелень, открытый грунт",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-37",
       "advice-38",
@@ -370,6 +399,7 @@
   {
     "id": "product-33",
     "name": "Сельдерей корневой",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-33",
       "home-wash-product-33",
@@ -382,6 +412,7 @@
   {
     "id": "product-34",
     "name": "Сельдерей черешковый",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-39",
       "advice-40",
@@ -395,6 +426,7 @@
   {
     "id": "product-35",
     "name": "Хрен, свежий корень",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-35",
       "home-wash-product-35",
@@ -407,6 +439,7 @@
   {
     "id": "product-36",
     "name": "Ревень",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-36",
       "home-wash-product-36",
@@ -419,6 +452,7 @@
   {
     "id": "product-37",
     "name": "Клубника",
+    "productTypes": ["berry"],
     "adviceIds": [
       "advice-41",
       "advice-42",
@@ -432,6 +466,7 @@
   {
     "id": "product-40",
     "name": "Земляника лесная",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-40",
       "home-wash-product-40",
@@ -444,6 +479,7 @@
   {
     "id": "product-41",
     "name": "Жимолость",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-41",
       "home-wash-product-41",
@@ -456,6 +492,7 @@
   {
     "id": "product-42",
     "name": "Черешня",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-42",
       "home-wash-product-42",
@@ -468,6 +505,7 @@
   {
     "id": "product-43",
     "name": "Вишня",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-43",
       "home-wash-product-43",
@@ -480,6 +518,7 @@
   {
     "id": "product-44",
     "name": "Малина",
+    "productTypes": ["berry"],
     "adviceIds": [
       "advice-43",
       "advice-44",
@@ -493,6 +532,7 @@
   {
     "id": "product-46",
     "name": "Чёрная смородина",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-46",
       "home-wash-product-46",
@@ -505,6 +545,7 @@
   {
     "id": "product-47",
     "name": "Красная смородина",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-47",
       "home-wash-product-47",
@@ -517,6 +558,7 @@
   {
     "id": "product-48",
     "name": "Крыжовник",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-48",
       "home-wash-product-48",
@@ -529,6 +571,7 @@
   {
     "id": "product-49",
     "name": "Черника лесная",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-49",
       "home-wash-product-49",
@@ -541,6 +584,7 @@
   {
     "id": "product-50",
     "name": "Голубика",
+    "productTypes": ["berry"],
     "adviceIds": [
       "advice-45",
       "advice-46",
@@ -554,6 +598,7 @@
   {
     "id": "product-52",
     "name": "Ежевика",
+    "productTypes": ["berry"],
     "adviceIds": [
       "advice-47",
       "advice-48",
@@ -567,6 +612,7 @@
   {
     "id": "product-53",
     "name": "Облепиха",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-53",
       "home-wash-product-53",
@@ -579,6 +625,7 @@
   {
     "id": "product-54",
     "name": "Калина",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-54",
       "home-wash-product-54",
@@ -592,6 +639,7 @@
   {
     "id": "product-55",
     "name": "Рябина красная",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-55",
       "home-wash-product-55",
@@ -605,6 +653,7 @@
   {
     "id": "product-56",
     "name": "Шиповник",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-56",
       "home-wash-product-56",
@@ -618,6 +667,7 @@
   {
     "id": "product-57",
     "name": "Ирга",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-57",
       "home-wash-product-57",
@@ -630,6 +680,7 @@
   {
     "id": "product-58",
     "name": "Черёмуха обыкновенная, свежая",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-58",
       "home-wash-product-58",
@@ -642,6 +693,7 @@
   {
     "id": "product-59",
     "name": "Брусника, свежий сбор",
+    "productTypes": ["berry"],
     "adviceIds": [
       "home-buy-product-59",
       "home-wash-product-59",
@@ -654,6 +706,7 @@
   {
     "id": "product-60",
     "name": "Клюква, свежий сбор",
+    "productTypes": ["berry"],
     "adviceIds": [
       "advice-49",
       "advice-50",
@@ -667,6 +720,7 @@
   {
     "id": "product-61",
     "name": "Абрикосы",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-51",
       "advice-52",
@@ -681,6 +735,7 @@
   {
     "id": "product-62",
     "name": "Персики и нектарины",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-53",
       "advice-54",
@@ -695,6 +750,7 @@
   {
     "id": "product-64",
     "name": "Сливы",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-55",
       "advice-56",
@@ -709,6 +765,7 @@
   {
     "id": "product-65",
     "name": "Алыча",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-57",
       "advice-58",
@@ -723,6 +780,7 @@
   {
     "id": "product-66",
     "name": "Яблоки",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-66",
       "home-wash-product-66",
@@ -735,6 +793,7 @@
   {
     "id": "product-69",
     "name": "Груши",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-69",
       "home-wash-product-69",
@@ -748,6 +807,7 @@
   {
     "id": "product-71",
     "name": "Арбуз грунтовой",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "home-buy-product-71",
       "home-wash-product-71",
@@ -760,6 +820,7 @@
   {
     "id": "product-72",
     "name": "Дыня",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "home-buy-product-72",
       "home-wash-product-72",
@@ -772,6 +833,7 @@
   {
     "id": "product-73",
     "name": "Виноград",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-59",
       "advice-60",
@@ -785,6 +847,7 @@
   {
     "id": "product-74",
     "name": "Инжир",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-61",
       "advice-62",
@@ -798,6 +861,7 @@
   {
     "id": "product-75",
     "name": "Айва",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-75",
       "home-wash-product-75",
@@ -810,6 +874,7 @@
   {
     "id": "product-76",
     "name": "Хурма",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-63",
       "advice-64",
@@ -823,6 +888,7 @@
   {
     "id": "product-78",
     "name": "Гранат",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-65",
       "advice-66",
@@ -836,6 +902,7 @@
   {
     "id": "product-79",
     "name": "Фейхоа",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-67",
       "advice-68",
@@ -849,6 +916,7 @@
   {
     "id": "product-82",
     "name": "Молодые салатные культуры, теплица",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-82",
       "home-wash-product-82",
@@ -861,6 +929,7 @@
   {
     "id": "product-83",
     "name": "Мандарины",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-83",
       "home-wash-product-83",
@@ -873,6 +942,7 @@
   {
     "id": "product-89",
     "name": "Апельсины",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-89",
       "home-wash-product-89",
@@ -885,6 +955,7 @@
   {
     "id": "product-92",
     "name": "Грейпфрут",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-92",
       "home-wash-product-92",
@@ -897,6 +968,7 @@
   {
     "id": "product-94",
     "name": "Лимоны",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-94",
       "home-wash-product-94",
@@ -909,6 +981,7 @@
   {
     "id": "product-96",
     "name": "Помело",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-96",
       "home-wash-product-96",
@@ -921,6 +994,7 @@
   {
     "id": "product-99",
     "name": "Лайм",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-99",
       "home-wash-product-99",
@@ -933,6 +1007,7 @@
   {
     "id": "product-102",
     "name": "Манго",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-69",
       "advice-70",
@@ -947,6 +1022,7 @@
   {
     "id": "product-109",
     "name": "Ананас",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "advice-71",
       "advice-72",
@@ -960,6 +1036,7 @@
   {
     "id": "product-112",
     "name": "Бананы",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "home-buy-product-112",
       "home-wash-product-112",
@@ -973,6 +1050,7 @@
   {
     "id": "product-114",
     "name": "Авокадо",
+    "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-73",
       "advice-74",
@@ -987,6 +1065,7 @@
   {
     "id": "product-118",
     "name": "Личи",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-118",
       "home-wash-product-118",
@@ -999,6 +1078,7 @@
   {
     "id": "product-122",
     "name": "Папайя",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-75",
       "advice-76",
@@ -1013,6 +1093,7 @@
   {
     "id": "product-125",
     "name": "Питайя (дракон-фрукт)",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-125",
       "home-wash-product-125",
@@ -1025,6 +1106,7 @@
   {
     "id": "product-128",
     "name": "Маракуйя",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-128",
       "home-wash-product-128",
@@ -1037,6 +1119,7 @@
   {
     "id": "product-131",
     "name": "Кокос",
+    "productTypes": ["fruit"],
     "adviceIds": [
       "home-buy-product-131",
       "home-wash-product-131",
@@ -1049,6 +1132,7 @@
   {
     "id": "product-134",
     "name": "Физалис",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "home-buy-product-134",
       "home-wash-product-134",
@@ -1062,6 +1146,7 @@
   {
     "id": "product-170",
     "name": "Киви",
+    "productTypes": ["fruit", "berry"],
     "adviceIds": [
       "advice-77",
       "advice-78",
@@ -1076,6 +1161,7 @@
   {
     "id": "product-195",
     "name": "Салат айсберг / романо",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-195",
       "home-wash-product-195",
@@ -1088,6 +1174,7 @@
   {
     "id": "product-198",
     "name": "Имбирь",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-198",
       "home-wash-product-198",
@@ -1100,6 +1187,7 @@
   {
     "id": "product-201",
     "name": "Батат",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-79",
       "advice-80",
@@ -1113,6 +1201,7 @@
   {
     "id": "product-204",
     "name": "Пекинская капуста",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-81",
       "advice-82",
@@ -1126,6 +1215,7 @@
   {
     "id": "product-206",
     "name": "Артишоки",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-83",
       "advice-84",
@@ -1139,6 +1229,7 @@
   {
     "id": "product-212",
     "name": "Лук-порей",
+    "productTypes": ["vegetable"],
     "adviceIds": [
       "home-buy-product-212",
       "home-wash-product-212",

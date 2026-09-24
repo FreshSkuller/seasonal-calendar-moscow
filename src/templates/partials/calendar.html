@@ -1,29 +1,48 @@
 <section data-panel="calendar" hidden>
   <div class="toolbar calendar-toolbar">
+    <div class="product-type-filter" role="group" aria-label="{{page.productTypeLabel}}">
+      <div class="product-type-heading">
+        <span class="filter-label">{{page.productTypeLabel}}</span>
+        <button id="reset" type="button" hidden>{{page.calendarReset}}</button>
+      </div>
+      <div class="product-type-options">
+        <button data-product-type="" aria-pressed="true">{{page.productTypes.all}}</button>
+        <button data-product-type="vegetable" aria-pressed="false">
+          {{page.productTypes.vegetable}}
+        </button>
+        <button data-product-type="fruit" aria-pressed="false">{{page.productTypes.fruit}}</button>
+        <button data-product-type="berry" aria-pressed="false">{{page.productTypes.berry}}</button>
+      </div>
+    </div>
     <div class="calendar-primary">
-      <label class="field search-field"
-        >{{page.searchLabel}}<input
-          type="search"
-          id="search"
-          placeholder="{{page.calendarPlaceholder}}" /></label
-      ><label class="field">{{page.monthLabel}}<select id="month"></select></label>
+      <div class="search-control search-field">
+        <label class="field" for="search">{{page.searchLabel}}</label>
+        <div class="search-input-wrap">
+          <input type="search" id="search" placeholder="{{page.calendarPlaceholder}}" />
+          <button id="calendar-clear-search" type="button" aria-label="{{page.clearSearch}}" hidden>
+            ×
+          </button>
+        </div>
+      </div>
+      <label class="field origin-field"
+        >{{page.originLabel}}<select id="origin">
+          <option value="">{{page.allOrigins}}</option>
+        </select></label
+      >
+      <label class="field month-field">{{page.monthLabel}}<select id="month"></select></label>
       <div class="segmented" role="group" aria-label="{{page.calendarViewLabel}}">
-        <button id="focus-view" aria-pressed="true">{{page.threeMonths}}</button
-        ><button id="year-view" aria-pressed="false">{{page.wholeYear}}</button>
+        <button id="focus-view" aria-pressed="true">
+          <span class="period-long">{{page.threeMonths}}</span
+          ><span class="period-short">{{page.threeMonthsShort}}</span></button
+        ><button id="year-view" aria-pressed="false">
+          <span class="period-long">{{page.wholeYear}}</span
+          ><span class="period-short">{{page.wholeYearShort}}</span>
+        </button>
       </div>
     </div>
     <details class="calendar-more" id="calendar-more" open>
       <summary>{{page.moreFilters}} <span id="calendar-filter-count" hidden></span></summary>
       <div class="calendar-secondary">
-        <label class="field origin-field"
-          >{{page.originLabel}}<select id="origin">
-            <option value="">{{page.allOrigins}}</option>
-          </select></label
-        ><label class="field"
-          >{{page.categoryLabel}}<select id="category">
-            <option value="">{{page.allProducts}}</option>
-          </select></label
-        >
         <label class="field"
           >{{page.statusLabel}}<select id="status">
             <option value="">{{page.allStatuses}}</option>
@@ -40,7 +59,6 @@
         ><label class="check-option"
           ><input type="checkbox" id="known-only" />{{page.knownOnly}}</label
         >
-        <button id="reset">{{page.calendarReset}}</button>
       </div>
     </details>
   </div>

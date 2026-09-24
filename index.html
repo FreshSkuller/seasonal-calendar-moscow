@@ -1015,7 +1015,7 @@
           display: none;
         }
         td.product .row-category {
-          display: none;
+          display: block;
         }
         td.product .mobile-origin {
           display: block;
@@ -1050,6 +1050,9 @@
         color: var(--muted);
         font-size: 14px;
         margin: 6px 0;
+      }
+      [data-panel='today'] > .toolbar {
+        margin-bottom: 20px;
       }
       .daily-search {
         display: grid;
@@ -1140,10 +1143,15 @@
         background: none;
       }
       .shop-origin {
-        font-weight: 600;
-        font-size: 13px;
+        font-size: 12px;
         margin: 0 0 12px;
         color: var(--muted);
+      }
+      .shop-types {
+        margin: 0 0 4px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.4;
       }
       .shop-tip {
         font-size: 14px;
@@ -1780,6 +1788,11 @@
         background: var(--group-wash-unknown);
       }
 
+      .shop-group[data-group='additional'] {
+        --group-accent: var(--muted);
+        background: var(--soft);
+      }
+
       .shop-group > summary {
         display: flex;
         align-items: center;
@@ -2173,6 +2186,255 @@
           text-align: left;
         }
       }
+
+      /* Store-first filtering stays visible on both catalog screens. */
+      .product-type-filter {
+        margin-bottom: 16px;
+      }
+
+      .product-type-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .product-type-heading #reset {
+        min-height: 44px;
+        padding: 5px 9px;
+        background: transparent;
+        font-size: 12px;
+      }
+
+      .filter-label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .product-type-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .product-type-options button {
+        min-height: 44px;
+        padding: 8px 15px;
+        font-weight: 650;
+      }
+
+      .product-type-options button[aria-pressed='true'] {
+        color: var(--bg);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .search-control {
+        min-width: 0;
+      }
+
+      .search-control > label {
+        margin-bottom: 6px;
+      }
+
+      .search-input-wrap {
+        position: relative;
+      }
+
+      .search-input-wrap input {
+        padding-right: 52px;
+      }
+
+      .search-input-wrap button {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 40px;
+        height: calc(100% - 4px);
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .season-label {
+        margin: 15px 0 0;
+      }
+
+      .today-chips {
+        margin-top: 7px;
+      }
+
+      .favorite-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        margin-top: 10px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .favorite-option input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        accent-color: var(--accent);
+      }
+
+      .calendar-primary {
+        grid-template-columns: minmax(220px, 1.4fr) minmax(185px, 1fr) minmax(125px, 155px) auto;
+      }
+
+      .period-short {
+        display: none;
+      }
+
+      .calendar-secondary {
+        display: flex;
+        align-items: end;
+        flex-wrap: wrap;
+      }
+
+      .calendar-secondary > .field {
+        flex: 1 1 180px;
+        max-width: 240px;
+      }
+
+      .calendar-secondary .check-option {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .filter-empty p {
+        margin: 0 0 10px;
+      }
+
+      .filter-empty button {
+        min-height: 44px;
+        margin: 0 7px 0 0;
+      }
+
+      @media (max-width: 850px) {
+        .calendar-primary {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .calendar-primary .search-field,
+        .calendar-primary .segmented {
+          grid-column: 1 / -1;
+        }
+
+        .calendar-primary .origin-field,
+        .calendar-primary .month-field {
+          grid-column: auto;
+        }
+
+        .calendar-secondary {
+          display: grid;
+        }
+
+        .calendar-secondary > .field {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .product-type-filter {
+          margin-bottom: 12px;
+        }
+
+        .product-type-options {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 6px;
+        }
+
+        .product-type-options button {
+          padding: 6px 3px;
+          font-size: 13px;
+        }
+
+        .calendar-primary .origin-field {
+          grid-column: 1 / -1;
+        }
+
+        .calendar-primary .month-field,
+        .calendar-primary .segmented {
+          grid-column: auto;
+        }
+
+        .today-chips {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .today-chips button:last-child {
+          grid-column: auto;
+        }
+
+        body[data-active-panel='today'] .hero {
+          min-height: 0;
+          margin: 5px 0 0;
+          padding: 0;
+          border: 0;
+          background: none;
+        }
+
+        body[data-active-panel='today'] .hero h1 {
+          margin: 0;
+          font-size: 24px;
+        }
+
+        body[data-active-panel='today'] .hero p {
+          display: none;
+        }
+
+        .today-header {
+          align-items: center;
+          margin: 0 0 8px;
+        }
+
+        .today-header h2 {
+          display: none;
+        }
+
+        .today-header .today-date {
+          margin: 0;
+        }
+
+        .today-meta {
+          flex-direction: row;
+          align-items: center;
+          gap: 7px;
+        }
+
+        .today-meta button {
+          min-height: 44px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .product-type-options button {
+          padding: 6px 1px;
+          font-size: 12px;
+        }
+
+        .calendar-primary .segmented button {
+          padding: 6px 5px;
+        }
+
+        .period-long {
+          display: none;
+        }
+
+        .period-short {
+          display: inline;
+        }
+      }
       ;
     </style>
   </head>
@@ -2275,39 +2537,55 @@
           </div>
           <div class="today-meta">
             <span class="today-count" id="today-count" aria-live="polite"></span
-            ><button id="today-reset">Сбросить</button>
+            ><button id="today-reset" hidden>Сбросить</button>
           </div>
         </div>
         <div class="toolbar">
+          <div class="product-type-filter" role="group" aria-label="Что смотрите?">
+            <span class="filter-label">Что смотрите?</span>
+            <div class="product-type-options">
+              <button data-product-type="" aria-pressed="true">Все</button>
+              <button data-product-type="vegetable" aria-pressed="false">Овощи</button>
+              <button data-product-type="fruit" aria-pressed="false">Фрукты</button>
+              <button data-product-type="berry" aria-pressed="false">Ягоды</button>
+            </div>
+          </div>
           <div class="daily-search">
+            <div class="search-control">
+              <label class="field" for="today-search">Найти продукт</label>
+              <div class="search-input-wrap">
+                <input id="today-search" type="search" placeholder="Например, морковь" />
+                <button id="today-clear-search" type="button" aria-label="Очистить поиск" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
             <label class="field"
-              >Найти продукт<input
-                id="today-search"
-                type="search"
-                placeholder="Что перед вами на прилавке?" /></label
-            ><label class="field"
               >Страна / регион<select id="today-origin">
                 <option value="">Все страны и регионы</option>
               </select></label
             >
           </div>
-          <div class="today-chips" aria-label="Что показать">
-            <button data-today-filter="all" aria-pressed="true">Все продукты</button
+          <span class="filter-label season-label">Сезон</span>
+          <div class="today-chips" role="group" aria-label="Сезон">
+            <button data-today-filter="all" aria-pressed="true">Любой сезон</button
             ><button
               data-today-filter="good"
               aria-pressed="false"
               title="Пик, сезон и круглогодичный урожай"
             >
               В сезоне</button
-            ><button data-today-filter="off" aria-pressed="false">Не сезон</button
-            ><button data-today-filter="fav" aria-pressed="false">♥ Моё избранное</button>
+            ><button data-today-filter="off" aria-pressed="false">Не сезон</button>
           </div>
+          <label class="check-option favorite-option"
+            ><input type="checkbox" id="today-favorites" /> Только избранное</label
+          >
         </div>
+        <div id="today-groups"></div>
         <p class="daily-note">
           Происхождение — с ценника. Статус — по текущему месяцу. Календарь показывает сезонность, а
           вкус зависит и от спелости.
         </p>
-        <div id="today-groups"></div>
         <div class="family-note">
           Сердечко сохраняет продукт целиком, со всеми странами и сортами. Избранное хранится только
           в этом браузере. Хранение и теплица не означают плохой вкус; «нет данных» не означает «не
@@ -2316,30 +2594,46 @@
       </section>
       <section data-panel="calendar" hidden>
         <div class="toolbar calendar-toolbar">
+          <div class="product-type-filter" role="group" aria-label="Что смотрите?">
+            <div class="product-type-heading">
+              <span class="filter-label">Что смотрите?</span>
+              <button id="reset" type="button" hidden>Сбросить</button>
+            </div>
+            <div class="product-type-options">
+              <button data-product-type="" aria-pressed="true">Все</button>
+              <button data-product-type="vegetable" aria-pressed="false">Овощи</button>
+              <button data-product-type="fruit" aria-pressed="false">Фрукты</button>
+              <button data-product-type="berry" aria-pressed="false">Ягоды</button>
+            </div>
+          </div>
           <div class="calendar-primary">
-            <label class="field search-field"
-              >Продукт или страна<input
-                type="search"
-                id="search"
-                placeholder="Например, манго или Египет" /></label
-            ><label class="field">Месяц<select id="month"></select></label>
+            <div class="search-control search-field">
+              <label class="field" for="search">Найти продукт</label>
+              <div class="search-input-wrap">
+                <input type="search" id="search" placeholder="Например, манго" />
+                <button id="calendar-clear-search" type="button" aria-label="Очистить поиск" hidden>
+                  ×
+                </button>
+              </div>
+            </div>
+            <label class="field origin-field"
+              >Страна / регион<select id="origin">
+                <option value="">Все происхождения</option>
+              </select></label
+            >
+            <label class="field month-field">Месяц<select id="month"></select></label>
             <div class="segmented" role="group" aria-label="Период календаря">
-              <button id="focus-view" aria-pressed="true">3 месяца</button
-              ><button id="year-view" aria-pressed="false">Весь год</button>
+              <button id="focus-view" aria-pressed="true">
+                <span class="period-long">3 месяца</span
+                ><span class="period-short">3 мес.</span></button
+              ><button id="year-view" aria-pressed="false">
+                <span class="period-long">Весь год</span><span class="period-short">Год</span>
+              </button>
             </div>
           </div>
           <details class="calendar-more" id="calendar-more" open>
             <summary>Остальные фильтры <span id="calendar-filter-count" hidden></span></summary>
             <div class="calendar-secondary">
-              <label class="field origin-field"
-                >Страна / регион<select id="origin">
-                  <option value="">Все происхождения</option>
-                </select></label
-              ><label class="field"
-                >Категория<select id="category">
-                  <option value="">Все продукты</option>
-                </select></label
-              >
               <label class="field"
                 >Фильтр по статусу<select id="status">
                   <option value="">Все статусы</option>
@@ -2356,7 +2650,6 @@
               ><label class="check-option"
                 ><input type="checkbox" id="known-only" /> С данными на месяц</label
               >
-              <button id="reset">Сбросить</button>
             </div>
           </details>
         </div>
@@ -5008,6 +5301,9 @@
           {
             "id": "product-1",
             "name": "Картофель",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-1",
               "home-wash-product-1",
@@ -5020,6 +5316,9 @@
           {
             "id": "product-3",
             "name": "Морковь основного урожая",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-1",
               "advice-2",
@@ -5033,6 +5332,9 @@
           {
             "id": "product-4",
             "name": "Свёкла основного урожая",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-4",
               "home-wash-product-4",
@@ -5045,6 +5347,9 @@
           {
             "id": "product-5",
             "name": "Капуста белокочанная",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-3",
               "advice-4",
@@ -5058,6 +5363,9 @@
           {
             "id": "product-7",
             "name": "Кольраби",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-7",
               "home-wash-product-7",
@@ -5070,6 +5378,9 @@
           {
             "id": "product-8",
             "name": "Лук репчатый",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-5",
               "advice-6",
@@ -5083,6 +5394,9 @@
           {
             "id": "product-9",
             "name": "Лук зелёный / перо, открытый грунт",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-7",
               "advice-8",
@@ -5096,6 +5410,9 @@
           {
             "id": "product-10",
             "name": "Чеснок",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-9",
               "advice-10",
@@ -5109,6 +5426,10 @@
           {
             "id": "product-11",
             "name": "Огурцы",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-11",
               "advice-12",
@@ -5122,6 +5443,10 @@
           {
             "id": "product-12",
             "name": "Томаты",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-13",
               "advice-14",
@@ -5135,6 +5460,10 @@
           {
             "id": "product-13",
             "name": "Кабачки / цуккини",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-15",
               "advice-16",
@@ -5148,6 +5477,10 @@
           {
             "id": "product-14",
             "name": "Баклажаны",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-17",
               "advice-18",
@@ -5161,6 +5494,10 @@
           {
             "id": "product-15",
             "name": "Перец болгарский",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-19",
               "advice-20",
@@ -5174,6 +5511,10 @@
           {
             "id": "product-16",
             "name": "Тыква зрелая, целая",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-21",
               "advice-22",
@@ -5187,6 +5528,9 @@
           {
             "id": "product-17",
             "name": "Кукуруза",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-23",
               "advice-24",
@@ -5200,6 +5544,9 @@
           {
             "id": "product-18",
             "name": "Горошек зелёный, свежий",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-18",
               "home-wash-product-18",
@@ -5212,6 +5559,9 @@
           {
             "id": "product-19",
             "name": "Фасоль стручковая",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-25",
               "advice-26",
@@ -5225,6 +5575,9 @@
           {
             "id": "product-20",
             "name": "Брокколи",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-27",
               "advice-28",
@@ -5238,6 +5591,9 @@
           {
             "id": "product-21",
             "name": "Цветная капуста",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-29",
               "advice-30",
@@ -5251,6 +5607,9 @@
           {
             "id": "product-22",
             "name": "Брюссельская капуста",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-22",
               "home-wash-product-22",
@@ -5263,6 +5622,9 @@
           {
             "id": "product-23",
             "name": "Редис",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-31",
               "advice-32",
@@ -5276,6 +5638,9 @@
           {
             "id": "product-25",
             "name": "Редька",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-33",
               "advice-34",
@@ -5289,6 +5654,9 @@
           {
             "id": "product-26",
             "name": "Репа",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-26",
               "home-wash-product-26",
@@ -5301,6 +5669,9 @@
           {
             "id": "product-27",
             "name": "Брюква",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-27",
               "home-wash-product-27",
@@ -5313,6 +5684,9 @@
           {
             "id": "product-28",
             "name": "Щавель",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-28",
               "home-wash-product-28",
@@ -5325,6 +5699,9 @@
           {
             "id": "product-29",
             "name": "Шпинат / руккола, открытый грунт",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-29",
               "home-wash-product-29",
@@ -5337,6 +5714,9 @@
           {
             "id": "product-30",
             "name": "Спаржа",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-35",
               "advice-36",
@@ -5350,6 +5730,9 @@
           {
             "id": "product-31",
             "name": "Черемша свежая",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-31",
               "home-wash-product-31",
@@ -5363,6 +5746,9 @@
           {
             "id": "product-32",
             "name": "Укроп / петрушка / зелень, открытый грунт",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-37",
               "advice-38",
@@ -5376,6 +5762,9 @@
           {
             "id": "product-33",
             "name": "Сельдерей корневой",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-33",
               "home-wash-product-33",
@@ -5388,6 +5777,9 @@
           {
             "id": "product-34",
             "name": "Сельдерей черешковый",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-39",
               "advice-40",
@@ -5401,6 +5793,9 @@
           {
             "id": "product-35",
             "name": "Хрен, свежий корень",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-35",
               "home-wash-product-35",
@@ -5413,6 +5808,9 @@
           {
             "id": "product-36",
             "name": "Ревень",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-36",
               "home-wash-product-36",
@@ -5425,6 +5823,9 @@
           {
             "id": "product-37",
             "name": "Клубника",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "advice-41",
               "advice-42",
@@ -5438,6 +5839,9 @@
           {
             "id": "product-40",
             "name": "Земляника лесная",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-40",
               "home-wash-product-40",
@@ -5450,6 +5854,9 @@
           {
             "id": "product-41",
             "name": "Жимолость",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-41",
               "home-wash-product-41",
@@ -5462,6 +5869,9 @@
           {
             "id": "product-42",
             "name": "Черешня",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-42",
               "home-wash-product-42",
@@ -5474,6 +5884,9 @@
           {
             "id": "product-43",
             "name": "Вишня",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-43",
               "home-wash-product-43",
@@ -5486,6 +5899,9 @@
           {
             "id": "product-44",
             "name": "Малина",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "advice-43",
               "advice-44",
@@ -5499,6 +5915,9 @@
           {
             "id": "product-46",
             "name": "Чёрная смородина",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-46",
               "home-wash-product-46",
@@ -5511,6 +5930,9 @@
           {
             "id": "product-47",
             "name": "Красная смородина",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-47",
               "home-wash-product-47",
@@ -5523,6 +5945,9 @@
           {
             "id": "product-48",
             "name": "Крыжовник",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-48",
               "home-wash-product-48",
@@ -5535,6 +5960,9 @@
           {
             "id": "product-49",
             "name": "Черника лесная",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-49",
               "home-wash-product-49",
@@ -5547,6 +5975,9 @@
           {
             "id": "product-50",
             "name": "Голубика",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "advice-45",
               "advice-46",
@@ -5560,6 +5991,9 @@
           {
             "id": "product-52",
             "name": "Ежевика",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "advice-47",
               "advice-48",
@@ -5573,6 +6007,9 @@
           {
             "id": "product-53",
             "name": "Облепиха",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-53",
               "home-wash-product-53",
@@ -5585,6 +6022,9 @@
           {
             "id": "product-54",
             "name": "Калина",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-54",
               "home-wash-product-54",
@@ -5598,6 +6038,9 @@
           {
             "id": "product-55",
             "name": "Рябина красная",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-55",
               "home-wash-product-55",
@@ -5611,6 +6054,9 @@
           {
             "id": "product-56",
             "name": "Шиповник",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-56",
               "home-wash-product-56",
@@ -5624,6 +6070,9 @@
           {
             "id": "product-57",
             "name": "Ирга",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-57",
               "home-wash-product-57",
@@ -5636,6 +6085,9 @@
           {
             "id": "product-58",
             "name": "Черёмуха обыкновенная, свежая",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-58",
               "home-wash-product-58",
@@ -5648,6 +6100,9 @@
           {
             "id": "product-59",
             "name": "Брусника, свежий сбор",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-59",
               "home-wash-product-59",
@@ -5660,6 +6115,9 @@
           {
             "id": "product-60",
             "name": "Клюква, свежий сбор",
+            "productTypes": [
+              "berry"
+            ],
             "adviceIds": [
               "advice-49",
               "advice-50",
@@ -5673,6 +6131,9 @@
           {
             "id": "product-61",
             "name": "Абрикосы",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-51",
               "advice-52",
@@ -5687,6 +6148,9 @@
           {
             "id": "product-62",
             "name": "Персики и нектарины",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-53",
               "advice-54",
@@ -5701,6 +6165,9 @@
           {
             "id": "product-64",
             "name": "Сливы",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-55",
               "advice-56",
@@ -5715,6 +6182,9 @@
           {
             "id": "product-65",
             "name": "Алыча",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-57",
               "advice-58",
@@ -5729,6 +6199,9 @@
           {
             "id": "product-66",
             "name": "Яблоки",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-66",
               "home-wash-product-66",
@@ -5741,6 +6214,9 @@
           {
             "id": "product-69",
             "name": "Груши",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-69",
               "home-wash-product-69",
@@ -5754,6 +6230,10 @@
           {
             "id": "product-71",
             "name": "Арбуз грунтовой",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-71",
               "home-wash-product-71",
@@ -5766,6 +6246,10 @@
           {
             "id": "product-72",
             "name": "Дыня",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-72",
               "home-wash-product-72",
@@ -5778,6 +6262,10 @@
           {
             "id": "product-73",
             "name": "Виноград",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-59",
               "advice-60",
@@ -5791,6 +6279,9 @@
           {
             "id": "product-74",
             "name": "Инжир",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-61",
               "advice-62",
@@ -5804,6 +6295,9 @@
           {
             "id": "product-75",
             "name": "Айва",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-75",
               "home-wash-product-75",
@@ -5816,6 +6310,10 @@
           {
             "id": "product-76",
             "name": "Хурма",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-63",
               "advice-64",
@@ -5829,6 +6327,10 @@
           {
             "id": "product-78",
             "name": "Гранат",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-65",
               "advice-66",
@@ -5842,6 +6344,10 @@
           {
             "id": "product-79",
             "name": "Фейхоа",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-67",
               "advice-68",
@@ -5855,6 +6361,9 @@
           {
             "id": "product-82",
             "name": "Молодые салатные культуры, теплица",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-82",
               "home-wash-product-82",
@@ -5867,6 +6376,9 @@
           {
             "id": "product-83",
             "name": "Мандарины",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-83",
               "home-wash-product-83",
@@ -5879,6 +6391,9 @@
           {
             "id": "product-89",
             "name": "Апельсины",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-89",
               "home-wash-product-89",
@@ -5891,6 +6406,9 @@
           {
             "id": "product-92",
             "name": "Грейпфрут",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-92",
               "home-wash-product-92",
@@ -5903,6 +6421,9 @@
           {
             "id": "product-94",
             "name": "Лимоны",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-94",
               "home-wash-product-94",
@@ -5915,6 +6436,9 @@
           {
             "id": "product-96",
             "name": "Помело",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-96",
               "home-wash-product-96",
@@ -5927,6 +6451,9 @@
           {
             "id": "product-99",
             "name": "Лайм",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-99",
               "home-wash-product-99",
@@ -5939,6 +6466,9 @@
           {
             "id": "product-102",
             "name": "Манго",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-69",
               "advice-70",
@@ -5953,6 +6483,9 @@
           {
             "id": "product-109",
             "name": "Ананас",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "advice-71",
               "advice-72",
@@ -5966,6 +6499,10 @@
           {
             "id": "product-112",
             "name": "Бананы",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-112",
               "home-wash-product-112",
@@ -5979,6 +6516,10 @@
           {
             "id": "product-114",
             "name": "Авокадо",
+            "productTypes": [
+              "vegetable",
+              "berry"
+            ],
             "adviceIds": [
               "advice-73",
               "advice-74",
@@ -5993,6 +6534,9 @@
           {
             "id": "product-118",
             "name": "Личи",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-118",
               "home-wash-product-118",
@@ -6005,6 +6549,10 @@
           {
             "id": "product-122",
             "name": "Папайя",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-75",
               "advice-76",
@@ -6019,6 +6567,9 @@
           {
             "id": "product-125",
             "name": "Питайя (дракон-фрукт)",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-125",
               "home-wash-product-125",
@@ -6031,6 +6582,9 @@
           {
             "id": "product-128",
             "name": "Маракуйя",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-128",
               "home-wash-product-128",
@@ -6043,6 +6597,9 @@
           {
             "id": "product-131",
             "name": "Кокос",
+            "productTypes": [
+              "fruit"
+            ],
             "adviceIds": [
               "home-buy-product-131",
               "home-wash-product-131",
@@ -6055,6 +6612,10 @@
           {
             "id": "product-134",
             "name": "Физалис",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "home-buy-product-134",
               "home-wash-product-134",
@@ -6068,6 +6629,10 @@
           {
             "id": "product-170",
             "name": "Киви",
+            "productTypes": [
+              "fruit",
+              "berry"
+            ],
             "adviceIds": [
               "advice-77",
               "advice-78",
@@ -6082,6 +6647,9 @@
           {
             "id": "product-195",
             "name": "Салат айсберг / романо",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-195",
               "home-wash-product-195",
@@ -6094,6 +6662,9 @@
           {
             "id": "product-198",
             "name": "Имбирь",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-198",
               "home-wash-product-198",
@@ -6106,6 +6677,9 @@
           {
             "id": "product-201",
             "name": "Батат",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-79",
               "advice-80",
@@ -6119,6 +6693,9 @@
           {
             "id": "product-204",
             "name": "Пекинская капуста",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-81",
               "advice-82",
@@ -6132,6 +6709,9 @@
           {
             "id": "product-206",
             "name": "Артишоки",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "advice-83",
               "advice-84",
@@ -6145,6 +6725,9 @@
           {
             "id": "product-212",
             "name": "Лук-порей",
+            "productTypes": [
+              "vegetable"
+            ],
             "adviceIds": [
               "home-buy-product-212",
               "home-wash-product-212",
@@ -46745,6 +47328,7 @@
           const variants = data.variants.map((variant) => ({
             ...variant,
             productName: products.get(variant.productId).name,
+            productTypes: products.get(variant.productId).productTypes,
             origin: origins.get(variant.originId).label,
             navigationGroup: origins.get(variant.originId).navigationGroup,
             category: categories.get(variant.categoryId).label,
@@ -46812,13 +47396,20 @@
             allOrigins: "Все происхождения",
             allProducts: "Все продукты",
             allStatuses: "Все статусы",
+            emptyQuery: "По запросу «{query}» ничего не найдено.",
+            emptyTypeQuery: "В разделе «{type}» нет результатов по запросу «{query}».",
             unspecifiedRussia: "Россия — регион не уточнён",
             allRegion: "{region} — все",
             addFavorite: "В избранное: {product}",
             removeFavorite: "Убрать из избранного: {product}",
             favorites: "Избранное",
             more: "Подробнее →",
-            monthLocation: "{month} · Москва"
+            monthLocation: "{month} · Москва",
+            otherOrigins: {
+              one: "ещё {count} происхождение",
+              few: "ещё {count} происхождения",
+              many: "ещё {count} происхождений"
+            }
           },
           calendar: {
             product: "Продукт",
@@ -46971,6 +47562,10 @@
                 description: "Сведений недостаточно для уверенного статуса."
               }
             },
+            additionalTypes: {
+              title: "Также в разделе «{type}»",
+              description: "Здесь этот раздел дополнительный. Статус сезона указан на каждой карточке."
+            },
             showMore: "Показать остальные: {count}",
             emptyFavorites: "В избранном пока ничего нет по этому запросу. Добавляйте продукты сердечком.",
             empty: "Ничего не найдено. Попробуйте другое название или сбросьте фильтры."
@@ -46991,17 +47586,24 @@
             todaySearch: "Найти продукт",
             todayOrigin: "Страна / регион",
             todayAllOrigins: "Все страны и регионы",
-            filterAll: "Все продукты",
+            productTypeLabel: "Что смотрите?",
+            productTypes: {
+              all: "Все",
+              vegetable: "Овощи",
+              fruit: "Фрукты",
+              berry: "Ягоды"
+            },
+            filterAnySeason: "Любой сезон",
             filterGood: "В сезоне",
             filterOff: "Не сезон",
-            filterFavorites: "♥ Моё избранное",
+            clearSearch: "Очистить поиск",
+            seasonFilterLabel: "Сезон",
             todayNote: "Происхождение — с ценника. Статус — по текущему месяцу. Календарь показывает сезонность, а вкус зависит и от спелости.",
             favoritesNote: "Сердечко сохраняет продукт целиком, со всеми странами и сортами. Избранное хранится только в этом браузере. Хранение и теплица не означают плохой вкус; «нет данных» не означает «не покупать».",
             monthLabel: "Месяц",
-            searchLabel: "Продукт или страна",
+            searchLabel: "Найти продукт",
             originLabel: "Страна / регион",
             allOrigins: "Все происхождения",
-            categoryLabel: "Категория",
             allProducts: "Все продукты",
             onlyFavorites: " Только избранное",
             knownOnly: " С данными на месяц",
@@ -47009,7 +47611,9 @@
             sortSeason: "Сезонные сначала",
             sortName: "По алфавиту",
             threeMonths: "3 месяца",
+            threeMonthsShort: "3 мес.",
             wholeYear: "Весь год",
+            wholeYearShort: "Год",
             calendarViewLabel: "Период календаря",
             moreFilters: "Остальные фильтры",
             calendarReset: "Сбросить",
@@ -47037,10 +47641,10 @@
             footer: "Москва · версия от 21.09.2026 · избранное хранится только в этом браузере.",
             themeLabel: "Тёмная тема",
             tabsLabel: "Разделы",
-            todayPlaceholder: "Что перед вами на прилавке?",
+            todayPlaceholder: "Например, морковь",
             filtersLabel: "Что показать",
             goodFilterTitle: "Пик, сезон и круглогодичный урожай",
-            calendarPlaceholder: "Например, манго или Египет",
+            calendarPlaceholder: "Например, манго",
             statusLabel: "Фильтр по статусу",
             sortLabel: "Порядок строк",
             tableLabel: "Сезонность продуктов по происхождению и месяцам"
@@ -47288,22 +47892,21 @@
           return searchProducts(products, filters.query || "", productSearchText).filter((product) => {
             const status = product.months[filters.month];
             if (!matchesOrigin(product, filters.origin || "")) return false;
-            if (filters.category && product.categoryId !== filters.category && product.category !== filters.category)
-              return false;
+            if (filters.productType && !product.productTypes.includes(filters.productType)) return false;
             if (filters.status && status !== filters.status) return false;
             if (filters.favoritesOnly && !favoriteIds.has(product.id)) return false;
             if (filters.knownOnly && status === "u") return false;
-            if (filters.mode === "fav" && !favoriteIds.has(product.id)) return false;
             if (filters.mode === "off" && status !== "n") return false;
             if (filters.mode === "good" && !["p", "g", "a"].includes(status) && !isYearRoundGreenhouse(product))
               return false;
             return true;
           });
         }
-        function sortProducts(products, month, order = "name") {
+        function sortProducts(products, month, order = "name", selectedType = "") {
+          const typeRank = (product) => selectedType && product.productTypes[0] !== selectedType ? 1 : 0;
           const rank = (product) => order === "season" ? STATUS_RANK[product.months[month]] : order === "peak" && product.months[month] === "p" ? -1 : 0;
           return [...products].sort(
-            (left, right) => rank(left) - rank(right) || left.name.localeCompare(right.name, "ru") || left.origin.localeCompare(right.origin, "ru") || left.id.localeCompare(right.id, "en", { numeric: true })
+            (left, right) => typeRank(left) - typeRank(right) || rank(left) - rank(right) || left.name.localeCompare(right.name, "ru") || left.origin.localeCompare(right.origin, "ru") || left.id.localeCompare(right.id, "en", { numeric: true })
           );
         }
         function visibleMonths(month, wholeYear) {
@@ -47342,6 +47945,7 @@
               name: catalog.product(productId).name,
               variantName: variant.name,
               variantCount: catalog.variantsFor(productId).length,
+              otherOriginCount: new Set(catalog.variantsFor(productId).map((item) => item.originId)).size - 1,
               selectionReason: reason
             };
           });
@@ -47352,7 +47956,8 @@
           const products = sortProducts(
             groupedProducts(catalog, filters, favorites, preferredVariants),
             filters.month,
-            order
+            order,
+            filters.productType
           );
           return {
             products,
@@ -47373,7 +47978,7 @@
               month,
               query: "",
               origin: "",
-              category: "",
+              productType: "",
               status: "",
               mode: "all",
               favoritesOnly: false,
@@ -47396,7 +48001,8 @@
                 if (Number.isInteger(value) && value >= 0 && value < 12) next.month = value;
               } else if (typeof value === typeof __privateGet(this, _initial)[key]) next[key] = value;
             }
-            if (!["all", "fav", "good", "off"].includes(next.mode)) next.mode = "all";
+            if (!["all", "good", "off"].includes(next.mode)) next.mode = "all";
+            if (!["", "vegetable", "fruit", "berry"].includes(next.productType)) next.productType = "";
             if (!["name", "season", "peak"].includes(next.order)) next.order = "season";
             if (!["", "p", "g", "b", "h", "t", "n", "u", "a"].includes(next.status)) next.status = "";
             __privateSet(this, _value, next);
@@ -47509,6 +48115,15 @@
           return `<button class="fav" data-favorite="${escapeHtml(product.id)}" aria-pressed="${selected}" aria-label="${escapeHtml(label)}">${selected ? "♥" : "♡"}</button>`;
         }
 
+        // src/components/origin-summary.js
+        function originSummary(product) {
+          const count = product.otherOriginCount;
+          if (!count) return product.origin;
+          const ending = count % 100;
+          const form = ending >= 11 && ending <= 14 ? "many" : count % 10 === 1 ? "one" : [2, 3, 4].includes(count % 10) ? "few" : "many";
+          return `${product.origin} · ${formatMessage(ru_default.common.otherOrigins[form], { count })}`;
+        }
+
         // src/components/calendar-table.js
         function calendarHeader(month, months) {
           return `<tr>
@@ -47526,18 +48141,25 @@
           <button class="cellbtn" data-product="${escapeHtml(product.variantId || product.id)}" data-month="${index}" title="${escapeHtml(description)}" aria-label="${escapeHtml(`${product.name}, ${description}`)}">${statusBadge(statuses, status, true)}</button>
         </td>`;
         }
-        function calendarRows(products, month, months, statuses, favorites) {
-          if (!products.length)
-            return `<tr><td class="empty" colspan="${4 + months.length}">${escapeHtml(ru_default.calendar.empty)}</td></tr>`;
+        function calendarRows(products, month, months, statuses, favorites, filters) {
+          if (!products.length) {
+            const type = ru_default.page.productTypes[filters.productType];
+            const message = filters.query ? formatMessage(type ? ru_default.common.emptyTypeQuery : ru_default.common.emptyQuery, {
+              type,
+              query: filters.query
+            }) : ru_default.calendar.empty;
+            return `<tr><td class="empty filter-empty" colspan="${4 + months.length}"><p>${escapeHtml(message)}</p>
+            ${filters.query ? `<button data-clear-query>${escapeHtml(ru_default.page.clearSearch)}</button>` : ""}
+            <button data-reset-filters>${escapeHtml(ru_default.page.calendarReset)}</button></td></tr>`;
+          }
           return products.map(
             (product) => `<tr>
           <td class="product">
             <button class="name" data-product="${escapeHtml(product.variantId || product.id)}">${escapeHtml(product.name)}</button>
-            <small class="row-category">${escapeHtml(product.category)}</small>
-            ${product.variantCount > 1 ? `<small class="variant-caption">${escapeHtml(product.variety || product.variantName)} · вариантов: ${product.variantCount}</small>` : ""}
-            <small class="mobile-origin">${escapeHtml(product.origin)}</small>
+            <small class="row-category">${escapeHtml(product.productTypes.map((type) => ru_default.page.productTypes[type]).join(" · "))}</small>
+            <small class="mobile-origin">${escapeHtml(originSummary(product))}</small>
           </td>
-          <td class="origin">${escapeHtml(product.origin)}</td>
+          <td class="origin">${escapeHtml(originSummary(product))}</td>
           <td class="decision"><button class="cellbtn" data-product="${escapeHtml(product.variantId || product.id)}" data-month="${month}" aria-label="${escapeHtml(`${product.name}: ${seasonLabel(product.months, month, statuses)}, ${ru_default.calendar.explanation}`)}">${statusBadge(statuses, product.months[month], false, seasonLabel(product.months, month, statuses))}</button></td>
           ${months.map((index) => monthCell(product, index, month, statuses)).join("")}
           <td>${favoriteButton(product, favorites.has(product.id))}</td>
@@ -47550,20 +48172,25 @@
           month: "month",
           search: "query",
           origin: "origin",
-          category: "category",
           status: "status",
           favorites: "favoritesOnly",
           "known-only": "knownOnly",
           sort: "order"
         };
         var CalendarView = class {
-          constructor({ catalog, preferences, clock, openProduct }) {
-            Object.assign(this, { catalog, preferences, openProduct });
-            this.state = new FilterState(clock().month);
+          constructor({ catalog, preferences, clock, openProduct, onSharedFiltersChange }) {
+            Object.assign(this, { catalog, preferences, openProduct, onSharedFiltersChange });
+            this.initialMonth = clock().month;
+            this.state = new FilterState(this.initialMonth);
             this.events = new AbortController();
             this.controls = Object.fromEntries(
               Object.keys(CONTROL_FIELDS).map((id) => [id, getElement(id)])
             );
+            this.typeButtons = [
+              ...document.querySelectorAll('[data-panel="calendar"] [data-product-type]')
+            ];
+            this.clearSearch = getElement("calendar-clear-search");
+            this.resetButton = getElement("reset");
             this.moreFilters = getElement("calendar-more");
             this.wideLayout = window.matchMedia("(min-width: 851px)");
             this.moreFilters.open = this.wideLayout.matches;
@@ -47575,10 +48202,6 @@
           initializeControls() {
             this.controls.origin.innerHTML = originOptions(this.catalog.origins);
             this.controls.month.innerHTML = ru_default.months.map((name, index) => `<option value="${index}">${escapeHtml(name)}</option>`).join("");
-            const categories = [...this.catalog.categories].sort(
-              (a, b) => a.label.localeCompare(b.label, "ru")
-            );
-            this.controls.category.innerHTML = `<option value="">${escapeHtml(ru_default.common.allProducts)}</option>` + categories.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.label)}</option>`).join("");
             this.controls.status.innerHTML = `<option value="">${escapeHtml(ru_default.common.allStatuses)}</option>` + Object.entries(this.catalog.statuses).map(
               ([code, [symbol, name]]) => `<option value="${code}">${escapeHtml(symbol)} ${escapeHtml(name)}</option>`
             ).join("");
@@ -47596,13 +48219,38 @@
               control.addEventListener(
                 id === "search" ? "input" : "change",
                 () => {
-                  const value = control.type === "checkbox" ? control.checked : id === "month" ? Number(control.value) : control.value;
+                  const value = control.type === "checkbox" ? control.checked : id === "month" ? Number(control.value) : id === "search" ? control.value.trim() : control.value;
                   this.state.update({ [CONTROL_FIELDS[id]]: value });
                   this.render();
+                  if (["search", "origin", "favorites"].includes(id))
+                    this.onSharedFiltersChange(this, { [CONTROL_FIELDS[id]]: value });
                 },
                 options
               );
             }
+            this.typeButtons.forEach(
+              (button) => button.addEventListener(
+                "click",
+                () => {
+                  const productType = button.dataset.productType;
+                  this.state.update({ productType });
+                  this.render();
+                  this.onSharedFiltersChange(this, { productType });
+                },
+                options
+              )
+            );
+            this.clearSearch.addEventListener(
+              "click",
+              () => {
+                this.controls.search.value = "";
+                this.state.update({ query: "" });
+                this.render();
+                this.onSharedFiltersChange(this, { query: "" });
+                this.controls.search.focus();
+              },
+              options
+            );
             for (const [id, wholeYear] of [
               ["focus-view", false],
               ["year-view", true]
@@ -47615,7 +48263,7 @@
                 },
                 options
               );
-            getElement("reset").addEventListener("click", () => this.reset(), options);
+            this.resetButton.addEventListener("click", () => this.reset(), options);
             getElement("table-body").addEventListener(
               "click",
               (event) => this.handleTableClick(event),
@@ -47629,6 +48277,11 @@
               else control.value = state[CONTROL_FIELDS[id]];
             }
           }
+          applySharedFilters(patch) {
+            this.state.update(patch);
+            this.syncControls();
+            this.render();
+          }
           render() {
             const filters = this.state.value;
             const { month, wholeYear, order } = filters;
@@ -47641,15 +48294,14 @@
               month,
               months,
               this.catalog.statuses,
-              favorites
+              favorites,
+              filters
             );
             getElement("month-title").textContent = formatMessage(ru_default.common.monthLocation, {
               month: ru_default.months[month]
             });
             getElement("result-count").textContent = formatMessage(ru_default.calendar.count, model);
             const activeCount = [
-              filters.origin,
-              filters.category,
               filters.status,
               filters.favoritesOnly,
               filters.knownOnly,
@@ -47658,10 +48310,32 @@
             const count = getElement("calendar-filter-count");
             count.textContent = activeCount;
             count.hidden = activeCount === 0;
+            this.typeButtons.forEach(
+              (button) => button.setAttribute("aria-pressed", button.dataset.productType === filters.productType)
+            );
+            this.clearSearch.hidden = !this.controls.search.value;
+            this.resetButton.hidden = ![
+              filters.query,
+              filters.origin,
+              filters.productType,
+              activeCount
+            ].some(Boolean);
             getElement("focus-view").setAttribute("aria-pressed", !wholeYear);
             getElement("year-view").setAttribute("aria-pressed", wholeYear);
           }
           handleTableClick(event) {
+            if (event.target.closest("[data-clear-query]")) {
+              this.controls.search.value = "";
+              this.state.update({ query: "" });
+              this.render();
+              this.onSharedFiltersChange(this, { query: "" });
+              this.controls.search.focus();
+              return;
+            }
+            if (event.target.closest("[data-reset-filters]")) {
+              this.reset();
+              return;
+            }
             const product = event.target.closest("[data-product]");
             const favorite = event.target.closest("[data-favorite]");
             if (product)
@@ -47678,6 +48352,12 @@
             this.state.reset();
             this.syncControls();
             this.render();
+            this.onSharedFiltersChange(this, {
+              query: "",
+              origin: "",
+              productType: "",
+              favoritesOnly: false
+            });
           }
           destroy() {
             this.events.abort();
@@ -47695,8 +48375,8 @@
           return `<article class="shop-card">
           <div class="shop-card-top">${statusBadge(statuses, status, false, seasonLabel(product.months, month, statuses))}${favoriteButton(product, isFavorite)}</div>
           <h3><button data-product="${escapeHtml(product.variantId || product.id)}">${escapeHtml(product.name)}</button></h3>
-          <p class="shop-origin">${escapeHtml(product.origin)}</p>
-          ${product.variantCount > 1 ? `<p class="variant-caption">${escapeHtml(product.variety || product.variantName)} · вариантов: ${product.variantCount}</p>` : ""}
+          <p class="shop-types">${escapeHtml(product.productTypes.map((type) => ru_default.page.productTypes[type]).join(" · "))}</p>
+          <p class="shop-origin">${escapeHtml(originSummary(product))}</p>
           <p class="shop-tip">${escapeHtml(productTip(product, status))}</p>
           <button class="why" data-product="${escapeHtml(product.variantId || product.id)}">${escapeHtml(ru_default.common.more)}</button>
         </article>`;
@@ -47704,33 +48384,56 @@
 
         // src/views/today-view.js
         var TodayView = class {
-          constructor({ catalog, preferences, clock, openProduct }) {
-            Object.assign(this, { catalog, preferences, clock, openProduct });
+          constructor({ catalog, preferences, clock, openProduct, onSharedFiltersChange }) {
+            Object.assign(this, { catalog, preferences, clock, openProduct, onSharedFiltersChange });
             this.state = new FilterState(clock().month);
             this.expandedGroups = /* @__PURE__ */ new Set();
             this.events = new AbortController();
             this.search = getElement("today-search");
+            this.clearSearch = getElement("today-clear-search");
             this.origin = getElement("today-origin");
+            this.favoritesOnly = getElement("today-favorites");
+            this.resetButton = getElement("today-reset");
+            this.typeButtons = [...document.querySelectorAll('[data-panel="today"] [data-product-type]')];
             this.groups = getElement("today-groups");
             this.origin.innerHTML = originOptions(catalog.origins);
             const options = { signal: this.events.signal };
             this.search.addEventListener(
               "input",
               () => {
-                this.state.update({ query: this.search.value.trim() });
-                this.render();
+                this.updateShared({ query: this.search.value.trim() });
               },
               options
             );
             this.origin.addEventListener(
               "change",
               () => {
-                this.state.update({ origin: this.origin.value });
-                this.render();
+                this.updateShared({ origin: this.origin.value });
               },
               options
             );
-            getElement("today-reset").addEventListener("click", () => this.reset(), options);
+            this.favoritesOnly.addEventListener(
+              "change",
+              () => this.updateShared({ favoritesOnly: this.favoritesOnly.checked }),
+              options
+            );
+            this.clearSearch.addEventListener(
+              "click",
+              () => {
+                this.search.value = "";
+                this.updateShared({ query: "" });
+                this.search.focus();
+              },
+              options
+            );
+            this.typeButtons.forEach(
+              (button) => button.addEventListener(
+                "click",
+                () => this.updateShared({ productType: button.dataset.productType }),
+                options
+              )
+            );
+            this.resetButton.addEventListener("click", () => this.reset(), options);
             this.groups.addEventListener("click", (event) => this.handleClick(event), options);
             document.querySelectorAll("[data-today-filter]").forEach(
               (button) => button.addEventListener(
@@ -47742,6 +48445,19 @@
                 options
               )
             );
+            this.render();
+          }
+          updateShared(patch) {
+            this.state.update(patch);
+            this.render();
+            this.onSharedFiltersChange(this, patch);
+          }
+          applySharedFilters(patch) {
+            this.state.update(patch);
+            const filters = this.state.value;
+            this.search.value = filters.query;
+            this.origin.value = filters.origin;
+            this.favoritesOnly.checked = filters.favoritesOnly;
             this.render();
           }
           render({ preserveOpen = false } = {}) {
@@ -47765,21 +48481,59 @@
             document.querySelectorAll("[data-today-filter]").forEach(
               (button) => button.setAttribute("aria-pressed", button.dataset.todayFilter === filters.mode)
             );
-            this.groups.innerHTML = TODAY_GROUPS.map((group) => this.renderGroup(group, products, filters)).join("") || `<div class="empty">${escapeHtml(filters.mode === "fav" ? ru_default.today.emptyFavorites : ru_default.today.empty)}</div>`;
+            this.typeButtons.forEach(
+              (button) => button.setAttribute("aria-pressed", button.dataset.productType === filters.productType)
+            );
+            this.clearSearch.hidden = !this.search.value;
+            this.resetButton.hidden = ![
+              filters.query,
+              filters.origin,
+              filters.productType,
+              filters.favoritesOnly,
+              filters.mode !== "all"
+            ].some(Boolean);
+            const primary = filters.productType ? products.filter((product) => product.productTypes[0] === filters.productType) : products;
+            const additional = filters.productType ? products.filter((product) => product.productTypes[0] !== filters.productType) : [];
+            const sections = TODAY_GROUPS.map((group) => this.renderGroup(group, primary, filters)).join("") + (additional.length ? this.renderGroup(
+              {
+                id: "additional",
+                codes: TODAY_GROUPS.flatMap((group) => group.codes),
+                open: true,
+                text: {
+                  title: formatMessage(ru_default.today.additionalTypes.title, {
+                    type: ru_default.page.productTypes[filters.productType]
+                  }),
+                  description: ru_default.today.additionalTypes.description
+                }
+              },
+              additional,
+              filters
+            ) : "");
+            this.groups.innerHTML = sections || this.renderEmpty(filters);
             for (const id of opened) {
               const group = this.groups.querySelector(`[data-group="${id}"]`);
               if (group) group.open = true;
             }
+          }
+          renderEmpty(filters) {
+            const type = ru_default.page.productTypes[filters.productType];
+            const message = filters.query ? formatMessage(type ? ru_default.common.emptyTypeQuery : ru_default.common.emptyQuery, {
+              type,
+              query: filters.query
+            }) : filters.favoritesOnly ? ru_default.today.emptyFavorites : ru_default.today.empty;
+            return `<div class="empty filter-empty"><p>${escapeHtml(message)}</p>
+            ${filters.query ? `<button data-clear-query>${escapeHtml(ru_default.page.clearSearch)}</button>` : ""}
+            <button data-reset-filters>${escapeHtml(ru_default.page.todayReset)}</button></div>`;
           }
           renderGroup(group, products, filters) {
             const matches = products.filter(
               (product) => group.codes.includes(product.months[filters.month])
             );
             if (!matches.length) return "";
-            const expanded = this.expandedGroups.has(group.id) || Boolean(filters.query);
+            const expanded = this.expandedGroups.has(group.id) || Boolean(filters.query) || Boolean(filters.productType && group.id !== "additional");
             const visible = expanded ? matches : matches.slice(0, CARDS_PER_GROUP);
-            const open = group.open || filters.query || filters.origin || filters.mode !== "all" || expanded;
-            const text = ru_default.today.groups[group.id];
+            const open = group.open || filters.query || filters.origin || filters.favoritesOnly || filters.mode !== "all" || expanded;
+            const text = group.text || ru_default.today.groups[group.id];
             const cards = visible.map(
               (product) => productCard(
                 product,
@@ -47796,6 +48550,16 @@
           </details>`;
           }
           handleClick(event) {
+            if (event.target.closest("[data-clear-query]")) {
+              this.search.value = "";
+              this.updateShared({ query: "" });
+              this.search.focus();
+              return;
+            }
+            if (event.target.closest("[data-reset-filters]")) {
+              this.reset();
+              return;
+            }
             const product = event.target.closest("[data-product]");
             const favorite = event.target.closest("[data-favorite]");
             const more = event.target.closest("[data-more]");
@@ -47813,8 +48577,15 @@
             this.search.value = "";
             this.origin.value = "";
             this.state.reset();
+            this.favoritesOnly.checked = false;
             this.expandedGroups.clear();
             this.render();
+            this.onSharedFiltersChange(this, {
+              query: "",
+              origin: "",
+              productType: "",
+              favoritesOnly: false
+            });
           }
           destroy() {
             this.events.abort();
@@ -48123,14 +48894,20 @@
           }
           const preferences = new Preferences(storage, { resolveFavoriteId: catalog.favoriteProductId });
           const dialog = new DetailsDialog(catalog);
+          let calendar;
+          let today;
           const dependencies = {
             catalog,
             preferences,
             clock,
-            openProduct: (id, month) => dialog.open(id, month)
+            openProduct: (id, month) => dialog.open(id, month),
+            onSharedFiltersChange: (source, patch) => {
+              for (const view of [calendar, today])
+                if (view && view !== source) view.applySharedFilters(patch);
+            }
           };
-          const calendar = new CalendarView(dependencies);
-          const today = new TodayView(dependencies);
+          calendar = new CalendarView(dependencies);
+          today = new TodayView(dependencies);
           const events = new AbortController();
           const options = { signal: events.signal };
           const applyTheme = () => {

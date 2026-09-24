@@ -6,31 +6,49 @@
     </div>
     <div class="today-meta">
       <span class="today-count" id="today-count" aria-live="polite"></span
-      ><button id="today-reset">{{page.todayReset}}</button>
+      ><button id="today-reset" hidden>{{page.todayReset}}</button>
     </div>
   </div>
   <div class="toolbar">
+    <div class="product-type-filter" role="group" aria-label="{{page.productTypeLabel}}">
+      <span class="filter-label">{{page.productTypeLabel}}</span>
+      <div class="product-type-options">
+        <button data-product-type="" aria-pressed="true">{{page.productTypes.all}}</button>
+        <button data-product-type="vegetable" aria-pressed="false">
+          {{page.productTypes.vegetable}}
+        </button>
+        <button data-product-type="fruit" aria-pressed="false">{{page.productTypes.fruit}}</button>
+        <button data-product-type="berry" aria-pressed="false">{{page.productTypes.berry}}</button>
+      </div>
+    </div>
     <div class="daily-search">
+      <div class="search-control">
+        <label class="field" for="today-search">{{page.todaySearch}}</label>
+        <div class="search-input-wrap">
+          <input id="today-search" type="search" placeholder="{{page.todayPlaceholder}}" />
+          <button id="today-clear-search" type="button" aria-label="{{page.clearSearch}}" hidden>
+            ×
+          </button>
+        </div>
+      </div>
       <label class="field"
-        >{{page.todaySearch}}<input
-          id="today-search"
-          type="search"
-          placeholder="{{page.todayPlaceholder}}" /></label
-      ><label class="field"
         >{{page.todayOrigin}}<select id="today-origin">
           <option value="">{{page.todayAllOrigins}}</option>
         </select></label
       >
     </div>
-    <div class="today-chips" aria-label="{{page.filtersLabel}}">
-      <button data-today-filter="all" aria-pressed="true">{{page.filterAll}}</button
+    <span class="filter-label season-label">{{page.seasonFilterLabel}}</span>
+    <div class="today-chips" role="group" aria-label="{{page.seasonFilterLabel}}">
+      <button data-today-filter="all" aria-pressed="true">{{page.filterAnySeason}}</button
       ><button data-today-filter="good" aria-pressed="false" title="{{page.goodFilterTitle}}">
         {{page.filterGood}}</button
-      ><button data-today-filter="off" aria-pressed="false">{{page.filterOff}}</button
-      ><button data-today-filter="fav" aria-pressed="false">{{page.filterFavorites}}</button>
+      ><button data-today-filter="off" aria-pressed="false">{{page.filterOff}}</button>
     </div>
+    <label class="check-option favorite-option"
+      ><input type="checkbox" id="today-favorites" />{{page.onlyFavorites}}</label
+    >
   </div>
-  <p class="daily-note">{{page.todayNote}}</p>
   <div id="today-groups"></div>
+  <p class="daily-note">{{page.todayNote}}</p>
   <div class="family-note">{{page.favoritesNote}}</div>
 </section>

@@ -8,33 +8,56 @@ import { productCard } from '../components/product-card.js';
 
 /** Owns daily filters and expanded groups; uses the shared database and preferences. */
 export class TodayView {
-  constructor({ catalog, preferences, clock, openProduct }) {
-    Object.assign(this, { catalog, preferences, clock, openProduct });
+  constructor({ catalog, preferences, clock, openProduct, onSharedFiltersChange }) {
+    Object.assign(this, { catalog, preferences, clock, openProduct, onSharedFiltersChange });
     this.state = new FilterState(clock().month);
     this.expandedGroups = new Set();
     this.events = new AbortController();
     this.search = getElement('today-search');
+    this.clearSearch = getElement('today-clear-search');
     this.origin = getElement('today-origin');
+    this.favoritesOnly = getElement('today-favorites');
+    this.resetButton = getElement('today-reset');
+    this.typeButtons = [...document.querySelectorAll('[data-panel="today"] [data-product-type]')];
     this.groups = getElement('today-groups');
     this.origin.innerHTML = originOptions(catalog.origins);
     const options = { signal: this.events.signal };
     this.search.addEventListener(
       'input',
       () => {
-        this.state.update({ query: this.search.value.trim() });
-        this.render();
+        this.updateShared({ query: this.search.value.trim() });
       },
       options,
     );
     this.origin.addEventListener(
       'change',
       () => {
-        this.state.update({ origin: this.origin.value });
-        this.render();
+        this.updateShared({ origin: this.origin.value });
       },
       options,
     );
-    getElement('today-reset').addEventListener('click', () => this.reset(), options);
+    this.favoritesOnly.addEventListener(
+      'change',
+      () => this.updateShared({ favoritesOnly: this.favoritesOnly.checked }),
+      options,
+    );
+    this.clearSearch.addEventListener(
+      'click',
+      () => {
+        this.search.value = '';
+        this.updateShared({ query: '' });
+        this.search.focus();
+      },
+      options,
+    );
+    this.typeButtons.forEach((button) =>
+      button.addEventListener(
+        'click',
+        () => this.updateShared({ productType: button.dataset.productType }),
+        options,
+      ),
+    );
+    this.resetButton.addEventListener('click', () => this.reset(), options);
     this.groups.addEventListener('click', (event) => this.handleClick(event), options);
     document.querySelectorAll('[data-today-filter]').forEach((button) =>
       button.addEventListener(
@@ -46,6 +69,21 @@ export class TodayView {
         options,
       ),
     );
+    this.render();
+  }
+
+  updateShared(patch) {
+    this.state.update(patch);
+    this.render();
+    this.onSharedFiltersChange(this, patch);
+  }
+
+  applySharedFilters(patch) {
+    this.state.update(patch);
+    const filters = this.state.value;
+    this.search.value = filters.query;
+    this.origin.value = filters.origin;
+    this.favoritesOnly.checked = filters.favoritesOnly;
     this.render();
   }
 
@@ -74,13 +112,62 @@ export class TodayView {
       .forEach((button) =>
         button.setAttribute('aria-pressed', button.dataset.todayFilter === filters.mode),
       );
-    this.groups.innerHTML =
-      TODAY_GROUPS.map((group) => this.renderGroup(group, products, filters)).join('') ||
-      `<div class="empty">${escape(filters.mode === 'fav' ? copy.today.emptyFavorites : copy.today.empty)}</div>`;
+    this.typeButtons.forEach((button) =>
+      button.setAttribute('aria-pressed', button.dataset.productType === filters.productType),
+    );
+    this.clearSearch.hidden = !this.search.value;
+    this.resetButton.hidden = ![
+      filters.query,
+      filters.origin,
+      filters.productType,
+      filters.favoritesOnly,
+      filters.mode !== 'all',
+    ].some(Boolean);
+    const primary = filters.productType
+      ? products.filter((product) => product.productTypes[0] === filters.productType)
+      : products;
+    const additional = filters.productType
+      ? products.filter((product) => product.productTypes[0] !== filters.productType)
+      : [];
+    const sections =
+      TODAY_GROUPS.map((group) => this.renderGroup(group, primary, filters)).join('') +
+      (additional.length
+        ? this.renderGroup(
+            {
+              id: 'additional',
+              codes: TODAY_GROUPS.flatMap((group) => group.codes),
+              open: true,
+              text: {
+                title: formatMessage(copy.today.additionalTypes.title, {
+                  type: copy.page.productTypes[filters.productType],
+                }),
+                description: copy.today.additionalTypes.description,
+              },
+            },
+            additional,
+            filters,
+          )
+        : '');
+    this.groups.innerHTML = sections || this.renderEmpty(filters);
     for (const id of opened) {
       const group = this.groups.querySelector(`[data-group="${id}"]`);
       if (group) group.open = true;
     }
+  }
+
+  renderEmpty(filters) {
+    const type = copy.page.productTypes[filters.productType];
+    const message = filters.query
+      ? formatMessage(type ? copy.common.emptyTypeQuery : copy.common.emptyQuery, {
+          type,
+          query: filters.query,
+        })
+      : filters.favoritesOnly
+        ? copy.today.emptyFavorites
+        : copy.today.empty;
+    return `<div class="empty filter-empty"><p>${escape(message)}</p>
+      ${filters.query ? `<button data-clear-query>${escape(copy.page.clearSearch)}</button>` : ''}
+      <button data-reset-filters>${escape(copy.page.todayReset)}</button></div>`;
   }
 
   renderGroup(group, products, filters) {
@@ -88,11 +175,19 @@ export class TodayView {
       group.codes.includes(product.months[filters.month]),
     );
     if (!matches.length) return '';
-    const expanded = this.expandedGroups.has(group.id) || Boolean(filters.query);
+    const expanded =
+      this.expandedGroups.has(group.id) ||
+      Boolean(filters.query) ||
+      Boolean(filters.productType && group.id !== 'additional');
     const visible = expanded ? matches : matches.slice(0, CARDS_PER_GROUP);
     const open =
-      group.open || filters.query || filters.origin || filters.mode !== 'all' || expanded;
-    const text = copy.today.groups[group.id];
+      group.open ||
+      filters.query ||
+      filters.origin ||
+      filters.favoritesOnly ||
+      filters.mode !== 'all' ||
+      expanded;
+    const text = group.text || copy.today.groups[group.id];
     const cards = visible
       .map((product) =>
         productCard(
@@ -115,6 +210,16 @@ export class TodayView {
   }
 
   handleClick(event) {
+    if (event.target.closest('[data-clear-query]')) {
+      this.search.value = '';
+      this.updateShared({ query: '' });
+      this.search.focus();
+      return;
+    }
+    if (event.target.closest('[data-reset-filters]')) {
+      this.reset();
+      return;
+    }
     const product = event.target.closest('[data-product]');
     const favorite = event.target.closest('[data-favorite]');
     const more = event.target.closest('[data-more]');
@@ -133,8 +238,15 @@ export class TodayView {
     this.search.value = '';
     this.origin.value = '';
     this.state.reset();
+    this.favoritesOnly.checked = false;
     this.expandedGroups.clear();
     this.render();
+    this.onSharedFiltersChange(this, {
+      query: '',
+      origin: '',
+      productType: '',
+      favoritesOnly: false,
+    });
   }
 
   destroy() {

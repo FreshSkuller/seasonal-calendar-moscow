@@ -8,7 +8,7 @@ export class FilterState {
       month,
       query: '',
       origin: '',
-      category: '',
+      productType: '',
       status: '',
       mode: 'all',
       favoritesOnly: false,
@@ -31,7 +31,8 @@ export class FilterState {
         if (Number.isInteger(value) && value >= 0 && value < 12) next.month = value;
       } else if (typeof value === typeof this.#initial[key]) next[key] = value;
     }
-    if (!['all', 'fav', 'good', 'off'].includes(next.mode)) next.mode = 'all';
+    if (!['all', 'good', 'off'].includes(next.mode)) next.mode = 'all';
+    if (!['', 'vegetable', 'fruit', 'berry'].includes(next.productType)) next.productType = '';
     if (!['name', 'season', 'peak'].includes(next.order)) next.order = 'season';
     if (!['', 'p', 'g', 'b', 'h', 't', 'n', 'u', 'a'].includes(next.status)) next.status = '';
     this.#value = next;

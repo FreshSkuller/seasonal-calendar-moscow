@@ -22,7 +22,7 @@ test('Переименование и порядок вариантов не м�
   changed.variants.reverse();
   const next = createCatalog(changed);
   assert.equal(next.favoriteProductId('r114'), id);
-  const cards = groupedProducts(next, { month: 8, mode: 'fav' }, new Set([id]));
+  const cards = groupedProducts(next, { month: 8, favoritesOnly: true }, new Set([id]));
   assert.equal(cards.length, 1);
   assert.equal(cards[0].name, 'Новое название');
   assert.equal(cards[0].id, id);
@@ -112,6 +112,15 @@ test('Невалидные связи, конфликт замен и небез
       db.variants[0].productId = 'missing';
     },
     (db) => {
+      db.products[0].productTypes = ['missing'];
+    },
+    (db) => {
+      db.products[0].productTypes = [];
+    },
+    (db) => {
+      db.products[0].productTypes = ['vegetable', 'vegetable'];
+    },
+    (db) => {
       db.products.push({ ...db.products[0] });
     },
     (db) => {
@@ -170,10 +179,11 @@ test('В одном продукте повторные советы опред�
 });
 test('Состояние фильтров независимо от DOM и не принимает неизвестные поля', () => {
   const state = new FilterState(8);
-  state.update({ query: 'манго', month: 0, wholeYear: true, unknown: 'bad' });
-  state.update({ month: 99, mode: 'bad' });
+  state.update({ query: 'манго', month: 0, wholeYear: true, productType: 'fruit', unknown: 'bad' });
+  state.update({ month: 99, mode: 'bad', productType: 'bad' });
   assert.equal(state.value.month, 0);
   assert.equal(state.value.mode, 'all');
+  assert.equal(state.value.productType, '');
   assert.equal(state.value.unknown, undefined);
   const copy = state.value;
   copy.month = 3;
