@@ -23,6 +23,9 @@
     </main>
     <footer>{{page.footer}}</footer>
     <dialog id="detail-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-close">
+        <button class="close" data-close-dialog aria-label="{{details.close}}">×</button>
+      </div>
       <div id="dialog-content"></div>
     </dialog>
     <script type="application/json" id="database">

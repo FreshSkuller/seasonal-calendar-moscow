@@ -24,11 +24,36 @@ dialog::backdrop {
   background: #10271e77;
   backdrop-filter: blur(3px);
 }
-.dialog-head {
+.dialog-close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 0;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  justify-content: space-between;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+.dialog-close .close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+  background: var(--card);
+  background: color-mix(in srgb, var(--card) 72%, transparent);
+  border-color: color-mix(in srgb, var(--line) 75%, transparent);
+  box-shadow:
+    0 4px 16px #0002,
+    inset 0 1px #fff8;
+  backdrop-filter: blur(14px) saturate(1.25);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  pointer-events: auto;
+}
+.dialog-head {
+  padding-right: 64px;
 }
 .dialog-head h2 {
   font:

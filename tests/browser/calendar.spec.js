@@ -253,3 +253,20 @@ test('Открытая карточка удерживает фон и возв�
     'hidden',
   );
 });
+
+test('Крестик остаётся доступен внизу длинной карточки', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('.shop-card .why').first().click();
+  const dialog = page.locator('#detail-dialog');
+  await page.locator('.season-reference > summary').click();
+  await dialog.evaluate((el) => (el.scrollTop = el.scrollHeight));
+  await expect.poll(() => dialog.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
+  const close = page.locator('[data-close-dialog]');
+  const [buttonBox, dialogBox] = await Promise.all([close.boundingBox(), dialog.boundingBox()]);
+  const titleBox = await page.locator('#dialog-title').boundingBox();
+  expect(buttonBox.y).toBeGreaterThanOrEqual(dialogBox.y);
+  expect(buttonBox.y + buttonBox.height).toBeLessThanOrEqual(dialogBox.y + dialogBox.height);
+  expect(titleBox.y + titleBox.height).toBeLessThan(dialogBox.y);
+  await close.click();
+  await expect(dialog).not.toBeVisible();
+});

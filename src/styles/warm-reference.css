@@ -42,7 +42,6 @@ body.dark dialog[data-detail-design='warm-reference'] {
   min-width: 44px;
   min-height: 44px;
   border-radius: 50%;
-  background: transparent;
   flex-shrink: 0;
 }
 [data-detail-design='warm-reference'] .purchase-season {

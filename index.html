@@ -539,11 +539,36 @@
         background: #10271e77;
         backdrop-filter: blur(3px);
       }
-      .dialog-head {
+      .dialog-close {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        height: 0;
         display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        justify-content: space-between;
+        justify-content: flex-end;
+        pointer-events: none;
+      }
+      .dialog-close .close {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        line-height: 1;
+        border-radius: 50%;
+        background: var(--card);
+        background: color-mix(in srgb, var(--card) 72%, transparent);
+        border-color: color-mix(in srgb, var(--line) 75%, transparent);
+        box-shadow:
+          0 4px 16px #0002,
+          inset 0 1px #fff8;
+        backdrop-filter: blur(14px) saturate(1.25);
+        -webkit-backdrop-filter: blur(14px) saturate(1.25);
+        pointer-events: auto;
+      }
+      .dialog-head {
+        padding-right: 64px;
       }
       .dialog-head h2 {
         font:
@@ -1406,7 +1431,6 @@
         min-width: 44px;
         min-height: 44px;
         border-radius: 50%;
-        background: transparent;
         flex-shrink: 0;
       }
       [data-detail-design='warm-reference'] .purchase-season {
@@ -1927,6 +1951,9 @@
     </main>
     <footer>Москва · версия от 21.09.2026 · избранное хранится только в этом браузере.</footer>
     <dialog id="detail-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-close">
+        <button class="close" data-close-dialog aria-label="Закрыть подробности">×</button>
+      </div>
       <div id="dialog-content"></div>
     </dialog>
     <script type="application/json" id="database">
@@ -47425,7 +47452,6 @@
           const selected = model.variants[0];
           return `<div class="dialog-head">
           <div><h2 id="dialog-title"${model.title.length > 18 ? " data-long-title" : ""}>${escapeHtml(model.title)}</h2>${scope(selected)}</div>
-          <button class="close" data-close-dialog aria-label="${escapeHtml(ru_default.details.close)}">×</button>
         </div>
         <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escapeHtml(ru_default.months[model.month])}</span></div>
         <section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escapeHtml(ru_default.details.shopTitle)}</h2>
