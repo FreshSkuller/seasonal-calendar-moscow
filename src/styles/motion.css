@@ -1,0 +1,198 @@
+/* Motion follows a change of place or state, without delaying the next action. */
+:root {
+  --motion-brief: 140ms;
+  --motion-standard: 190ms;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tabs button {
+  transition:
+    color var(--motion-brief) ease,
+    border-color var(--motion-brief) ease;
+}
+
+.panel-enter {
+  animation: panel-enter var(--motion-standard) var(--motion-ease) both;
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0.7;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#today-groups .shop-group > summary,
+.toolbar .favorite-option {
+  transition: background-color var(--motion-brief) ease;
+}
+
+#today-groups .shop-group > summary::after,
+[data-detail-design='warm-reference']
+  :is(.home-guide, .season-reference, .product-sources)
+  > summary::after {
+  transition: transform var(--motion-standard) var(--motion-ease);
+}
+
+/* The selected segment moves to the new choice without moving the controls. */
+@supports selector(:has(button)) {
+  #panel-today :is(.product-type-options, .today-chips) {
+    position: relative;
+    isolation: isolate;
+  }
+
+  #panel-today :is(.product-type-options, .today-chips)::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    border-radius: 10px;
+    background: var(--menu-selected);
+    box-shadow: var(--menu-control-shadow);
+    transform: translateX(var(--indicator-x, 0));
+    transition: transform var(--motion-standard) var(--motion-ease);
+    pointer-events: none;
+  }
+
+  #panel-today .product-type-options::before {
+    width: calc((100% - 20px) / 4);
+  }
+
+  #panel-today .today-chips::before {
+    width: calc((100% - 16px) / 3);
+  }
+
+  #panel-today :is(.product-type-options, .today-chips) > button {
+    position: relative;
+    z-index: 1;
+  }
+
+  #panel-today :is(.product-type-options, .today-chips) > button[aria-pressed='true'] {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  #panel-today
+    :is(.product-type-options, .today-chips):has(> button:nth-child(2)[aria-pressed='true']) {
+    --indicator-x: calc(100% + 4px);
+  }
+
+  #panel-today
+    :is(.product-type-options, .today-chips):has(> button:nth-child(3)[aria-pressed='true']) {
+    --indicator-x: calc(200% + 8px);
+  }
+
+  #panel-today .product-type-options:has(> button:nth-child(4)[aria-pressed='true']) {
+    --indicator-x: calc(300% + 12px);
+  }
+}
+
+.favorite-confirm {
+  animation: favorite-confirm var(--motion-standard) var(--motion-ease);
+}
+
+@keyframes favorite-confirm {
+  from {
+    transform: scale(0.88);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.card-reveal,
+[data-detail-design='warm-reference']
+  :is(.home-guide, .season-reference, .product-sources)[open]
+  > .detail-disclosure-content,
+.advice-update {
+  animation: content-reveal var(--motion-standard) var(--motion-ease) both;
+}
+
+@keyframes content-reveal {
+  from {
+    opacity: 0.65;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-detail-design='warm-reference'] .purchase-option {
+  transition:
+    background-color var(--motion-brief) ease,
+    border-color var(--motion-brief) ease,
+    box-shadow var(--motion-brief) ease;
+}
+
+dialog {
+  opacity: 0;
+  transform: translateY(8px) scale(0.985);
+  transition:
+    opacity var(--motion-standard) var(--motion-ease),
+    transform var(--motion-standard) var(--motion-ease),
+    display var(--motion-standard) allow-discrete,
+    overlay var(--motion-standard) allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: none;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+}
+
+dialog::backdrop {
+  opacity: 0;
+  transition:
+    opacity var(--motion-standard) var(--motion-ease),
+    display var(--motion-standard) allow-discrete,
+    overlay var(--motion-standard) allow-discrete;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-enter,
+  .favorite-confirm,
+  .card-reveal,
+  [data-detail-design='warm-reference']
+    :is(.home-guide, .season-reference, .product-sources)[open]
+    > .detail-disclosure-content,
+  .advice-update {
+    animation: none;
+  }
+
+  .tabs button,
+  #today-groups .shop-group > summary,
+  .toolbar .favorite-option,
+  #today-groups .shop-group > summary::after,
+  [data-detail-design='warm-reference']
+    :is(.home-guide, .season-reference, .product-sources)
+    > summary::after,
+  #panel-today :is(.product-type-options, .today-chips)::before,
+  [data-detail-design='warm-reference'] .purchase-option,
+  dialog,
+  dialog::backdrop {
+    transition: none;
+  }
+}

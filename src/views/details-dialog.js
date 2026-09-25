@@ -20,10 +20,12 @@ export class DetailsDialog {
         } else return;
         const scroll = this.dialog.scrollTop;
         const model = buildProductDetails(this.catalog, this.variantId, this.month, this.context);
-        this.content.querySelector('[data-home-advice]').innerHTML = homeAdvice(
-          model,
-          this.catalog,
-        );
+        const advice = this.content.querySelector('[data-home-advice]');
+        advice.classList.remove('advice-update');
+        advice.innerHTML = homeAdvice(model, this.catalog);
+        // Restart the brief reveal when someone changes the choice again before it finishes.
+        void advice.offsetWidth;
+        advice.classList.add('advice-update');
         const readiness = this.content.querySelector('[data-readiness]');
         if (readiness) readiness.hidden = this.context.form === 'cut';
         this.content.querySelector('[data-purchase-status]').textContent =

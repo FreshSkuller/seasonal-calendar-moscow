@@ -61,7 +61,10 @@ export function startApplication(database, { clock = moscowDate } = {}) {
       tab.tabIndex = selected ? 0 : -1;
     });
     document.querySelectorAll('[data-panel]').forEach((panel) => {
-      panel.hidden = panel.dataset.panel !== button.dataset.tab;
+      const selected = panel.dataset.panel === button.dataset.tab;
+      const entering = selected && panel.hidden;
+      panel.hidden = !selected;
+      panel.classList.toggle('panel-enter', entering);
     });
     if (button.dataset.tab === 'today') today.render();
   };

@@ -32,6 +32,151 @@ test('Разделы переключаются с клавиатуры и со�
   expect(await today.evaluate((element) => getComputedStyle(element).outlineStyle)).toBe('solid');
 });
 
+test('Переходы короткие, прерываемые и отключаются при уменьшении движения', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('[data-tab="calendar"]').click();
+  await expect(page.locator('#panel-calendar')).toBeVisible();
+  expect(
+    await page
+      .locator('#panel-calendar')
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('panel-enter');
+  await page.locator('[data-tab="today"]').click();
+  await expect(page.locator('#panel-today')).toBeVisible();
+
+  const group = page.locator('#today-groups .shop-group').first();
+  await group.locator('summary').click();
+  await expect(group).not.toHaveAttribute('open');
+  await group.locator('summary').click();
+  await expect(group).toHaveAttribute('open');
+
+  await page.locator('.shop-card .why').first().click();
+  const dialog = page.locator('#detail-dialog');
+  await expect(dialog).toBeVisible();
+  expect(
+    await dialog.evaluate((element) => getComputedStyle(element).transitionDuration),
+  ).toContain('0.19s');
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.locator('[data-tab="calendar"]').click();
+  expect(
+    await page
+      .locator('#panel-calendar')
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('none');
+  await page.locator('#table-body .name').first().click();
+  await expect(dialog).toBeVisible();
+  expect(await dialog.evaluate((element) => getComputedStyle(element).transitionDuration)).toBe(
+    '0s',
+  );
+  await page.locator('[data-close-dialog]').click();
+  await expect(dialog).not.toBeVisible();
+});
+
+test('На главной выбор фильтра, избранное и новые карточки дают короткий отклик', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const types = page.locator('#panel-today .product-type-options');
+  await types.locator('button').nth(2).click();
+  await expect(types.locator('button').nth(2)).toHaveAttribute('aria-pressed', 'true');
+  await expect
+    .poll(() =>
+      types.evaluate(
+        (element) => new DOMMatrix(getComputedStyle(element, '::before').transform).m41,
+      ),
+    )
+    .toBeGreaterThan(20);
+  const seasons = page.locator('#panel-today .today-chips');
+  await seasons.locator('button').nth(1).click();
+  await expect(seasons.locator('button').nth(1)).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('#today-reset').click();
+
+  const favorite = page.locator('.shop-group[data-group="good"] .fav').first();
+  const id = await favorite.getAttribute('data-favorite');
+  await favorite.click();
+  const updated = page.locator(`#today-groups [data-favorite="${id}"]`);
+  await expect(updated).toHaveAttribute('aria-pressed', 'true');
+  await expect(updated).toHaveClass(/favorite-confirm/);
+  await expect(updated).toBeFocused();
+
+  const group = page.locator('.shop-group[data-group="good"]');
+  const shown = await group.locator('.shop-card').count();
+  await group.locator('.show-more').click();
+  const added = group.locator('.shop-card').nth(shown);
+  await expect(added).toBeVisible();
+  await expect(added).toHaveClass(/card-reveal/);
+  await expect(added.locator('h3 button')).toBeFocused();
+});
+
+test('Раскрытый совет в карточке и изменение выбора учитывают уменьшение движения', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('#today-search').fill('авокадо');
+  await expect(page.locator('.shop-card')).toHaveCount(1);
+  await page.locator('.shop-card .why').click();
+  await page.locator('[data-home-guide] > summary').click();
+  const content = page.locator('[data-home-guide] > .detail-disclosure-content');
+  await expect(content).toBeVisible();
+  expect(await content.evaluate((element) => getComputedStyle(element).animationName)).toBe(
+    'content-reveal',
+  );
+  const cut = page.locator('input[name="purchase-form"][value="cut"]');
+  await cut.check();
+  const advice = page.locator('[data-home-advice]');
+  await expect(advice).toHaveClass(/advice-update/);
+  await expect(cut).toBeFocused();
+
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.locator('input[name="purchase-form"][value="whole"]').check();
+  expect(await advice.evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
+  expect(
+    await page
+      .locator('.purchase-option')
+      .first()
+      .evaluate((element) => getComputedStyle(element).transitionDuration),
+  ).toBe('0s');
+});
+
+test('Поиск показывает один крестик очистки и спокойный фокус в обеих темах', async ({ page }) => {
+  await page.goto('/');
+  for (const theme of ['light', 'dark']) {
+    if (theme === 'dark') await page.locator('#theme').click();
+    for (const [panel, inputId, clearId] of [
+      ['today', 'today-search', 'today-clear-search'],
+      ['calendar', 'search', 'calendar-clear-search'],
+    ]) {
+      await page.locator(`[data-tab="${panel}"]`).click();
+      const input = page.locator(`#${inputId}`);
+      const clear = page.locator(`#${clearId}`);
+      await input.fill('о');
+      await expect(clear).toBeVisible();
+      const focus = await input.evaluate((element) => {
+        const style = getComputedStyle(element);
+        return {
+          outline: style.outlineStyle,
+          shadow: style.boxShadow,
+        };
+      });
+      expect(focus.outline).toBe('none');
+      expect(focus.shadow).not.toBe('none');
+      expect((await clear.boundingBox()).width).toBeGreaterThanOrEqual(44);
+      await clear.evaluate((button) => (button.hidden = true));
+      const box = await input.boundingBox();
+      await input.click({ position: { x: box.width - 20, y: box.height / 2 } });
+      await expect(input).toHaveValue('о');
+      await clear.evaluate((button) => (button.hidden = false));
+      await clear.click();
+      await expect(input).toHaveValue('');
+      await expect(clear).toBeHidden();
+      await expect(input).toBeFocused();
+    }
+  }
+});
+
 test('Текст, сезонные статусы и границы полей читаются в обеих темах', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
@@ -66,14 +211,19 @@ test('Текст, сезонные статусы и границы полей �
           '.toolbar .product-type-options button[aria-pressed="false"]',
           '.toolbar .product-type-options',
         ],
-        ['выбранный фильтр', '.toolbar .product-type-options button[aria-pressed="true"]'],
+        [
+          'выбранный фильтр',
+          '.toolbar .product-type-options button[aria-pressed="true"]',
+          '.toolbar .product-type-options',
+          '::before',
+        ],
         ['поле поиска', '.toolbar input[type="search"]'],
         ['описание продукта', '.shop-origin', '.shop-card'],
         ['подробнее', '.shop-card .why', '.shop-card'],
       ];
-      const failures = samples.flatMap(([name, foreground, background = foreground]) => {
+      const failures = samples.flatMap(([name, foreground, background = foreground, pseudo]) => {
         const fg = getComputedStyle(document.querySelector(foreground)).color;
-        const bg = getComputedStyle(document.querySelector(background)).backgroundColor;
+        const bg = getComputedStyle(document.querySelector(background), pseudo).backgroundColor;
         const contrast = ratio(fg, bg);
         return contrast < 4.5 ? [{ name, contrast }] : [];
       });

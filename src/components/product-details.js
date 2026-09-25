@@ -47,11 +47,11 @@ export function productDetails(model, presentation) {
     )
     .join('')}
   </section>
-  <details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}</summary>
-    ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div>
+  <details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}</summary><div class="detail-disclosure-content">
+    ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div></div>
   </details>
-  <details class="season-reference"><summary>${escape(copy.details.calendarTitle)}</summary><div data-variant-details>${productVariants(model, presentation)}</div></details>
-  <details class="product-sources" data-product-sources><summary>${escape(copy.details.allSources)}</summary>${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</details>`;
+  <details class="season-reference"><summary>${escape(copy.details.calendarTitle)}</summary><div class="detail-disclosure-content" data-variant-details>${productVariants(model, presentation)}</div></details>
+  <details class="product-sources" data-product-sources><summary>${escape(copy.details.allSources)}</summary><div class="detail-disclosure-content">${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</div></details>`;
 }
 
 export function productVariants(model, presentation) {

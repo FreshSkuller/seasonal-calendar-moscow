@@ -2943,6 +2943,31 @@
         outline-offset: 3px;
       }
 
+      .search-input-wrap input[type='search']::-webkit-search-cancel-button {
+        display: none;
+      }
+
+      .toolbar .search-input-wrap input[type='search']:focus-visible {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+      }
+
+      .toolbar .search-input-wrap button {
+        width: 44px;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+
+      .toolbar .search-input-wrap button:hover {
+        background: var(--menu-control);
+      }
+
+      .toolbar .search-input-wrap button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
+
       #theme {
         min-width: 44px;
         min-height: 44px;
@@ -3254,6 +3279,206 @@
         button,
         input[type='search'],
         select {
+          transition: none;
+        }
+      }
+
+      /* motion.css */
+      /* Motion follows a change of place or state, without delaying the next action. */
+      :root {
+        --motion-brief: 140ms;
+        --motion-standard: 190ms;
+        --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .tabs button {
+        transition:
+          color var(--motion-brief) ease,
+          border-color var(--motion-brief) ease;
+      }
+
+      .panel-enter {
+        animation: panel-enter var(--motion-standard) var(--motion-ease) both;
+      }
+
+      @keyframes panel-enter {
+        from {
+          opacity: 0.7;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      #today-groups .shop-group > summary,
+      .toolbar .favorite-option {
+        transition: background-color var(--motion-brief) ease;
+      }
+
+      #today-groups .shop-group > summary::after,
+      [data-detail-design='warm-reference']
+        :is(.home-guide, .season-reference, .product-sources)
+        > summary::after {
+        transition: transform var(--motion-standard) var(--motion-ease);
+      }
+
+      /* The selected segment moves to the new choice without moving the controls. */
+      @supports selector(:has(button)) {
+        #panel-today :is(.product-type-options, .today-chips) {
+          position: relative;
+          isolation: isolate;
+        }
+
+        #panel-today :is(.product-type-options, .today-chips)::before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          bottom: 4px;
+          left: 4px;
+          border-radius: 10px;
+          background: var(--menu-selected);
+          box-shadow: var(--menu-control-shadow);
+          transform: translateX(var(--indicator-x, 0));
+          transition: transform var(--motion-standard) var(--motion-ease);
+          pointer-events: none;
+        }
+
+        #panel-today .product-type-options::before {
+          width: calc((100% - 20px) / 4);
+        }
+
+        #panel-today .today-chips::before {
+          width: calc((100% - 16px) / 3);
+        }
+
+        #panel-today :is(.product-type-options, .today-chips) > button {
+          position: relative;
+          z-index: 1;
+        }
+
+        #panel-today :is(.product-type-options, .today-chips) > button[aria-pressed='true'] {
+          background: transparent;
+          box-shadow: none;
+        }
+
+        #panel-today
+          :is(.product-type-options, .today-chips):has(> button:nth-child(2)[aria-pressed='true']) {
+          --indicator-x: calc(100% + 4px);
+        }
+
+        #panel-today
+          :is(.product-type-options, .today-chips):has(> button:nth-child(3)[aria-pressed='true']) {
+          --indicator-x: calc(200% + 8px);
+        }
+
+        #panel-today .product-type-options:has(> button:nth-child(4)[aria-pressed='true']) {
+          --indicator-x: calc(300% + 12px);
+        }
+      }
+
+      .favorite-confirm {
+        animation: favorite-confirm var(--motion-standard) var(--motion-ease);
+      }
+
+      @keyframes favorite-confirm {
+        from {
+          transform: scale(0.88);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .card-reveal,
+      [data-detail-design='warm-reference']
+        :is(.home-guide, .season-reference, .product-sources)[open]
+        > .detail-disclosure-content,
+      .advice-update {
+        animation: content-reveal var(--motion-standard) var(--motion-ease) both;
+      }
+
+      @keyframes content-reveal {
+        from {
+          opacity: 0.65;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      [data-detail-design='warm-reference'] .purchase-option {
+        transition:
+          background-color var(--motion-brief) ease,
+          border-color var(--motion-brief) ease,
+          box-shadow var(--motion-brief) ease;
+      }
+
+      dialog {
+        opacity: 0;
+        transform: translateY(8px) scale(0.985);
+        transition:
+          opacity var(--motion-standard) var(--motion-ease),
+          transform var(--motion-standard) var(--motion-ease),
+          display var(--motion-standard) allow-discrete,
+          overlay var(--motion-standard) allow-discrete;
+      }
+
+      dialog[open] {
+        opacity: 1;
+        transform: none;
+      }
+
+      @starting-style {
+        dialog[open] {
+          opacity: 0;
+          transform: translateY(8px) scale(0.985);
+        }
+      }
+
+      dialog::backdrop {
+        opacity: 0;
+        transition:
+          opacity var(--motion-standard) var(--motion-ease),
+          display var(--motion-standard) allow-discrete,
+          overlay var(--motion-standard) allow-discrete;
+      }
+
+      dialog[open]::backdrop {
+        opacity: 1;
+      }
+
+      @starting-style {
+        dialog[open]::backdrop {
+          opacity: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .panel-enter,
+        .favorite-confirm,
+        .card-reveal,
+        [data-detail-design='warm-reference']
+          :is(.home-guide, .season-reference, .product-sources)[open]
+          > .detail-disclosure-content,
+        .advice-update {
+          animation: none;
+        }
+
+        .tabs button,
+        #today-groups .shop-group > summary,
+        .toolbar .favorite-option,
+        #today-groups .shop-group > summary::after,
+        [data-detail-design='warm-reference']
+          :is(.home-guide, .season-reference, .product-sources)
+          > summary::after,
+        #panel-today :is(.product-type-options, .today-chips)::before,
+        [data-detail-design='warm-reference'] .purchase-option,
+        dialog,
+        dialog::backdrop {
           transition: none;
         }
       }
@@ -51667,11 +51892,19 @@
             if (product) this.openProduct(product.dataset.product, this.clock().month);
             if (favorite) {
               this.preferences.toggleFavorite(favorite.dataset.favorite);
-              this.groups.querySelector(`[data-favorite="${favorite.dataset.favorite}"]`)?.focus();
+              const button = this.groups.querySelector(`[data-favorite="${favorite.dataset.favorite}"]`);
+              button?.focus();
+              button?.classList.add("favorite-confirm");
             }
             if (more) {
-              this.expandedGroups.add(more.dataset.more);
+              const groupId = more.dataset.more;
+              this.expandedGroups.add(groupId);
               this.render();
+              const added = [...this.groups.querySelectorAll(`[data-group="${groupId}"] .shop-card`)].slice(
+                CARDS_PER_GROUP
+              );
+              added.slice(0, 3).forEach((card) => card.classList.add("card-reveal"));
+              added[0]?.querySelector("h3 button")?.focus();
             }
           }
           reset() {
@@ -51875,11 +52108,11 @@
             )}` : ""
           ).join("")}
         </section>
-        <details class="home-guide" data-home-guide><summary>${escapeHtml(ru_default.details.homeTitle)}</summary>
-          ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div>
+        <details class="home-guide" data-home-guide><summary>${escapeHtml(ru_default.details.homeTitle)}</summary><div class="detail-disclosure-content">
+          ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div></div>
         </details>
-        <details class="season-reference"><summary>${escapeHtml(ru_default.details.calendarTitle)}</summary><div data-variant-details>${productVariants(model, presentation)}</div></details>
-        <details class="product-sources" data-product-sources><summary>${escapeHtml(ru_default.details.allSources)}</summary>${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</details>`;
+        <details class="season-reference"><summary>${escapeHtml(ru_default.details.calendarTitle)}</summary><div class="detail-disclosure-content" data-variant-details>${productVariants(model, presentation)}</div></details>
+        <details class="product-sources" data-product-sources><summary>${escapeHtml(ru_default.details.allSources)}</summary><div class="detail-disclosure-content">${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</div></details>`;
         }
         function productVariants(model, presentation) {
           const [selected, ...others] = model.variants;
@@ -51957,10 +52190,11 @@
                 } else return;
                 const scroll = this.dialog.scrollTop;
                 const model = buildProductDetails(this.catalog, this.variantId, this.month, this.context);
-                this.content.querySelector("[data-home-advice]").innerHTML = homeAdvice(
-                  model,
-                  this.catalog
-                );
+                const advice = this.content.querySelector("[data-home-advice]");
+                advice.classList.remove("advice-update");
+                advice.innerHTML = homeAdvice(model, this.catalog);
+                void advice.offsetWidth;
+                advice.classList.add("advice-update");
                 const readiness = this.content.querySelector("[data-readiness]");
                 if (readiness) readiness.hidden = this.context.form === "cut";
                 this.content.querySelector("[data-purchase-status]").textContent = ru_default.details.purchase.updated;
@@ -52046,7 +52280,10 @@
               tab.tabIndex = selected ? 0 : -1;
             });
             document.querySelectorAll("[data-panel]").forEach((panel) => {
-              panel.hidden = panel.dataset.panel !== button.dataset.tab;
+              const selected = panel.dataset.panel === button.dataset.tab;
+              const entering = selected && panel.hidden;
+              panel.hidden = !selected;
+              panel.classList.toggle("panel-enter", entering);
             });
             if (button.dataset.tab === "today") today.render();
           };

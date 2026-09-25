@@ -204,11 +204,19 @@ export class TodayView {
     if (product) this.openProduct(product.dataset.product, this.clock().month);
     if (favorite) {
       this.preferences.toggleFavorite(favorite.dataset.favorite);
-      this.groups.querySelector(`[data-favorite="${favorite.dataset.favorite}"]`)?.focus();
+      const button = this.groups.querySelector(`[data-favorite="${favorite.dataset.favorite}"]`);
+      button?.focus();
+      button?.classList.add('favorite-confirm');
     }
     if (more) {
-      this.expandedGroups.add(more.dataset.more);
+      const groupId = more.dataset.more;
+      this.expandedGroups.add(groupId);
       this.render();
+      const added = [...this.groups.querySelectorAll(`[data-group="${groupId}"] .shop-card`)].slice(
+        CARDS_PER_GROUP,
+      );
+      added.slice(0, 3).forEach((card) => card.classList.add('card-reveal'));
+      added[0]?.querySelector('h3 button')?.focus();
     }
   }
 
