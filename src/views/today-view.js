@@ -145,7 +145,13 @@ export class TodayView {
       : filters.favoritesOnly
         ? copy.today.emptyFavorites
         : copy.today.empty;
-    return `<div class="empty filter-empty"><p>${escape(message)}</p>
+    return `<div class="empty filter-empty">
+      <svg class="empty-illustration" viewBox="0 0 100 82" fill="none" aria-hidden="true" focusable="false">
+        <path d="M33 38c0-11 7-19 17-19s17 8 17 19" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" />
+        <path d="M21 39h58l-8 27c-1 4-4 6-8 6H37c-4 0-7-2-8-6l-8-27Z" fill="var(--soft)" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round" />
+        <path d="M20 39h60M38 49l3 14m9-14v14m12-14-3 14" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" />
+      </svg>
+      <p>${escape(message)}</p>
       ${filters.query ? `<button data-clear-query>${escape(copy.page.clearSearch)}</button>` : ''}
       <button data-reset-filters>${escape(copy.page.todayReset)}</button></div>`;
   }

@@ -635,6 +635,27 @@ test('Готовый файл работает без сервера и инте
   await expect(page.locator('.empty')).toBeVisible();
 });
 
+test('Иллюстрации не перегружают мобильную шапку и пустую выдачу', async ({ page }) => {
+  await page.goto('/');
+  const mark = page.locator('.hero-mark');
+  if (page.viewportSize().width <= 540) {
+    await expect(mark).toBeVisible();
+    await page.setViewportSize({ width: 320, height: 700 });
+    await expect(mark).toBeVisible();
+  } else await expect(mark).toBeHidden();
+  await expect(mark).toHaveAttribute('aria-hidden', 'true');
+
+  await page.locator('#today-search').fill('несуществующий продукт');
+  const empty = page.locator('#today-groups > .filter-empty');
+  await expect(empty).toBeVisible();
+  await expect(empty.locator('.empty-illustration')).toBeVisible();
+  await expect(empty.locator('.empty-illustration')).toHaveAttribute('aria-hidden', 'true');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await empty.locator('[data-clear-query]').click();
+  await expect(empty).toHaveCount(0);
+  await expect(page.locator('#today-search')).toHaveValue('');
+});
+
 test('Один авокадо: все происхождения и годовые графики внутри карточки', async ({ page }) => {
   await page.goto('/');
   await page.locator('#today-search').fill('авокадо');

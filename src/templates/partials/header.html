@@ -10,7 +10,30 @@
   </div>
   <div class="hero">
     <div class="hero-copy">
-      <h1>{{page.heroTitle}}</h1>
+      <div class="hero-title-row">
+        <h1>{{page.heroTitle}}</h1>
+        <svg class="hero-mark" viewBox="0 0 52 52" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="26" cy="26" r="24" fill="var(--hero-glow)" />
+          <path
+            d="M12 26c0-9 7-13 14-9 7-4 14 0 14 9 0 11-7 19-14 19s-14-8-14-19Z"
+            fill="#C8775D"
+            stroke="#8F5846"
+            stroke-width="1.8"
+          />
+          <path
+            d="M26 17c-1-6 1-10 6-12"
+            stroke="#5E6744"
+            stroke-width="2.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M27 13c-4-6-9-7-14-4 3 5 8 7 14 4Z"
+            fill="#7E8B61"
+            stroke="#5E6744"
+            stroke-width="1.5"
+          />
+        </svg>
+      </div>
       <p>{{page.heroIntro}}<br />{{page.heroAction}}</p>
     </div>
     <div class="hero-side">
