@@ -80,11 +80,6 @@ body[data-active-panel='method'] .hero {
   background: var(--group-wash-unknown);
 }
 
-.shop-group[data-group='additional'] {
-  --group-accent: var(--muted);
-  background: var(--soft);
-}
-
 .shop-group > summary {
   display: flex;
   align-items: center;

@@ -127,17 +127,39 @@ test('Томаты находятся как овощи и ягоды на об�
   await expect(page.locator('#table-body .filter-empty')).toBeVisible();
 });
 
-test('Основные ягоды идут перед дополнительными на главной и в календаре', async ({ page }) => {
+test('Основные ягоды идут перед дополнительными внутри сезонных групп и в календаре', async ({
+  page,
+}) => {
   await page.goto('/');
   await page.locator('[data-panel="today"] [data-product-type="berry"]').click();
   const groups = page.locator('#today-groups .shop-group');
-  await expect(groups.last()).toHaveAttribute('data-group', 'additional');
-  await expect(groups.last().locator('.group-count')).toHaveText('17');
-  await expect(page.locator('.shop-card .shop-types')).toHaveCount(
-    await page.locator('.shop-card').count(),
+  await expect(page.locator('#today-groups [data-group="additional"]')).toHaveCount(0);
+  const bySeason = await groups.evaluateAll((items) =>
+    items.map((group) => ({
+      count: Number(group.querySelector('.group-count').textContent),
+      types: [...group.querySelectorAll('.shop-card .shop-types')].map((type) => type.textContent),
+    })),
   );
-  await page.locator('[data-more="additional"]').click();
-  await expect(groups.last()).toContainText('Томаты');
+  const total = Number((await page.locator('#today-count').textContent()).match(/\d+/)[0]);
+  expect(bySeason.reduce((sum, group) => sum + group.count, 0)).toBe(total);
+  expect(bySeason.some((group) => group.types.some((type) => !type.startsWith('Ягоды')))).toBe(
+    true,
+  );
+  for (const group of bySeason) {
+    expect(group.types).toHaveLength(group.count);
+    const firstAdditional = group.types.findIndex((type) => !type.startsWith('Ягоды'));
+    if (firstAdditional >= 0) {
+      expect(group.types.slice(0, firstAdditional).every((type) => type.startsWith('Ягоды'))).toBe(
+        true,
+      );
+      expect(group.types.slice(firstAdditional).every((type) => !type.startsWith('Ягоды'))).toBe(
+        true,
+      );
+    }
+  }
+  await expect(page.locator('#today-groups .shop-card').filter({ hasText: 'Томаты' })).toHaveCount(
+    1,
+  );
   await page.locator('[data-tab="calendar"]').click();
   const types = await page.locator('#table-body .row-category').allTextContents();
   const firstAdditional = types.findIndex((type) => !type.startsWith('Ягоды'));
@@ -278,7 +300,9 @@ test('Сезонные группы и карточка открываются �
   await expect(page.locator('#detail-dialog')).not.toBeVisible();
 });
 
-test('Пять сезонных состояний различимы и счётчики читаются в обеих темах', async ({ page }) => {
+test('Сезонные группы единообразны, статусы и счётчики читаются в обеих темах', async ({
+  page,
+}) => {
   await page.goto('/');
   const ids = ['good', 'annual', 'choose', 'careful', 'off'];
   for (const theme of ['light', 'dark']) {
@@ -306,7 +330,7 @@ test('Пять сезонных состояний различимы и счё�
         return {
           id: group.dataset.group,
           wash: getComputedStyle(group).backgroundColor,
-          accent: getComputedStyle(count).color,
+          accent: getComputedStyle(group.querySelector('summary'), '::before').backgroundColor,
           contrast:
             (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05),
         };
@@ -314,7 +338,7 @@ test('Пять сезонных состояний различимы и счё�
     });
     const visible = colors.filter(({ id }) => ids.includes(id));
     expect(visible.map(({ id }) => id)).toEqual(ids);
-    expect(new Set(visible.map(({ wash }) => wash)).size).toBe(ids.length);
+    expect(new Set(visible.map(({ wash }) => wash)).size).toBe(1);
     expect(new Set(visible.map(({ accent }) => accent)).size).toBe(ids.length);
     expect(visible.every(({ contrast }) => contrast >= 4.5)).toBe(true);
   }

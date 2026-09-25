@@ -123,31 +123,11 @@ export class TodayView {
       filters.favoritesOnly,
       filters.mode !== 'all',
     ].some(Boolean);
-    const primary = filters.productType
-      ? products.filter((product) => product.productTypes[0] === filters.productType)
-      : products;
-    const additional = filters.productType
-      ? products.filter((product) => product.productTypes[0] !== filters.productType)
-      : [];
-    const sections =
-      TODAY_GROUPS.map((group) => this.renderGroup(group, primary, filters)).join('') +
-      (additional.length
-        ? this.renderGroup(
-            {
-              id: 'additional',
-              codes: TODAY_GROUPS.flatMap((group) => group.codes),
-              open: true,
-              text: {
-                title: formatMessage(copy.today.additionalTypes.title, {
-                  type: copy.page.productTypes[filters.productType],
-                }),
-                description: copy.today.additionalTypes.description,
-              },
-            },
-            additional,
-            filters,
-          )
-        : '');
+    // buildProductList sorts the selected primary type before secondary types.
+    // Filtering that list by seasonal status keeps this order within every group.
+    const sections = TODAY_GROUPS.map((group) => this.renderGroup(group, products, filters)).join(
+      '',
+    );
     this.groups.innerHTML = sections || this.renderEmpty(filters);
     for (const id of opened) {
       const group = this.groups.querySelector(`[data-group="${id}"]`);
@@ -176,9 +156,7 @@ export class TodayView {
     );
     if (!matches.length) return '';
     const expanded =
-      this.expandedGroups.has(group.id) ||
-      Boolean(filters.query) ||
-      Boolean(filters.productType && group.id !== 'additional');
+      this.expandedGroups.has(group.id) || Boolean(filters.query) || Boolean(filters.productType);
     const visible = expanded ? matches : matches.slice(0, CARDS_PER_GROUP);
     const open =
       group.open ||
@@ -187,7 +165,7 @@ export class TodayView {
       filters.favoritesOnly ||
       filters.mode !== 'all' ||
       expanded;
-    const text = group.text || copy.today.groups[group.id];
+    const text = copy.today.groups[group.id];
     const cards = visible
       .map((product) =>
         productCard(

@@ -37,16 +37,20 @@
         </select></label
       >
     </div>
-    <span class="filter-label season-label">{{page.seasonFilterLabel}}</span>
-    <div class="today-chips" role="group" aria-label="{{page.seasonFilterLabel}}">
-      <button data-today-filter="all" aria-pressed="true">{{page.filterAnySeason}}</button
-      ><button data-today-filter="good" aria-pressed="false" title="{{page.goodFilterTitle}}">
-        {{page.filterGood}}</button
-      ><button data-today-filter="off" aria-pressed="false">{{page.filterOff}}</button>
+    <div class="today-filter-footer">
+      <div class="season-filter">
+        <span class="filter-label season-label">{{page.seasonFilterLabel}}</span>
+        <div class="today-chips" role="group" aria-label="{{page.seasonFilterLabel}}">
+          <button data-today-filter="all" aria-pressed="true">{{page.filterAnySeason}}</button
+          ><button data-today-filter="good" aria-pressed="false" title="{{page.goodFilterTitle}}">
+            {{page.filterGood}}</button
+          ><button data-today-filter="off" aria-pressed="false">{{page.filterOff}}</button>
+        </div>
+      </div>
+      <label class="check-option favorite-option"
+        ><input type="checkbox" id="today-favorites" />{{page.onlyFavorites}}</label
+      >
     </div>
-    <label class="check-option favorite-option"
-      ><input type="checkbox" id="today-favorites" />{{page.onlyFavorites}}</label
-    >
   </div>
   <div id="today-groups"></div>
   <p class="daily-note">{{page.todayNote}}</p>
