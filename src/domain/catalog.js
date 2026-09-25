@@ -17,6 +17,7 @@ export function createCatalog(database) {
       ...variant,
       productName: products.get(variant.productId).name,
       productTypes: products.get(variant.productId).productTypes,
+      searchAliases: products.get(variant.productId).searchAliases || EMPTY,
       origin: origins.get(variant.originId).label,
       navigationGroup: origins.get(variant.originId).navigationGroup,
       category: categories.get(variant.categoryId).label,

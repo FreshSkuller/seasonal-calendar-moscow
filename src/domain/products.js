@@ -10,6 +10,7 @@ export function productSearchText(product) {
       product.productName || '',
       product.origin,
       product.variety || '',
+      ...(product.searchAliases || []),
       ...(product.aliases || []),
     ].join(' '),
   );

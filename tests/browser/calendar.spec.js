@@ -699,7 +699,7 @@ test('Избранное прежней версии переносится на
 
 test('Поиск прощает опечатки и раскладку на обоих экранах', async ({ page }) => {
   await page.goto('/');
-  for (const query of ['авдкадо', 'fdfrflj']) {
+  for (const query of ['авдкадо', 'fdfrflj', 'avokado']) {
     await page.locator('#today-search').fill(query);
     await expect(page.locator('.shop-card')).toHaveCount(1);
     await expect(page.locator('.shop-card h3')).toHaveText('Авокадо');
@@ -719,6 +719,29 @@ test('Поиск прощает опечатки и раскладку на об
   expect(
     await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
   ).toBe(true);
+});
+
+test('Словоформы и привычные названия находят продукты на обоих экранах', async ({ page }) => {
+  await page.goto('/');
+  for (const [query, name] of [
+    ['огурец', 'Огурцы'],
+    ['огурцами', 'Огурцы'],
+    ['помидор', 'Томаты'],
+    ['помидорами', 'Томаты'],
+  ]) {
+    await page.locator('#today-search').fill(query);
+    await expect(page.locator('.shop-card h3')).toHaveText(name);
+  }
+  await page.locator('[data-tab="calendar"]').click();
+  for (const [query, name] of [
+    ['огурец', 'Огурцы'],
+    ['огурцами', 'Огурцы'],
+    ['помидор', 'Томаты'],
+    ['помидорами', 'Томаты'],
+  ]) {
+    await page.locator('#search').fill(query);
+    await expect(page.locator('#table-body .name')).toHaveText(name);
+  }
 });
 
 test('Открытая карточка удерживает фон и возвращает прокрутку после закрытия', async ({ page }) => {

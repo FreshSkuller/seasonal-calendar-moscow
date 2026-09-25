@@ -121,6 +121,9 @@ test('Невалидные связи, конфликт замен и небез
       db.products[0].productTypes = ['vegetable', 'vegetable'];
     },
     (db) => {
+      db.products[0].searchAliases = ['картошка', 'картошка'];
+    },
+    (db) => {
       db.products.push({ ...db.products[0] });
     },
     (db) => {

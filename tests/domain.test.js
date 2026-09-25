@@ -48,6 +48,42 @@ test('Поиск учитывает регистр, ё, привычные на�
   );
 });
 
+test('Поиск находит формы названий, синонимы, латиницу и опечатку в словоформе', () => {
+  const cases = [
+    ['огурец', 'product-11'],
+    ['огурцами', 'product-11'],
+    ['ogurec', 'product-11'],
+    ['помидор', 'product-12'],
+    ['помидорами', 'product-12'],
+    ['памидорами', 'product-12'],
+    ['pomidor', 'product-12'],
+    ['яблоко', 'product-66'],
+    ['грушей', 'product-69'],
+    ['кабачок', 'product-13'],
+    ['перцами', 'product-15'],
+    ['морковью', 'product-3'],
+    ['зелёного лука', 'product-9'],
+  ];
+  for (const [query, expectedId] of cases)
+    assert.deepEqual(
+      groupedProducts(database, { month: 0, query }).map((product) => product.id),
+      [expectedId],
+      query,
+    );
+
+  const tomatoes = database.variantsFor('product-12');
+  assert.ok(tomatoes.every((variant) => variant.searchAliases.includes('помидор')));
+  assert.deepEqual(
+    filterProducts(database.variants, {
+      month: 0,
+      query: 'помидорами',
+      productType: 'vegetable',
+      origin: `country:${tomatoes[0].origin}`,
+    }).map((product) => product.productId),
+    ['product-12'],
+  );
+});
+
 test('Сезонные фильтры не превращают неизвестные месяцы и хранение в сезон', () => {
   for (let month = 0; month < 12; month++) {
     const good = filterProducts(database.variants, { month, mode: 'good' });

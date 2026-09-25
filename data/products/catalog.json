@@ -2,6 +2,7 @@
   {
     "id": "product-1",
     "name": "Картофель",
+    "searchAliases": ["картошка"],
     "productTypes": ["vegetable"],
     "adviceIds": [
       "home-potato-select-product-1",
@@ -15,6 +16,7 @@
   {
     "id": "product-3",
     "name": "Морковь основного урожая",
+    "searchAliases": ["морковка"],
     "productTypes": ["vegetable"],
     "adviceIds": [
       "advice-1",
@@ -111,6 +113,7 @@
   {
     "id": "product-11",
     "name": "Огурцы",
+    "searchAliases": ["огурец"],
     "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-11",
@@ -125,6 +128,7 @@
   {
     "id": "product-12",
     "name": "Томаты",
+    "searchAliases": ["помидор"],
     "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-13",
@@ -139,6 +143,7 @@
   {
     "id": "product-13",
     "name": "Кабачки / цуккини",
+    "searchAliases": ["кабачок"],
     "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-15",
@@ -167,6 +172,7 @@
   {
     "id": "product-15",
     "name": "Перец болгарский",
+    "searchAliases": ["перцы"],
     "productTypes": ["vegetable", "berry"],
     "adviceIds": [
       "advice-19",
@@ -209,6 +215,7 @@
   {
     "id": "product-18",
     "name": "Горошек зелёный, свежий",
+    "searchAliases": ["горох"],
     "productTypes": ["vegetable"],
     "adviceIds": [
       "home-pea-select-product-18",

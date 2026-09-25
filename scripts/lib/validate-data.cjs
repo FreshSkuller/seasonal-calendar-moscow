@@ -91,6 +91,8 @@ function validateData(db) {
   };
   for (const product of products.values()) {
     text(product.name, 'Название продукта');
+    if (product.searchAliases !== undefined)
+      ids(product.searchAliases, 'Поисковые названия: ' + product.id);
     assert.ok(
       Array.isArray(product.productTypes) &&
         product.productTypes.length > 0 &&
