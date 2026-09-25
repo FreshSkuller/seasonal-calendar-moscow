@@ -12,6 +12,112 @@ async function revealCalendarFilters(page) {
   }
 }
 
+test('Разделы переключаются с клавиатуры и сохраняют видимый фокус', async ({ page }) => {
+  await page.goto('/');
+  const today = page.getByRole('tab', { name: 'Сегодня' });
+  const calendar = page.getByRole('tab', { name: 'По месяцам' });
+  const method = page.getByRole('tab', { name: 'Справка' });
+  await today.focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(calendar).toBeFocused();
+  await expect(calendar).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('tabpanel', { name: 'По месяцам' })).toBeVisible();
+  await expect(today).toHaveAttribute('tabindex', '-1');
+  await page.keyboard.press('End');
+  await expect(method).toBeFocused();
+  await expect(page.getByRole('tabpanel', { name: 'Справка' })).toBeVisible();
+  await page.keyboard.press('Home');
+  await expect(today).toBeFocused();
+  await expect(page.getByRole('tabpanel', { name: 'Сегодня' })).toBeVisible();
+  expect(await today.evaluate((element) => getComputedStyle(element).outlineStyle)).toBe('solid');
+});
+
+test('Текст, сезонные статусы и границы полей читаются в обеих темах', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  for (const theme of ['light', 'dark']) {
+    if (theme === 'dark') await page.locator('#theme').click();
+    await page.locator('[data-tab="today"]').click();
+    const pageContrast = await page.evaluate(() => {
+      const luminance = (color) => {
+        const rgb = color
+          .match(/[\d.]+/g)
+          .slice(0, 3)
+          .map(Number);
+        const channel = (value) => {
+          const normalized = value / 255;
+          return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+        };
+        return rgb.reduce(
+          (sum, value, index) => sum + channel(value) * [0.2126, 0.7152, 0.0722][index],
+          0,
+        );
+      };
+      const ratio = (a, b) => {
+        const first = luminance(a);
+        const second = luminance(b);
+        return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
+      };
+      const samples = [
+        ['основной текст', 'body', 'body'],
+        ['подпись фильтра', '.toolbar .filter-label', '.toolbar'],
+        [
+          'невыбранный фильтр',
+          '.toolbar .product-type-options button[aria-pressed="false"]',
+          '.toolbar .product-type-options',
+        ],
+        ['выбранный фильтр', '.toolbar .product-type-options button[aria-pressed="true"]'],
+        ['поле поиска', '.toolbar input[type="search"]'],
+        ['описание продукта', '.shop-origin', '.shop-card'],
+        ['подробнее', '.shop-card .why', '.shop-card'],
+      ];
+      const failures = samples.flatMap(([name, foreground, background = foreground]) => {
+        const fg = getComputedStyle(document.querySelector(foreground)).color;
+        const bg = getComputedStyle(document.querySelector(background)).backgroundColor;
+        const contrast = ratio(fg, bg);
+        return contrast < 4.5 ? [{ name, contrast }] : [];
+      });
+      const field = getComputedStyle(document.querySelector('.toolbar input[type="search"]'));
+      const borderContrast = ratio(field.borderColor, field.backgroundColor);
+      if (borderContrast < 3) failures.push({ name: 'граница поля', contrast: borderContrast });
+      return failures;
+    });
+    expect(pageContrast).toEqual([]);
+
+    await page.locator('[data-tab="calendar"]').click();
+    const statusContrast = await page.locator('.legend .symbol').evaluateAll((symbols) => {
+      const luminance = (color) => {
+        const rgb = color
+          .match(/[\d.]+/g)
+          .slice(0, 3)
+          .map(Number);
+        return rgb.reduce((sum, value, index) => {
+          const normalized = value / 255;
+          const channel =
+            normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+          return sum + channel * [0.2126, 0.7152, 0.0722][index];
+        }, 0);
+      };
+      return symbols.map((symbol) => {
+        const style = getComputedStyle(symbol);
+        const fg = luminance(style.color);
+        const bg = luminance(style.backgroundColor);
+        return (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
+      });
+    });
+    expect(Math.min(...statusContrast)).toBeGreaterThanOrEqual(4.5);
+    await page.locator('[data-tab="today"]').click();
+    await page.locator('.shop-card h3 button').first().click();
+    const matchingStatus = await page.evaluate(() => {
+      const card = getComputedStyle(document.querySelector('.shop-card .pill'));
+      const detail = getComputedStyle(document.querySelector('.purchase-season .pill'));
+      return card.backgroundColor === detail.backgroundColor && card.color === detail.color;
+    });
+    expect(matchingStatus).toBe(true);
+    await page.locator('[data-close-dialog]').click();
+  }
+});
+
 test('Состояние покупки меняет советы, сохраняет фокус и сбрасывается для другой карточки', async ({
   page,
 }) => {

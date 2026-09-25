@@ -7,22 +7,29 @@
     <title>Что сейчас в сезоне · Москва</title>
     <style>
             /* foundation.css */
+      /* Warm semantic surfaces and a single green action color for both themes. */
       :root {
-        --bg: #f6f2e9;
-        --card: #fffdf7;
-        --ink: #30382d;
-        --muted: #656b5c;
-        --line: #ded8ca;
-        --accent: #435d39;
-        --soft: #ecefe3;
-        --hero-wash: #efe6d4;
-        --hero-glow: #f3e5cd;
-        --group-wash: #edf4e9;
-        --group-wash-annual: #f1efe3;
-        --group-wash-choose: #eaf2f4;
-        --group-wash-careful: #fbf0dd;
-        --group-wash-off: #f8eae6;
-        --group-wash-unknown: #f0f0eb;
+        --bg: #f7f4ec;
+        --card: #fffdf8;
+        --surface-raised: #f9f7f0;
+        --control-bg: #e9ece5;
+        --control-selected: #fffefa;
+        --field-bg: #fffefa;
+        --control-line: #899589;
+        --ink: #293229;
+        --muted: #5d665b;
+        --line: #d9d5c9;
+        --accent: #3f6149;
+        --warning: #98672d;
+        --soft: #edece3;
+        --hero-wash: #efe4d0;
+        --hero-glow: #f3dfb9;
+        --group-wash: #f2f1e9;
+        --group-wash-annual: #f4f0e5;
+        --group-wash-choose: #edf2f1;
+        --group-wash-careful: #f7f0e3;
+        --group-wash-off: #f7ebe6;
+        --group-wash-unknown: #f1f0ec;
         --group-accent-good: #426643;
         --group-accent-annual: #6e653a;
         --group-accent-choose: #416a76;
@@ -48,21 +55,27 @@
         line-height: 1.5;
       }
       body.dark {
-        --bg: #1d241e;
-        --card: #273128;
-        --ink: #f0eee2;
-        --muted: #bec5b5;
-        --line: #4c594b;
-        --accent: #bed2a4;
-        --soft: #333f32;
-        --hero-wash: #364236;
-        --hero-glow: #46513a;
-        --group-wash: #2b392b;
-        --group-wash-annual: #38372a;
-        --group-wash-choose: #283940;
-        --group-wash-careful: #40362a;
-        --group-wash-off: #3f302e;
-        --group-wash-unknown: #323630;
+        --bg: #211f1b;
+        --card: #2e2d27;
+        --surface-raised: #38372f;
+        --control-bg: #3d3e34;
+        --control-selected: #59654f;
+        --field-bg: #34342e;
+        --control-line: #7c7e6e;
+        --ink: #f5f1e8;
+        --muted: #c7c1b1;
+        --line: #57564b;
+        --accent: #c4d8ad;
+        --warning: #dfbd80;
+        --soft: #393a31;
+        --hero-wash: #3b392f;
+        --hero-glow: #514634;
+        --group-wash: #36382e;
+        --group-wash-annual: #3b382b;
+        --group-wash-choose: #2e3939;
+        --group-wash-careful: #43392c;
+        --group-wash-off: #41312d;
+        --group-wash-unknown: #34352f;
         --group-accent-good: #b7d5a8;
         --group-accent-annual: #ddcb97;
         --group-accent-choose: #a9cbd5;
@@ -194,7 +207,7 @@
       input[type='search'],
       select {
         width: 100%;
-        border: 1px solid var(--line);
+        border: 1px solid var(--control-line);
         background: var(--card);
         color: var(--ink);
         border-radius: 8px;
@@ -277,19 +290,48 @@
       }
       .status-n {
         background: #f4e1db;
-        color: #a45240;
+        color: #8b3f31;
       }
       .status-u {
         background: #edeee7;
-        color: #7a8278;
+        color: #566057;
       }
       .status-a {
         background: #e2e7d8;
         color: #536043;
       }
-      .dark .symbol,
-      .dark .pill {
-        filter: brightness(0.85);
+      /* Status hues retain their meaning on the warm dark surfaces. */
+      body.dark .status-p {
+        background: #544526;
+        color: #f8dfa5;
+      }
+      body.dark .status-g {
+        background: #304936;
+        color: #c5e7c7;
+      }
+      body.dark .status-b {
+        background: #4d3b2c;
+        color: #f6d2a0;
+      }
+      body.dark .status-h {
+        background: #40374e;
+        color: #e2d5f3;
+      }
+      body.dark .status-t {
+        background: #2c434d;
+        color: #c4e3ea;
+      }
+      body.dark .status-n {
+        background: #4a3532;
+        color: #f2bbb4;
+      }
+      body.dark .status-u {
+        background: #3b413c;
+        color: #d1d7cc;
+      }
+      body.dark .status-a {
+        background: #3e4637;
+        color: #d5e0bf;
       }
       .summary-line {
         display: flex;
@@ -822,7 +864,7 @@
         margin: 20px 0;
       }
       .notice {
-        border-left: 3px solid #d9a642;
+        border-left: 3px solid var(--warning);
         padding: 2px 0 2px 14px;
         margin: 20px 0;
         color: var(--muted);
@@ -1358,18 +1400,18 @@
       }
 
       /* warm-reference.css */
-      /* Product sheet: semantic surfaces and typography adapt independently of the page theme. */
+      /* Product sheet shares the site's semantic palette while retaining an elevated surface. */
       dialog[data-detail-design='warm-reference'] {
-        --detail-surface: #fffdfa;
-        --detail-section: #f3f5f0;
-        --detail-group: #f7f8f4;
-        --detail-control: #ecefeb;
-        --detail-ink: #273029;
-        --detail-muted: #59665d;
-        --detail-line: #dce2d9;
-        --detail-accent: #426e50;
-        --detail-selected: #e8f3e9;
-        --detail-warning: #9c712d;
+        --detail-surface: #fffefa;
+        --detail-section: #f2f2e9;
+        --detail-group: #f8f6ef;
+        --detail-control: var(--control-bg);
+        --detail-ink: var(--ink);
+        --detail-muted: var(--muted);
+        --detail-line: var(--line);
+        --detail-accent: var(--accent);
+        --detail-selected: #e7eee2;
+        --detail-warning: var(--warning);
         width: min(760px, calc(100% - 24px));
         padding: 30px 32px;
         border: 1px solid var(--detail-line);
@@ -1379,27 +1421,27 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
         font-size: 16px;
         line-height: 1.5;
-        box-shadow: 0 24px 70px #20282030;
+        box-shadow: 0 24px 70px #30271b30;
       }
       body.dark dialog[data-detail-design='warm-reference'] {
-        --detail-surface: #2c302d;
-        --detail-section: #3a403a;
-        --detail-group: #353b35;
-        --detail-control: #424942;
-        --detail-ink: #f1f2ec;
-        --detail-muted: #c0c9c0;
-        --detail-line: #535c54;
-        --detail-accent: #aed8b5;
-        --detail-selected: #344a39;
-        --detail-warning: #d8b975;
+        --detail-surface: #343229;
+        --detail-section: #424037;
+        --detail-group: #3d3b32;
+        --detail-control: #494a3e;
+        --detail-ink: var(--ink);
+        --detail-muted: var(--muted);
+        --detail-line: var(--line);
+        --detail-accent: var(--accent);
+        --detail-selected: #404d3a;
+        --detail-warning: var(--warning);
         box-shadow: 0 28px 80px #0009;
       }
       [data-detail-design='warm-reference']::backdrop {
-        background: #1c241e66;
+        background: #29261f73;
         backdrop-filter: blur(6px);
       }
       body.dark [data-detail-design='warm-reference']::backdrop {
-        background: #0a0d0ab8;
+        background: #0e0d0ab8;
       }
       [data-detail-design='warm-reference'] .dialog-head h2 {
         font-family: inherit;
@@ -1440,73 +1482,7 @@
         font-size: 13px;
         font-weight: 600;
         padding: 5px 10px;
-        background: var(--detail-status-bg);
-        color: var(--detail-status-fg);
         filter: none;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-p {
-        --detail-status-bg: #fff0cb;
-        --detail-status-fg: #6d5108;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-g {
-        --detail-status-bg: #e9f5e7;
-        --detail-status-fg: #2b6039;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-b {
-        --detail-status-bg: #fdf0dd;
-        --detail-status-fg: #7e4e16;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-h {
-        --detail-status-bg: #f2edf9;
-        --detail-status-fg: #674a86;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-t {
-        --detail-status-bg: #e7f2f6;
-        --detail-status-fg: #2d6373;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-n {
-        --detail-status-bg: #f9e9e7;
-        --detail-status-fg: #914238;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-u {
-        --detail-status-bg: #eff0eb;
-        --detail-status-fg: #5d665c;
-      }
-      [data-detail-design='warm-reference'] .purchase-season .status-a {
-        --detail-status-bg: #eef0e6;
-        --detail-status-fg: #556144;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-p {
-        --detail-status-bg: #534325;
-        --detail-status-fg: #f6dda3;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-g {
-        --detail-status-bg: #304936;
-        --detail-status-fg: #c2e8c6;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-b {
-        --detail-status-bg: #4d3b2c;
-        --detail-status-fg: #f6d2a0;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-h {
-        --detail-status-bg: #40374e;
-        --detail-status-fg: #dfcef3;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-t {
-        --detail-status-bg: #2c434d;
-        --detail-status-fg: #c4e3ea;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-n {
-        --detail-status-bg: #4a3532;
-        --detail-status-fg: #f2bbb4;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-u {
-        --detail-status-bg: #3b413c;
-        --detail-status-fg: #d1d7cc;
-      }
-      body.dark [data-detail-design='warm-reference'] .purchase-season .status-a {
-        --detail-status-bg: #3e4637;
-        --detail-status-fg: #d5e0bf;
       }
       [data-detail-design='warm-reference'] [data-shop-advice] > h2 {
         color: var(--detail-ink);
@@ -2582,28 +2558,28 @@
       /* apple-menu.css */
       /* Shared catalog controls and the daily status list follow one quiet visual hierarchy. */
       :root {
-        --menu-surface: #fffdfa;
-        --menu-control: #eef0ed;
-        --menu-field: #fffefa;
-        --menu-card: #f8faf6;
-        --menu-selected: #fffdfa;
-        --menu-ink: #29312b;
-        --menu-muted: #59655c;
-        --menu-line: #dfe4dc;
-        --menu-accent: #426e50;
+        --menu-surface: var(--card);
+        --menu-control: var(--control-bg);
+        --menu-field: var(--field-bg);
+        --menu-card: var(--surface-raised);
+        --menu-selected: var(--control-selected);
+        --menu-ink: var(--ink);
+        --menu-muted: var(--muted);
+        --menu-line: var(--line);
+        --menu-accent: var(--accent);
         --menu-control-shadow: 0 1px 3px #26332724;
       }
 
       body.dark {
-        --menu-surface: #2c302d;
-        --menu-control: #3a403a;
-        --menu-field: #343a35;
-        --menu-card: #343a35;
-        --menu-selected: #525b53;
-        --menu-ink: #f1f2ec;
-        --menu-muted: #c0c9c0;
-        --menu-line: #4c574e;
-        --menu-accent: #aed8b5;
+        --menu-surface: var(--card);
+        --menu-control: var(--control-bg);
+        --menu-field: var(--field-bg);
+        --menu-card: var(--surface-raised);
+        --menu-selected: var(--control-selected);
+        --menu-ink: var(--ink);
+        --menu-muted: var(--muted);
+        --menu-line: var(--line);
+        --menu-accent: var(--accent);
         --menu-control-shadow: 0 1px 4px #0005;
       }
 
@@ -2643,7 +2619,7 @@
         border-color: var(--menu-line);
         border-radius: 20px;
         padding: 22px 24px;
-        box-shadow: 0 8px 28px #27332a0d;
+        box-shadow: 0 8px 28px #4d3b260d;
       }
 
       body.dark .toolbar {
@@ -2707,7 +2683,7 @@
       .toolbar select {
         min-height: 50px;
         padding: 11px 14px;
-        border: 1px solid var(--menu-line);
+        border: 1px solid var(--control-line);
         border-radius: 12px;
         background: var(--menu-field);
         color: var(--menu-ink);
@@ -2795,7 +2771,7 @@
         border: 1px solid var(--menu-line);
         border-radius: 18px;
         background: var(--menu-surface);
-        box-shadow: 0 3px 12px #26332709;
+        box-shadow: 0 3px 12px #4d3b2609;
       }
 
       #today-groups .shop-group > summary {
@@ -2931,6 +2907,356 @@
           padding: 0 16px 16px;
         }
       }
+
+      /* ui-refinement.css */
+      /* Final shared rules for readable type, clear controls and both appearances. */
+      :root {
+        --focus-ring: #925d27;
+        font-size: 16px;
+      }
+
+      body.dark {
+        --focus-ring: #e9bf78;
+      }
+
+      button,
+      input,
+      select,
+      summary {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button,
+      input[type='search'],
+      select {
+        transition:
+          background-color 140ms ease,
+          border-color 140ms ease,
+          color 140ms ease,
+          box-shadow 140ms ease;
+      }
+
+      :is(button, a, input, select, summary, .legend, [role='tabpanel']):focus-visible,
+      .toolbar :is(button, input, select):focus-visible,
+      #today-groups .shop-group > summary:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 3px;
+      }
+
+      #theme {
+        min-width: 44px;
+        min-height: 44px;
+        margin-left: 8px;
+      }
+
+      .stamp {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero {
+        min-height: 205px;
+      }
+
+      .tabs {
+        gap: 30px;
+        margin-bottom: 22px;
+      }
+
+      .tabs button {
+        font-size: 15px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+      }
+
+      .tabs button:hover:not([aria-selected='true']) {
+        color: var(--accent);
+      }
+
+      .toolbar {
+        padding: 20px 22px;
+      }
+
+      .toolbar .product-type-options button:hover:not([aria-pressed='true']),
+      .toolbar .segmented button:hover:not([aria-pressed='true']),
+      [data-panel='today'] .today-chips button:hover:not([aria-pressed='true']) {
+        background: color-mix(in srgb, var(--menu-selected) 62%, transparent);
+        color: var(--menu-ink);
+      }
+
+      .toolbar .favorite-option:hover,
+      #today-groups .shop-group > summary:hover {
+        background: color-mix(in srgb, var(--menu-control) 65%, var(--menu-surface));
+      }
+
+      .shop-card .fav:hover,
+      .table-wrap .fav:hover {
+        color: var(--accent);
+        background: var(--soft);
+      }
+
+      .shop-card .fav,
+      .table-wrap .fav {
+        border-radius: 10px;
+      }
+
+      .shop-card .fav[aria-pressed='true'],
+      .table-wrap .fav[aria-pressed='true'] {
+        color: #9a620a;
+      }
+
+      body.dark .shop-card .fav[aria-pressed='true'],
+      body.dark .table-wrap .fav[aria-pressed='true'] {
+        color: #f0ca79;
+      }
+
+      .shop-card .why:hover,
+      .shop-card h3 button:hover,
+      .table-wrap .name:hover {
+        color: var(--accent);
+      }
+
+      .shop-card .why:active,
+      .show-more:active,
+      .toolbar button:active,
+      .tabs button:active {
+        transform: translateY(1px);
+      }
+
+      .shop-types {
+        font-size: 12px;
+      }
+
+      .shop-origin {
+        font-size: 13px;
+      }
+
+      .shop-tip {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .group-desc,
+      .daily-note,
+      .scope-note {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .why {
+        font-size: 14px;
+      }
+
+      .summary-line h1 {
+        font-size: 23px;
+      }
+
+      .legend,
+      .coverage {
+        font-size: 13px;
+      }
+
+      th {
+        font-size: 13px;
+      }
+
+      td {
+        font-size: 14px;
+      }
+
+      td.product .name {
+        font-size: 15px;
+      }
+
+      td.product small {
+        font-size: 12px;
+      }
+
+      .table-scroll-hint {
+        display: none;
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .panel h1 {
+        font-size: clamp(30px, 3.5vw, 38px);
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+
+      .panel h2 {
+        font-family: inherit;
+        font-size: 26px;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .panel > p {
+        font-size: 16px;
+        line-height: 1.58;
+      }
+
+      .info-card {
+        border-radius: 16px;
+        padding: 22px;
+      }
+
+      .info-card p,
+      .notice {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .fine,
+      .source-list p {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 850px) {
+        .table-scroll-hint {
+          display: block;
+        }
+
+        .hero {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .topline {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          gap: 2px 8px;
+        }
+
+        .brand,
+        .stamp {
+          font-size: 12px;
+          line-height: 1.3;
+        }
+
+        .stamp {
+          display: contents;
+        }
+
+        .checked-date {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          color: var(--muted);
+        }
+
+        #theme {
+          grid-column: 2;
+          grid-row: 1;
+          margin: 0;
+        }
+
+        body[data-active-panel='today'] .hero h1 {
+          font-size: 29px;
+          line-height: 1.16;
+        }
+
+        .tabs {
+          gap: 22px;
+          margin-bottom: 14px;
+        }
+
+        .tabs button {
+          min-height: 48px;
+          font-size: 15px;
+        }
+
+        .today-header {
+          margin: 8px 0 10px;
+        }
+
+        .today-header .today-date,
+        .today-count {
+          font-size: 13px;
+        }
+
+        .toolbar {
+          padding: 15px;
+        }
+
+        .toolbar .product-type-options button,
+        .toolbar .segmented button,
+        [data-panel='today'] .today-chips button {
+          padding: 8px 4px;
+          font-size: 14px;
+        }
+
+        .toolbar label.field,
+        .toolbar .filter-label,
+        .toolbar .search-control > label {
+          font-size: 13px;
+        }
+
+        .toolbar .favorite-option {
+          font-size: 14px;
+        }
+
+        .shop-card {
+          padding: 16px;
+        }
+
+        #today-groups .shop-group > summary {
+          font-size: 18px;
+        }
+
+        .shop-card h3 {
+          font-size: 19px;
+        }
+
+        .summary-line {
+          display: block;
+        }
+
+        .summary-line h1 {
+          font-size: 21px;
+        }
+
+        .summary-line > span {
+          display: block;
+          max-width: none;
+          margin-top: 3px;
+          font-size: 12px;
+          text-align: left;
+        }
+
+        .panel h1 {
+          font-size: 31px;
+        }
+
+        .panel h2 {
+          font-size: 24px;
+        }
+
+        .info-card {
+          padding: 18px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .toolbar .product-type-options button,
+        .toolbar .segmented button,
+        [data-panel='today'] .today-chips button {
+          padding-left: 2px;
+          padding-right: 2px;
+          font-size: 13px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        button,
+        input[type='search'],
+        select {
+          transition: none;
+        }
+      }
       ;
     </style>
   </head>
@@ -2939,8 +3265,8 @@
       <div class="topline">
         <div class="brand">Сезонный календарь / Москва</div>
         <div class="stamp">
-          Проверка: 21 сентября 2026
-          <button id="theme" aria-label="Тёмная тема" aria-pressed="false">◑</button>
+          <span class="checked-date">Проверка: 21 сентября 2026 </span
+          ><button id="theme" aria-label="Тёмная тема" aria-pressed="false">◑</button>
         </div>
       </div>
       <div class="hero">
@@ -3020,12 +3346,46 @@
     </header>
 
     <main>
-      <nav class="tabs" aria-label="Разделы">
-        <button data-tab="today" aria-selected="true">Сегодня</button
-        ><button data-tab="calendar" aria-selected="false">По месяцам</button
-        ><button data-tab="method" aria-selected="false">Справка</button>
+      <nav class="tabs" role="tablist" aria-label="Разделы">
+        <button
+          id="tab-today"
+          type="button"
+          role="tab"
+          data-tab="today"
+          aria-controls="panel-today"
+          aria-selected="true"
+          tabindex="0"
+        >
+          Сегодня</button
+        ><button
+          id="tab-calendar"
+          type="button"
+          role="tab"
+          data-tab="calendar"
+          aria-controls="panel-calendar"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          По месяцам</button
+        ><button
+          id="tab-method"
+          type="button"
+          role="tab"
+          data-tab="method"
+          aria-controls="panel-method"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Справка
+        </button>
       </nav>
-      <section data-panel="today">
+      <section
+        id="panel-today"
+        data-panel="today"
+        role="tabpanel"
+        aria-labelledby="tab-today"
+        tabindex="0"
+      >
         <div class="today-header">
           <div>
             <h2>Сезонность на сегодня</h2>
@@ -3092,7 +3452,14 @@
           покупать».
         </div>
       </section>
-      <section data-panel="calendar" hidden>
+      <section
+        id="panel-calendar"
+        data-panel="calendar"
+        role="tabpanel"
+        aria-labelledby="tab-calendar"
+        tabindex="0"
+        hidden
+      >
         <div class="toolbar calendar-toolbar">
           <div class="product-type-filter" role="group" aria-label="Что смотрите?">
             <div class="product-type-heading">
@@ -3158,6 +3525,7 @@
           <span id="result-count" aria-live="polite"></span>
         </div>
         <div class="legend" id="legend-items" tabindex="0"></div>
+        <p class="table-scroll-hint">Прокрутите таблицу вправо, чтобы увидеть другие месяцы →</p>
         <div class="table-wrap">
           <table aria-label="Сезонность продуктов по происхождению и месяцам">
             <thead id="table-head"></thead>
@@ -3176,7 +3544,15 @@
           урожая. Наличие товара в конкретном магазине не проверяется автоматически.
         </p>
       </section>
-      <section class="panel" data-panel="method" hidden>
+      <section
+        id="panel-method"
+        class="panel"
+        data-panel="method"
+        role="tabpanel"
+        aria-labelledby="tab-method"
+        tabindex="0"
+        hidden
+      >
         <h1>Сезон помогает выбрать. Этикетка уточняет.</h1>
         <p>
           Сначала сопоставьте продукт, страну и сорт. Если на ценнике только «Россия», региональная
@@ -50385,7 +50761,8 @@
             calendarPlaceholder: "Например, манго",
             statusLabel: "Фильтр по статусу",
             sortLabel: "Порядок строк",
-            tableLabel: "Сезонность продуктов по происхождению и месяцам"
+            tableLabel: "Сезонность продуктов по происхождению и месяцам",
+            tableScrollHint: "Прокрутите таблицу вправо, чтобы увидеть другие месяцы →"
           },
           seasonDirections: {
             starting: "Сезон начинается",
@@ -51660,19 +52037,37 @@
           applyTheme();
           getElement("theme").addEventListener("click", () => preferences.toggleTheme(), options);
           document.body.dataset.activePanel = "today";
-          document.querySelectorAll("[data-tab]").forEach(
-            (button) => button.addEventListener(
-              "click",
-              () => {
-                document.body.dataset.activePanel = button.dataset.tab;
-                document.querySelectorAll("[data-tab]").forEach((tab) => tab.setAttribute("aria-selected", tab === button));
-                document.querySelectorAll("[data-panel]").forEach((panel) => {
-                  panel.hidden = panel.dataset.panel !== button.dataset.tab;
-                });
-                if (button.dataset.tab === "today") today.render();
-              },
-              options
-            )
+          const tabs = [...document.querySelectorAll("[data-tab]")];
+          const activateTab = (button) => {
+            document.body.dataset.activePanel = button.dataset.tab;
+            tabs.forEach((tab) => {
+              const selected = tab === button;
+              tab.setAttribute("aria-selected", selected);
+              tab.tabIndex = selected ? 0 : -1;
+            });
+            document.querySelectorAll("[data-panel]").forEach((panel) => {
+              panel.hidden = panel.dataset.panel !== button.dataset.tab;
+            });
+            if (button.dataset.tab === "today") today.render();
+          };
+          tabs.forEach((button) => button.addEventListener("click", () => activateTab(button), options));
+          document.querySelector(".tabs").addEventListener(
+            "keydown",
+            (event) => {
+              const current = tabs.indexOf(document.activeElement);
+              if (current < 0) return;
+              const next = {
+                ArrowRight: (current + 1) % tabs.length,
+                ArrowLeft: (current - 1 + tabs.length) % tabs.length,
+                Home: 0,
+                End: tabs.length - 1
+              }[event.key];
+              if (next === void 0) return;
+              event.preventDefault();
+              activateTab(tabs[next]);
+              tabs[next].focus();
+            },
+            options
           );
           getElement("coverage").textContent = formatMessage(ru_default.calendar.coverage, {
             total: catalog.variants.length,

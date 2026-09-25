@@ -52,21 +52,37 @@ export function startApplication(database, { clock = moscowDate } = {}) {
   getElement('theme').addEventListener('click', () => preferences.toggleTheme(), options);
 
   document.body.dataset.activePanel = 'today';
-  document.querySelectorAll('[data-tab]').forEach((button) =>
-    button.addEventListener(
-      'click',
-      () => {
-        document.body.dataset.activePanel = button.dataset.tab;
-        document
-          .querySelectorAll('[data-tab]')
-          .forEach((tab) => tab.setAttribute('aria-selected', tab === button));
-        document.querySelectorAll('[data-panel]').forEach((panel) => {
-          panel.hidden = panel.dataset.panel !== button.dataset.tab;
-        });
-        if (button.dataset.tab === 'today') today.render();
-      },
-      options,
-    ),
+  const tabs = [...document.querySelectorAll('[data-tab]')];
+  const activateTab = (button) => {
+    document.body.dataset.activePanel = button.dataset.tab;
+    tabs.forEach((tab) => {
+      const selected = tab === button;
+      tab.setAttribute('aria-selected', selected);
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    document.querySelectorAll('[data-panel]').forEach((panel) => {
+      panel.hidden = panel.dataset.panel !== button.dataset.tab;
+    });
+    if (button.dataset.tab === 'today') today.render();
+  };
+  tabs.forEach((button) => button.addEventListener('click', () => activateTab(button), options));
+  document.querySelector('.tabs').addEventListener(
+    'keydown',
+    (event) => {
+      const current = tabs.indexOf(document.activeElement);
+      if (current < 0) return;
+      const next = {
+        ArrowRight: (current + 1) % tabs.length,
+        ArrowLeft: (current - 1 + tabs.length) % tabs.length,
+        Home: 0,
+        End: tabs.length - 1,
+      }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      activateTab(tabs[next]);
+      tabs[next].focus();
+    },
+    options,
   );
 
   getElement('coverage').textContent = formatMessage(copy.calendar.coverage, {

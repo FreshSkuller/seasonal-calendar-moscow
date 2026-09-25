@@ -1,0 +1,348 @@
+/* Final shared rules for readable type, clear controls and both appearances. */
+:root {
+  --focus-ring: #925d27;
+  font-size: 16px;
+}
+
+body.dark {
+  --focus-ring: #e9bf78;
+}
+
+button,
+input,
+select,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input[type='search'],
+select {
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+:is(button, a, input, select, summary, .legend, [role='tabpanel']):focus-visible,
+.toolbar :is(button, input, select):focus-visible,
+#today-groups .shop-group > summary:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+#theme {
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: 8px;
+}
+
+.stamp {
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  min-height: 205px;
+}
+
+.tabs {
+  gap: 30px;
+  margin-bottom: 22px;
+}
+
+.tabs button {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.tabs button:hover:not([aria-selected='true']) {
+  color: var(--accent);
+}
+
+.toolbar {
+  padding: 20px 22px;
+}
+
+.toolbar .product-type-options button:hover:not([aria-pressed='true']),
+.toolbar .segmented button:hover:not([aria-pressed='true']),
+[data-panel='today'] .today-chips button:hover:not([aria-pressed='true']) {
+  background: color-mix(in srgb, var(--menu-selected) 62%, transparent);
+  color: var(--menu-ink);
+}
+
+.toolbar .favorite-option:hover,
+#today-groups .shop-group > summary:hover {
+  background: color-mix(in srgb, var(--menu-control) 65%, var(--menu-surface));
+}
+
+.shop-card .fav:hover,
+.table-wrap .fav:hover {
+  color: var(--accent);
+  background: var(--soft);
+}
+
+.shop-card .fav,
+.table-wrap .fav {
+  border-radius: 10px;
+}
+
+.shop-card .fav[aria-pressed='true'],
+.table-wrap .fav[aria-pressed='true'] {
+  color: #9a620a;
+}
+
+body.dark .shop-card .fav[aria-pressed='true'],
+body.dark .table-wrap .fav[aria-pressed='true'] {
+  color: #f0ca79;
+}
+
+.shop-card .why:hover,
+.shop-card h3 button:hover,
+.table-wrap .name:hover {
+  color: var(--accent);
+}
+
+.shop-card .why:active,
+.show-more:active,
+.toolbar button:active,
+.tabs button:active {
+  transform: translateY(1px);
+}
+
+.shop-types {
+  font-size: 12px;
+}
+
+.shop-origin {
+  font-size: 13px;
+}
+
+.shop-tip {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.group-desc,
+.daily-note,
+.scope-note {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.why {
+  font-size: 14px;
+}
+
+.summary-line h1 {
+  font-size: 23px;
+}
+
+.legend,
+.coverage {
+  font-size: 13px;
+}
+
+th {
+  font-size: 13px;
+}
+
+td {
+  font-size: 14px;
+}
+
+td.product .name {
+  font-size: 15px;
+}
+
+td.product small {
+  font-size: 12px;
+}
+
+.table-scroll-hint {
+  display: none;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.panel h1 {
+  font-size: clamp(30px, 3.5vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.panel h2 {
+  font-family: inherit;
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.panel > p {
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.info-card {
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.info-card p,
+.notice {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.fine,
+.source-list p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 850px) {
+  .table-scroll-hint {
+    display: block;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .topline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 8px;
+  }
+
+  .brand,
+  .stamp {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .stamp {
+    display: contents;
+  }
+
+  .checked-date {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    color: var(--muted);
+  }
+
+  #theme {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  body[data-active-panel='today'] .hero h1 {
+    font-size: 29px;
+    line-height: 1.16;
+  }
+
+  .tabs {
+    gap: 22px;
+    margin-bottom: 14px;
+  }
+
+  .tabs button {
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .today-header {
+    margin: 8px 0 10px;
+  }
+
+  .today-header .today-date,
+  .today-count {
+    font-size: 13px;
+  }
+
+  .toolbar {
+    padding: 15px;
+  }
+
+  .toolbar .product-type-options button,
+  .toolbar .segmented button,
+  [data-panel='today'] .today-chips button {
+    padding: 8px 4px;
+    font-size: 14px;
+  }
+
+  .toolbar label.field,
+  .toolbar .filter-label,
+  .toolbar .search-control > label {
+    font-size: 13px;
+  }
+
+  .toolbar .favorite-option {
+    font-size: 14px;
+  }
+
+  .shop-card {
+    padding: 16px;
+  }
+
+  #today-groups .shop-group > summary {
+    font-size: 18px;
+  }
+
+  .shop-card h3 {
+    font-size: 19px;
+  }
+
+  .summary-line {
+    display: block;
+  }
+
+  .summary-line h1 {
+    font-size: 21px;
+  }
+
+  .summary-line > span {
+    display: block;
+    max-width: none;
+    margin-top: 3px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .panel h1 {
+    font-size: 31px;
+  }
+
+  .panel h2 {
+    font-size: 24px;
+  }
+
+  .info-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .toolbar .product-type-options button,
+  .toolbar .segmented button,
+  [data-panel='today'] .today-chips button {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  input[type='search'],
+  select {
+    transition: none;
+  }
+}

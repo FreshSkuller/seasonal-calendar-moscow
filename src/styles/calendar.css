@@ -16,7 +16,7 @@ label.field {
 input[type='search'],
 select {
   width: 100%;
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   background: var(--card);
   color: var(--ink);
   border-radius: 8px;
@@ -99,19 +99,48 @@ input::placeholder {
 }
 .status-n {
   background: #f4e1db;
-  color: #a45240;
+  color: #8b3f31;
 }
 .status-u {
   background: #edeee7;
-  color: #7a8278;
+  color: #566057;
 }
 .status-a {
   background: #e2e7d8;
   color: #536043;
 }
-.dark .symbol,
-.dark .pill {
-  filter: brightness(0.85);
+/* Status hues retain their meaning on the warm dark surfaces. */
+body.dark .status-p {
+  background: #544526;
+  color: #f8dfa5;
+}
+body.dark .status-g {
+  background: #304936;
+  color: #c5e7c7;
+}
+body.dark .status-b {
+  background: #4d3b2c;
+  color: #f6d2a0;
+}
+body.dark .status-h {
+  background: #40374e;
+  color: #e2d5f3;
+}
+body.dark .status-t {
+  background: #2c434d;
+  color: #c4e3ea;
+}
+body.dark .status-n {
+  background: #4a3532;
+  color: #f2bbb4;
+}
+body.dark .status-u {
+  background: #3b413c;
+  color: #d1d7cc;
+}
+body.dark .status-a {
+  background: #3e4637;
+  color: #d5e0bf;
 }
 .summary-line {
   display: flex;

@@ -12,10 +12,38 @@
   <body>
     @@PARTIAL:header@@
     <main>
-      <nav class="tabs" aria-label="{{page.tabsLabel}}">
-        <button data-tab="today" aria-selected="true">{{page.tabToday}}</button
-        ><button data-tab="calendar" aria-selected="false">{{page.tabCalendar}}</button
-        ><button data-tab="method" aria-selected="false">{{page.tabHelp}}</button>
+      <nav class="tabs" role="tablist" aria-label="{{page.tabsLabel}}">
+        <button
+          id="tab-today"
+          type="button"
+          role="tab"
+          data-tab="today"
+          aria-controls="panel-today"
+          aria-selected="true"
+          tabindex="0"
+        >
+          {{page.tabToday}}</button
+        ><button
+          id="tab-calendar"
+          type="button"
+          role="tab"
+          data-tab="calendar"
+          aria-controls="panel-calendar"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          {{page.tabCalendar}}</button
+        ><button
+          id="tab-method"
+          type="button"
+          role="tab"
+          data-tab="method"
+          aria-controls="panel-method"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          {{page.tabHelp}}
+        </button>
       </nav>
       @@PARTIAL:today@@@@PARTIAL:calendar@@ @@PARTIAL:method@@
 

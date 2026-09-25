@@ -15,7 +15,7 @@ footer {
   margin: 20px 0;
 }
 .notice {
-  border-left: 3px solid #d9a642;
+  border-left: 3px solid var(--warning);
   padding: 2px 0 2px 14px;
   margin: 20px 0;
   color: var(--muted);

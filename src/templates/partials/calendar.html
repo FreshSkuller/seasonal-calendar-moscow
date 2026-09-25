@@ -1,4 +1,11 @@
-<section data-panel="calendar" hidden>
+<section
+  id="panel-calendar"
+  data-panel="calendar"
+  role="tabpanel"
+  aria-labelledby="tab-calendar"
+  tabindex="0"
+  hidden
+>
   <div class="toolbar calendar-toolbar">
     <div class="product-type-filter" role="group" aria-label="{{page.productTypeLabel}}">
       <div class="product-type-heading">
@@ -67,6 +74,7 @@
     <span id="result-count" aria-live="polite"></span>
   </div>
   <div class="legend" id="legend-items" tabindex="0"></div>
+  <p class="table-scroll-hint">{{page.tableScrollHint}}</p>
   <div class="table-wrap">
     <table aria-label="{{page.tableLabel}}">
       <thead id="table-head"></thead>

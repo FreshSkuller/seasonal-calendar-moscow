@@ -1,15 +1,15 @@
-/* Product sheet: semantic surfaces and typography adapt independently of the page theme. */
+/* Product sheet shares the site's semantic palette while retaining an elevated surface. */
 dialog[data-detail-design='warm-reference'] {
-  --detail-surface: #fffdfa;
-  --detail-section: #f3f5f0;
-  --detail-group: #f7f8f4;
-  --detail-control: #ecefeb;
-  --detail-ink: #273029;
-  --detail-muted: #59665d;
-  --detail-line: #dce2d9;
-  --detail-accent: #426e50;
-  --detail-selected: #e8f3e9;
-  --detail-warning: #9c712d;
+  --detail-surface: #fffefa;
+  --detail-section: #f2f2e9;
+  --detail-group: #f8f6ef;
+  --detail-control: var(--control-bg);
+  --detail-ink: var(--ink);
+  --detail-muted: var(--muted);
+  --detail-line: var(--line);
+  --detail-accent: var(--accent);
+  --detail-selected: #e7eee2;
+  --detail-warning: var(--warning);
   width: min(760px, calc(100% - 24px));
   padding: 30px 32px;
   border: 1px solid var(--detail-line);
@@ -19,27 +19,27 @@ dialog[data-detail-design='warm-reference'] {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  box-shadow: 0 24px 70px #20282030;
+  box-shadow: 0 24px 70px #30271b30;
 }
 body.dark dialog[data-detail-design='warm-reference'] {
-  --detail-surface: #2c302d;
-  --detail-section: #3a403a;
-  --detail-group: #353b35;
-  --detail-control: #424942;
-  --detail-ink: #f1f2ec;
-  --detail-muted: #c0c9c0;
-  --detail-line: #535c54;
-  --detail-accent: #aed8b5;
-  --detail-selected: #344a39;
-  --detail-warning: #d8b975;
+  --detail-surface: #343229;
+  --detail-section: #424037;
+  --detail-group: #3d3b32;
+  --detail-control: #494a3e;
+  --detail-ink: var(--ink);
+  --detail-muted: var(--muted);
+  --detail-line: var(--line);
+  --detail-accent: var(--accent);
+  --detail-selected: #404d3a;
+  --detail-warning: var(--warning);
   box-shadow: 0 28px 80px #0009;
 }
 [data-detail-design='warm-reference']::backdrop {
-  background: #1c241e66;
+  background: #29261f73;
   backdrop-filter: blur(6px);
 }
 body.dark [data-detail-design='warm-reference']::backdrop {
-  background: #0a0d0ab8;
+  background: #0e0d0ab8;
 }
 [data-detail-design='warm-reference'] .dialog-head h2 {
   font-family: inherit;
@@ -80,73 +80,7 @@ body.dark [data-detail-design='warm-reference']::backdrop {
   font-size: 13px;
   font-weight: 600;
   padding: 5px 10px;
-  background: var(--detail-status-bg);
-  color: var(--detail-status-fg);
   filter: none;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-p {
-  --detail-status-bg: #fff0cb;
-  --detail-status-fg: #6d5108;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-g {
-  --detail-status-bg: #e9f5e7;
-  --detail-status-fg: #2b6039;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-b {
-  --detail-status-bg: #fdf0dd;
-  --detail-status-fg: #7e4e16;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-h {
-  --detail-status-bg: #f2edf9;
-  --detail-status-fg: #674a86;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-t {
-  --detail-status-bg: #e7f2f6;
-  --detail-status-fg: #2d6373;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-n {
-  --detail-status-bg: #f9e9e7;
-  --detail-status-fg: #914238;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-u {
-  --detail-status-bg: #eff0eb;
-  --detail-status-fg: #5d665c;
-}
-[data-detail-design='warm-reference'] .purchase-season .status-a {
-  --detail-status-bg: #eef0e6;
-  --detail-status-fg: #556144;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-p {
-  --detail-status-bg: #534325;
-  --detail-status-fg: #f6dda3;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-g {
-  --detail-status-bg: #304936;
-  --detail-status-fg: #c2e8c6;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-b {
-  --detail-status-bg: #4d3b2c;
-  --detail-status-fg: #f6d2a0;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-h {
-  --detail-status-bg: #40374e;
-  --detail-status-fg: #dfcef3;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-t {
-  --detail-status-bg: #2c434d;
-  --detail-status-fg: #c4e3ea;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-n {
-  --detail-status-bg: #4a3532;
-  --detail-status-fg: #f2bbb4;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-u {
-  --detail-status-bg: #3b413c;
-  --detail-status-fg: #d1d7cc;
-}
-body.dark [data-detail-design='warm-reference'] .purchase-season .status-a {
-  --detail-status-bg: #3e4637;
-  --detail-status-fg: #d5e0bf;
 }
 [data-detail-design='warm-reference'] [data-shop-advice] > h2 {
   color: var(--detail-ink);

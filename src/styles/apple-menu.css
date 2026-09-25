@@ -1,27 +1,27 @@
 /* Shared catalog controls and the daily status list follow one quiet visual hierarchy. */
 :root {
-  --menu-surface: #fffdfa;
-  --menu-control: #eef0ed;
-  --menu-field: #fffefa;
-  --menu-card: #f8faf6;
-  --menu-selected: #fffdfa;
-  --menu-ink: #29312b;
-  --menu-muted: #59655c;
-  --menu-line: #dfe4dc;
-  --menu-accent: #426e50;
+  --menu-surface: var(--card);
+  --menu-control: var(--control-bg);
+  --menu-field: var(--field-bg);
+  --menu-card: var(--surface-raised);
+  --menu-selected: var(--control-selected);
+  --menu-ink: var(--ink);
+  --menu-muted: var(--muted);
+  --menu-line: var(--line);
+  --menu-accent: var(--accent);
   --menu-control-shadow: 0 1px 3px #26332724;
 }
 
 body.dark {
-  --menu-surface: #2c302d;
-  --menu-control: #3a403a;
-  --menu-field: #343a35;
-  --menu-card: #343a35;
-  --menu-selected: #525b53;
-  --menu-ink: #f1f2ec;
-  --menu-muted: #c0c9c0;
-  --menu-line: #4c574e;
-  --menu-accent: #aed8b5;
+  --menu-surface: var(--card);
+  --menu-control: var(--control-bg);
+  --menu-field: var(--field-bg);
+  --menu-card: var(--surface-raised);
+  --menu-selected: var(--control-selected);
+  --menu-ink: var(--ink);
+  --menu-muted: var(--muted);
+  --menu-line: var(--line);
+  --menu-accent: var(--accent);
   --menu-control-shadow: 0 1px 4px #0005;
 }
 
@@ -61,7 +61,7 @@ body[data-active-panel='today'] .hero h1 {
   border-color: var(--menu-line);
   border-radius: 20px;
   padding: 22px 24px;
-  box-shadow: 0 8px 28px #27332a0d;
+  box-shadow: 0 8px 28px #4d3b260d;
 }
 
 body.dark .toolbar {
@@ -125,7 +125,7 @@ body.dark .toolbar {
 .toolbar select {
   min-height: 50px;
   padding: 11px 14px;
-  border: 1px solid var(--menu-line);
+  border: 1px solid var(--control-line);
   border-radius: 12px;
   background: var(--menu-field);
   color: var(--menu-ink);
@@ -213,7 +213,7 @@ body.dark .toolbar {
   border: 1px solid var(--menu-line);
   border-radius: 18px;
   background: var(--menu-surface);
-  box-shadow: 0 3px 12px #26332709;
+  box-shadow: 0 3px 12px #4d3b2609;
 }
 
 #today-groups .shop-group > summary {
