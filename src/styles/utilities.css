@@ -8,32 +8,12 @@ footer {
   font-size: 12px;
   color: var(--muted);
 }
-.download {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
 .notice {
   border-left: 3px solid var(--warning);
   padding: 2px 0 2px 14px;
   margin: 20px 0;
   color: var(--muted);
   font-size: 14px;
-}
-.known-count {
-  font-variant-numeric: tabular-nums;
-}
-.legend details {
-  width: 100%;
-}
-.legend summary {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--muted);
-}
-.legend details p {
-  max-width: 1000px;
 }
 .coverage {
   font-size: 13px;

@@ -114,13 +114,6 @@ dialog::backdrop {
 .storage-instructions dd {
   margin: 4px 0 0;
 }
-.variant-caption {
-  display: block;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-  margin: 6px 0;
-}
 .purchase-context {
   background: var(--soft);
   border-radius: 12px;

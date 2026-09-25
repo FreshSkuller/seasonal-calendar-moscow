@@ -47,7 +47,7 @@ async function build() {
     .join('\n');
   let html = renderTemplate(read('src/templates/page.html'), readJson('content/ru.json'));
   const replacements = {
-    DATABASE: JSON.stringify(database, null, 2).replace(/</g, '\\u003c'),
+    DATABASE: JSON.stringify(database).replace(/</g, '\\u003c'),
     STYLES: styles,
     APP_JS: javascript.replace(/<\/script/gi, '<\\/script'),
   };

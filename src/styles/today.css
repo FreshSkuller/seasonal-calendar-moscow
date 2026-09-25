@@ -157,9 +157,6 @@
   color: var(--muted);
   margin: 22px 0;
 }
-.today-header .date-icon {
-  font-size: 36px;
-}
 .tabs button {
   min-height: 48px;
 }

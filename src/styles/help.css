@@ -53,30 +53,7 @@
   font-size: 11px;
   margin-right: 7px;
 }
-.audit details {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-}
 summary {
   cursor: pointer;
   font-weight: 650;
-}
-.audit p,
-.audit li {
-  font-size: 13px;
-}
-.audit code {
-  font-size: 12px;
-  letter-spacing: 0.07em;
-}
-.audit ul {
-  padding-left: 20px;
-}
-.audit-controls {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-.audit-controls input {
-  max-width: 450px;
 }
