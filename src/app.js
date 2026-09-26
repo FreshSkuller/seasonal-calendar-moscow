@@ -26,7 +26,7 @@ export function startApplication(database, { clock = moscowDate } = {}) {
     catalog,
     preferences,
     clock,
-    openProduct: (id, month) => dialog.open(id, month),
+    openProduct: (id, month, options) => dialog.open(id, month, options),
     onSharedFiltersChange: (source, patch) => {
       for (const view of [calendar, today])
         if (view && view !== source) view.applySharedFilters(patch);
@@ -67,6 +67,7 @@ export function startApplication(database, { clock = moscowDate } = {}) {
       panel.classList.toggle('panel-enter', entering);
     });
     if (button.dataset.tab === 'today') today.render();
+    if (button.dataset.tab === 'calendar') calendar.updateScrollHint();
   };
   tabs.forEach((button) => button.addEventListener('click', () => activateTab(button), options));
   document.querySelector('.tabs').addEventListener(

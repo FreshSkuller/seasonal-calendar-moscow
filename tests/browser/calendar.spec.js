@@ -75,6 +75,35 @@ test('Переходы короткие, прерываемые и отключ�
   await expect(dialog).not.toBeVisible();
 });
 
+test('Сорта раскрываются плавно, повторное нажатие и уменьшение движения работают', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('[data-tab="calendar"]').click();
+  await revealCalendarFilters(page);
+  await page.locator('#search').fill('авокадо');
+  const toggle = page.locator('#table-body [data-toggle-variants]');
+  await toggle.click();
+  await expect(page.locator('.variant-row')).toHaveCount(3);
+  expect(
+    await page
+      .locator('.variant-row')
+      .first()
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('variant-row-enter');
+  await toggle.click();
+  await expect(page.locator('.variant-row')).toHaveCount(0);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await toggle.click();
+  await expect(page.locator('.variant-row')).toHaveCount(3);
+  expect(
+    await page
+      .locator('.variant-row')
+      .first()
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('none');
+});
+
 test('На главной выбор фильтра, избранное и новые карточки дают короткий отклик', async ({
   page,
 }) => {
@@ -154,11 +183,13 @@ test('Поиск показывает один крестик очистки и 
       const clear = page.locator(`#${clearId}`);
       await input.fill('о');
       await expect(clear).toBeVisible();
+      await expect.poll(() => input.evaluate((element) => element.getAnimations().length)).toBe(0);
       const focus = await input.evaluate((element) => {
         const style = getComputedStyle(element);
         return {
           outline: style.outlineStyle,
           shadow: style.boxShadow,
+          border: style.borderColor,
         };
       });
       expect(focus.outline).toBe('none');
@@ -173,6 +204,29 @@ test('Поиск показывает один крестик очистки и 
       await expect(input).toHaveValue('');
       await expect(clear).toBeHidden();
       await expect(input).toBeFocused();
+      if (panel === 'calendar') {
+        await revealCalendarFilters(page);
+        const sort = page.locator('#sort');
+        await sort.focus();
+        await expect.poll(() => sort.evaluate((element) => element.getAnimations().length)).toBe(0);
+        const selectFocus = await sort.evaluate((element) => {
+          const style = getComputedStyle(element);
+          return {
+            visible: element.matches(':focus-visible'),
+            outline: style.outlineStyle,
+            shadow: style.boxShadow,
+            border: style.borderColor,
+          };
+        });
+        expect(selectFocus.visible).toBe(true);
+        expect(selectFocus.outline).toBe('none');
+        expect(selectFocus.shadow).toBe(focus.shadow);
+        expect(selectFocus.border).toBe(focus.border);
+        await page.keyboard.press('Tab');
+        expect(
+          await page.evaluate(() => getComputedStyle(document.activeElement).outlineColor),
+        ).toBe(focus.border);
+      }
     }
   }
 });
@@ -491,6 +545,38 @@ test('Месяцы, все регионы России, сброс, тема и 
   expect(await page.locator('body').innerText()).not.toMatch(/undefined|\{\{page\./);
 });
 
+test('Годовой календарь показывает выбранный месяц и сохраняет ручную прокрутку', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('[data-tab="calendar"]').click();
+  await page.locator('#month').selectOption('8');
+  await page.locator('#year-view').click();
+  const wrap = page.locator('#panel-calendar .table-wrap');
+  const selectedMonthIsVisible = () =>
+    wrap.evaluate((element) => {
+      const month = element.querySelector('th.month.selected').getBoundingClientRect();
+      const sticky = element.querySelector('th:first-child').getBoundingClientRect();
+      const bounds = element.getBoundingClientRect();
+      return month.left >= sticky.right - 1 && month.right <= bounds.right + 1;
+    });
+  await expect.poll(selectedMonthIsVisible).toBe(true);
+  await page.locator('#theme').click();
+  await expect.poll(selectedMonthIsVisible).toBe(true);
+
+  if (page.viewportSize().width <= 850) {
+    expect(await wrap.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+    await wrap.evaluate((element) => element.scrollTo({ left: 0, behavior: 'instant' }));
+    await page.locator('#year-view').click();
+    expect(await wrap.evaluate((element) => element.scrollLeft)).toBe(0);
+    await page.locator('#search').fill('авокадо');
+    expect(await wrap.evaluate((element) => element.scrollLeft)).toBe(0);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.locator('#month').selectOption('11');
+    expect(await selectedMonthIsVisible()).toBe(true);
+  }
+});
+
 test('Календарь показывает результаты над сгибом экрана и сохраняет доступ к фильтрам', async ({
   page,
 }) => {
@@ -663,6 +749,14 @@ test('Один авокадо: все происхождения и годовы
   await page.locator('#today-origin').selectOption({ label: 'Перу' });
   await expect(page.locator('.shop-card .shop-origin')).toHaveText('Перу · ещё 3 происхождения');
   await page.locator('.shop-card .why').click();
+  await expect(
+    page.locator('#dialog-content > :is([data-shop-advice], .season-reference)').first(),
+  ).toHaveAttribute('data-shop-advice', '');
+  expect(
+    await page
+      .locator('.season-reference')
+      .evaluate((element) => getComputedStyle(element).borderTopWidth),
+  ).toBe('1px');
   await expect(page.locator('.variant-detail').first()).toContainText('Перу');
   const variants = await page.locator('.variant-detail').count();
   expect(variants).toBeGreaterThan(3);
@@ -672,6 +766,94 @@ test('Один авокадо: все происхождения и годовы
   expect(
     await page.locator('#detail-dialog').evaluate((el) => el.scrollWidth <= el.clientWidth),
   ).toBe(true);
+});
+
+test('По месяцам раскрывает варианты в общей таблице и открывает их сезонность', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.locator('[data-tab="calendar"]').click();
+  await page.locator('#month').selectOption('8');
+  await page.locator('#search').fill('авокадо');
+  const table = page.locator('#table-body');
+  const toggle = table.locator('[data-toggle-variants]');
+  await expect(table.locator('.product-row')).toHaveCount(1);
+  const toggleSize = await toggle.boundingBox();
+  expect(toggleSize.width).toBeGreaterThanOrEqual(44);
+  expect(toggleSize.height).toBeGreaterThanOrEqual(44);
+  if (page.viewportSize().width > 1100) {
+    const rowHeight = await table
+      .locator('.product-row')
+      .evaluate((row) => row.getBoundingClientRect().height);
+    expect(rowHeight).toBeLessThanOrEqual(100);
+  }
+  await expect(table.locator('.variant-row:visible')).toHaveCount(0);
+  await expect(table.locator('.product-row [data-favorite]')).toHaveCount(1);
+  if (page.viewportSize().width <= 850) {
+    await expect(table.locator('.product-row td.product [data-favorite]')).toHaveCount(1);
+    expect(
+      await page
+        .locator('.table-wrap')
+        .evaluate((element) => element.scrollWidth <= element.clientWidth),
+    ).toBe(true);
+    await expect(page.locator('.table-scroll-hint')).toBeHidden();
+  }
+  const featuredOrigin = (await table.locator('.product-row .origin').textContent()).trim();
+  await expect(table.locator('.product-row .mobile-origin')).toContainText(featuredOrigin);
+  await expect(table.locator('.product-row .month.selected .cellbtn')).toHaveAttribute(
+    'aria-label',
+    new RegExp(featuredOrigin),
+  );
+  await table.locator('.product-row .month.selected .cellbtn').click();
+  await expect(page.locator('.dialog-head .fine')).toContainText(featuredOrigin);
+  await expect(
+    page.locator('#dialog-content > :is([data-shop-advice], .season-reference)').first(),
+  ).toHaveClass(/season-reference/);
+  await expect(page.locator('.season-reference')).toHaveAttribute('open', '');
+  expect(
+    await page
+      .locator('[data-shop-advice]')
+      .evaluate((element) => getComputedStyle(element).borderTopWidth),
+  ).toBe('1px');
+  const otherVariants = page.locator('.other-variants');
+  await expect(otherVariants).not.toHaveAttribute('open', '');
+  await expect(otherVariants.locator('.variant-detail').first()).toBeHidden();
+  await expect(otherVariants.locator('summary')).toContainText('3');
+  await otherVariants.locator('summary').click();
+  await expect(otherVariants).toHaveAttribute('open', '');
+  await expect(otherVariants.locator('.variant-detail').first()).toBeVisible();
+  await page.keyboard.press('Escape');
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  const variants = table.locator('.variant-row:visible');
+  await expect(variants).toHaveCount(3);
+  await expect(variants.first().locator('.month')).toHaveCount(3);
+  await expect(variants.first().locator('.cellbtn')).toHaveCount(4);
+  const hitSizes = await table
+    .locator('.product-row .name, .month .cellbtn, .variant-row .variant-name')
+    .evaluateAll((buttons) =>
+      buttons.map((button) => {
+        const { width, height } = button.getBoundingClientRect();
+        return { width, height };
+      }),
+    );
+  expect(hitSizes.every(({ width, height }) => width >= 44 && height >= 44)).toBe(true);
+  for (const row of await variants.all()) {
+    const origin = (await row.locator('.mobile-origin').textContent()).trim();
+    await row.locator('.month.selected .cellbtn').click();
+    await expect(page.locator('.season-reference')).toHaveAttribute('open', '');
+    await expect(page.locator('.dialog-head .fine')).toContainText(origin);
+    await expect(page.locator('.variant-detail').first()).toContainText(origin);
+    await page.keyboard.press('Escape');
+  }
+  await toggle.focus();
+  await page.keyboard.press('Enter');
+  await expect(toggle).toBeFocused();
+  await expect(variants).toHaveCount(0);
+  if (page.viewportSize().width <= 850) {
+    await page.locator('#year-view').click();
+    await expect(page.locator('.table-scroll-hint')).toBeVisible();
+  }
 });
 
 test('Избранное прежней версии переносится на постоянный продукт без потери старой записи', async ({

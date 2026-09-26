@@ -192,6 +192,10 @@ td {
   font-size: 13px;
   vertical-align: middle;
 }
+.table-wrap tbody td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 th:first-child,
 td:first-child {
   padding-left: 18px;
@@ -217,11 +221,108 @@ td.product .name {
   text-align: left;
   line-height: 1.4;
 }
+.calendar-product-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.calendar-product-heading .name {
+  flex: 1;
+}
+.calendar-product-heading .variant-toggle {
+  flex: none;
+  margin-top: 0;
+  white-space: nowrap;
+}
+.calendar-product-heading .fav {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+.table-wrap .product-row .name {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+}
 td.product small {
   display: block;
   font-size: 11px;
   color: var(--muted);
   margin-top: 4px;
+}
+td.origin small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+.variant-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 2px;
+  padding: 5px 4px 5px 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+.variant-toggle::after {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 140ms ease;
+}
+.variant-toggle[aria-expanded='true']::after {
+  margin-top: 3px;
+  transform: rotate(225deg);
+}
+@media (hover: hover) {
+  .variant-toggle:hover,
+  .variant-row .variant-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+.variant-row,
+.variant-row td.product {
+  background: color-mix(in srgb, var(--soft) 34%, var(--card));
+}
+.variant-row td.product {
+  padding-left: 30px;
+}
+.variant-row .variant-name {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+.table-wrap :is(.name, .variant-name, .variant-toggle, .cellbtn):active {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .variant-toggle::after {
+    transition: none;
+  }
 }
 td.origin {
   min-width: 180px;

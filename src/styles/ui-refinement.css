@@ -1,11 +1,6 @@
 /* Final shared rules for readable type, clear controls and both appearances. */
 :root {
-  --focus-ring: #925d27;
   font-size: 16px;
-}
-
-body.dark {
-  --focus-ring: #e9bf78;
 }
 
 button,
@@ -28,8 +23,14 @@ select {
 :is(button, a, input, select, summary, .legend, [role='tabpanel']):focus-visible,
 .toolbar :is(button, input, select):focus-visible,
 #today-groups .shop-group > summary:focus-visible {
-  outline: 3px solid var(--focus-ring);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:is(input[type='search'], select):focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 .search-input-wrap input[type='search']::-webkit-search-cancel-button {
@@ -209,6 +210,9 @@ td.product small {
   margin: 0 0 8px;
   color: var(--muted);
   font-size: 13px;
+}
+.table-scroll-hint[hidden] {
+  display: none;
 }
 
 .panel h1 {

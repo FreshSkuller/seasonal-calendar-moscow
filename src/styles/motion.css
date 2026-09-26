@@ -32,10 +32,27 @@
 }
 
 #today-groups .shop-group > summary::after,
+#panel-calendar .variant-toggle::after,
+.other-variants > summary::after,
 [data-detail-design='warm-reference']
   :is(.home-guide, .season-reference, .product-sources)
   > summary::after {
   transition: transform var(--motion-standard) var(--motion-ease);
+}
+
+.variant-row-enter {
+  animation: variant-row-enter var(--motion-standard) var(--motion-ease) both;
+}
+
+@keyframes variant-row-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* The selected segment moves to the new choice without moving the controls. */
@@ -109,6 +126,7 @@
 [data-detail-design='warm-reference']
   :is(.home-guide, .season-reference, .product-sources)[open]
   > .detail-disclosure-content,
+.other-variants[open] > .other-variants-content,
 .advice-update {
   animation: content-reveal var(--motion-standard) var(--motion-ease) both;
 }
@@ -175,9 +193,11 @@ dialog[open]::backdrop {
   .panel-enter,
   .favorite-confirm,
   .card-reveal,
+  .variant-row-enter,
   [data-detail-design='warm-reference']
     :is(.home-guide, .season-reference, .product-sources)[open]
     > .detail-disclosure-content,
+  .other-variants[open] > .other-variants-content,
   .advice-update {
     animation: none;
   }
@@ -186,6 +206,8 @@ dialog[open]::backdrop {
   #today-groups .shop-group > summary,
   .toolbar .favorite-option,
   #today-groups .shop-group > summary::after,
+  #panel-calendar .variant-toggle::after,
+  .other-variants > summary::after,
   [data-detail-design='warm-reference']
     :is(.home-guide, .season-reference, .product-sources)
     > summary::after,

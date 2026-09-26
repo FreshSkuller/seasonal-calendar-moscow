@@ -147,12 +147,14 @@ body[data-active-panel='method'] .hero {
   box-shadow: inset 0 1px #ffffff30;
 }
 
-.table-wrap tbody tr:hover td {
-  background: var(--group-wash);
-}
+@media (hover: hover) {
+  .table-wrap tbody tr:hover td {
+    background: var(--group-wash);
+  }
 
-.table-wrap tbody tr:hover td.month.selected {
-  background: var(--soft);
+  .table-wrap tbody tr:hover td.month.selected {
+    background: var(--soft);
+  }
 }
 
 input[type='search'],

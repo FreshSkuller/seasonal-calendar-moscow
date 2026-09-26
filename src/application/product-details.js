@@ -1,5 +1,6 @@
 import { resolveSeason } from '../domain/seasons.js';
 import { resolveAdvice, adviceForVariant } from '../domain/advice.js';
+import { sortVariantsBySeasonProximity } from '../domain/product-groups.js';
 
 /** Complete screen model, independent of DOM, storage and the current clock. */
 export function buildProductDetails(
@@ -12,7 +13,10 @@ export function buildProductDetails(
   if (!selected) throw new Error(`Unknown variant: ${variantId}`);
   const variants = [
     selected,
-    ...catalog.variantsFor(selected.productId).filter((row) => row.id !== variantId),
+    ...sortVariantsBySeasonProximity(
+      catalog.variantsFor(selected.productId).filter((row) => row.id !== variantId),
+      month,
+    ),
   ];
   const displayedAdvice = new Set();
   const displayedShopAdvice = new Set();

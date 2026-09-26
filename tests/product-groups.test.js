@@ -1,7 +1,11 @@
 import { createRequire } from 'node:module';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { groupedProducts, selectRepresentative } from '../src/domain/product-groups.js';
+import {
+  groupedProducts,
+  selectRepresentative,
+  sortVariantsBySeasonProximity,
+} from '../src/domain/product-groups.js';
 import { createCatalog } from '../src/domain/catalog.js';
 import { buildProductDetails } from '../src/application/product-details.js';
 import { productDetails } from '../src/components/product-details.js';
@@ -31,6 +35,21 @@ test('Страна и сорт фильтруют варианты до выбо
   assert.equal(cultivar.length, 1);
   assert.equal(cultivar[0].variantId, 'r216');
   assert.equal(cultivar[0].months[0], 'n');
+});
+
+test('При одинаковом статусе первым идёт вариант с ближайшим следующим сезоном', () => {
+  const months = (nextSeason) =>
+    Array.from({ length: 12 }, (_, index) => (index === nextSeason ? 'g' : 'n'));
+  const variants = [
+    { id: 'later', name: 'Поздний', origin: 'Б', months: months(4) },
+    { id: 'sooner', name: 'Ближайший', origin: 'А', months: months(1) },
+  ];
+  assert.equal(selectRepresentative(variants, 0).variant.id, 'sooner');
+  assert.deepEqual(
+    sortVariantsBySeasonProximity(variants, 0).map((item) => item.id),
+    ['sooner', 'later'],
+  );
+  assert.equal(selectRepresentative(variants, 0, 'later').variant.id, 'later');
 });
 test('Подробнее показывает каждый вариант с собственным годом, выбранный первым', () => {
   const product = db.variants.find((r) => r.id === 'r114');

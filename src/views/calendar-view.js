@@ -21,6 +21,7 @@ export class CalendarView {
     Object.assign(this, { catalog, preferences, openProduct, onSharedFiltersChange });
     this.initialMonth = clock().month;
     this.state = new FilterState(this.initialMonth);
+    this.expandedProducts = new Set();
     this.events = new AbortController();
     this.controls = Object.fromEntries(
       Object.keys(CONTROL_FIELDS).map((id) => [id, getElement(id)]),
@@ -58,9 +59,11 @@ export class CalendarView {
       'change',
       (event) => {
         this.moreFilters.open = event.matches;
+        this.render();
       },
       options,
     );
+    window.addEventListener('resize', () => this.updateScrollHint(), options);
     for (const [id, control] of Object.entries(this.controls)) {
       control.addEventListener(
         id === 'search' ? 'input' : 'change',
@@ -75,6 +78,7 @@ export class CalendarView {
                   : control.value;
           this.state.update({ [CONTROL_FIELDS[id]]: value });
           this.render();
+          if (id === 'month') this.revealSelectedMonth();
           if (['search', 'origin', 'favorites'].includes(id))
             this.onSharedFiltersChange(this, { [CONTROL_FIELDS[id]]: value });
         },
@@ -111,8 +115,10 @@ export class CalendarView {
       getElement(id).addEventListener(
         'click',
         () => {
+          const changed = this.state.value.wholeYear !== wholeYear;
           this.state.update({ wholeYear });
           this.render();
+          if (changed && wholeYear) this.revealSelectedMonth();
         },
         options,
       );
@@ -141,7 +147,8 @@ export class CalendarView {
     const favorites = this.preferences.favorites;
     const model = buildProductList(this.catalog, filters, favorites, order);
     const months = visibleMonths(month, wholeYear);
-    getElement('table-head').innerHTML = calendarHeader(month, months);
+    const compact = !this.wideLayout.matches;
+    getElement('table-head').innerHTML = calendarHeader(month, months, compact);
     getElement('table-body').innerHTML = calendarRows(
       model.products,
       month,
@@ -149,7 +156,11 @@ export class CalendarView {
       this.catalog.statuses,
       favorites,
       filters,
+      this.catalog,
+      this.expandedProducts,
+      compact,
     );
+    this.updateScrollHint();
     getElement('month-title').textContent = formatMessage(copy.common.monthLocation, {
       month: copy.months[month],
     });
@@ -176,7 +187,89 @@ export class CalendarView {
     getElement('focus-view').setAttribute('aria-pressed', !wholeYear);
     getElement('year-view').setAttribute('aria-pressed', wholeYear);
   }
+  updateScrollHint() {
+    const wrap = document.querySelector('#panel-calendar .table-wrap');
+    document.querySelector('#panel-calendar .table-scroll-hint').hidden =
+      wrap.scrollWidth - wrap.clientWidth <= 12;
+  }
+  revealSelectedMonth() {
+    if (!this.state.value.wholeYear) return;
+    const wrap = document.querySelector('#panel-calendar .table-wrap');
+    const selected = getElement('table-head').querySelector('th.month.selected');
+    if (!selected) return;
+    const wrapRect = wrap.getBoundingClientRect();
+    const selectedRect = selected.getBoundingClientRect();
+    const stickyEdge = getElement('table-head')
+      .querySelector('th:first-child')
+      .getBoundingClientRect().right;
+    const visibleStart = Math.max(wrapRect.left, stickyEdge) + 8;
+    const visibleEnd = wrapRect.right - 8;
+    if (selectedRect.left >= visibleStart && selectedRect.right <= visibleEnd) return;
+    const center = (visibleStart + visibleEnd - selectedRect.width) / 2;
+    const target = Math.max(
+      0,
+      Math.min(wrap.scrollWidth - wrap.clientWidth, wrap.scrollLeft + selectedRect.left - center),
+    );
+    wrap.scrollTo({
+      left: target,
+      top: wrap.scrollTop,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'instant'
+        : 'smooth',
+    });
+  }
+  animateVariantChange(productId, previousTops, expanded) {
+    if (!previousTops || !Element.prototype.animate) return;
+    const body = getElement('table-body');
+    const motion = getComputedStyle(document.documentElement);
+    const timing = {
+      duration: parseFloat(motion.getPropertyValue('--motion-standard')) || 190,
+      easing: motion.getPropertyValue('--motion-ease').trim() || 'ease-out',
+    };
+    for (const row of body.querySelectorAll('[data-product-row]')) {
+      const previousTop = previousTops.get(row.dataset.productRow);
+      if (previousTop === undefined) continue;
+      const offset = previousTop - row.getBoundingClientRect().top;
+      if (Math.abs(offset) < 1) continue;
+      row.animate([{ transform: `translateY(${offset}px)` }, { transform: 'none' }], timing);
+    }
+    if (!expanded) return;
+    const button = [...body.querySelectorAll('[data-toggle-variants]')].find(
+      (item) => item.dataset.toggleVariants === productId,
+    );
+    let row = button?.closest('tr').nextElementSibling;
+    while (row?.classList.contains('variant-row')) {
+      row.classList.add('variant-row-enter');
+      row = row.nextElementSibling;
+    }
+  }
   handleTableClick(event) {
+    const toggle = event.target.closest('[data-toggle-variants]');
+    if (toggle) {
+      const productId = toggle.dataset.toggleVariants;
+      const body = getElement('table-body');
+      const previousTops = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? null
+        : new Map(
+            [...body.querySelectorAll('[data-product-row]')].map((row) => [
+              row.dataset.productRow,
+              row.getBoundingClientRect().top,
+            ]),
+          );
+      const expanded = !this.expandedProducts.has(productId);
+      if (expanded) this.expandedProducts.add(productId);
+      else this.expandedProducts.delete(productId);
+      const scrollBox = body.closest('.table-wrap');
+      const { scrollTop, scrollLeft } = scrollBox;
+      this.render();
+      scrollBox.scrollTop = scrollTop;
+      scrollBox.scrollLeft = scrollLeft;
+      [...getElement('table-body').querySelectorAll('[data-toggle-variants]')]
+        .find((button) => button.dataset.toggleVariants === productId)
+        ?.focus({ preventScroll: true });
+      this.animateVariantChange(productId, previousTops, expanded);
+      return;
+    }
     if (event.target.closest('[data-clear-query]')) {
       this.controls.search.value = '';
       this.state.update({ query: '' });
@@ -197,6 +290,7 @@ export class CalendarView {
         product.dataset.month === undefined
           ? this.state.value.month
           : Number(product.dataset.month),
+        { showSeason: true },
       );
     if (favorite) {
       this.preferences.toggleFavorite(favorite.dataset.favorite);

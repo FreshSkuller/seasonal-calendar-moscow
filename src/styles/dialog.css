@@ -255,6 +255,39 @@ dialog::backdrop {
   font-weight: 650;
   min-height: 44px;
 }
+.other-variants {
+  border-top: 1px solid var(--line);
+}
+.other-variants > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 0;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.other-variants > summary::-webkit-details-marker {
+  display: none;
+}
+.other-variants > summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin-right: 4px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.other-variants[open] > summary::after {
+  transform: rotate(225deg);
+}
+.other-variants-content > h2 {
+  margin-top: 12px;
+}
 .home-guide > summary span {
   display: block;
   margin-top: 5px;

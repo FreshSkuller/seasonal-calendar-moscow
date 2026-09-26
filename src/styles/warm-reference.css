@@ -217,6 +217,11 @@ body.dark [data-detail-design='warm-reference']::backdrop {
   padding: 0;
   margin-top: 18px;
 }
+[data-detail-design='warm-reference'] .season-reference + [data-shop-advice] {
+  border-top: 1px solid var(--detail-line);
+  margin-top: 18px;
+  padding-top: 20px;
+}
 [data-detail-design='warm-reference'] .season-reference > summary {
   font-size: 15px;
   font-weight: 500;

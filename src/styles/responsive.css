@@ -141,10 +141,17 @@
     font-size: 10px;
   }
 }
-.mobile-origin {
+td.product .mobile-origin {
   display: none;
 }
 @media (max-width: 850px) {
+  .table-wrap :is(th:first-child, td.product) {
+    box-shadow: inset -1px 0 var(--line);
+  }
+  .month {
+    min-width: 48px;
+    padding: 8px 2px;
+  }
   td.origin,
   td.decision,
   th:nth-child(2),
@@ -166,5 +173,11 @@
   }
   .table-wrap {
     max-height: 70vh;
+  }
+}
+@media (max-width: 360px) {
+  td.product {
+    min-width: 140px;
+    max-width: 160px;
   }
 }

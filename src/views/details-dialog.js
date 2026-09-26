@@ -52,13 +52,14 @@ export class DetailsDialog {
     );
   }
 
-  open(id, month) {
+  open(id, month, { showSeason = false } = {}) {
     this.variantId = id;
     this.month = month;
     this.context = { environment: 'home', form: 'whole' };
     const model = buildProductDetails(this.catalog, id, month, this.context);
     this.dialog.dataset.detailDesign = detailDesign(model.productId);
-    this.content.innerHTML = productDetails(model, this.catalog);
+    this.content.innerHTML = productDetails(model, this.catalog, { seasonFirst: showSeason });
+    this.content.querySelector('.season-reference').open = showSeason;
     this.dialog.showModal();
     this.content.querySelector('#dialog-title').focus({ preventScroll: true });
     this.dialog.scrollTop = 0;

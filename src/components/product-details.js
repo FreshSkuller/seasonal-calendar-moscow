@@ -1,5 +1,5 @@
 import copy from '../../content/ru.json' with { type: 'json' };
-import { escapeHtml as escape } from '../shared/html.js';
+import { escapeHtml as escape, formatMessage } from '../shared/html.js';
 import { variantDetails } from './variant-details.js';
 import { purchaseContext } from './purchase-context.js';
 import { adviceSection } from './advice-section.js';
@@ -28,13 +28,9 @@ export function homeAdvice(model, presentation) {
 }
 
 /** Shop advice is independent of the home state; each seasonal variant keeps its graph. */
-export function productDetails(model, presentation) {
+export function productDetails(model, presentation, { seasonFirst = false } = {}) {
   const selected = model.variants[0];
-  return `<div class="dialog-head">
-    <div><h2 id="dialog-title" tabindex="-1"${model.title.length > 18 ? ' data-long-title' : ''}>${escape(model.title)}</h2>${scope(selected)}</div>
-  </div>
-  <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escape(copy.months[model.month])}</span></div>
-  <section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escape(copy.details.shopTitle)}</h2>
+  const shopAdvice = `<section data-shop-advice aria-labelledby="shop-advice-title"><h2 id="shop-advice-title">${escape(copy.details.shopTitle)}</h2>
   ${model.variants
     .map((variant, index) =>
       variant.shopAdvice.some((item) => !item.repeated)
@@ -46,15 +42,25 @@ export function productDetails(model, presentation) {
         : '',
     )
     .join('')}
-  </section>
-  <details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}</summary><div class="detail-disclosure-content">
+  </section>`;
+  const homeGuide = `<details class="home-guide" data-home-guide><summary>${escape(copy.details.homeTitle)}</summary><div class="detail-disclosure-content">
     ${purchaseContext(model)}<div data-home-advice>${homeAdvice(model, presentation)}</div></div>
-  </details>
-  <details class="season-reference"><summary>${escape(copy.details.calendarTitle)}</summary><div class="detail-disclosure-content" data-variant-details>${productVariants(model, presentation)}</div></details>
+  </details>`;
+  const seasonReference = `<details class="season-reference"><summary>${escape(copy.details.calendarTitle)}</summary><div class="detail-disclosure-content" data-variant-details>${productVariants(model, presentation, { compactOthers: seasonFirst })}</div></details>`;
+  const sections = seasonFirst
+    ? [seasonReference, shopAdvice, homeGuide]
+    : [shopAdvice, homeGuide, seasonReference];
+  return `<div class="dialog-head">
+    <div><h2 id="dialog-title" tabindex="-1"${model.title.length > 18 ? ' data-long-title' : ''}>${escape(model.title)}</h2>${scope(selected)}</div>
+  </div>
+  <div class="purchase-season">${statusBadge(presentation.statuses, selected.season.status, false, seasonLabel(selected.season.months, model.month, presentation.statuses))}<span>${escape(copy.months[model.month])}</span></div>
+  ${sections.join('')}
   <details class="product-sources" data-product-sources><summary>${escape(copy.details.allSources)}</summary><div class="detail-disclosure-content">${seasonSourceNotes(model.variants)}${sourceList(presentation.sources, model.sourceIds)}</div></details>`;
 }
 
-export function productVariants(model, presentation) {
+export function productVariants(model, presentation, { compactOthers = false } = {}) {
   const [selected, ...others] = model.variants;
-  return `${variantDetails(selected, model.month, presentation)}${others.length ? `<h2>${escape(copy.details.otherVariants)}</h2><p class="fine">${escape(copy.details.variantGuide)}</p>${others.map((row) => variantDetails(row, model.month, presentation)).join('')}` : ''}`;
+  if (!others.length) return variantDetails(selected, model.month, presentation);
+  const otherDetails = `<h2>${escape(copy.details.otherVariants)}</h2><p class="fine">${escape(copy.details.variantGuide)}</p>${others.map((row) => variantDetails(row, model.month, presentation)).join('')}`;
+  return `${variantDetails(selected, model.month, presentation)}${compactOthers ? `<details class="other-variants"><summary>${escape(formatMessage(copy.calendar.showVariants, { count: others.length }))}</summary><div class="other-variants-content">${otherDetails}</div></details>` : otherDetails}`;
 }
